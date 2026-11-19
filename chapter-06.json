@@ -104,13 +104,14 @@
               "source": 765
             },
             {
-              "type": "table",
-              "rows": [
-                [
-                  "RELATIONSHIP WITH REACT\nYou've probably heard of React — another hugely popular library. Next.js is best thought of as an extended edition that includes React inside it, so everything React can do works exactly the same in Next.js."
-                ]
-              ],
-              "source": 766
+              "type": "details",
+              "title": "Relationship with react",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "You've probably heard of React — another hugely popular library. Next.js is best thought of as an extended edition that includes React inside it, so everything React can do works exactly the same in Next.js."
+                }
+              ]
             }
           ],
           "source": 761,
@@ -226,88 +227,122 @@
               "optional": false
             },
             {
-              "type": "paragraph",
-              "text": "Find your existing webdev folder containing the earlier course projects. Copy its full path using the instructions for your computer below.",
-              "links": [],
-              "source": 786
+              "type": "action",
+              "where": "File Explorer on Windows · Finder on Mac",
+              "title": "Copy the path to your existing webdev folder",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Find your existing webdev folder containing the earlier course projects. Copy its full path using the instructions for your computer below.",
+                  "links": [],
+                  "source": 786
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Windows: Open webdev in File Explorer. Click the address bar and copy the full path.",
+                  "platform": "Windows"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mac: Open webdev in Finder. Choose View → Show Path Bar. Control-click webdev in the path bar and choose Copy “webdev” as Pathname.",
+                  "platform": "Mac"
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Windows: Open webdev in File Explorer. Click the address bar and copy the full path.",
-              "platform": "Windows"
-            },
-            {
-              "type": "paragraph",
-              "text": "Mac: Open webdev in Finder. Choose View → Show Path Bar. Control-click webdev in the path bar and choose Copy “webdev” as Pathname.",
-              "platform": "Mac"
-            },
-            {
-              "type": "code",
-              "text": "cd \"PASTE_FULL_PATH_TO_WEBDEV_HERE\"",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "note": "Replace the placeholder with the path you copied. Keep the quotes. If cd reports an error, correct it before continuing.",
-              "source": 787
+              "title": "Move to webdev and verify the path",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Replace PASTE_FULL_PATH_TO_WEBDEV_HERE with that full path. Keep the quotation marks. Run the two commands below one at a time."
+                },
+                {
+                  "type": "code",
+                  "text": "cd \"PASTE_FULL_PATH_TO_WEBDEV_HERE\"",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "note": "Replace the placeholder with the path you copied. Keep the quotes. If cd reports an error, correct it before continuing.",
+                  "source": 787
+                },
+                {
+                  "type": "code",
+                  "text": "pwd",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 787,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The displayed path must end in webdev. If ohana-link already contains package.json, skip the creation command and open that existing app in Step 2. If that folder exists but is incomplete, ask for help before creating another copy.",
+                  "source": 787
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "pwd",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 787,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Create ohana-link only if it does not already exist",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "npx create-next-app@latest ohana-link --use-npm",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "windows": "npx.cmd create-next-app@latest ohana-link --use-npm",
+                  "source": 787,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If asked to install create-next-app, type y and press Enter. Select Yes, use recommended defaults when that question appears. Wait for the success message and for the normal terminal prompt to return.",
+                  "links": [],
+                  "source": 792
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "The displayed path must end in webdev. If ohana-link already contains package.json, skip the creation command and open that existing app in Step 2. If that folder exists but is incomplete, ask for help before creating another copy.",
-              "source": 787
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "npx: a tool installed alongside Node.js that runs a specific command immediately.",
+                  "links": [],
+                  "source": 789
+                },
+                {
+                  "type": "bullet",
+                  "text": "create-next-app: the command that generates a new Next.js app.",
+                  "links": [],
+                  "source": 790
+                },
+                {
+                  "type": "bullet",
+                  "text": "ohana-link: the name of the app (and folder) that will be created.",
+                  "links": [],
+                  "source": 791
+                },
+                {
+                  "type": "note",
+                  "text": "“A “Next app” is not a mobile app — it means a web app built with Next.js. Feature-rich websites are usually called web applications (web apps).”",
+                  "links": [],
+                  "source": 793,
+                  "title": "Another way to think about it",
+                  "optional": true
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "npx create-next-app@latest ohana-link --use-npm",
-              "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "windows": "npx.cmd create-next-app@latest ohana-link --use-npm",
-              "source": 787,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "bullet",
-              "text": "npx: a tool installed alongside Node.js that runs a specific command immediately.",
-              "links": [],
-              "source": 789
-            },
-            {
-              "type": "bullet",
-              "text": "create-next-app: the command that generates a new Next.js app.",
-              "links": [],
-              "source": 790
-            },
-            {
-              "type": "bullet",
-              "text": "ohana-link: the name of the app (and folder) that will be created.",
-              "links": [],
-              "source": 791
-            },
-            {
-              "type": "paragraph",
-              "text": "If asked to install create-next-app, type y and press Enter. Select Yes, use recommended defaults when that question appears. Wait for the success message and for the normal terminal prompt to return.",
-              "links": [],
-              "source": 792
-            },
-            {
-              "type": "note",
-              "text": "“A “Next app” is not a mobile app — it means a web app built with Next.js. Feature-rich websites are usually called web applications (web apps).”",
-              "links": [],
-              "source": 793,
-              "title": "Another way to think about it",
-              "optional": true
+              "type": "check",
+              "text": "The creation command reports success and the terminal prompt returns. If you reused an existing app, its folder contains package.json."
             }
           ],
           "source": 785,
@@ -318,27 +353,52 @@
           "title": "Run the app",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Choose File > Open Folder in VS Code and open ohana-link. Confirm package.json appears in Explorer. Open a normal terminal in this folder and run the command below.",
-              "links": [],
-              "source": 795
+              "type": "action",
+              "where": "VS Code",
+              "title": "Open ohana-link",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Choose File > Open Folder in VS Code and open ohana-link. Confirm package.json appears in Explorer. Open a normal terminal in this folder and run the command below.",
+                  "links": [],
+                  "source": 795
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "npm run dev",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "windows": "npm.cmd run dev",
-              "source": 796,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Start the development server",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "npm run dev",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "windows": "npm.cmd run dev",
+                  "source": 796,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Open the Local address printed in the terminal. It is usually http://localhost:3000; if Next.js chooses another port, use the printed address. Keep that terminal running. To stop the server, click the terminal and press Control + C.",
-              "links": [],
-              "source": 798
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Open the printed Local address",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open the Local address printed in the terminal. It is usually http://localhost:3000; if Next.js chooses another port, use the printed address. Keep that terminal running. To stop the server, click the terminal and press Control + C.",
+                  "links": [],
+                  "source": 798
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "The Next.js page opens in your browser. Keep the server terminal running."
             }
           ],
           "source": 794,
@@ -346,106 +406,131 @@
         },
         {
           "id": "s799",
-          "title": "Read package.json",
+          "title": "Read package.json in the editor",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "package.json is the file a manager should read first in any Node project — it holds the project's core configuration:",
-              "links": [],
-              "source": 800
+              "type": "action",
+              "where": "VS Code · Explorer",
+              "title": "Open package.json",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "In Explorer, click package.json. Read the fields below; no changes are needed."
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "name / version: the project's name and version.",
-              "links": [],
-              "source": 801
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "package.json is the file a manager should read first in any Node project — it holds the project's core configuration:",
+                  "links": [],
+                  "source": 800
+                },
+                {
+                  "type": "bullet",
+                  "text": "name / version: the project's name and version.",
+                  "links": [],
+                  "source": 801
+                },
+                {
+                  "type": "bullet",
+                  "text": "scripts: a collection of frequently used commands.",
+                  "links": [],
+                  "source": 802
+                },
+                {
+                  "type": "bullet",
+                  "text": "dependencies: the list of tools the project depends on — the ingredients of the dish, e.g. next, react.",
+                  "links": [],
+                  "source": 803
+                },
+                {
+                  "type": "bullet",
+                  "text": "devDependencies: tools needed only during development — the knife and cutting board of the kitchen.",
+                  "links": [],
+                  "source": 804
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look inside scripts for the commands available in your project. The exact entries depend on the version and options used to create it.",
+                  "links": [],
+                  "source": 805
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Script",
+                      "Run it with",
+                      "What it does"
+                    ],
+                    [
+                      "dev",
+                      "npm run dev",
+                      "Run the app in development mode"
+                    ],
+                    [
+                      "build",
+                      "npm run build",
+                      "Build the app for deployment"
+                    ],
+                    [
+                      "start",
+                      "npm run start",
+                      "Run the built result"
+                    ],
+                    [
+                      "lint",
+                      "npm run lint",
+                      "Check the code for problems"
+                    ]
+                  ],
+                  "source": 806
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Any command registered under scripts can be run as npm run <script-name>. npm itself is the package-management program installed together with Node.js.",
+                  "links": [],
+                  "source": 808
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "scripts: a collection of frequently used commands.",
-              "links": [],
-              "source": 802
-            },
-            {
-              "type": "bullet",
-              "text": "dependencies: the list of tools the project depends on — the ingredients of the dish, e.g. next, react.",
-              "links": [],
-              "source": 803
-            },
-            {
-              "type": "bullet",
-              "text": "devDependencies: tools needed only during development — the knife and cutting board of the kitchen.",
-              "links": [],
-              "source": 804
-            },
-            {
-              "type": "paragraph",
-              "text": "Look inside scripts for the commands available in your project. The exact entries depend on the version and options used to create it.",
-              "links": [],
-              "source": 805
-            },
-            {
-              "type": "table",
-              "rows": [
-                [
-                  "Script",
-                  "Run it with",
-                  "What it does"
-                ],
-                [
-                  "dev",
-                  "npm run dev",
-                  "Run the app in development mode"
-                ],
-                [
-                  "build",
-                  "npm run build",
-                  "Build the app for deployment"
-                ],
-                [
-                  "start",
-                  "npm run start",
-                  "Run the built result"
-                ],
-                [
-                  "lint",
-                  "npm run lint",
-                  "Check the code for problems"
-                ]
-              ],
-              "source": 806
-            },
-            {
-              "type": "paragraph",
-              "text": "Any command registered under scripts can be run as npm run <script-name>. npm itself is the package-management program installed together with Node.js.",
-              "links": [],
-              "source": 808
+              "type": "check",
+              "text": "You can locate scripts and dependencies in your project’s package.json."
             }
           ],
           "source": 799,
-          "kind": "Understand"
+          "kind": "Practice"
         },
         {
           "id": "s809",
           "title": "Meet the node_modules folder",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "node_modules is where the tools listed in dependencies and devDependencies actually get installed — think of it as the project's refrigerator.",
-              "links": [],
-              "source": 810
-            },
-            {
-              "type": "bullet",
-              "text": "It's enormous, so it's normally excluded when a project goes to GitHub or gets shared — seeing it in a repo is a sign of sloppy setup.",
-              "links": [],
-              "source": 811
-            },
-            {
-              "type": "bullet",
-              "text": "The dependency files describe which packages to install. When package-lock.json exists, npm ci restores its recorded versions. npm install installs the dependencies and can update the lockfile.",
-              "links": [],
-              "source": 812
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "node_modules is where the tools listed in dependencies and devDependencies actually get installed — think of it as the project's refrigerator.",
+                  "links": [],
+                  "source": 810
+                },
+                {
+                  "type": "bullet",
+                  "text": "It's enormous, so it's normally excluded when a project goes to GitHub or gets shared — seeing it in a repo is a sign of sloppy setup.",
+                  "links": [],
+                  "source": 811
+                },
+                {
+                  "type": "bullet",
+                  "text": "The dependency files describe which packages to install. When package-lock.json exists, npm ci restores its recorded versions. npm install installs the dependencies and can update the lockfile.",
+                  "links": [],
+                  "source": 812
+                }
+              ]
             },
             {
               "type": "details",
@@ -481,7 +566,7 @@
             }
           ],
           "source": 809,
-          "kind": "Practice"
+          "kind": "Only if needed"
         }
       ],
       "source": 783
@@ -502,39 +587,55 @@
               "text": "If the app from Lesson 6.4 is still running, keep that terminal open and read the output below. Do not start a second server. Use this command in the ohana-link folder only when the server is stopped."
             },
             {
-              "type": "code",
-              "text": "npm run dev",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "windows": "npm.cmd run dev",
-              "source": 818,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Start the server only if it is stopped",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "npm run dev",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "windows": "npm.cmd run dev",
+                  "source": 818,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "output",
-              "text": "> ohana-link@0.1.0 dev\n▲ Next.js 16.2.0 (Turbopack)\n- Local:    http://localhost:3000\n- Network:  http://172.30.1.87:3000\n✓ Ready in 412ms",
-              "label": "Example output — do not type",
-              "source": 818
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "output",
+                  "text": "> ohana-link@0.1.0 dev\n▲ Next.js 16.2.0 (Turbopack)\n- Local:    http://localhost:3000\n- Network:  http://172.30.1.87:3000\n✓ Ready in 412ms",
+                  "label": "Example output — do not type",
+                  "source": 818
+                },
+                {
+                  "type": "bullet",
+                  "text": "Running npm run dev starts Next.js's own embedded web server.",
+                  "links": [],
+                  "source": 819
+                },
+                {
+                  "type": "bullet",
+                  "text": "When your browser visits that address, the server responds with HTML/CSS/JS files, and the browser draws the screen.",
+                  "links": [],
+                  "source": 820
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When the AI reports “the server is running,” this output — especially the ✓ Ready line and the Local: address — is the evidence to look for.",
+                  "links": [],
+                  "source": 821
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Running npm run dev starts Next.js's own embedded web server.",
-              "links": [],
-              "source": 819
-            },
-            {
-              "type": "bullet",
-              "text": "When your browser visits that address, the server responds with HTML/CSS/JS files, and the browser draws the screen.",
-              "links": [],
-              "source": 820
-            },
-            {
-              "type": "paragraph",
-              "text": "When the AI reports “the server is running,” this output — especially the ✓ Ready line and the Local: address — is the evidence to look for.",
-              "links": [],
-              "source": 821
+              "type": "check",
+              "text": "The running terminal shows Ready and a Local address. Keep this terminal open."
             }
           ],
           "source": 817,
@@ -718,42 +819,59 @@
           "title": "Hands-on: build a Pomodoro timer out of components",
           "blocks": [
             {
-              "type": "note",
-              "title": "Use the Next.js project",
-              "text": "Open ohana-link, where package.json is visible. Keep the development server in its existing terminal. Choose Terminal → New Terminal, confirm this second terminal is also in ohana-link, and type claude there. Use Claude’s message area for AI prompts. Save and review the starter state in Git before changing it."
+              "type": "action",
+              "where": "VS Code",
+              "title": "Keep the server and Claude in separate terminals",
+              "blocks": [
+                {
+                  "type": "note",
+                  "title": "Use the Next.js project",
+                  "text": "Open ohana-link, where package.json is visible. Keep the development server in its existing terminal. Choose Terminal → New Terminal, confirm this second terminal is also in ohana-link, and type claude there. Use Claude’s message area for AI prompts. Save and review the starter state in Git before changing it."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Give Claude Code a prompt like this and have it generate the feature as a component structure — note how the prompt names the exact components and folder, so you can check the result against it:",
-              "links": [],
-              "source": 849
-            },
-            {
-              "type": "code",
-              "text": "Build a Pomodoro timer web application.\n\n# Main Page\n\n## Main Page UI\n- Display the title \"pomodoro\" using an `h1` tag\n- Display the current remaining time (load and use from localStorage, default is 25 minutes)\n- Place Start, Stop, and Reset buttons\n- Place a Settings button (navigates to the Settings page)\n\n## Main Page Features\n- Clicking the Start button starts the timer\n- Clicking the Stop button pauses/stops the timer\n- Clicking the Reset button resets the timer\n\n# Settings Page\n\n## Settings Page UI\n- Place the title \"Setting\" using an `h3` tag\n- Place a single input field to set the timer duration\n- Place a Complete Setting (Save) button\n\n## Settings Page Features\n- Change timer duration\n- Can only be set between 1 minute and 60 minutes (inclusive)\n- The Complete Setting button cannot be clicked if the input field is left empty\n- The updated time is immediately reflected on the Main Page\n- The updated time persists even after a page refresh\n\n# Component Splitting\n- Properly split the work into modular components\n- Split the components into `Timer`, `Controllers`, and `TimerSettingInput`\n- Store the components in the `/components` folder\n- If a `src` folder exists, store them in `src/components`\n- Must be stored in `/components`, NOT `app/components`\n\n# Miscellaneous\n- Do not build or run the Next.js app after completing the development\n- Explain the results in English as follows:\n- Explain unit by unit for each component (Name, Path, Role)\n- Explain in the order of Regular Components -> Page Components\n- In the Page Component explanation, include a list of the Regular Components it contains",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-850",
-              "source": 850,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Build the component-based timer",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Build a Pomodoro timer web application.\n\n# Main Page\n\n## Main Page UI\n- Display the title \"pomodoro\" using an `h1` tag\n- Display the current remaining time (load and use from localStorage, default is 25 minutes)\n- Place Start, Stop, and Reset buttons\n- Place a Settings button (navigates to the Settings page)\n\n## Main Page Features\n- Clicking the Start button starts the timer\n- Clicking the Stop button pauses/stops the timer\n- Clicking the Reset button resets the timer\n\n# Settings Page\n\n## Settings Page UI\n- Place the title \"Setting\" using an `h3` tag\n- Place a single input field to set the timer duration\n- Place a Complete Setting (Save) button\n\n## Settings Page Features\n- Change timer duration\n- Can only be set between 1 minute and 60 minutes (inclusive)\n- The Complete Setting button cannot be clicked if the input field is left empty\n- The updated time is immediately reflected on the Main Page\n- The updated time persists even after a page refresh\n\n# Component Splitting\n- Properly split the work into modular components\n- Split the components into `Timer`, `Controllers`, and `TimerSettingInput`\n- Store the components in the `/components` folder\n- If a `src` folder exists, store them in `src/components`\n- Must be stored in `/components`, NOT `app/components`\n\n# Miscellaneous\n- Do not build or run the Next.js app after completing the development\n- Explain the results in English as follows:\n- Explain unit by unit for each component (Name, Path, Role)\n- Explain in the order of Regular Components -> Page Components\n- In the Page Component explanation, include a list of the Regular Components it contains",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-850",
+                  "source": 850,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Also create the file (.claude/settings.json), to grant permissions to Claude. In the file, write:",
-              "links": [],
-              "source": 852
-            },
-            {
-              "type": "code",
-              "text": "{\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"ask\": [\n      \"Bash(git push *)\",\n      \"Bash(git commit *)\",\n      \"Bash(rm -rf *)\"\n    ]\n  }\n}",
-              "where": "VS Code editor · .claude/settings.json",
-              "mode": "file",
-              "label": "File contents",
-              "copy": true,
-              "source": 853,
-              "note": "Save this file before continuing."
+              "type": "action",
+              "where": "VS Code · Explorer",
+              "title": "Create or review the project permission settings",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Inside the project’s .claude folder, open or create settings.json. Review the contents below and save the file."
+                },
+                {
+                  "type": "code",
+                  "text": "{\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"ask\": [\n      \"Bash(git push *)\",\n      \"Bash(git commit *)\",\n      \"Bash(rm -rf *)\"\n    ]\n  }\n}",
+                  "where": "VS Code editor · .claude/settings.json",
+                  "mode": "file",
+                  "label": "File contents",
+                  "copy": true,
+                  "source": 853,
+                  "note": "Save this file before continuing."
+                }
+              ]
             },
             {
               "type": "check",
@@ -768,101 +886,164 @@
           "title": "A look inside a component file",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Open the generated Timer.tsx and you'll find two things living together in one file:",
-              "links": [],
-              "source": 856
+              "type": "action",
+              "where": "VS Code · Explorer",
+              "title": "Open the generated Timer.tsx",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Find Timer.tsx in Explorer and open it. Read the interface and behavior together; no edit is required."
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "HTML tags — the element's appearance and layout.",
-              "links": [],
-              "source": 857
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open the generated Timer.tsx and you'll find two things living together in one file:",
+                  "links": [],
+                  "source": 856
+                },
+                {
+                  "type": "bullet",
+                  "text": "HTML tags — the element's appearance and layout.",
+                  "links": [],
+                  "source": 857
+                },
+                {
+                  "type": "bullet",
+                  "text": "JavaScript functions — the element's behavior.",
+                  "links": [],
+                  "source": 858
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A .tsx file contains TypeScript with JSX, which looks similar to HTML. Components can combine the interface and the logic that supports it.",
+                  "links": [],
+                  "source": 859
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "JavaScript functions — the element's behavior.",
-              "links": [],
-              "source": 858
-            },
-            {
-              "type": "paragraph",
-              "text": "A .tsx file contains TypeScript with JSX, which looks similar to HTML. Components can combine the interface and the logic that supports it.",
-              "links": [],
-              "source": 859
+              "type": "check",
+              "text": "You can identify the interface markup and the logic in the component file."
             }
           ],
           "source": 855,
-          "kind": "Understand"
+          "kind": "Practice"
         },
         {
           "id": "s860",
           "title": "App Router: the folder structure IS the URL",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Unlike ordinary components, page components are saved under the app/ folder with the file name page.tsx — and the URL follows the folder path exactly. That mapping is your audit trail: given a URL, you know exactly which file to inspect.",
-              "links": [],
-              "source": 861
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Unlike ordinary components, page components are saved under the app/ folder with the file name page.tsx — and the URL follows the folder path exactly. That mapping is your audit trail: given a URL, you know exactly which file to inspect.",
+                  "links": [],
+                  "source": 861
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "File path",
+                      "URL in the browser"
+                    ],
+                    [
+                      "app/page.tsx",
+                      "/  (the main page)"
+                    ],
+                    [
+                      "app/setting/page.tsx",
+                      "/setting"
+                    ],
+                    [
+                      "app/test/page.tsx",
+                      "/test"
+                    ]
+                  ],
+                  "source": 862
+                }
+              ]
             },
             {
-              "type": "table",
-              "rows": [
-                [
-                  "File path",
-                  "URL in the browser"
-                ],
-                [
-                  "app/page.tsx",
-                  "/  (the main page)"
-                ],
-                [
-                  "app/setting/page.tsx",
-                  "/setting"
-                ],
-                [
-                  "app/test/page.tsx",
-                  "/test"
-                ]
-              ],
-              "source": 862
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Ask for a temporary test page",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Ask Claude Code to create a temporary page at /test. Check that app/test/page.tsx exists, or src/app/test/page.tsx if your project uses src, and visit /test in the browser.",
+                  "links": [],
+                  "source": 864
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Ask Claude Code to create a temporary page at /test. Check that app/test/page.tsx exists, or src/app/test/page.tsx if your project uses src, and visit /test in the browser.",
-              "links": [],
-              "source": 864
+              "type": "check",
+              "text": "The test page file exists under app/test or src/app/test, and the running app opens at /test."
             }
           ],
           "source": 860,
-          "kind": "Understand"
+          "kind": "Practice"
         },
         {
           "id": "s865",
           "title": "Directing edits at the component level",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Once you know the component concept, you can point the AI at an exact target by name:",
-              "links": [],
-              "source": 866
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Once you know the component concept, you can point the AI at an exact target by name:",
+                  "links": [],
+                  "source": 866
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "Add a simple click animation to the Controllers component.",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-867",
-              "source": 867,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Request a change to one component",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Add a simple click animation to the Controllers component.",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-867",
+                  "source": 867,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "A component name helps you scope the request. Review Claude’s changed files to confirm the change stayed within that scope.",
-              "links": [],
-              "source": 869
+              "type": "action",
+              "where": "VS Code",
+              "title": "Review the changed files",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A component name helps you scope the request. Review Claude’s changed files to confirm the change stayed within that scope.",
+                  "links": [],
+                  "source": 869
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "Click the timer controls in the browser. The animation works and the change stays within the requested scope."
             }
           ],
           "source": 865,
