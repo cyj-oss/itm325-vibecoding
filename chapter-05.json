@@ -271,7 +271,7 @@
     {
       "id": "5.4",
       "title": "Version Control with Git",
-      "objective": "Apply Git to an existing project (for example, your pomodoro timer), record versions as commits, and practice the two moves — Discard and Revert — that let you undo any AI mistake you catch.",
+      "objective": "Apply Git to your Pomodoro project and record a version as a commit. Learn when Discard or Revert can help you recover from a mistake.",
       "intro": [],
       "steps": [
         {
@@ -363,6 +363,10 @@
             {
               "type": "explanation",
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Staging selects the changes to include in your next commit, like putting items in a shopping cart before checkout."
+                },
                 {
                   "type": "note",
                   "text": "“Stage → write a message → commit. This flow is the backbone of every version you'll ever record.”",
