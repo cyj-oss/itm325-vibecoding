@@ -1036,7 +1036,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Start with the project open in VS Code, with both Claude and the Next.js app running:",
+              "text": "Open ohana-link in VS Code. Keep the server running in its existing terminal and Claude in a second terminal. Use the command below only if the server has stopped; do not paste it into Claude’s message area.",
               "links": [],
               "source": 1187
             },
