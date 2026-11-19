@@ -249,27 +249,16 @@
       "intro": [
         {
           "type": "setup",
-          "label": "Open Supabase setup",
+          "label": "Setup 2 · Part 3 · Supabase",
           "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/SUPABASE.md",
-          "text": "Complete the account, project, and connection preparation in the existing setup guide. This is the same process on Windows and Mac."
-        },
-        {
-          "type": "paragraph",
-          "text": "Complete the Supabase setup in the database lesson using this guide. Windows and Mac follow the same steps:",
-          "links": [],
-          "source": 1072
-        },
-        {
-          "type": "paragraph",
-          "text": "https://github.com/cyj-oss/itm325-setup2/blob/main/SUPABASE.md",
-          "links": [
-            {
-              "text": "https://github.com/cyj-oss/itm325-setup2/blob/main/SUPABASE.md",
-              "target": "https://github.com/cyj-oss/itm325-setup2/blob/main/SUPABASE.md",
-              "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink"
-            }
+          "text": "The guide opens in a new tab. Keep this book tab open.",
+          "scope": "With your existing Next.js app working, complete all four Supabase setup steps. Windows and Mac use the same page. Reuse your existing account and project.",
+          "checks": [
+            "Your Supabase project dashboard is ready.",
+            "Connection files and real settings are saved; .env.local is ignored by Git and is not tracked.",
+            "The app starts without setup errors. Database reads and writes are tested later in the lesson."
           ],
-          "source": 1073
+          "returnText": "Stop at DONE for Part 3 setup. Switch back to this book tab, Lesson 8.2, Step 1. Continue below with Connection files and environment variables. Do not repeat the setup prompt. Table creation comes later in Lesson 8.4."
         },
         {
           "type": "paragraph",
@@ -320,6 +309,12 @@
           "title": "Connection files and environment variables",
           "blocks": [
             {
+              "type": "note",
+              "title": "Review the files you just prepared",
+              "text": "The setup guide already prepared the connection. Use this step to understand and check those files. Keep your real .env.local values; do not replace a working connection with the example below.",
+              "optional": false
+            },
+            {
               "type": "paragraph",
               "text": "The .env.local file stores the environment variables used by your app.",
               "links": [],
@@ -347,7 +342,7 @@
               "mode": "file",
               "label": "File contents",
               "copy": true,
-              "note": "Replace the example URL and key with your own project values. Preserve any other settings in the file.",
+              "note": "Already saved your real values in setup? Read this example without pasting it again. Use it only for missing entries, replace its placeholders, and preserve the rest of .env.local.",
               "source": 1087
             },
             {
