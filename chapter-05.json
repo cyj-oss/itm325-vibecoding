@@ -347,7 +347,9 @@
                 "The two Git identity check commands show your intended name and email."
               ],
               "returnText": "Return to this same step, Lesson 5.4, Step 2. Continue below with staging, writing a message, and committing.",
-              "optional": true
+              "optional": true,
+              "returnUrl": "#lesson=5.4&step=1",
+              "returnLabel": "Return to 5.4 · Record your first commit"
             },
             {
               "type": "action",
