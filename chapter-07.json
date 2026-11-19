@@ -201,7 +201,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Run Claude in the terminal and execute the command by tagging the file with `@prompt.md`. Claude will generate components such as the header, the sidebar, a link card, and the link grid — that component-by-component report is your first review artifact. Then start the dev server:",
+              "text": "Save prompt.md and use the Claude Code instruction above once. Review the component report and changed files. Keep the existing development server running; use the command below in a regular terminal only if it has stopped.",
               "links": [],
               "source": 912
             },
@@ -218,7 +218,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Open http://localhost:3000 in your browser and review the delivery: does the layout match every line of the spec you wrote?",
+              "text": "Open the Local address printed by the server, usually http://localhost:3000. Check the layout against every part of your prompt.",
               "links": [],
               "source": 915
             }
@@ -487,7 +487,7 @@
               "copy": true,
               "windows": "npm.cmd run dev",
               "source": 958,
-              "note": "Paste into the named input area. Press Enter to run."
+              "note": "If the development server is already running, keep it open and skip this command. Otherwise, run it in a regular terminal inside ohana-link, outside Claude."
             },
             {
               "type": "paragraph",
@@ -570,7 +570,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Open the project folder in VS Code and start the Next.js app with npm run dev. Start with `prompt.md` empty — either clear it out or move its old contents into a separate file.",
+              "text": "Open ohana-link in VS Code. Keep its existing server running, or start it with the command below if it has stopped. Start with prompt.md empty: clear it or save its old contents in another file.",
               "links": [],
               "source": 971
             },
@@ -583,7 +583,7 @@
               "copy": true,
               "windows": "npm.cmd run dev",
               "source": 972,
-              "note": "Paste into the named input area. Press Enter to run."
+              "note": "If the development server is already running, keep it open and skip this command. Otherwise, run it in a regular terminal inside ohana-link, outside Claude."
             }
           ],
           "source": 970,
