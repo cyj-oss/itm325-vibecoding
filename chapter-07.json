@@ -241,9 +241,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Save prompt.md and use the Claude Code instruction above once. Review the component report and changed files. Keep the existing development server running; use the command below in a regular terminal only if it has stopped.",
-                  "links": [],
-                  "source": 912
+                  "text": "After Claude finishes, review its component report and changed files. Keep the existing development server running. Use this command only if it has stopped."
                 },
                 {
                   "type": "code",
@@ -926,13 +924,22 @@
             {
               "type": "action",
               "where": "Browser · your app",
-              "title": "Test the result and save your work",
+              "title": "Test the result",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "If pressing Delete in the confirmation modal makes the folder disappear from the sidebar, it's working. Commit with `Implement delete-folder feature` and push.",
-                  "links": [],
-                  "source": 992
+                  "text": "Delete a disposable test folder using its confirmation dialog. Check that it disappears from the sidebar."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Commit and push the working feature",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Stage the reviewed changes, use the commit message Implement delete-folder feature, commit, and push."
                 }
               ]
             },
@@ -973,13 +980,22 @@
             {
               "type": "action",
               "where": "Browser · your app",
-              "title": "Test the result and save your work",
+              "title": "Test the result",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Refresh the browser, confirm the behavior, and finish with one last commit and push. That wraps up folder management.",
-                  "links": [],
-                  "source": 997
+                  "text": "Rename a disposable test folder. Confirm that the sidebar displays the new name."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Commit and push the working feature",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Stage the reviewed changes, use the commit message Implement rename-folder feature, commit, and push."
                 }
               ]
             },
@@ -1125,19 +1141,22 @@
             {
               "type": "action",
               "where": "Browser · your app",
-              "title": "Test the result and save your work",
+              "title": "Test the result",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Run it with `@prompt.md` — the implementation takes about 2–3 minutes. Then, in the browser, go to the new-link page, enter an address like https://www.nytimes.com, and save it. You should see the thumbnail, title, and description collected and stored automatically — if any of those fields comes back empty, that's the first thing to flag.",
-                  "links": [],
-                  "source": 1021
-                },
+                  "text": "After Claude finishes, open the new-link page in your browser, enter an address such as https://www.nytimes.com, and save it. Review the title, description, and thumbnail returned by the feature."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Commit and push the working feature",
+              "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Afterwards, commit with the message `Implement add-link feature + Open Graph API` and push.",
-                  "links": [],
-                  "source": 1022
+                  "text": "Stage the reviewed changes, use the commit message Implement add-link feature + Open Graph API, commit, and push."
                 }
               ]
             },
@@ -1178,13 +1197,22 @@
             {
               "type": "action",
               "where": "Browser · your app",
-              "title": "Test the result and save your work",
+              "title": "Test the result",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "In the browser, hover a link card and run the flow: delete button → confirmation modal → deleted. If it behaves, commit with `Implement delete-link feature` and push.",
-                  "links": [],
-                  "source": 1027
+                  "text": "Hover over a disposable test link, click its delete button, and confirm deletion. Check that the link disappears."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Commit and push the working feature",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Stage the reviewed changes, use the commit message Implement delete-link feature, commit, and push."
                 }
               ]
             },
