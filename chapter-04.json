@@ -445,54 +445,68 @@
           "title": "What CSS does",
           "blocks": [
             {
-              "type": "image",
-              "src": "image5.png",
-              "alt": "HTML supplies structure; CSS changes its appearance.",
-              "caption": "HTML supplies structure; CSS changes its appearance.",
-              "source": 372
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "image",
+                  "src": "image5.png",
+                  "alt": "HTML supplies structure; CSS changes its appearance.",
+                  "caption": "HTML supplies structure; CSS changes its appearance.",
+                  "source": 372
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The same HTML structure, before and after CSS: structure from HTML, looks from CSS.",
+                  "links": [],
+                  "source": 373
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Build a page's skeleton with HTML alone and the screen is just text, neatly stacked. The colors, the sizes, the spacing — everything is the browser's plain default.",
+                  "links": [],
+                  "source": 374
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Dressing that skeleton in visual style is CSS's job. Text color, backgrounds, spacing, alignment, fonts, shadows, even animation — pretty much every part of the screen you'd call “design” is CSS's responsibility. The exact same HTML can look completely different depending on which CSS is put on it — so when the AI's page looks wrong but behaves right, CSS is where to send it back for fixes.",
+                  "links": [],
+                  "source": 375
+                },
+                {
+                  "type": "note",
+                  "text": "“If HTML is the skeleton, CSS is the appearance.”",
+                  "links": [],
+                  "source": 376,
+                  "title": "Another way to think about it",
+                  "optional": true
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "The same HTML structure, before and after CSS: structure from HTML, looks from CSS.",
-              "links": [],
-              "source": 373
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Style index.html",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Paste the prompt and press Enter."
+                },
+                {
+                  "type": "code",
+                  "text": "Add CSS styling to the index.html file based on these instructions.\n - Apply only simple styles (fonts, colors, margins, etc.).\n - Do not create a separate CSS file. Use internal styling.\n - Style 3 or fewer tags using tag selectors.\n - Set the background color to a pastel blue tone.",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-378",
+                  "source": 378,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Build a page's skeleton with HTML alone and the screen is just text, neatly stacked. The colors, the sizes, the spacing — everything is the browser's plain default.",
-              "links": [],
-              "source": 374
-            },
-            {
-              "type": "paragraph",
-              "text": "Dressing that skeleton in visual style is CSS's job. Text color, backgrounds, spacing, alignment, fonts, shadows, even animation — pretty much every part of the screen you'd call “design” is CSS's responsibility. The exact same HTML can look completely different depending on which CSS is put on it — so when the AI's page looks wrong but behaves right, CSS is where to send it back for fixes.",
-              "links": [],
-              "source": 375
-            },
-            {
-              "type": "note",
-              "text": "“If HTML is the skeleton, CSS is the appearance.”",
-              "links": [],
-              "source": 376,
-              "title": "Another way to think about it",
-              "optional": true
-            },
-            {
-              "type": "paragraph",
-              "text": "Now, Insert this prompt into Claude:",
-              "links": [],
-              "source": 377
-            },
-            {
-              "type": "code",
-              "text": "Add CSS styling to the index.html file based on these instructions.\n - Apply only simple styles (fonts, colors, margins, etc.).\n - Do not create a separate CSS file. Use internal styling.\n - Style 3 or fewer tags using tag selectors.\n - Set the background color to a pastel blue tone.",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-378",
-              "source": 378,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+              "type": "check",
+              "text": "Refresh index.html in the browser. The page has styling while its original content remains."
             }
           ],
           "source": 371,
@@ -538,81 +552,96 @@
           "title": "The two selectors you'll actually use",
           "blocks": [
             {
-              "type": "subheading",
-              "text": "Tag selector",
-              "links": [],
-              "source": 387
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Tag selector",
+                  "links": [],
+                  "source": 387
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Write a tag's name as-is and the same style applies to every tag of that kind on the page:",
+                  "links": [],
+                  "source": 388
+                },
+                {
+                  "type": "code",
+                  "text": "h1 { color: navy; }\n└─ selector = the tag name: every h1 on the page turns navy at once",
+                  "where": "tag selector",
+                  "mode": "reference",
+                  "label": "Reference example",
+                  "copy": false,
+                  "source": 389
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Write a tag's name as-is and the same style applies to every tag of that kind on the page:",
-              "links": [],
-              "source": 388
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Add and style the Google link",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "Request: Update the index.html file based on these instructions.\n- Add an 'a' tag that links to Google.\n- Assign a class name to this link and use a class selector to apply unique styles to it.\n- Make the link look exactly like a button.\n- Use only HTML and CSS.",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-392",
+                  "source": 392,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "h1 { color: navy; }\n└─ selector = the tag name: every h1 on the page turns navy at once",
-              "where": "tag selector",
-              "mode": "reference",
-              "label": "Reference example",
-              "copy": false,
-              "source": 389
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Class selector",
+                  "links": [],
+                  "source": 393
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use this when you want to style only the specific elements you designate, regardless of tag type:",
+                  "links": [],
+                  "source": 394
+                },
+                {
+                  "type": "code",
+                  "text": "HTML — give the tag a name with the class attribute:\n  <a class=\"google-link\" href=\"...\">Google</a>\n\nCSS — a dot (.) plus the same name:\n  .google-link { color: green; }",
+                  "where": "class selector",
+                  "mode": "reference",
+                  "label": "Reference example",
+                  "copy": false,
+                  "source": 395
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In HTML you attach a class to a tag with class=\"name\"; in CSS you select only the elements carrying that class by putting a dot in front of the same name: .name. Give the same class to several tags and they all get styled in one shot.",
+                  "links": [],
+                  "source": 397
+                },
+                {
+                  "type": "bullet",
+                  "text": "First give the HTML element a class=\"name\" attribute, then select it in CSS as .name.",
+                  "links": [],
+                  "source": 398
+                },
+                {
+                  "type": "bullet",
+                  "text": "This is the selector used most in real-world work — expect to see it all over AI-generated CSS.",
+                  "links": [],
+                  "source": 399
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Now, Insert this prompt into Claude:",
-              "links": [],
-              "source": 391
-            },
-            {
-              "type": "code",
-              "text": "Request: Update the index.html file based on these instructions.\n- Add an 'a' tag that links to Google.\n- Assign a class name to this link and use a class selector to apply unique styles to it.\n- Make the link look exactly like a button.\n- Use only HTML and CSS.",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-392",
-              "source": 392,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
-            },
-            {
-              "type": "subheading",
-              "text": "Class selector",
-              "links": [],
-              "source": 393
-            },
-            {
-              "type": "paragraph",
-              "text": "Use this when you want to style only the specific elements you designate, regardless of tag type:",
-              "links": [],
-              "source": 394
-            },
-            {
-              "type": "code",
-              "text": "HTML — give the tag a name with the class attribute:\n  <a class=\"google-link\" href=\"...\">Google</a>\n\nCSS — a dot (.) plus the same name:\n  .google-link { color: green; }",
-              "where": "class selector",
-              "mode": "reference",
-              "label": "Reference example",
-              "copy": false,
-              "source": 395
-            },
-            {
-              "type": "paragraph",
-              "text": "In HTML you attach a class to a tag with class=\"name\"; in CSS you select only the elements carrying that class by putting a dot in front of the same name: .name. Give the same class to several tags and they all get styled in one shot.",
-              "links": [],
-              "source": 397
-            },
-            {
-              "type": "bullet",
-              "text": "First give the HTML element a class=\"name\" attribute, then select it in CSS as .name.",
-              "links": [],
-              "source": 398
-            },
-            {
-              "type": "bullet",
-              "text": "This is the selector used most in real-world work — expect to see it all over AI-generated CSS.",
-              "links": [],
-              "source": 399
+              "type": "check",
+              "text": "The Google link appears in index.html. Its class name matches the CSS selector."
             }
           ],
           "source": 386,
@@ -623,27 +652,37 @@
           "title": "Splitting CSS into its own file",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Write all the CSS inside the <style> tag and the file gets long and hard to read. The usual practice — and what a well-organized AI should do — is to split it into a separate file like style.css and pull it in from the HTML's <head>.",
-              "links": [],
-              "source": 401
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Write all the CSS inside the <style> tag and the file gets long and hard to read. The usual practice — and what a well-organized AI should do — is to split it into a separate file like style.css and pull it in from the HTML's <head>.",
+                  "links": [],
+                  "source": 401
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Now, Insert this prompt into Claude:",
-              "links": [],
-              "source": 402
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Move the CSS into its own file",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "Extract all CSS code from the index.html file, move it into a separate .css file, and link it to the HTML file.",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-403",
+                  "source": 403,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "Extract all CSS code from the index.html file, move it into a separate .css file, and link it to the HTML file.",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-403",
-              "source": 403,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+              "type": "check",
+              "text": "A separate CSS file appears in Explorer. Refresh the browser and confirm that the styling still works."
             }
           ],
           "source": 400,
@@ -663,38 +702,48 @@
           "title": "What JavaScript does",
           "blocks": [
             {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "JavaScript is the language that gives behavior to the elements laid out with HTML and styled with CSS. An alert pops when a button is pressed, new elements get added or removed — the parts we casually call “features” are JavaScript's department. When a feature you requested doesn't fire, this is the file to question.",
+                  "links": [],
+                  "source": 407
+                },
+                {
+                  "type": "paragraph",
+                  "text": "HTML and CSS build the screen; JavaScript makes that screen interact with the user.",
+                  "links": [],
+                  "source": 408
+                }
+              ]
+            },
+            {
               "type": "note",
               "title": "Check the starting page",
               "text": "The next prompt refers to a Confirm button. If index.html does not yet contain a real button labeled Confirm, ask Claude to add that button first. Keep the Google link as a link. Then use the original prompt below."
             },
             {
-              "type": "paragraph",
-              "text": "JavaScript is the language that gives behavior to the elements laid out with HTML and styled with CSS. An alert pops when a button is pressed, new elements get added or removed — the parts we casually call “features” are JavaScript's department. When a feature you requested doesn't fire, this is the file to question.",
-              "links": [],
-              "source": 407
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Add the input and button behavior",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "Request: Update the index.html file with an input field and JavaScript based on these instructions.\n- Add a text input field right before the confirm button.\n- When the confirm button is clicked, trigger an alert box that says \"Confirmed!\".\n- Do not create a separate JavaScript file.\n- Use the <script> tag.\n- Place the <script> tag inside the <head> section of the HTML.",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-411",
+                  "source": 411,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "HTML and CSS build the screen; JavaScript makes that screen interact with the user.",
-              "links": [],
-              "source": 408
-            },
-            {
-              "type": "paragraph",
-              "text": "Now, Insert this prompt into Claude:",
-              "links": [],
-              "source": 410
-            },
-            {
-              "type": "code",
-              "text": "Request: Update the index.html file with an input field and JavaScript based on these instructions.\n- Add a text input field right before the confirm button.\n- When the confirm button is clicked, trigger an alert box that says \"Confirmed!\".\n- Do not create a separate JavaScript file.\n- Use the <script> tag.\n- Place the <script> tag inside the <head> section of the HTML.",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-411",
-              "source": 411,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+              "type": "check",
+              "text": "Refresh index.html, enter text in the new input field, and click Confirm to check the requested behavior."
             }
           ],
           "source": 406,
@@ -812,67 +861,103 @@
           "title": "Modifying HTML elements",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "JavaScript can also create brand-new HTML elements on a screen that's already drawn, change their contents, or delete them:",
-              "links": [],
-              "source": 431
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "JavaScript can also create brand-new HTML elements on a screen that's already drawn, change their contents, or delete them:",
+                  "links": [],
+                  "source": 431
+                },
+                {
+                  "type": "bullet",
+                  "text": "Read the value typed into an input form and add a new item to the screen.",
+                  "links": [],
+                  "source": 432
+                },
+                {
+                  "type": "bullet",
+                  "text": "Press a delete button and remove that element.",
+                  "links": [],
+                  "source": 433
+                },
+                {
+                  "type": "bullet",
+                  "text": "Every interaction on services like Instagram or X (Twitter) is built exactly this way.",
+                  "links": [],
+                  "source": 434
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Read the value typed into an input form and add a new item to the screen.",
-              "links": [],
-              "source": 432
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Create the phonebook page",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Send this first prompt and wait for Claude to finish."
+                },
+                {
+                  "type": "code",
+                  "text": "Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it. Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it.",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-436",
+                  "source": 436,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Press a delete button and remove that element.",
-              "links": [],
-              "source": 433
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Add working add and delete features",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Send this next prompt after the page exists."
+                },
+                {
+                  "type": "code",
+                  "text": "Add functionality to add and delete phone numbers in the contact.html page.\n- Use the <script> tag.",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-438",
+                  "source": 438,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Every interaction on services like Instagram or X (Twitter) is built exactly this way.",
-              "links": [],
-              "source": 434
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Move JavaScript into its own file",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Send this last prompt after the features work."
+                },
+                {
+                  "type": "code",
+                  "text": "Extract all JavaScript code from the contact.html file, move it into a separate .js file, and link it back to the HTML file.",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-440",
+                  "source": 440,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Now, Insert this prompt into Claude:",
-              "links": [],
-              "source": 435
-            },
-            {
-              "type": "code",
-              "text": "Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it. Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it.",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-436",
-              "source": 436,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
-            },
-            {
-              "type": "code",
-              "text": "Add functionality to add and delete phone numbers in the contact.html page.\n- Use the <script> tag.",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-438",
-              "source": 438,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
-            },
-            {
-              "type": "code",
-              "text": "Extract all JavaScript code from the contact.html file, move it into a separate .js file, and link it back to the HTML file.",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-440",
-              "source": 440,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+              "type": "check",
+              "text": "Open contact.html in a browser. Add and delete a test phone number. The page still works after JavaScript is moved to a separate file."
             }
           ],
           "source": 430,
@@ -951,23 +1036,28 @@
           "title": "The workflow: a prompt.md file, run with @",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Typing a complicated prompt straight into the terminal every time is clumsy to edit and hard to read once it gets long. So instead: create a `prompt.md` file in the file explorer on the left and write your prompt inside it, then run it by tagging @prompt.md in the Claude Code input box. A written prompt file is also your paper trail — you can always check what you actually asked for against what you got.",
-              "links": [],
-              "source": 453
-            },
-            {
-              "type": "paragraph",
-              "text": "Type the at-sign (@) and a list of taggable files pops up. Arrow down to prompt.md, press Enter, then command “run this file” — Claude reads the contents and works from them as written.",
-              "links": [],
-              "source": 454
-            },
-            {
-              "type": "note",
-              "title": "What is markdown (.md)?",
-              "text": ".md is a text file in Markdown format — plain text plus a light styling syntax like # for headings and **bold** for bold. Claude Code itself reads and writes Markdown files all the time, so it's a handy format to know.",
-              "optional": true,
-              "source": 455
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Typing a complicated prompt straight into the terminal every time is clumsy to edit and hard to read once it gets long. So instead: create a `prompt.md` file in the file explorer on the left and write your prompt inside it, then run it by tagging @prompt.md in the Claude Code input box. A written prompt file is also your paper trail — you can always check what you actually asked for against what you got.",
+                  "links": [],
+                  "source": 453
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Type the at-sign (@) and a list of taggable files pops up. Arrow down to prompt.md, press Enter, then command “run this file” — Claude reads the contents and works from them as written.",
+                  "links": [],
+                  "source": 454
+                },
+                {
+                  "type": "note",
+                  "title": "What is markdown (.md)?",
+                  "text": ".md is a text file in Markdown format — plain text plus a light styling syntax like # for headings and **bold** for bold. Claude Code itself reads and writes Markdown files all the time, so it's a handy format to know.",
+                  "optional": true,
+                  "source": 455
+                }
+              ]
             }
           ],
           "source": 452,
@@ -978,38 +1068,70 @@
           "title": "Setup: one folder per project",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "When you build web services, the standard practice is to manage each project in its own folder. Create two subfolders inside your webdev folder:",
-              "links": [],
-              "source": 458
+              "type": "action",
+              "where": "VS Code · Explorer",
+              "title": "Create two folders inside webdev",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Right-click webdev in Explorer and choose New Folder. Create the following folders. Move the earlier HTML, CSS, and JavaScript practice files into 1.web-basic."
+                },
+                {
+                  "type": "bullet",
+                  "text": "1.web-basic — the HTML/CSS/JS practice files you've made so far (move them in here).",
+                  "links": [],
+                  "source": 459
+                },
+                {
+                  "type": "bullet",
+                  "text": "2.pomodoro — the pomodoro project we're building now.",
+                  "links": [],
+                  "source": 460
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "1.web-basic — the HTML/CSS/JS practice files you've made so far (move them in here).",
-              "links": [],
-              "source": 459
+              "type": "action",
+              "where": "VS Code",
+              "title": "Open 2.pomodoro",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Choose File → Open Folder and select 2.pomodoro. Choose Terminal → New Terminal. Confirm that the terminal path ends in 2.pomodoro."
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "2.pomodoro — the pomodoro project we're building now.",
-              "links": [],
-              "source": 460
-            },
-            {
-              "type": "paragraph",
-              "text": "In VS Code, choose File > Open Folder and open 2.pomodoro. Open Terminal > New Terminal and confirm its current path ends in 2.pomodoro. Run Claude Code in that folder. Create prompt.md in the project folder and save it before asking Claude to read it.",
-              "links": [],
-              "source": 461
-            },
-            {
-              "type": "code",
-              "text": "claude",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 462,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Start Claude Code",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "claude",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 462,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "VS Code · Explorer",
+              "title": "Create prompt.md",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Right-click the project folder in Explorer → New File → name it prompt.md. Open it in the editor and save it."
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "VS Code has 2.pomodoro open, prompt.md exists in that folder, and Claude is running there."
             }
           ],
           "source": 457,
@@ -1020,27 +1142,39 @@
           "title": "Build the main page UI",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Write the following in prompt.md:",
-              "links": [],
-              "source": 465
-            },
-            {
-              "type": "code",
-              "text": "Build the main page of a pomodoro timer web app.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h1 tag with the title \"Pomodoro\"\n    –  Below it, the current remaining time\n    –  Below that, Start / Stop / Reset buttons\n    –  Below that, a button that goes to the settings page\n–  Keep the CSS for styling in an index.css file",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-466",
-              "source": 466,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Build the main page UI",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Paste the following prompt into prompt.md. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Build the main page of a pomodoro timer web app.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h1 tag with the title \"Pomodoro\"\n    –  Below it, the current remaining time\n    –  Below that, Start / Stop / Reset buttons\n    –  Below that, a button that goes to the settings page\n–  Keep the CSS for styling in an index.css file",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-466",
+                  "source": 466,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Save prompt.md, then ask Claude Code to read and carry out that file. Review requests to create the project files before approving. Open index.html in a browser and confirm that every required element appears. Timer behavior comes in the next step.",
-              "links": [],
-              "source": 468
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the result",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Save prompt.md, then ask Claude Code to read and carry out that file. Review requests to create the project files before approving. Open index.html in a browser and confirm that every required element appears. Timer behavior comes in the next step.",
+                  "links": [],
+                  "source": 468
+                }
+              ]
             },
             {
               "type": "note",
@@ -1058,27 +1192,51 @@
           "title": "Add the main page features",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "You could simply delete the prompt you just wrote, but if you'd rather keep it, make a prompts/ folder and move it there as 1-main-ui.md for backup. Then empty out prompt.md and write the next prompt:",
-              "links": [],
-              "source": 472
+              "type": "details",
+              "title": "Optional: keep the previous prompt",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "You could simply delete the prompt you just wrote, but if you'd rather keep it, make a prompts/ folder and move it there as 1-main-ui.md for backup. Then empty out prompt.md and write the next prompt:",
+                  "links": [],
+                  "source": 472
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "Use JavaScript to add features to the main page.\n–  Start button: an event handler that starts the timer\n–  Stop button: an event handler that stops the timer\n–  Reset button: an event handler that resets the timer to 25 minutes\n–  Set the event handlers using the onclick approach\n–  Keep all the JavaScript code in a separate index.js file",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-473",
-              "source": 473,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Add the timer behavior",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Use JavaScript to add features to the main page.\n–  Start button: an event handler that starts the timer\n–  Stop button: an event handler that stops the timer\n–  Reset button: an event handler that resets the timer to 25 minutes\n–  Set the event handlers using the onclick approach\n–  Keep all the JavaScript code in a separate index.js file",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-473",
+                  "source": 473,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Run @prompt.md again. Claude creates index.js and links it into index.html with a <script> tag. Refresh the browser and verify by clicking: confirm the Start / Stop / Reset buttons all behave as specified before you move on.",
-              "links": [],
-              "source": 475
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the result",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Run @prompt.md again. Claude creates index.js and links it into index.html with a <script> tag. Refresh the browser and verify by clicking: confirm the Start / Stop / Reset buttons all behave as specified before you move on.",
+                  "links": [],
+                  "source": 475
+                }
+              ]
             }
           ],
           "source": 471,
@@ -1089,27 +1247,51 @@
           "title": "Build the settings page UI",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Move the previous prompt to prompts/2-main-feature.md, then write a new prompt in prompt.md:",
-              "links": [],
-              "source": 477
+              "type": "details",
+              "title": "Optional: keep the previous prompt",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Move the previous prompt to prompts/2-main-feature.md, then write a new prompt in prompt.md:",
+                  "links": [],
+                  "source": 477
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "Build a brand-new settings page.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h3 tag with the title \"Setting\"\n    –  One input tag for setting the timer minutes\n    –  A done button\n–  Keep the settings page CSS in a separate setting.css file\n–  Make the main page's settings button navigate to this settings page (do not change its styles)",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-478",
-              "source": 478,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Build the settings page",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Build a brand-new settings page.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h3 tag with the title \"Setting\"\n    –  One input tag for setting the timer minutes\n    –  A done button\n–  Keep the settings page CSS in a separate setting.css file\n–  Make the main page's settings button navigate to this settings page (do not change its styles)",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-478",
+                  "source": 478,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Run it and setting.html + setting.css are generated, and the settings button in index.html is automatically converted to an <a> tag so page navigation works. Verify in the browser: press the settings button on the main page and confirm it navigates — and that the main page's styles weren't touched, since the prompt forbade it.",
-              "links": [],
-              "source": 480
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the result",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Run it and setting.html + setting.css are generated, and the settings button in index.html is automatically converted to an <a> tag so page navigation works. Verify in the browser: press the settings button on the main page and confirm it navigates — and that the main page's styles weren't touched, since the prompt forbade it.",
+                  "links": [],
+                  "source": 480
+                }
+              ]
             }
           ],
           "source": 476,
@@ -1120,27 +1302,51 @@
           "title": "Add the settings page features",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Move the previous prompt to prompts/3-setting-ui.md, and write the final prompt:",
-              "links": [],
-              "source": 482
+              "type": "details",
+              "title": "Optional: keep the previous prompt",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Move the previous prompt to prompts/3-setting-ui.md, and write the final prompt:",
+                  "links": [],
+                  "source": 482
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "Implement the settings page features.\n–  The UI is already finished — do not change it\n–  Changing the timer length:\n    –  Only values from 1 to 60 minutes may be entered\n    –  If the time field is empty, the save button must not be clickable\n    –  A changed time is reflected immediately on the main page\n    –  A changed time persists even after a page refresh",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-483",
-              "source": 483,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Add settings behavior",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Implement the settings page features.\n–  The UI is already finished — do not change it\n–  Changing the timer length:\n    –  Only values from 1 to 60 minutes may be entered\n    –  If the time field is empty, the save button must not be clickable\n    –  A changed time is reflected immediately on the main page\n    –  A changed time persists even after a page refresh",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-483",
+                  "source": 483,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "After it runs, walk the acceptance criteria: change the time on the settings page (say, to 10 minutes) → save → confirm the main page reflects it → and confirm the time is still there after you refresh the browser. Try an out-of-range value and an empty field too — the AI was told to block both.",
-              "links": [],
-              "source": 485
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the result",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "After it runs, walk the acceptance criteria: change the time on the settings page (say, to 10 minutes) → save → confirm the main page reflects it → and confirm the time is still there after you refresh the browser. Try an out-of-range value and an empty field too — the AI was told to block both.",
+                  "links": [],
+                  "source": 485
+                }
+              ]
             }
           ],
           "source": 481,
@@ -1151,89 +1357,101 @@
           "title": "Why the time survives a refresh",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "No server, no database — yet the changed time sticks. The secret is a storage space the browser itself owns, called Local Storage. Knowing it exists lets you ask the right question when data should (or shouldn't) persist:",
-              "links": [],
-              "source": 487
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "No server, no database — yet the changed time sticks. The secret is a storage space the browser itself owns, called Local Storage. Knowing it exists lets you ask the right question when data should (or shouldn't) persist:",
+                  "links": [],
+                  "source": 487
+                },
+                {
+                  "type": "bullet",
+                  "text": "A small data store inside the browser. JavaScript can freely save and read key–value data in it.",
+                  "links": [],
+                  "source": 488
+                },
+                {
+                  "type": "bullet",
+                  "text": "Local Storage usually survives refreshes and browser restarts. It can be cleared by the user or browser, and private browsing has different persistence behavior.",
+                  "links": [],
+                  "source": 489
+                },
+                {
+                  "type": "bullet",
+                  "text": "But it's only reachable from that browser on that computer. Open the site on a different PC and the data isn't there. To share across devices you'd need a separate database.",
+                  "links": [],
+                  "source": 490
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Local Storage keeps small values in the current browser. It is not a shared online database.",
+                  "links": [],
+                  "source": 491
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Plenty of services lean on this space: temporarily saved shopping carts, personal preferences, and more. At the “little tool just for me” stage — like our pomodoro — local storage alone is plenty.",
+                  "links": [],
+                  "source": 492
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "A small data store inside the browser. JavaScript can freely save and read key–value data in it.",
-              "links": [],
-              "source": 488
-            },
-            {
-              "type": "bullet",
-              "text": "Local Storage usually survives refreshes and browser restarts. It can be cleared by the user or browser, and private browsing has different persistence behavior.",
-              "links": [],
-              "source": 489
-            },
-            {
-              "type": "bullet",
-              "text": "But it's only reachable from that browser on that computer. Open the site on a different PC and the data isn't there. To share across devices you'd need a separate database.",
-              "links": [],
-              "source": 490
-            },
-            {
-              "type": "paragraph",
-              "text": "Local Storage keeps small values in the current browser. It is not a shared online database.",
-              "links": [],
-              "source": 491
-            },
-            {
-              "type": "paragraph",
-              "text": "Plenty of services lean on this space: temporarily saved shopping carts, personal preferences, and more. At the “little tool just for me” stage — like our pomodoro — local storage alone is plenty.",
-              "links": [],
-              "source": 492
-            },
-            {
-              "type": "subheading",
-              "text": "See it for yourself",
-              "links": [],
-              "source": 493
-            },
-            {
-              "type": "paragraph",
-              "text": "You can inspect the stored value directly with the browser's developer tools — a manager's window into what the AI's code is actually saving:",
-              "links": [],
-              "source": 494
-            },
-            {
-              "type": "bullet",
-              "text": "Open developer tools — Windows: F12 or Ctrl + Shift + I; macOS: Cmd + Option + I.",
-              "links": [],
-              "source": 495
-            },
-            {
-              "type": "bullet",
-              "text": "In the top tab strip, choose Application (it may hide behind the >> overflow menu).",
-              "links": [],
-              "source": 496
-            },
-            {
-              "type": "bullet",
-              "text": "In the left sidebar: Storage → Local Storage → click the domain entry.",
-              "links": [],
-              "source": 497
-            },
-            {
-              "type": "bullet",
-              "text": "On the right you'll see a key like timerMinutes with its value — change the time on the settings page and it updates instantly.",
-              "links": [],
-              "source": 498
-            },
-            {
-              "type": "image",
-              "src": "image7.png",
-              "alt": "Chrome DevTools showing a value in Local Storage.",
-              "caption": "Chrome DevTools showing a value in Local Storage.",
-              "source": 499
-            },
-            {
-              "type": "paragraph",
-              "text": "Chrome DevTools → Application → Local Storage: the timerMinutes key holding the saved value.",
-              "links": [],
-              "source": 500
+              "type": "details",
+              "title": "Optional: inspect the saved value in Chrome",
+              "blocks": [
+                {
+                  "type": "action",
+                  "where": "Chrome · Developer Tools",
+                  "title": "Find the saved timer value",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "You can inspect the stored value directly with the browser's developer tools — a manager's window into what the AI's code is actually saving:",
+                      "links": [],
+                      "source": 494
+                    },
+                    {
+                      "type": "bullet",
+                      "text": "Open developer tools — Windows: F12 or Ctrl + Shift + I; macOS: Cmd + Option + I.",
+                      "links": [],
+                      "source": 495
+                    },
+                    {
+                      "type": "bullet",
+                      "text": "In the top tab strip, choose Application (it may hide behind the >> overflow menu).",
+                      "links": [],
+                      "source": 496
+                    },
+                    {
+                      "type": "bullet",
+                      "text": "In the left sidebar: Storage → Local Storage → click the domain entry.",
+                      "links": [],
+                      "source": 497
+                    },
+                    {
+                      "type": "bullet",
+                      "text": "On the right you'll see a key like timerMinutes with its value — change the time on the settings page and it updates instantly.",
+                      "links": [],
+                      "source": 498
+                    },
+                    {
+                      "type": "image",
+                      "src": "image7.png",
+                      "alt": "Chrome DevTools showing a value in Local Storage.",
+                      "caption": "Chrome DevTools showing a value in Local Storage.",
+                      "source": 499
+                    },
+                    {
+                      "type": "paragraph",
+                      "text": "Chrome DevTools → Application → Local Storage: the timerMinutes key holding the saved value.",
+                      "links": [],
+                      "source": 500
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "source": 486,
@@ -1397,30 +1615,41 @@
           "title": "Open Netlify and start signing up",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Go to https://netlify.com in your browser.",
-              "links": [],
-              "source": 525
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Open Netlify and choose Sign up",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Go to https://netlify.com in your browser.",
+                  "links": [],
+                  "source": 525
+                },
+                {
+                  "type": "image",
+                  "src": "image8.png",
+                  "alt": "Guidebook screenshot for Open Netlify and start signing up",
+                  "caption": "Open Netlify and start signing up",
+                  "source": 526
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Click Sign up in the upper-right corner.",
+                  "links": [],
+                  "source": 527
+                },
+                {
+                  "type": "image",
+                  "src": "image9.png",
+                  "alt": "Guidebook screenshot for Open Netlify and start signing up",
+                  "caption": "Open Netlify and start signing up",
+                  "source": 528
+                }
+              ]
             },
             {
-              "type": "image",
-              "src": "image8.png",
-              "alt": "Guidebook screenshot for Open Netlify and start signing up",
-              "caption": "Open Netlify and start signing up",
-              "source": 526
-            },
-            {
-              "type": "paragraph",
-              "text": "Click Sign up in the upper-right corner.",
-              "links": [],
-              "source": 527
-            },
-            {
-              "type": "image",
-              "src": "image9.png",
-              "alt": "Guidebook screenshot for Open Netlify and start signing up",
-              "caption": "Open Netlify and start signing up",
-              "source": 528
+              "type": "check",
+              "text": "The Netlify sign-up page is open."
             }
           ],
           "source": 524,
@@ -1431,36 +1660,47 @@
           "title": "Create your account and complete your profile",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Choose your preferred sign-up method. Google is one option.",
-              "links": [],
-              "source": 530
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Create your Netlify account",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Choose your preferred sign-up method. Google is one option.",
+                  "links": [],
+                  "source": 530
+                },
+                {
+                  "type": "image",
+                  "src": "image10.png",
+                  "alt": "Guidebook screenshot for Create your account and complete your profile",
+                  "caption": "Create your account and complete your profile",
+                  "source": 531
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enter your name and complete the profile questions. Choose answers that fit you. The example uses the following responses:",
+                  "links": [],
+                  "source": 532
+                },
+                {
+                  "type": "image",
+                  "src": "image11.png",
+                  "alt": "Guidebook screenshot for Create your account and complete your profile",
+                  "caption": "Create your account and complete your profile",
+                  "source": 533
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Name: your own name. Use: Personal. Experience: Beginner. First project: Web app. Role: Product Engineer. How you heard about Netlify: Someone else. Team name: a name you choose, such as onebite.",
+                  "links": [],
+                  "source": 534
+                }
+              ]
             },
             {
-              "type": "image",
-              "src": "image10.png",
-              "alt": "Guidebook screenshot for Create your account and complete your profile",
-              "caption": "Create your account and complete your profile",
-              "source": 531
-            },
-            {
-              "type": "paragraph",
-              "text": "Enter your name and complete the profile questions. Choose answers that fit you. The example uses the following responses:",
-              "links": [],
-              "source": 532
-            },
-            {
-              "type": "image",
-              "src": "image11.png",
-              "alt": "Guidebook screenshot for Create your account and complete your profile",
-              "caption": "Create your account and complete your profile",
-              "source": 533
-            },
-            {
-              "type": "paragraph",
-              "text": "Name: your own name. Use: Personal. Experience: Beginner. First project: Web app. Role: Product Engineer. How you heard about Netlify: Someone else. Team name: a name you choose, such as onebite.",
-              "links": [],
-              "source": 534
+              "type": "check",
+              "text": "You are signed in and the profile questions are complete."
             }
           ],
           "source": 529,
@@ -1471,30 +1711,41 @@
           "title": "Open the dashboard",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "On the Deploy your first project screen, click Skip this step for now to open the dashboard.",
-              "links": [],
-              "source": 536
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Open the dashboard",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "On the Deploy your first project screen, click Skip this step for now to open the dashboard.",
+                  "links": [],
+                  "source": 536
+                },
+                {
+                  "type": "image",
+                  "src": "image12.png",
+                  "alt": "Guidebook screenshot for Open the dashboard",
+                  "caption": "Open the dashboard",
+                  "source": 537
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The dashboard is where you will upload and manage your project.",
+                  "links": [],
+                  "source": 538
+                },
+                {
+                  "type": "image",
+                  "src": "image13.png",
+                  "alt": "Guidebook screenshot for Open the dashboard",
+                  "caption": "Open the dashboard",
+                  "source": 539
+                }
+              ]
             },
             {
-              "type": "image",
-              "src": "image12.png",
-              "alt": "Guidebook screenshot for Open the dashboard",
-              "caption": "Open the dashboard",
-              "source": 537
-            },
-            {
-              "type": "paragraph",
-              "text": "The dashboard is where you will upload and manage your project.",
-              "links": [],
-              "source": 538
-            },
-            {
-              "type": "image",
-              "src": "image13.png",
-              "alt": "Guidebook screenshot for Open the dashboard",
-              "caption": "Open the dashboard",
-              "source": 539
+              "type": "check",
+              "text": "The Netlify dashboard is visible."
             }
           ],
           "source": 535,
@@ -1505,23 +1756,34 @@
           "title": "Select your project folder",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "On the dashboard, find Upload your project files near the bottom. Click choose a folder.",
-              "links": [],
-              "source": 541
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Choose only the Pomodoro project folder",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "On the dashboard, find Upload your project files near the bottom. Click choose a folder.",
+                  "links": [],
+                  "source": 541
+                },
+                {
+                  "type": "image",
+                  "src": "image14.png",
+                  "alt": "Guidebook screenshot for Select your project folder",
+                  "caption": "Select your project folder",
+                  "source": 542
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Select the 2.pomodoro project folder you created in Section 4.6. This is the folder containing index.html and the app’s CSS and JavaScript files. Upload this project folder, not the entire webdev folder.",
+                  "links": [],
+                  "source": 543
+                }
+              ]
             },
             {
-              "type": "image",
-              "src": "image14.png",
-              "alt": "Guidebook screenshot for Select your project folder",
-              "caption": "Select your project folder",
-              "source": 542
-            },
-            {
-              "type": "paragraph",
-              "text": "Select the 2.pomodoro project folder you created in Section 4.6. This is the folder containing index.html and the app’s CSS and JavaScript files. Upload this project folder, not the entire webdev folder.",
-              "links": [],
-              "source": 543
+              "type": "check",
+              "text": "You selected 2.pomodoro, which contains index.html and the project’s CSS and JavaScript files."
             }
           ],
           "source": 540,
@@ -1532,23 +1794,34 @@
           "title": "Upload the files and wait for deployment",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "If your browser asks you to confirm the upload, check that you selected your project folder, then click Upload. The folder picker and confirmation message may use your computer’s language.",
-              "links": [],
-              "source": 546
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Confirm the upload",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "If your browser asks you to confirm the upload, check that you selected your project folder, then click Upload. The folder picker and confirmation message may use your computer’s language.",
+                  "links": [],
+                  "source": 546
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Netlify uploads the files and deploys the project. When it finishes, the project overview opens.",
+                  "links": [],
+                  "source": 548
+                },
+                {
+                  "type": "image",
+                  "src": "image17.png",
+                  "alt": "Guidebook screenshot for Upload the files and wait for deployment",
+                  "caption": "Upload the files and wait for deployment",
+                  "source": 549
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Netlify uploads the files and deploys the project. When it finishes, the project overview opens.",
-              "links": [],
-              "source": 548
-            },
-            {
-              "type": "image",
-              "src": "image17.png",
-              "alt": "Guidebook screenshot for Upload the files and wait for deployment",
-              "caption": "Upload the files and wait for deployment",
-              "source": 549
+              "type": "check",
+              "text": "Deployment finishes and the project overview opens."
             }
           ],
           "source": 545,
@@ -1559,43 +1832,54 @@
           "title": "Make the website public",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Check the visibility label near the project name. If it says Private, visitors outside your team cannot open the website. If the project is already public, continue to Step 7.",
-              "links": [],
-              "source": 551
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Check the site visibility",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Check the visibility label near the project name. If it says Private, visitors outside your team cannot open the website. If the project is already public, continue to Open your website and find its address settings.",
+                  "links": [],
+                  "source": 551
+                },
+                {
+                  "type": "image",
+                  "src": "image18.png",
+                  "alt": "Guidebook screenshot for Make the website public",
+                  "caption": "Make the website public",
+                  "source": 552
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For a private project, click Make public.",
+                  "links": [],
+                  "source": 553
+                },
+                {
+                  "type": "image",
+                  "src": "image19.png",
+                  "alt": "Guidebook screenshot for Make the website public",
+                  "caption": "Make the website public",
+                  "source": 554
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In the dialog, you can edit the website name. If you change it, click the green check mark to confirm. Then click Make public at the bottom.",
+                  "links": [],
+                  "source": 555
+                },
+                {
+                  "type": "image",
+                  "src": "image20.png",
+                  "alt": "Guidebook screenshot for Make the website public",
+                  "caption": "Make the website public",
+                  "source": 556
+                }
+              ]
             },
             {
-              "type": "image",
-              "src": "image18.png",
-              "alt": "Guidebook screenshot for Make the website public",
-              "caption": "Make the website public",
-              "source": 552
-            },
-            {
-              "type": "paragraph",
-              "text": "For a private project, click Make public.",
-              "links": [],
-              "source": 553
-            },
-            {
-              "type": "image",
-              "src": "image19.png",
-              "alt": "Guidebook screenshot for Make the website public",
-              "caption": "Make the website public",
-              "source": 554
-            },
-            {
-              "type": "paragraph",
-              "text": "In the dialog, you can edit the website name. If you change it, click the green check mark to confirm. Then click Make public at the bottom.",
-              "links": [],
-              "source": 555
-            },
-            {
-              "type": "image",
-              "src": "image20.png",
-              "alt": "Guidebook screenshot for Make the website public",
-              "caption": "Make the website public",
-              "source": 556
+              "type": "check",
+              "text": "The site is public. Continue to Open your website and find its address settings."
             }
           ],
           "source": 550,
@@ -1606,30 +1890,41 @@
           "title": "Open your website and find its address settings",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "When Netlify confirms that your project is public, open the displayed address. Check that the timer and settings page work.",
-              "links": [],
-              "source": 558
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Open and test your public site",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "When Netlify confirms that your project is public, open the displayed address. Check that the timer and settings page work.",
+                  "links": [],
+                  "source": 558
+                },
+                {
+                  "type": "image",
+                  "src": "image21.png",
+                  "alt": "Guidebook screenshot for Open your website and find its address settings",
+                  "caption": "Open your website and find its address settings",
+                  "source": 559
+                },
+                {
+                  "type": "paragraph",
+                  "text": "To change the address later, open the project overview and click Go to Domain management. The next two steps show how to rename the default netlify.app address.",
+                  "links": [],
+                  "source": 560
+                },
+                {
+                  "type": "image",
+                  "src": "image22.png",
+                  "alt": "Guidebook screenshot for Open your website and find its address settings",
+                  "caption": "Open your website and find its address settings",
+                  "source": 561
+                }
+              ]
             },
             {
-              "type": "image",
-              "src": "image21.png",
-              "alt": "Guidebook screenshot for Open your website and find its address settings",
-              "caption": "Open your website and find its address settings",
-              "source": 559
-            },
-            {
-              "type": "paragraph",
-              "text": "To change the address later, open the project overview and click Go to Domain management. Steps 8 and 9 show how to rename the default netlify.app address.",
-              "links": [],
-              "source": 560
-            },
-            {
-              "type": "image",
-              "src": "image22.png",
-              "alt": "Guidebook screenshot for Open your website and find its address settings",
-              "caption": "Open your website and find its address settings",
-              "source": 561
+              "type": "check",
+              "text": "The public address opens your timer, and the timer and settings page work."
             }
           ],
           "source": 557,
@@ -1640,64 +1935,86 @@
           "title": "Change the default website address",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Under Production domains, open Options next to the Netlify address and choose Edit project name.",
-              "links": [],
-              "source": 563
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Rename the default address if you want to",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Under Production domains, open Options next to the Netlify address and choose Edit project name.",
+                  "links": [],
+                  "source": 563
+                },
+                {
+                  "type": "image",
+                  "src": "image23.png",
+                  "alt": "Guidebook screenshot for Change the default website address",
+                  "caption": "Change the default website address",
+                  "source": 564
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enter an available project name and click Save. Netlify updates the default address to your-project-name.netlify.app.",
+                  "links": [],
+                  "source": 565
+                },
+                {
+                  "type": "image",
+                  "src": "image24.png",
+                  "alt": "Guidebook screenshot for Change the default website address",
+                  "caption": "Change the default website address",
+                  "source": 566
+                }
+              ]
             },
             {
-              "type": "image",
-              "src": "image23.png",
-              "alt": "Guidebook screenshot for Change the default website address",
-              "caption": "Change the default website address",
-              "source": 564
-            },
-            {
-              "type": "paragraph",
-              "text": "Enter an available project name and click Save. Netlify updates the default address to your-project-name.netlify.app.",
-              "links": [],
-              "source": 565
-            },
-            {
-              "type": "image",
-              "src": "image24.png",
-              "alt": "Guidebook screenshot for Change the default website address",
-              "caption": "Change the default website address",
-              "source": 566
+              "type": "check",
+              "text": "If you changed the name, Netlify displays the new default address."
             }
           ],
           "source": 562,
-          "kind": "Practice"
+          "kind": "Optional"
         },
         {
           "id": "s567",
           "title": "Check the updated address",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Click Project overview in the left sidebar to return to your project.",
-              "links": [],
-              "source": 568
+              "type": "action",
+              "where": "Browser · Netlify",
+              "title": "Check the address you will share",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Click Project overview in the left sidebar to return to your project.",
+                  "links": [],
+                  "source": 568
+                },
+                {
+                  "type": "image",
+                  "src": "image25.png",
+                  "alt": "Guidebook screenshot for Check the updated address",
+                  "caption": "Check the updated address",
+                  "source": 569
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Confirm that the new address appears, then open it to check your website. Use this updated address when sharing your project.",
+                  "links": [],
+                  "source": 570
+                },
+                {
+                  "type": "image",
+                  "src": "image26.png",
+                  "alt": "Guidebook screenshot for Check the updated address",
+                  "caption": "Check the updated address",
+                  "source": 571
+                }
+              ]
             },
             {
-              "type": "image",
-              "src": "image25.png",
-              "alt": "Guidebook screenshot for Check the updated address",
-              "caption": "Check the updated address",
-              "source": 569
-            },
-            {
-              "type": "paragraph",
-              "text": "Confirm that the new address appears, then open it to check your website. Use this updated address when sharing your project.",
-              "links": [],
-              "source": 570
-            },
-            {
-              "type": "image",
-              "src": "image26.png",
-              "alt": "Guidebook screenshot for Check the updated address",
-              "caption": "Check the updated address",
-              "source": 571
+              "type": "check",
+              "text": "The address you plan to share opens the correct website."
             }
           ],
           "source": 567,
