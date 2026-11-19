@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="216" height="44" viewBox="0 0 216 44" role="img" aria-label="Return to book">
+  <title>Return to book</title>
+  <rect x="0.5" y="0.5" width="215" height="43" rx="8" fill="#1457bf" stroke="#1457bf"/>
+  <text x="22" y="27.5" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600">Return to book</text>
+  <path d="M174 22h18m-6-6 6 6-6 6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
