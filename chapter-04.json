@@ -1471,152 +1471,164 @@
     {
       "id": "4.7",
       "title": "Deploying to the Cloud",
-      "objective": "Understand what it takes for other people to use the web service you had built — the concept of deployment, and what servers and the cloud are along the way — so you can talk about launch plans without getting lost.",
+      "objective": "Understand how a web server delivers your website, then put your Pomodoro timer online with Netlify.",
       "intro": [],
       "steps": [
         {
           "id": "s504",
-          "title": "Why deployment is necessary",
+          "title": "From your laptop to a public link",
+          "kind": "Understand",
+          "source": 504,
           "blocks": [
             {
               "type": "paragraph",
-              "text": "So far, we've run our pages by dragging the HTML file straight into our own browser. But other people's computers can't just reach into the files on your computer — if they could, that would basically be hacking. So to let the outside world reach your service safely, you need a separate mechanism. “It works on my machine” is not shipped — a distinction every manager needs.",
-              "links": [],
-              "source": 505
+              "text": "Your Pomodoro timer currently opens from files on your own computer. Sending someone that folder path does not give them access to your copy."
+            },
+            {
+              "type": "paragraph",
+              "text": "Deployment means putting a copy of your website on a hosting service so people can visit it using a web address."
+            },
+            {
+              "type": "image",
+              "src": "cloud-local-vs-hosted.svg",
+              "alt": "Before deployment, your browser opens files on your laptop. After you upload them to Netlify, visitors use a web address to access the hosted copy.",
+              "caption": "Deployment gives other people a place to visit your website."
             }
-          ],
-          "source": 504,
-          "kind": "Understand"
+          ]
         },
         {
           "id": "s506",
-          "title": "A program called a server",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "That “separate mechanism” is a server.",
-              "links": [],
-              "source": 507
-            },
-            {
-              "type": "paragraph",
-              "text": "A server is a program that stays switched on 24/7, 365 days a year on one computer. It sits there, continuously waiting for connection requests from outside. When someone visits your site's address, it accepts the request and hands back only the HTML/CSS/JS files you decided on in advance.",
-              "links": [],
-              "source": 508
-            },
-            {
-              "type": "note",
-              "text": "“A server is a 24/7 program that takes outside requests and safely serves only the files you've designated.”",
-              "links": [],
-              "source": 509,
-              "title": "Another way to think about it",
-              "optional": true
-            }
-          ],
+          "title": "What does a web server do?",
+          "kind": "Understand",
           "source": 506,
-          "kind": "Understand"
-        },
-        {
-          "id": "s510",
-          "title": "The restaurant analogy",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "If that's hard to picture, think of a restaurant server. A customer calls out an order, the server takes it and brings food from the kitchen. But food that's not on the menu — say, the kitchen staff's own packed lunch — never gets served. Period.",
-              "links": [],
-              "source": 511
+              "text": "A web server is software that receives a browser’s request and sends back the files or data it needs."
+            },
+            {
+              "type": "image",
+              "src": "cloud-request-response.svg",
+              "alt": "1. The visitor’s browser asks for your page. 2. The web server sends HTML, CSS, and JavaScript files. 3. The browser displays the page and runs the Pomodoro timer.",
+              "caption": "For this timer, the server sends the files. The browser displays the page and runs the timer."
             },
             {
               "type": "paragraph",
-              "text": "A server program is the same. It accepts outside requests but exposes absolutely nothing beyond the files designated in advance — which is why strangers can't get at the private files on your PC. The flow of outside request → predetermined response is exactly like a restaurant server, and that's where the name “server” (one who serves) comes from.",
-              "links": [],
-              "source": 512
+              "text": "When a classmate opens your link, their browser asks for your page. The server sends the website files. Their browser uses those files to show and run your timer."
+            },
+            {
+              "type": "details",
+              "title": "Does “server” mean a computer or a program?",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "You will hear both uses. A computer can be called a server, and the software running on it can also be called a server. Here, focus on its job: respond to the browser’s request."
+                }
+              ]
             }
-          ],
-          "source": 510,
-          "kind": "Understand"
+          ]
         },
         {
-          "id": "s513",
-          "title": "Phrases you'll hear constantly",
+          "id": "s517",
+          "title": "What Netlify does for you",
+          "kind": "Understand",
+          "source": 517,
           "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The cloud means using computers managed by a provider over the internet. Netlify is the hosting service we will use for this lesson."
+            },
             {
               "type": "table",
               "rows": [
                 [
-                  "Phrase",
-                  "What it means"
+                  "Who?",
+                  "What happens?"
                 ],
                 [
-                  "“Spin up a server”",
-                  "Switch the server program on so it starts accepting outside requests"
+                  "You",
+                  "Upload the 2.pomodoro folder."
                 ],
                 [
-                  "“The server crashed”",
-                  "Too many simultaneous requests piled in and the server computer stopped coping — think launch-day of a hot new game"
+                  "Netlify",
+                  "Hosts the website files and gives you a web address."
                 ],
                 [
-                  "“Server maintenance”",
-                  "The server is switched off briefly while the code or hardware is worked on; the site is unreachable in the meantime"
+                  "A visitor’s browser",
+                  "Loads the files and runs the timer."
                 ]
-              ],
-              "source": 514
+              ]
             },
             {
               "type": "paragraph",
-              "text": "Building a web service, in the end, means setting up this server program to respond with the HTML/CSS/JS files that were made.",
-              "links": [],
-              "source": 516
-            }
-          ],
-          "source": 513,
-          "kind": "Understand"
-        },
-        {
-          "id": "s517",
-          "title": "Why we use a cloud service",
-          "blocks": [
+              "text": "You do not need to install a separate web server for this exercise. Visitors use the copy hosted by Netlify, so your laptop does not need to stay on."
+            },
+            {
+              "type": "details",
+              "title": "If you change the timer later",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Saving a change on your laptop does not update this manually uploaded site. Upload the updated project folder to the same Netlify project to publish the new version."
+                }
+              ]
+            },
+            {
+              "type": "details",
+              "title": "Server words you may hear",
+              "blocks": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Phrase",
+                      "Simple meaning"
+                    ],
+                    [
+                      "Start a server",
+                      "Run the software so it can receive requests."
+                    ],
+                    [
+                      "The server crashed",
+                      "The server stopped unexpectedly. There can be many causes."
+                    ],
+                    [
+                      "Server maintenance",
+                      "Update or repair the service. It may be briefly unavailable."
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "details",
+              "title": "Optional reading",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Learn more from MDN’s web server explanation and Netlify’s deployment guide."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MDN: Web servers · Netlify: Create deploys",
+                  "links": [
+                    {
+                      "text": "MDN: Web servers",
+                      "target": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_web_server"
+                    },
+                    {
+                      "text": "Netlify: Create deploys",
+                      "target": "https://docs.netlify.com/deploy/create-deploys/"
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "type": "paragraph",
-              "text": "Running a server yourself means keeping a computer on 24/7/365, worrying about power cuts and accidental shutdowns, and handling the network and security settings on your own. Taking that burden off your hands is what a cloud service does:",
-              "links": [],
-              "source": 518
-            },
-            {
-              "type": "bullet",
-              "text": "You rent a slice of a professionally equipped server computer.",
-              "links": [],
-              "source": 519
-            },
-            {
-              "type": "bullet",
-              "text": "Stability, security, and networking are provided automatically.",
-              "links": [],
-              "source": 520
-            },
-            {
-              "type": "bullet",
-              "text": "Many services are free to start while your traffic is small.",
-              "links": [],
-              "source": 521
+              "text": "Next, follow the Netlify steps to upload your timer and open its public link."
             }
-          ],
-          "source": 517,
-          "kind": "Understand"
-        },
-        {
-          "id": "s522",
-          "title": "Services that do this for you",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "Services like Netlify and Vercel host static web projects and give them a public web address. We will use Netlify to deploy the pomodoro timer from Section 4.6. Follow the steps below to create an account, upload your project, and make the website public.",
-              "links": [],
-              "source": 523
-            }
-          ],
-          "source": 522,
-          "kind": "Understand"
+          ]
         },
         {
           "id": "s524",
