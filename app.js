@@ -26,7 +26,7 @@
     const text=actualCode(b),note=b.note||'',where=normalShell(b.where||'');
     if(!b.copy)return '<div class="reference"><div class="kind">'+escape(b.label||'Read this example — do not type')+'</div><pre><code>'+escape(text)+'</code></pre>'+(note?'<p>'+inline(note)+'</p>':'')+'</div>';
     const filePrompt=b.mode==='prompt'&&where.includes('prompt.md');
-    return '<section class="input-area '+extra+'" aria-label="'+escape(b.label||'Input')+'"><div class="input-destination"><span class="where-label">Where to paste</span><strong>'+escape(where)+'</strong></div><div class="code-head"><span class="kind">'+escape(b.label||'Input')+'</span><button type="button" class="copy" aria-label="Copy '+escape(b.label||'input')+'">Copy</button></div><pre><code>'+escape(text)+'</code></pre>'+(note?'<p class="input-note">'+inline(note)+'</p>':'')+'</section>'+(filePrompt?'<div class="launch-prompt"><p>After saving the file, paste this instruction into <strong>Claude Code</strong> and press Enter.</p>'+codeHtml({mode:'command',copy:true,where:'Claude Code input · in the VS Code terminal panel',label:'Claude Code instruction',text:'Read @prompt.md and carry out the instructions in that file.'},'compact')+'</div>':'');
+    return '<section class="input-area '+extra+'" aria-label="'+escape(b.label||'Input')+'"><div class="input-destination"><div class="input-location"><span class="where-label">Where to paste</span><strong>'+escape(where)+'</strong></div><button type="button" class="copy" aria-label="Copy '+escape(b.label||'input')+'">Copy</button></div><pre><code>'+escape(text)+'</code></pre>'+(note?'<p class="input-note">'+inline(note)+'</p>':'')+'</section>'+(filePrompt?'<div class="launch-prompt"><p>After saving the file, paste this instruction into <strong>Claude Code</strong> and press Enter.</p>'+codeHtml({mode:'command',copy:true,where:'Claude Code input · in the VS Code terminal panel',label:'Claude Code instruction',text:'Read @prompt.md and carry out the instructions in that file.'},'compact')+'</div>':'');
   }
   function setupHtml(b){
     const scope=b.scope?'<div class="setup-scope"><h4>Do in the guide</h4><p>'+inline(b.scope)+'</p></div>':'';
@@ -48,6 +48,7 @@
         case 'code':html+=codeHtml(b);break;
         case 'output':html+='<div class="reference"><div class="kind">'+escape(b.label||'Example output — do not type')+'</div><pre><code>'+escape(b.text)+'</code></pre></div>';break;
         case 'note':html+=b.optional?'<details class="optional"><summary>'+escape(b.title)+'</summary><p>'+inline(b.text)+'</p></details>':'<aside class="notice"><h3>'+escape(b.title)+'</h3><p>'+inline(b.text)+'</p></aside>';break;
+        case 'details':html+='<details class="optional"><summary>'+escape(b.title)+'</summary><div class="optional-content">'+renderBlocks(b.blocks||[])+'</div></details>';break;
         case 'check':html+='<section class="check"><h3>Check before continuing</h3><p>'+inline(b.text)+'</p></section>';break;
         case 'setup':html+=setupHtml(b);break;
         case 'download':html+='<section class="setup-card"><h3>'+escape(b.label)+'</h3><p>'+inline(b.text)+'</p><a class="button" href="'+escape(safeUrl(b.url))+'" download>Download themes</a></section>';break;
