@@ -153,18 +153,22 @@
       "steps": [
         {
           "id": "setup",
-          "title": "Open the installation guide",
+          "title": "Prepare Node.js and check the versions",
           "source": 772,
           "blocks": [
             {
               "type": "setup",
-              "label": "Node.js and Next.js on Windows",
-              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/WINDOWS.md",
-              "text": "Follow the linked guide for your operating system. It checks existing installations so you can keep working tools. Return to this book after the guide’s success checks are complete."
-            },
-            {
-              "type": "check",
-              "text": "Confirm the tool checks in the linked guide succeed before continuing."
+              "label": "Setup 2 · Part 2 · Windows",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/WINDOWS.md#1-prepare-nodejs-and-npm",
+              "text": "The guide opens in a new tab. Keep this book tab open.",
+              "scope": "For this book lesson, complete only Step 1, Prepare Node.js and npm, including Check in VS Code. Stop before Step 2, Create the Next.js app, even though the guide also includes app creation and startup.",
+              "checks": [
+                "The helper prints PROJECT TOOLS READY.",
+                "In the regular VS Code terminal, the grouped Git, Node.js, and npm version commands all print version numbers."
+              ],
+              "returnText": "Return to Lesson 6.4, Step 1. Create and run the app there, in the book’s teaching order. A version check finishes this Node.js lesson; it does not finish all of Part 2.",
+              "returnUrl": "#lesson=6.4&step=0",
+              "returnLabel": "Continue to 6.4 · Create the app"
             }
           ],
           "kind": "Practice"
@@ -181,18 +185,22 @@
       "steps": [
         {
           "id": "setup",
-          "title": "Open the installation guide",
+          "title": "Prepare Node.js and check the versions",
           "source": 778,
           "blocks": [
             {
               "type": "setup",
-              "label": "Node.js and Next.js on Mac",
-              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/MAC.md",
-              "text": "Follow the linked guide for your operating system. It checks existing installations so you can keep working tools. Return to this book after the guide’s success checks are complete."
-            },
-            {
-              "type": "check",
-              "text": "Confirm the tool checks in the linked guide succeed before continuing."
+              "label": "Setup 2 · Part 2 · Mac",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/MAC.md#1-prepare-nodejs-and-npm",
+              "text": "The guide opens in a new tab. Keep this book tab open.",
+              "scope": "For this book lesson, complete only Step 1, Prepare Node.js and npm, including Check in VS Code. Stop before Step 2, Create the Next.js app, even though the guide also includes app creation and startup.",
+              "checks": [
+                "The helper prints PROJECT TOOLS READY.",
+                "In the regular VS Code terminal, the grouped Git, Node.js, and npm version commands all print version numbers."
+              ],
+              "returnText": "Return to Lesson 6.4, Step 1. Create and run the app there, in the book’s teaching order. A version check finishes this Node.js lesson; it does not finish all of Part 2.",
+              "returnUrl": "#lesson=6.4&step=0",
+              "returnLabel": "Continue to 6.4 · Create the app"
             }
           ],
           "kind": "Practice"
@@ -211,6 +219,12 @@
           "id": "s785",
           "title": "Generate the Next app",
           "blocks": [
+            {
+              "type": "note",
+              "title": "Back from the Node.js setup guide",
+              "text": "Git, Node.js, and npm are ready. Now follow Steps 1 and 2 of this lesson to create and run your app. If you already created ohana-link in the GitHub guide, keep it: read the command explanations, skip the creation command, and use the existing app in Step 2.",
+              "optional": false
+            },
             {
               "type": "paragraph",
               "text": "Open your existing webdev folder in File Explorer or Finder and copy its full path. Use that path in the terminal. If the setup guide already created ohana-link and it contains package.json, do not create the app again; continue with running the existing app.",
