@@ -1,0 +1,323 @@
+{
+  "number": 9,
+  "title": "Authentication and Authorization",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "Almost every real web app needs accounts: a way for people to sign up, log in, and see only their own data. This chapter covers the two ideas behind that — authentication (proving who you are: sign-up, login, and the token flow that keeps users signed in) and authorization (deciding what each signed-in user is allowed to touch). We stay at the concept level here: the goal is to understand the machinery well enough to direct auth work, ask the right security questions, and recognize when protection is missing.",
+      "links": [],
+      "source": 1259
+    }
+  ],
+  "lessons": [
+    {
+      "id": "9.1",
+      "title": "How User Authentication Works",
+      "objective": "Understand how user authentication features like login and sign-up actually work under the hood. You'll learn the core flow of token-based authentication well enough to direct the AI's auth work, ask the right security questions, and figure out the cause when something goes wrong.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s1264",
+          "title": "How sign-up works",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Sign-up creates an account using information such as an email address and password. An authentication service such as Supabase Auth handles password hashing and account verification; the app should not store plain-text passwords in its own data tables.",
+              "links": [],
+              "source": 1265
+            }
+          ],
+          "source": 1264,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1266",
+          "title": "How login works",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Login is the process of proving you're the same person who signed up. Here's the flow:",
+              "links": [],
+              "source": 1267
+            },
+            {
+              "type": "bullet",
+              "text": "The browser sends the email and password the user typed in to the server.",
+              "links": [],
+              "source": 1268
+            },
+            {
+              "type": "bullet",
+              "text": "The server checks whether they match the credentials stored in the database.",
+              "links": [],
+              "source": 1269
+            },
+            {
+              "type": "bullet",
+              "text": "If they match, the server issues a token — think of it as an entry ticket — and hands it back to the browser.",
+              "links": [],
+              "source": 1270
+            },
+            {
+              "type": "bullet",
+              "text": "For requests that need authentication, the app sends the appropriate access token so the server can verify the session.",
+              "links": [],
+              "source": 1271
+            },
+            {
+              "type": "paragraph",
+              "text": "The token even carries ID information that identifies the user, so the server can tell directly whose request it's looking at.",
+              "links": [],
+              "source": 1272
+            }
+          ],
+          "source": 1266,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1273",
+          "title": "So what exactly is a token?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A token is a digital entry pass issued by the server. It's usually a long string that looks like random characters, and inside it carries information that identifies the user — like a user ID — plus a signature that prevents forgery and tampering.",
+              "links": [],
+              "source": 1274
+            },
+            {
+              "type": "paragraph",
+              "text": "For a signed token such as a JWT, the server validates the signature, expiration, and relevant claims. Authorization checks still decide which data the request may access.",
+              "links": [],
+              "source": 1275
+            },
+            {
+              "type": "note",
+              "text": "“A token is a little ID card that tells the server whose request this is.”",
+              "links": [],
+              "source": 1276,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 1273,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1277",
+          "title": "The danger of token theft",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Because a token is the entry pass, the moment someone steals it they can impersonate the user. If a hacker gets hold of just the token, they can access your account — no password needed — and view or manipulate your data. It's the most critical failure mode in an authentication system, and the reason a manager can never wave auth work through on the AI's say-so alone.",
+              "links": [],
+              "source": 1278
+            }
+          ],
+          "source": 1277,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1279",
+          "title": "That's why tokens expire",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Access tokens have a limited lifetime set by the authentication system. Shorter lifetimes reduce how long a stolen token can be used, but the exact duration varies.",
+              "links": [],
+              "source": 1280
+            },
+            {
+              "type": "paragraph",
+              "text": "A refresh mechanism can maintain a session without asking the user to sign in every time an access token expires.",
+              "links": [],
+              "source": 1281
+            }
+          ],
+          "source": 1279,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1282",
+          "title": "Access tokens and refresh tokens",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "To avoid making users log in constantly because of short lifetimes, servers issue two kinds of tokens together:",
+              "links": [],
+              "source": 1283
+            },
+            {
+              "type": "bullet",
+              "text": "Access token: the entry pass used when accessing the service. Short lifetime.",
+              "links": [],
+              "source": 1284
+            },
+            {
+              "type": "bullet",
+              "text": "Refresh token: a special token used to get a new access token issued. Usually single-use.",
+              "links": [],
+              "source": 1285
+            },
+            {
+              "type": "paragraph",
+              "text": "When the access token expires, the browser uses the refresh token to get a fresh access token — so you keep using the service without interruption.",
+              "links": [],
+              "source": 1286
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Concept",
+                  "What it is"
+                ],
+                [
+                  "Token",
+                  "A digital entry pass: a long signed string identifying the user, sent with every request"
+                ],
+                [
+                  "Access token",
+                  "The short-lived pass used to access the service"
+                ],
+                [
+                  "Refresh token",
+                  "A special (usually one-time) token used to get a new access token"
+                ],
+                [
+                  "Expiration",
+                  "A limited lifetime that reduces how long a stolen token can be used"
+                ]
+              ],
+              "source": 1288
+            }
+          ],
+          "source": 1282,
+          "kind": "Understand"
+        }
+      ],
+      "source": 1262,
+      "conceptOnly": true
+    },
+    {
+      "id": "9.2",
+      "title": "Understanding Authorization to Protect Your Data",
+      "objective": "Understand why authentication by itself cannot keep your data safe, learn the concept of authorization — controlling who may access which data — well enough to notice when it's been skipped, and know the role of Supabase's RLS feature so you can ask for it by name.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s1292",
+          "title": "The limits of authentication",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Authentication confirms an identity. It does not by itself establish which database rows that user may read or change. Access depends on the permissions and policies that are configured.",
+              "links": [],
+              "source": 1293
+            },
+            {
+              "type": "paragraph",
+              "text": "Suppose Alex signs in and requests Jordan’s links. If the database grants that request and no policy restricts it to the owner, the data could be exposed. A correct ownership policy should prevent that access.",
+              "links": [],
+              "source": 1294
+            },
+            {
+              "type": "note",
+              "title": "Before you continue",
+              "text": "A valid login token proves identity, not ownership. Check the database permissions and row-level policies before treating an app as protected.",
+              "optional": false,
+              "source": 1295
+            }
+          ],
+          "source": 1292,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1297",
+          "title": "So what is authorization?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Authorization is the step that comes after authentication: whenever a user tries to access a specific piece of data, the system additionally checks whether that user actually has permission for that data. A campus analogy makes the difference easy to remember:",
+              "links": [],
+              "source": 1298
+            },
+            {
+              "type": "bullet",
+              "text": "Authentication — the check at the campus gate: are you a student or an instructor who's allowed to enter the school at all?",
+              "links": [],
+              "source": 1299
+            },
+            {
+              "type": "bullet",
+              "text": "Authorization — the check at the faculty office door: is the person trying to walk in actually a professor?",
+              "links": [],
+              "source": 1300
+            },
+            {
+              "type": "paragraph",
+              "text": "Both checks matter. Getting through the front gate (logging in) should never automatically open every door inside the building (every row in your database).",
+              "links": [],
+              "source": 1301
+            }
+          ],
+          "source": 1297,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1302",
+          "title": "Supabase RLS",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "So that you can set up authorization without pain, Supabase provides a feature called RLS (Row Level Security). True to its name, it lets you attach access rules to each individual row of a table. That means you can create policies like “Jordan's rows can only be accessed by Jordan” and “Alex's rows can only be accessed by Alex.”",
+              "links": [],
+              "source": 1303
+            },
+            {
+              "type": "paragraph",
+              "text": "RLS policies can govern SELECT, INSERT, UPDATE, and DELETE separately. Review every operation your app needs; an operation with no applicable permission should remain denied.",
+              "links": [],
+              "source": 1304
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Operation",
+                  "Plain English",
+                  "The question the policy answers"
+                ],
+                [
+                  "INSERT",
+                  "Create",
+                  "Who may add new rows?"
+                ],
+                [
+                  "SELECT",
+                  "Read",
+                  "Which rows may this user see?"
+                ],
+                [
+                  "UPDATE",
+                  "Modify",
+                  "Which rows may this user change?"
+                ],
+                [
+                  "DELETE",
+                  "Remove",
+                  "Which rows may this user delete?"
+                ]
+              ],
+              "source": 1305
+            }
+          ],
+          "source": 1302,
+          "kind": "Understand"
+        }
+      ],
+      "source": 1290,
+      "conceptOnly": true
+    }
+  ],
+  "shortTitle": "Authentication and authorization"
+}

@@ -1,0 +1,1028 @@
+{
+  "number": 5,
+  "title": "Git & GitHub: Version Control for Your Code",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "AI coding assistants can write — and rewrite — a lot of code very quickly. As the person directing that work, you can only delegate that power safely if you can rewind any change that goes wrong. This chapter introduces version control with Git, gets it installed on your machine, and walks you through saving snapshots of your project, publishing it to GitHub, and syncing work between computers. For a manager, the commit history is also your audit trail — it shows exactly what the AI changed and when. Along the way you'll see why version control is the safety net that lets you confidently hand more permissions to an AI assistant like Claude Code.",
+      "links": [],
+      "source": 574
+    },
+    {
+      "type": "note",
+      "title": "Before you continue",
+      "text": "Lessons 5.2 and 5.3 cover Git installation on different operating systems — work through the one that matches your laptop.",
+      "optional": false,
+      "source": 578
+    }
+  ],
+  "lessons": [
+    {
+      "id": "5.1",
+      "title": "Version Control",
+      "objective": "Understand version control well enough to insist on it before any AI coding begins — and to spot when a project is missing this safety net. Along the way, get to know Git, the tool that dominates the field.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s581",
+          "title": "What is version control?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Think back to the last time you worked on a big class presentation. Your backup folder probably ended up looking something like this:",
+              "links": [],
+              "source": 582
+            },
+            {
+              "type": "bullet",
+              "text": "EventPlan.pptx",
+              "links": [],
+              "source": 583
+            },
+            {
+              "type": "bullet",
+              "text": "EventPlan_edited.pptx",
+              "links": [],
+              "source": 584
+            },
+            {
+              "type": "bullet",
+              "text": "EventPlan_final.pptx",
+              "links": [],
+              "source": 585
+            },
+            {
+              "type": "bullet",
+              "text": "EventPlan_final_v2.pptx  ← the “real” final… for now",
+              "links": [],
+              "source": 586
+            },
+            {
+              "type": "paragraph",
+              "text": "Copying a file and stretching the name — final.pptx, final_edited.pptx, REAL_final.pptx — is a homemade version-control system. Version control applies that same instinct to code files, but does it properly:",
+              "links": [],
+              "source": 588
+            },
+            {
+              "type": "bullet",
+              "text": "As development moves forward, code is constantly added, changed, and deleted.",
+              "links": [],
+              "source": 589
+            },
+            {
+              "type": "bullet",
+              "text": "Saving the state of your project at any moment you choose — like a checkpoint in a video game — is what version control does.",
+              "links": [],
+              "source": 590
+            },
+            {
+              "type": "paragraph",
+              "text": "Git organizes that flow into a clean commit history: every version of the same project stacks up one line at a time, and you can jump back to any point whenever you want. Instead of four confusingly named copies, you get one tidy list like this:",
+              "links": [],
+              "source": 592
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Commit ID",
+                  "Commit message"
+                ],
+                [
+                  "e4b9c1",
+                  "refactor: reorder the slides"
+                ],
+                [
+                  "d1a8f3",
+                  "fix: correct typos in the schedule"
+                ],
+                [
+                  "c9d4e2",
+                  "feat: add the budget slide"
+                ],
+                [
+                  "b7e2c4",
+                  "feat: add the schedule slide"
+                ],
+                [
+                  "a3f9b1",
+                  "init: first draft of the event plan"
+                ]
+              ],
+              "source": 593
+            },
+            {
+              "type": "note",
+              "text": "“Git manages your changes as a clean commit history — every version in one stack, and you can roll back to any point at any time.”",
+              "links": [],
+              "source": 595,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 581,
+          "kind": "Understand"
+        },
+        {
+          "id": "s596",
+          "title": "Why you need version control (especially with AI)",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Version control has always mattered, but three reasons make it especially important when the actual coding is done by an AI assistant you direct.",
+              "links": [],
+              "source": 597
+            },
+            {
+              "type": "subheading",
+              "text": "1. You can roll back the AI's mistakes",
+              "links": [],
+              "source": 598
+            },
+            {
+              "type": "paragraph",
+              "text": "When bugs pile up or the AI writes something completely off the rails, you can quickly return to the last point where everything worked.",
+              "links": [],
+              "source": 599
+            },
+            {
+              "type": "subheading",
+              "text": "2. You can painlessly discard changes you don't like",
+              "links": [],
+              "source": 600
+            },
+            {
+              "type": "paragraph",
+              "text": "No need to hunt through multiple files deleting code line by line — just move back to the version before that feature went in.",
+              "links": [],
+              "source": 601
+            },
+            {
+              "type": "subheading",
+              "text": "3. You can safely delegate more authority to the AI",
+              "links": [],
+              "source": 602
+            },
+            {
+              "type": "paragraph",
+              "text": "Even if you hand file-editing permissions over to the AI, there's a safety net: if something goes wrong, you can always restore a previous version.",
+              "links": [],
+              "source": 603
+            }
+          ],
+          "source": 596,
+          "kind": "Understand"
+        },
+        {
+          "id": "s604",
+          "title": "The #1 version control tool: Git",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "Git is a version control program created by Linus Torvalds, the creator of Linux. More than 90% of developers worldwide use it.",
+              "links": [],
+              "source": 605
+            },
+            {
+              "type": "bullet",
+              "text": "It adds version control to any folder you choose: save a version at any point, or roll back to an earlier one.",
+              "links": [],
+              "source": 606
+            },
+            {
+              "type": "bullet",
+              "text": "Starting with the next lesson, we'll install Git and use it hands-on. Follow the installation lesson for your operating system.",
+              "links": [],
+              "source": 607
+            }
+          ],
+          "source": 604,
+          "kind": "Understand"
+        }
+      ],
+      "source": 579
+    },
+    {
+      "id": "5.2",
+      "title": "Installing Git — Windows",
+      "objective": "",
+      "intro": [],
+      "steps": [
+        {
+          "id": "setup",
+          "title": "Open the installation guide",
+          "source": 609,
+          "blocks": [
+            {
+              "type": "setup",
+              "label": "Git and GitHub preparation",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB.md",
+              "text": "Follow the linked guide for your operating system. It checks existing installations so you can keep working tools. Return to this book after the guide’s success checks are complete."
+            },
+            {
+              "type": "check",
+              "text": "Confirm the tool checks in the linked guide succeed before continuing."
+            }
+          ],
+          "kind": "Practice"
+        }
+      ],
+      "source": 609,
+      "platform": "Windows"
+    },
+    {
+      "id": "5.3",
+      "title": "Installing Git — macOS",
+      "objective": "",
+      "intro": [],
+      "steps": [
+        {
+          "id": "setup",
+          "title": "Open the installation guide",
+          "source": 612,
+          "blocks": [
+            {
+              "type": "setup",
+              "label": "Git and GitHub preparation",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB.md",
+              "text": "Follow the linked guide for your operating system. It checks existing installations so you can keep working tools. Return to this book after the guide’s success checks are complete."
+            },
+            {
+              "type": "check",
+              "text": "Confirm the tool checks in the linked guide succeed before continuing."
+            }
+          ],
+          "kind": "Practice"
+        }
+      ],
+      "source": 612,
+      "platform": "Mac"
+    },
+    {
+      "id": "5.4",
+      "title": "Version Control with Git",
+      "objective": "Apply Git to an existing project (for example, your pomodoro timer), record versions as commits, and practice the two moves — Discard and Revert — that let you undo any AI mistake you catch.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s617",
+          "title": "Initialize Git",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Open your project's root folder in VS Code, then run this command in the built-in terminal:",
+              "links": [],
+              "source": 618
+            },
+            {
+              "type": "code",
+              "text": "git init",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 619,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "output",
+              "text": "Initialized empty Git repository in .../pomodoro/.git/",
+              "label": "Example output — do not type",
+              "source": 619
+            },
+            {
+              "type": "bullet",
+              "text": "If you see the message “Initialized empty Git repository”, it worked.",
+              "links": [],
+              "source": 621
+            },
+            {
+              "type": "bullet",
+              "text": "A Git repository is the storage space that keeps the folder's version history. A hidden folder named .git is created inside your project.",
+              "links": [],
+              "source": 622
+            }
+          ],
+          "source": 617,
+          "kind": "Practice"
+        },
+        {
+          "id": "s624",
+          "title": "Record your first version (a commit)",
+          "blocks": [
+            {
+              "type": "setup",
+              "label": "Set your Git name and email",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB.md#3-set-your-git-name-and-email",
+              "text": "Before your first commit on this computer, complete the name and email check. This identifies the commit author; it is separate from signing in to GitHub."
+            },
+            {
+              "type": "paragraph",
+              "text": "You'll work in three small steps from the Source Control tab on the left side of VS Code.",
+              "links": [],
+              "source": 625
+            },
+            {
+              "type": "note",
+              "text": "“Stage → write a message → commit. This flow is the backbone of every version you'll ever record.”",
+              "links": [],
+              "source": 626,
+              "title": "Another way to think about it",
+              "optional": true
+            },
+            {
+              "type": "subheading",
+              "text": "1. Staging",
+              "links": [],
+              "source": 627
+            },
+            {
+              "type": "paragraph",
+              "text": "Staging means putting your changed files “on stage” — think of it as adding items to a shopping cart before checkout. Hover over a file to reveal a + button and add it individually, or click the + on the Changes header to stage everything at once.",
+              "links": [],
+              "source": 628
+            },
+            {
+              "type": "subheading",
+              "text": "2. Write a commit message",
+              "links": [],
+              "source": 629
+            },
+            {
+              "type": "paragraph",
+              "text": "Describe in one line what this change is. For a first version, something as simple as INIT is fine. Good messages become signposts later, when you're walking back up the graph looking for a specific point in time.",
+              "links": [],
+              "source": 630
+            },
+            {
+              "type": "subheading",
+              "text": "3. Commit",
+              "links": [],
+              "source": 631
+            },
+            {
+              "type": "paragraph",
+              "text": "Press the ✓ Commit button and a new version is created — a dot appears in the Graph area below. Each dot is a snapshot of your code at that moment, and you can return to it at any time.",
+              "links": [],
+              "source": 632
+            }
+          ],
+          "source": 624,
+          "kind": "Practice"
+        },
+        {
+          "id": "s633",
+          "title": "How big should a commit be?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Commit often, in small, single-feature units — not giant batches. For example, if the AI is building authentication, have it commit login → sign-up → password reset separately. Then, if one feature breaks, you can roll back just that point without losing the rest. This is also the standard to hold your AI assistant to: one feature per commit keeps every change small enough for you to review.",
+              "links": [],
+              "source": 634
+            }
+          ],
+          "source": 633,
+          "kind": "Understand"
+        },
+        {
+          "id": "s635",
+          "title": "Fixing the AI's mistakes",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Discard — cancel changes that aren't committed yet",
+              "links": [],
+              "source": 636
+            },
+            {
+              "type": "paragraph",
+              "text": "Discard removes uncommitted changes from the selected files. Review the files first: this can permanently remove work that Git has never saved. For tracked files, discard restores their latest committed version. Do not discard unrelated work.",
+              "links": [],
+              "source": 637
+            },
+            {
+              "type": "subheading",
+              "text": "Revert — undo a mistake that was already committed",
+              "links": [],
+              "source": 638
+            },
+            {
+              "type": "paragraph",
+              "text": "If the bad code was already committed, git revert creates a new commit that cancels it out. Two steps:",
+              "links": [],
+              "source": 639
+            },
+            {
+              "type": "bullet",
+              "text": "Copy the bad commit's ID from the graph — right-click the commit in the Source Control graph (or use the ... button next to it) to open the menu, then choose Copy Commit ID.",
+              "links": [],
+              "source": 640
+            },
+            {
+              "type": "bullet",
+              "text": "Run git revert with the actual commit ID, replacing the placeholder below. Git normally creates a new commit that reverses the selected commit. If a conflict occurs, resolve it before completing the revert.",
+              "links": [],
+              "source": 641
+            },
+            {
+              "type": "code",
+              "text": "git revert <copied-commit-ID>",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 643,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "bullet",
+              "text": "If a commit-message editor opens, save the message and close that editor so Git can finish. Check the Source Control graph for the new revert commit. If Git reports a conflict, do not assume the revert is finished.",
+              "links": [],
+              "source": 645
+            },
+            {
+              "type": "paragraph",
+              "text": "git reset can move the current branch and, depending on its options, discard working files. This course uses revert for changes that have already been committed.",
+              "links": [],
+              "source": 647
+            }
+          ],
+          "source": 635,
+          "kind": "Practice"
+        }
+      ],
+      "source": 615
+    },
+    {
+      "id": "5.5",
+      "title": "Meet GitHub & Publish Your Project",
+      "objective": "Understand GitHub, the Git-based online code storage service, publish your own project to it for the first time — and confirm the full history made the trip.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s650",
+          "title": "What is GitHub?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "GitHub hosts Git repositories online so you can back up and share code and its history.",
+              "links": [],
+              "source": 651
+            },
+            {
+              "type": "bullet",
+              "text": "It stores your computer's code files online — together with the entire version history that Git manages.",
+              "links": [],
+              "source": 652
+            },
+            {
+              "type": "bullet",
+              "text": "In other words, it's not simple file upload; it's a service for sharing your Git repository as-is.",
+              "links": [],
+              "source": 653
+            }
+          ],
+          "source": 650,
+          "kind": "Understand"
+        },
+        {
+          "id": "s655",
+          "title": "Not just source code — your Git versions come along",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "GitHub doesn't hold just your source code; it also stores the full version history you've been managing with Git. That's where the name comes from: the hub for Git (Git + Hub) — GitHub.",
+              "links": [],
+              "source": 656
+            },
+            {
+              "type": "note",
+              "text": "“A repository that lives on a remote server like GitHub is called a remote repository.”",
+              "links": [],
+              "source": 657,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 655,
+          "kind": "Understand"
+        },
+        {
+          "id": "s658",
+          "title": "Why use it?",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Backup",
+              "links": [],
+              "source": 659
+            },
+            {
+              "type": "paragraph",
+              "text": "Even if your local folder is deleted, you can pull the code and the version history back down from GitHub.",
+              "links": [],
+              "source": 660
+            },
+            {
+              "type": "subheading",
+              "text": "Multiple computers & collaboration",
+              "links": [],
+              "source": 661
+            },
+            {
+              "type": "paragraph",
+              "text": "Moving between a school lab machine and your laptop, or working with teammates, it's easy for everyone to share the same project.",
+              "links": [],
+              "source": 662
+            },
+            {
+              "type": "subheading",
+              "text": "Connecting outside services",
+              "links": [],
+              "source": 663
+            },
+            {
+              "type": "paragraph",
+              "text": "Some services can deploy directly from a GitHub repository. Connecting Supabase to your app is a separate step; a GitHub sign-in alone does not connect the database.",
+              "links": [],
+              "source": 664
+            }
+          ],
+          "source": 658,
+          "kind": "Understand"
+        },
+        {
+          "id": "s665",
+          "title": "Sign up and log in",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Prepare your GitHub account: https://github.com/login",
+              "links": [
+                {
+                  "text": "https://github.com/login",
+                  "target": "https://github.com/login",
+                  "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink"
+                }
+              ],
+              "source": 666
+            }
+          ],
+          "source": 665,
+          "kind": "Understand"
+        },
+        {
+          "id": "s667",
+          "title": "Publish your local repository to GitHub",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "You'll publish straight from the Source Control tab in VS Code. The flow has three beats: Publish Branch button → type a repository name → choose the visibility.",
+              "links": [],
+              "source": 668
+            },
+            {
+              "type": "bullet",
+              "text": "In the Source Control tab (Graph view), click the blue Publish Branch button.",
+              "links": [],
+              "source": 669
+            },
+            {
+              "type": "bullet",
+              "text": "The first time, GitHub login and a VS Code authorization step (Authorize) run in order. If email verification is requested, complete that too.",
+              "links": [],
+              "source": 670
+            },
+            {
+              "type": "bullet",
+              "text": "In the input box at the top, type a repository name (e.g. pomodoro-timer-web). Avoid spaces and special characters (except - and _), and stick to English letters and digits.",
+              "links": [],
+              "source": 671
+            },
+            {
+              "type": "bullet",
+              "text": "Choose the visibility required for your course project. Public repositories are visible to everyone. Private repositories are visible only to people with access.",
+              "links": [],
+              "source": 672
+            },
+            {
+              "type": "bullet",
+              "text": "Finally, one more login may pop up to connect the Git program with GitHub (“Sign in with your browser”) — go ahead and finish it.",
+              "links": [],
+              "source": 673
+            }
+          ],
+          "source": 667,
+          "kind": "Practice"
+        },
+        {
+          "id": "s674",
+          "title": "A quick peek at branches",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "Version history usually runs in a single line, but when you need experiments or forks in the road, you can split it into branches.",
+              "links": [],
+              "source": 675
+            },
+            {
+              "type": "bullet",
+              "text": "The main branch is a common starting branch name. Publish Branch uploads the branch you are currently using; that branch is not always named main.",
+              "links": [],
+              "source": 676
+            }
+          ],
+          "source": 674,
+          "kind": "Understand"
+        },
+        {
+          "id": "s678",
+          "title": "Check the result",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "On GitHub, open your profile menu (top right) → Your repositories to find the repository you just uploaded. On the repository page, click the Commits link near the top — you'll see every version you've committed so far, carried over intact.",
+              "links": [],
+              "source": 679
+            }
+          ],
+          "source": 678,
+          "kind": "Practice"
+        }
+      ],
+      "source": 648
+    },
+    {
+      "id": "5.6",
+      "title": "Using GitHub: Push, Pull, and Clone",
+      "objective": "Get hands-on with the three core commands for working with a repository on GitHub — Push, Pull, and Clone — and learn to read at a glance whether local and remote are in sync.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s683",
+          "title": "Local vs. remote repository",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "Local repository: the project folder that exists only on your computer.",
+              "links": [],
+              "source": 684
+            },
+            {
+              "type": "bullet",
+              "text": "Remote repository: the copy uploaded online, e.g. on GitHub (usually referred to as origin).",
+              "links": [],
+              "source": 685
+            },
+            {
+              "type": "paragraph",
+              "text": "In VS Code's Graph view, main marks your latest local commit, while origin/main marks the latest remote commit. When those two labels sit on different commits, the two sides need to be synchronized. That pair of labels is a manager's fastest status check: if they've drifted apart, some work isn't backed up — or isn't shared — yet.",
+              "links": [],
+              "source": 687
+            }
+          ],
+          "source": 683,
+          "kind": "Understand"
+        },
+        {
+          "id": "s688",
+          "title": "Push — local → remote",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Pushing sends commits you created locally up to the remote.",
+              "links": [],
+              "source": 689
+            },
+            {
+              "type": "bullet",
+              "text": "In VS Code Source Control, use Push to upload your local commits. Sync Changes combines a pull and a push, so it can also bring remote changes into your project.",
+              "links": [],
+              "source": 690
+            },
+            {
+              "type": "bullet",
+              "text": "If a pull/push confirmation dialog appears, click OK.",
+              "links": [],
+              "source": 691
+            },
+            {
+              "type": "note",
+              "text": "“Make it a habit to push right after every new commit. Your local and remote history stay identical at all times.”",
+              "links": [],
+              "source": 693,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 688,
+          "kind": "Practice"
+        },
+        {
+          "id": "s694",
+          "title": "Pull — remote → local",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Pulling brings down commits that were added from another computer (or from GitHub's web editor) into your local copy.",
+              "links": [],
+              "source": 695
+            },
+            {
+              "type": "bullet",
+              "text": "Click the arrow icon on the right side of the Source Control graph → Pull.",
+              "links": [],
+              "source": 696
+            },
+            {
+              "type": "bullet",
+              "text": "Example scenario: you edit a file directly on github.com and commit it with “Commit changes”; back on your machine, you Pull to fetch that commit.",
+              "links": [],
+              "source": 697
+            }
+          ],
+          "source": 694,
+          "kind": "Practice"
+        },
+        {
+          "id": "s699",
+          "title": "Clone — copy an entire remote to a new local machine",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Use clone when the project folder doesn't exist at all — for example, when you start working on a new computer.",
+              "links": [],
+              "source": 700
+            },
+            {
+              "type": "bullet",
+              "text": "On the GitHub repository page, click the green Code button → copy the clone URL.",
+              "links": [],
+              "source": 701
+            },
+            {
+              "type": "bullet",
+              "text": "In a terminal, move to the directory you want to work in, then run the command below.",
+              "links": [],
+              "source": 702
+            },
+            {
+              "type": "code",
+              "text": "git clone <copied-URL> <local-folder-name>",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 703,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Example — download the project into a folder named pomodoro under your web-dev folder:",
+              "links": [],
+              "source": 705
+            },
+            {
+              "type": "paragraph",
+              "text": "Example locations from the guidebook: ~/webdev on Mac and C:\\webdev on Windows. Use the actual location of your own workspace.",
+              "source": 706
+            },
+            {
+              "type": "code",
+              "text": "cd \"PASTE_FULL_PATH_TO_WEBDEV_HERE\"",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "note": "Replace the placeholder before running.",
+              "source": 706
+            },
+            {
+              "type": "code",
+              "text": "git clone https://github.com/user/pomodoro-timer-web.git pomodoro",
+              "where": "VS Code terminal · normal shell",
+              "mode": "reference",
+              "label": "Example only",
+              "copy": false,
+              "note": "Replace the example URL with your own repository URL before using it.",
+              "source": 706
+            },
+            {
+              "type": "paragraph",
+              "text": "When the command finishes, every file and the full version history of the remote repository comes back down to your local machine.",
+              "links": [],
+              "source": 708
+            }
+          ],
+          "source": 699,
+          "kind": "Practice"
+        },
+        {
+          "id": "s709",
+          "title": "Putting it together",
+          "blocks": [
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Situation",
+                  "Command"
+                ],
+                [
+                  "A new commit exists locally",
+                  "Push"
+                ],
+                [
+                  "A new commit appeared on the remote",
+                  "Pull"
+                ],
+                [
+                  "You need the whole project from scratch",
+                  "Clone"
+                ]
+              ],
+              "source": 710
+            }
+          ],
+          "source": 709,
+          "kind": "Understand"
+        }
+      ],
+      "source": 681
+    },
+    {
+      "id": "5.7",
+      "title": "Safely Granting Permissions to AI",
+      "objective": "With Git in place as a safety device, learn how to safely grant Claude Code broader permissions — and how to verify the guardrails actually trigger.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s714",
+          "title": "Why hand over permissions at all?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Claude Code uses permission settings to decide which actions need approval. Git gives you saved checkpoints, but it does not protect work that has never been committed. Review the changes before allowing broader editing permissions.",
+              "links": [],
+              "source": 715
+            }
+          ],
+          "source": 714,
+          "kind": "Understand"
+        },
+        {
+          "id": "s716",
+          "title": "Two approaches",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "1. bypass permissions mode (not recommended)",
+              "links": [],
+              "source": 717
+            },
+            {
+              "type": "paragraph",
+              "text": "The simplest — and riskiest — approach is to skip every permission check:",
+              "links": [],
+              "source": 718
+            },
+            {
+              "type": "code",
+              "text": "claude --permission-mode bypassPermissions",
+              "where": "Terminal",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 719
+            },
+            {
+              "type": "bullet",
+              "text": "Bypass mode skips many permission checks. We do not use it for the course exercises.",
+              "links": [],
+              "source": 721
+            },
+            {
+              "type": "bullet",
+              "text": "We won't use this mode while you're learning.",
+              "links": [],
+              "source": 722
+            },
+            {
+              "type": "subheading",
+              "text": "2. Fine-grained control with a settings file (recommended)",
+              "links": [],
+              "source": 724
+            },
+            {
+              "type": "paragraph",
+              "text": "Create a .claude/settings.json file in your project root and define permissions precisely:",
+              "links": [],
+              "source": 725
+            },
+            {
+              "type": "code",
+              "text": "{\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"ask\": [\n      \"Bash(git push *)\",\n      \"Bash(git commit *)\",\n      \"Bash(rm -rf *)\"\n    ]\n  }\n}",
+              "where": "VS Code editor · .claude/settings.json",
+              "mode": "file",
+              "label": "File contents",
+              "copy": true,
+              "source": 726,
+              "note": "Save this file before continuing."
+            }
+          ],
+          "source": 716,
+          "kind": "Practice"
+        },
+        {
+          "id": "s728",
+          "title": "What the options mean",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "defaultMode: \"acceptEdits\" allows file edits and some common file operations in the permitted workspace without asking each time. Other behavior depends on the command, permission rules, and current Claude Code version.",
+              "links": [],
+              "source": 729
+            },
+            {
+              "type": "bullet",
+              "text": "The ask array — registers commands that must get your approval before running.",
+              "links": [],
+              "source": 730
+            },
+            {
+              "type": "bullet",
+              "text": "Bash(...) matches commands run through Claude Code’s Bash tool. PowerShell tool commands need their own matching rules.",
+              "links": [],
+              "source": 731
+            },
+            {
+              "type": "bullet",
+              "text": "* is a wildcard that matches whatever arguments follow.",
+              "links": [],
+              "source": 732
+            },
+            {
+              "type": "bullet",
+              "text": "These sample rules cover the listed Bash command patterns. They are not a universal block on every possible command or tool. Check the current permissions documentation and review any requested action.",
+              "links": [],
+              "source": 733
+            },
+            {
+              "type": "paragraph",
+              "text": "Let's test if Claude's permission mode works properly.",
+              "links": [],
+              "source": 734
+            },
+            {
+              "type": "paragraph",
+              "text": "Open claude in the terminal and make sure the mode at the bottom is set to accept edits on (press Shift + Tab to switch modes).",
+              "links": [],
+              "source": 735
+            },
+            {
+              "type": "code",
+              "text": "Add a feature to index.html that displays the current time.",
+              "where": "Claude Code input",
+              "mode": "prompt",
+              "label": "Claude Code prompt",
+              "copy": true,
+              "id": "prompt-736",
+              "source": 736,
+              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+            },
+            {
+              "type": "paragraph",
+              "text": "You will now see that Claude proceeds automatically without asking for permission to edit the file or apply specific changes.",
+              "links": [],
+              "source": 737
+            }
+          ],
+          "source": 728,
+          "kind": "Practice"
+        },
+        {
+          "id": "s739",
+          "title": "Behavior after applying it",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Save the settings and restart Claude Code. File edits now proceed automatically — Claude just reports the results. Once you've reviewed the changes, finish up in the Source Control tab with stage → commit → push.",
+              "links": [],
+              "source": 740
+            },
+            {
+              "type": "paragraph",
+              "text": "Ctrl + J on Windows or Command + J on Mac shows or hides the bottom panel. Hiding the panel does not stop the terminal or its running program.",
+              "links": [],
+              "source": 741
+            }
+          ],
+          "source": 739,
+          "kind": "Understand"
+        }
+      ],
+      "source": 712
+    }
+  ],
+  "shortTitle": "Git and GitHub"
+}

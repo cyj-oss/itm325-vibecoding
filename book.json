@@ -1,0 +1,349 @@
+{
+  "title": "ITM 325 Vibe Coding",
+  "subtitle": "Build your project one clear step at a time.",
+  "version": "2026-11-18",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Talking to Your Computer: The Terminal",
+      "shortTitle": "The terminal",
+      "file": "chapter-01.json",
+      "lessons": [
+        {
+          "id": "1.1",
+          "title": "The CLI and the Terminal",
+          "platform": null,
+          "steps": 2
+        },
+        {
+          "id": "1.2",
+          "title": "Terminal Basics — Windows",
+          "platform": "Windows",
+          "steps": 2
+        },
+        {
+          "id": "1.3",
+          "title": "Terminal Basics — macOS",
+          "platform": "Mac",
+          "steps": 3
+        },
+        {
+          "id": "1.4",
+          "title": "Terminal Shortcuts Worth Knowing",
+          "platform": null,
+          "steps": 3
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Setting Up Claude Code",
+      "shortTitle": "Claude Code",
+      "file": "chapter-02.json",
+      "lessons": [
+        {
+          "id": "2.1",
+          "title": "Meet Claude Code",
+          "platform": null,
+          "steps": 3
+        },
+        {
+          "id": "2.2",
+          "title": "Claude Code: Account and Subscription",
+          "platform": null,
+          "steps": 3
+        },
+        {
+          "id": "2.3",
+          "title": "Installing Claude Code — Windows",
+          "platform": "Windows",
+          "steps": 1
+        },
+        {
+          "id": "2.4",
+          "title": "Installing Claude Code — macOS",
+          "platform": "Mac",
+          "steps": 1
+        },
+        {
+          "id": "2.5",
+          "title": "Claude Code Basics",
+          "platform": null,
+          "steps": 6
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Installing a Code Editor",
+      "shortTitle": "VS Code",
+      "file": "chapter-03.json",
+      "lessons": [
+        {
+          "id": "3.1",
+          "title": "Introducing the VSCode Editor",
+          "platform": null,
+          "steps": 3
+        },
+        {
+          "id": "3.2",
+          "title": "Installing VSCode and Learning the Basics",
+          "platform": null,
+          "steps": 5
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Web Development Basics: Just the Essentials",
+      "shortTitle": "Web basics",
+      "file": "chapter-04.json",
+      "lessons": [
+        {
+          "id": "4.1",
+          "title": "The Internet and the Web",
+          "platform": null,
+          "steps": 3
+        },
+        {
+          "id": "4.2",
+          "title": "Laying Out a Page with HTML",
+          "platform": null,
+          "steps": 4
+        },
+        {
+          "id": "4.3",
+          "title": "HTML's Essential Tags",
+          "platform": null,
+          "steps": 2
+        },
+        {
+          "id": "4.4",
+          "title": "Styling with CSS",
+          "platform": null,
+          "steps": 4
+        },
+        {
+          "id": "4.5",
+          "title": "Adding Behavior with JavaScript",
+          "platform": null,
+          "steps": 6
+        },
+        {
+          "id": "4.6",
+          "title": "Your First Project: A Pomodoro Timer",
+          "platform": null,
+          "steps": 8
+        },
+        {
+          "id": "4.7",
+          "title": "Deploying to the Cloud",
+          "platform": null,
+          "steps": 15
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Git & GitHub: Version Control for Your Code",
+      "shortTitle": "Git and GitHub",
+      "file": "chapter-05.json",
+      "lessons": [
+        {
+          "id": "5.1",
+          "title": "Version Control",
+          "platform": null,
+          "steps": 3
+        },
+        {
+          "id": "5.2",
+          "title": "Installing Git — Windows",
+          "platform": "Windows",
+          "steps": 1
+        },
+        {
+          "id": "5.3",
+          "title": "Installing Git — macOS",
+          "platform": "Mac",
+          "steps": 1
+        },
+        {
+          "id": "5.4",
+          "title": "Version Control with Git",
+          "platform": null,
+          "steps": 4
+        },
+        {
+          "id": "5.5",
+          "title": "Meet GitHub & Publish Your Project",
+          "platform": null,
+          "steps": 7
+        },
+        {
+          "id": "5.6",
+          "title": "Using GitHub: Push, Pull, and Clone",
+          "platform": null,
+          "steps": 5
+        },
+        {
+          "id": "5.7",
+          "title": "Safely Granting Permissions to AI",
+          "platform": null,
+          "steps": 4
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Web Development Frameworks for More Complex Projects",
+      "shortTitle": "Next.js",
+      "file": "chapter-06.json",
+      "lessons": [
+        {
+          "id": "6.1",
+          "title": "Introduction to Web Development Frameworks",
+          "platform": null,
+          "steps": 3
+        },
+        {
+          "id": "6.2",
+          "title": "Installing Node.js — Windows",
+          "platform": "Windows",
+          "steps": 1
+        },
+        {
+          "id": "6.3",
+          "title": "Installing Node.js — macOS",
+          "platform": "Mac",
+          "steps": 1
+        },
+        {
+          "id": "6.4",
+          "title": "Creating Your First Next.js App",
+          "platform": null,
+          "steps": 4
+        },
+        {
+          "id": "6.5",
+          "title": "How a Next.js App Runs",
+          "platform": null,
+          "steps": 5
+        },
+        {
+          "id": "6.6",
+          "title": "Next.js Core Concepts",
+          "platform": null,
+          "steps": 6
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Starting the Ohana Link Project",
+      "shortTitle": "Ohana Link",
+      "file": "chapter-07.json",
+      "lessons": [
+        {
+          "id": "7.1",
+          "title": "Project Introduction",
+          "platform": null,
+          "steps": 4
+        },
+        {
+          "id": "7.2",
+          "title": "Building the Project's Base UI",
+          "platform": null,
+          "steps": 5
+        },
+        {
+          "id": "7.3",
+          "title": "Setting a Design Theme (Claude Skills)",
+          "platform": null,
+          "steps": 7
+        },
+        {
+          "id": "7.4",
+          "title": "Implementing Folder Management",
+          "platform": null,
+          "steps": 6
+        },
+        {
+          "id": "7.5",
+          "title": "Implementing Link Management",
+          "platform": null,
+          "steps": 6
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Databases: Storing Your Data for Good",
+      "shortTitle": "Databases",
+      "file": "chapter-08.json",
+      "lessons": [
+        {
+          "id": "8.1",
+          "title": "Introducing Databases",
+          "platform": null,
+          "steps": 5
+        },
+        {
+          "id": "8.2",
+          "title": "Setting Up Supabase",
+          "platform": null,
+          "steps": 2
+        },
+        {
+          "id": "8.3",
+          "title": "How Databases Work",
+          "platform": null,
+          "steps": 7
+        },
+        {
+          "id": "8.4",
+          "title": "Creating Database Tables",
+          "platform": null,
+          "steps": 8
+        },
+        {
+          "id": "8.5",
+          "title": "Wiring Features to the Database",
+          "platform": null,
+          "steps": 8
+        },
+        {
+          "id": "8.6",
+          "title": "Troubleshooting Database Errors",
+          "platform": null,
+          "steps": 5
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Authentication and Authorization",
+      "shortTitle": "Authentication and authorization",
+      "file": "chapter-09.json",
+      "lessons": [
+        {
+          "id": "9.1",
+          "title": "How User Authentication Works",
+          "platform": null,
+          "steps": 6
+        },
+        {
+          "id": "9.2",
+          "title": "Understanding Authorization to Protect Your Data",
+          "platform": null,
+          "steps": 3
+        }
+      ]
+    }
+  ],
+  "setupLinks": {
+    "first": "https://github.com/cyj-oss/itm325-setup",
+    "second": "https://github.com/cyj-oss/itm325-setup2"
+  },
+  "repository": "https://github.com/cyj-oss/itm325-vibecoding",
+  "sourceSha256": "d47a63c55a312685503702b2eda12cbdfd271c7fec8cfd75682a3ab301673f54"
+}

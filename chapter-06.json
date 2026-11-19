@@ -1,0 +1,876 @@
+{
+  "number": 6,
+  "title": "Web Development Frameworks for More Complex Projects",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "So far the pages you've directed have used plain HTML, CSS, and JavaScript. That works fine for small projects, but real web services — with routing, optimization, and their own servers — call for heavier machinery, and you need to know what that machinery is to judge whether your AI is using it well. This chapter introduces web development frameworks, gets Node.js installed on your machine (yes, yours — it's the environment you'll use to run and check the AI's work), and has you direct the creation of your very first Next.js app. Along the way you'll learn what localhost:3000 actually means and meet the two core Next.js ideas (components and the App Router) that let you give precise instructions and verify they were followed.",
+      "links": [],
+      "source": 745
+    },
+    {
+      "type": "note",
+      "title": "Before you continue",
+      "text": "Lessons 6.2 and 6.2b cover the same skill — installing Node.js — on different operating systems. Work through the one that matches your laptop; you only need one of them.",
+      "optional": false,
+      "source": 749
+    }
+  ],
+  "lessons": [
+    {
+      "id": "6.1",
+      "title": "Introduction to Web Development Frameworks",
+      "objective": "Understand what a web development framework is — well enough to know why your AI should build on one, and to recognize the tools this course will use.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s752",
+          "title": "What is a web development framework?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A framework literally means a skeleton or frame — a skeleton tool for web development. It bundles the features web services need over and over — so the project gets them all at once instead of the AI building each one from scratch:",
+              "links": [],
+              "source": 753
+            },
+            {
+              "type": "bullet",
+              "text": "Image optimization and rendering optimization",
+              "links": [],
+              "source": 754
+            },
+            {
+              "type": "bullet",
+              "text": "A built-in web server of its own",
+              "links": [],
+              "source": 755
+            },
+            {
+              "type": "bullet",
+              "text": "File-based routing (URLs that follow your folder structure)",
+              "links": [],
+              "source": 756
+            },
+            {
+              "type": "bullet",
+              "text": "Data caching and automatic screen updates",
+              "links": [],
+              "source": 757
+            },
+            {
+              "type": "paragraph",
+              "text": "Think of it as a meal kit: a finished dish gets to the table quickly without prepping every ingredient from scratch. If every one of those details were implemented by hand, both the code you'd have to review and your AI token consumption would balloon — so unless a project is truly simple, developers (human or AI) build on top of a framework. “Are we on a framework?” is one of the first questions a manager should ask about any web project.",
+              "links": [],
+              "source": 758
+            },
+            {
+              "type": "note",
+              "title": "Workspace note",
+              "text": "Your HTML/CSS/JS knowledge is still every bit as useful. Frameworks are ultimately built on top of those three, so you absolutely need the foundational concepts to judge what the AI produces.",
+              "optional": false,
+              "source": 759
+            }
+          ],
+          "source": 752,
+          "kind": "Understand"
+        },
+        {
+          "id": "s761",
+          "title": "The framework we'll use in this course: Next.js",
+          "blocks": [
+            {
+              "type": "image",
+              "src": "image27.png",
+              "alt": "Framework survey example from the guidebook.",
+              "caption": "Framework survey example from the guidebook.",
+              "source": 762
+            },
+            {
+              "type": "paragraph",
+              "text": "Next.js usage among web frameworks, 2018–2025 (source: State of JavaScript 2025).",
+              "links": [],
+              "source": 763
+            },
+            {
+              "type": "bullet",
+              "text": "Next.js is a widely used React framework. The chart is a survey example, not a count of all developers or companies.",
+              "links": [],
+              "source": 764
+            },
+            {
+              "type": "bullet",
+              "text": "It provides powerful features for building complex web services fast, which is why most companies have adopted it.",
+              "links": [],
+              "source": 765
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "RELATIONSHIP WITH REACT\nYou've probably heard of React — another hugely popular library. Next.js is best thought of as an extended edition that includes React inside it, so everything React can do works exactly the same in Next.js."
+                ]
+              ],
+              "source": 766
+            }
+          ],
+          "source": 761,
+          "kind": "Understand"
+        },
+        {
+          "id": "s768",
+          "title": "A companion tool you need to know: Node.js",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "To run a Next.js app on your own computer — which you must do to check the AI's work with your own eyes — you need Node.js.",
+              "links": [],
+              "source": 769
+            },
+            {
+              "type": "bullet",
+              "text": "Node.js is a program that executes JavaScript code.",
+              "links": [],
+              "source": 770
+            },
+            {
+              "type": "bullet",
+              "text": "If Next.js is a video game, Node.js is the game console that runs it.",
+              "links": [],
+              "source": 771
+            }
+          ],
+          "source": 768,
+          "kind": "Understand"
+        }
+      ],
+      "source": 750
+    },
+    {
+      "id": "6.2",
+      "title": "Installing Node.js — Windows",
+      "objective": "",
+      "intro": [],
+      "steps": [
+        {
+          "id": "setup",
+          "title": "Open the installation guide",
+          "source": 772,
+          "blocks": [
+            {
+              "type": "setup",
+              "label": "Node.js and Next.js on Windows",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/WINDOWS.md",
+              "text": "Follow the linked guide for your operating system. It checks existing installations so you can keep working tools. Return to this book after the guide’s success checks are complete."
+            },
+            {
+              "type": "check",
+              "text": "Confirm the tool checks in the linked guide succeed before continuing."
+            }
+          ],
+          "kind": "Practice"
+        }
+      ],
+      "source": 772,
+      "platform": "Windows"
+    },
+    {
+      "id": "6.3",
+      "title": "Installing Node.js — macOS",
+      "objective": "",
+      "intro": [],
+      "steps": [
+        {
+          "id": "setup",
+          "title": "Open the installation guide",
+          "source": 778,
+          "blocks": [
+            {
+              "type": "setup",
+              "label": "Node.js and Next.js on Mac",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/MAC.md",
+              "text": "Follow the linked guide for your operating system. It checks existing installations so you can keep working tools. Return to this book after the guide’s success checks are complete."
+            },
+            {
+              "type": "check",
+              "text": "Confirm the tool checks in the linked guide succeed before continuing."
+            }
+          ],
+          "kind": "Practice"
+        }
+      ],
+      "source": 778,
+      "platform": "Mac"
+    },
+    {
+      "id": "6.4",
+      "title": "Creating Your First Next.js App",
+      "objective": "Direct the generation of your first Next.js app with npx, and read its core configuration file, package.json, well enough to audit what a project depends on.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s785",
+          "title": "Generate the Next app",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Open your existing webdev folder in File Explorer or Finder and copy its full path. Use that path in the terminal. If the setup guide already created ohana-link and it contains package.json, do not create the app again; continue with running the existing app.",
+              "links": [],
+              "source": 786
+            },
+            {
+              "type": "code",
+              "text": "cd \"PASTE_FULL_PATH_TO_WEBDEV_HERE\"",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "note": "Replace the placeholder with the full path to your existing webdev folder. Keep the quotation marks.",
+              "source": 787
+            },
+            {
+              "type": "code",
+              "text": "pwd",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 787,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "The displayed path should end in webdev. If ohana-link already contains package.json, skip creating it again.",
+              "source": 787
+            },
+            {
+              "type": "code",
+              "text": "npx create-next-app@latest ohana-link --use-npm",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "windows": "npx.cmd create-next-app@latest ohana-link --use-npm",
+              "source": 787,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "bullet",
+              "text": "npx: a tool installed alongside Node.js that runs a specific command immediately.",
+              "links": [],
+              "source": 789
+            },
+            {
+              "type": "bullet",
+              "text": "create-next-app: the command that generates a new Next.js app.",
+              "links": [],
+              "source": 790
+            },
+            {
+              "type": "bullet",
+              "text": "ohana-link: the name of the app (and folder) that will be created.",
+              "links": [],
+              "source": 791
+            },
+            {
+              "type": "paragraph",
+              "text": "If asked to install create-next-app, type y and press Enter. Select Yes, use recommended defaults when that question appears. Wait for the success message and for the normal terminal prompt to return.",
+              "links": [],
+              "source": 792
+            },
+            {
+              "type": "note",
+              "text": "“A “Next app” is not a mobile app — it means a web app built with Next.js. Feature-rich websites are usually called web applications (web apps).”",
+              "links": [],
+              "source": 793,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 785,
+          "kind": "Practice"
+        },
+        {
+          "id": "s794",
+          "title": "Run the app",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Choose File > Open Folder in VS Code and open ohana-link. Confirm package.json appears in Explorer. Open a normal terminal in this folder and run the command below.",
+              "links": [],
+              "source": 795
+            },
+            {
+              "type": "code",
+              "text": "npm run dev",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "windows": "npm.cmd run dev",
+              "source": 796,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Open the Local address printed in the terminal. It is usually http://localhost:3000; if Next.js chooses another port, use the printed address. Keep that terminal running. To stop the server, click the terminal and press Control + C.",
+              "links": [],
+              "source": 798
+            }
+          ],
+          "source": 794,
+          "kind": "Practice"
+        },
+        {
+          "id": "s799",
+          "title": "Read package.json",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "package.json is the file a manager should read first in any Node project — it holds the project's core configuration:",
+              "links": [],
+              "source": 800
+            },
+            {
+              "type": "bullet",
+              "text": "name / version: the project's name and version.",
+              "links": [],
+              "source": 801
+            },
+            {
+              "type": "bullet",
+              "text": "scripts: a collection of frequently used commands.",
+              "links": [],
+              "source": 802
+            },
+            {
+              "type": "bullet",
+              "text": "dependencies: the list of tools the project depends on — the ingredients of the dish, e.g. next, react.",
+              "links": [],
+              "source": 803
+            },
+            {
+              "type": "bullet",
+              "text": "devDependencies: tools needed only during development — the knife and cutting board of the kitchen.",
+              "links": [],
+              "source": 804
+            },
+            {
+              "type": "paragraph",
+              "text": "Look inside scripts for the commands available in your project. The exact entries depend on the version and options used to create it.",
+              "links": [],
+              "source": 805
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Script",
+                  "Run it with",
+                  "What it does"
+                ],
+                [
+                  "dev",
+                  "npm run dev",
+                  "Run the app in development mode"
+                ],
+                [
+                  "build",
+                  "npm run build",
+                  "Build the app for deployment"
+                ],
+                [
+                  "start",
+                  "npm run start",
+                  "Run the built result"
+                ],
+                [
+                  "lint",
+                  "npm run lint",
+                  "Check the code for problems"
+                ]
+              ],
+              "source": 806
+            },
+            {
+              "type": "paragraph",
+              "text": "Any command registered under scripts can be run as npm run <script-name>. npm itself is the package-management program installed together with Node.js.",
+              "links": [],
+              "source": 808
+            }
+          ],
+          "source": 799,
+          "kind": "Understand"
+        },
+        {
+          "id": "s809",
+          "title": "Meet the node_modules folder",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "node_modules is where the tools listed in dependencies and devDependencies actually get installed — think of it as the project's refrigerator.",
+              "links": [],
+              "source": 810
+            },
+            {
+              "type": "bullet",
+              "text": "It's enormous, so it's normally excluded when a project goes to GitHub or gets shared — seeing it in a repo is a sign of sloppy setup.",
+              "links": [],
+              "source": 811
+            },
+            {
+              "type": "bullet",
+              "text": "The dependency files describe which packages to install. When package-lock.json exists, npm ci restores its recorded versions. npm install installs the dependencies and can update the lockfile.",
+              "links": [],
+              "source": 812
+            },
+            {
+              "type": "paragraph",
+              "text": "For an existing project with missing packages, run one of the following from the folder containing package.json.",
+              "source": 813
+            },
+            {
+              "type": "code",
+              "text": "npm ci",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "windows": "npm.cmd ci",
+              "note": "Use this when package-lock.json exists.",
+              "source": 813
+            },
+            {
+              "type": "code",
+              "text": "npm install",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "windows": "npm.cmd install",
+              "note": "Use this when there is no package-lock.json.",
+              "source": 813
+            }
+          ],
+          "source": 809,
+          "kind": "Practice"
+        }
+      ],
+      "source": 783
+    },
+    {
+      "id": "6.5",
+      "title": "How a Next.js App Runs",
+      "objective": "Get to the heart of how npm run dev makes an app reachable at http://localhost:3000 — well enough to confirm for yourself that a server the AI claims is “running” really is.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s817",
+          "title": "A Next app has its own built-in server",
+          "blocks": [
+            {
+              "type": "code",
+              "text": "npm run dev",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "windows": "npm.cmd run dev",
+              "source": 818,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "output",
+              "text": "> ohana-link@0.1.0 dev\n▲ Next.js 16.2.0 (Turbopack)\n- Local:    http://localhost:3000\n- Network:  http://172.30.1.87:3000\n✓ Ready in 412ms",
+              "label": "Example output — do not type",
+              "source": 818
+            },
+            {
+              "type": "bullet",
+              "text": "Running npm run dev starts Next.js's own embedded web server.",
+              "links": [],
+              "source": 819
+            },
+            {
+              "type": "bullet",
+              "text": "When your browser visits that address, the server responds with HTML/CSS/JS files, and the browser draws the screen.",
+              "links": [],
+              "source": 820
+            },
+            {
+              "type": "paragraph",
+              "text": "When the AI reports “the server is running,” this output — especially the ✓ Ready line and the Local: address — is the evidence to look for.",
+              "links": [],
+              "source": 821
+            }
+          ],
+          "source": 817,
+          "kind": "Practice"
+        },
+        {
+          "id": "s822",
+          "title": "What is localhost?",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "localhost is the address that points to your own computer.",
+              "links": [],
+              "source": 823
+            },
+            {
+              "type": "bullet",
+              "text": "So visiting http://localhost:3000 means sending a request to the Next server running on your own machine.",
+              "links": [],
+              "source": 824
+            },
+            {
+              "type": "bullet",
+              "text": "Nobody else can reach your server through their localhost — to each person, localhost means themselves. Keep this in mind before flagging “the link doesn't work for me” as a bug.",
+              "links": [],
+              "source": 825
+            }
+          ],
+          "source": 822,
+          "kind": "Understand"
+        },
+        {
+          "id": "s826",
+          "title": "The role of the port number",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The :3000 after localhost is a port number.",
+              "links": [],
+              "source": 827
+            },
+            {
+              "type": "bullet",
+              "text": "Several servers can run on one computer at the same time, so there has to be a way to tell which server a request is meant for.",
+              "links": [],
+              "source": 828
+            },
+            {
+              "type": "bullet",
+              "text": "A port number is like a gate number — the operating system assigns each server its own unique one.",
+              "links": [],
+              "source": 829
+            }
+          ],
+          "source": 826,
+          "kind": "Understand"
+        },
+        {
+          "id": "s830",
+          "title": "Why don't normal websites show a port number?",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "Everyday websites — Google, YouTube — connect with just the address, no port in sight.",
+              "links": [],
+              "source": 831
+            },
+            {
+              "type": "bullet",
+              "text": "That's because the browser automatically uses port 443, the HTTPS default.",
+              "links": [],
+              "source": 832
+            },
+            {
+              "type": "bullet",
+              "text": "It's a globally agreed-upon default, so there's simply no need to display it.",
+              "links": [],
+              "source": 833
+            }
+          ],
+          "source": 830,
+          "kind": "Understand"
+        },
+        {
+          "id": "s834",
+          "title": "Recap",
+          "blocks": [
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Term",
+                  "Meaning"
+                ],
+                [
+                  "localhost",
+                  "The address that points to my own computer"
+                ],
+                [
+                  "3000",
+                  "The port number used during development (Next.js's default)"
+                ],
+                [
+                  "443",
+                  "The web's standard HTTPS port — the invisible default every browser assumes"
+                ]
+              ],
+              "source": 835
+            },
+            {
+              "type": "paragraph",
+              "text": "Public HTTPS addresses usually omit port 443. A hosting platform can forward requests to an application running on another internal port.",
+              "links": [],
+              "source": 837
+            }
+          ],
+          "source": 834,
+          "kind": "Understand"
+        }
+      ],
+      "source": 815
+    },
+    {
+      "id": "6.6",
+      "title": "Next.js Core Concepts",
+      "objective": "Nail down the first concepts you need when directing Next.js work: component-based development, and page routing with the App Router — the vocabulary for scoping AI edits and checking where files landed.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s840",
+          "title": "Core concept: pages are assembled from pieces",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Instead of drawing a whole page in one go, Next.js splits the UI into small pieces, builds each separately, and assembles them like Lego blocks into a finished page.",
+              "links": [],
+              "source": 841
+            },
+            {
+              "type": "bullet",
+              "text": "Each individual UI piece is called a component — for example a Header, a Sidebar, or a Timer.",
+              "links": [],
+              "source": 842
+            },
+            {
+              "type": "bullet",
+              "text": "A page itself is just another component — a page component assembled from many smaller ones.",
+              "links": [],
+              "source": 843
+            },
+            {
+              "type": "subheading",
+              "text": "Why split things up?",
+              "links": [],
+              "source": 844
+            },
+            {
+              "type": "bullet",
+              "text": "Built as a single HTML/CSS/JS file, all the UI code piles into one place and grows steadily more complex.",
+              "links": [],
+              "source": 845
+            },
+            {
+              "type": "bullet",
+              "text": "When it's hard for humans and AI to read, both maintenance and generation quality suffer.",
+              "links": [],
+              "source": 846
+            },
+            {
+              "type": "bullet",
+              "text": "Splitting by component separates responsibilities, making editing and reuse much easier — and making the AI's changes far easier to review.",
+              "links": [],
+              "source": 847
+            }
+          ],
+          "source": 840,
+          "kind": "Understand"
+        },
+        {
+          "id": "s848",
+          "title": "Hands-on: build a Pomodoro timer out of components",
+          "blocks": [
+            {
+              "type": "note",
+              "title": "Use the Next.js project",
+              "text": "Open ohana-link, where package.json is visible. Keep the development server in one normal terminal and run Claude Code in a second terminal. Save and review the starter state in Git before changing it."
+            },
+            {
+              "type": "paragraph",
+              "text": "Give Claude Code a prompt like this and have it generate the feature as a component structure — note how the prompt names the exact components and folder, so you can check the result against it:",
+              "links": [],
+              "source": 849
+            },
+            {
+              "type": "code",
+              "text": "Build a Pomodoro timer web application.\n\n# Main Page\n\n## Main Page UI\n- Display the title \"pomodoro\" using an `h1` tag\n- Display the current remaining time (load and use from localStorage, default is 25 minutes)\n- Place Start, Stop, and Reset buttons\n- Place a Settings button (navigates to the Settings page)\n\n## Main Page Features\n- Clicking the Start button starts the timer\n- Clicking the Stop button pauses/stops the timer\n- Clicking the Reset button resets the timer\n\n# Settings Page\n\n## Settings Page UI\n- Place the title \"Setting\" using an `h3` tag\n- Place a single input field to set the timer duration\n- Place a Complete Setting (Save) button\n\n## Settings Page Features\n- Change timer duration\n- Can only be set between 1 minute and 60 minutes (inclusive)\n- The Complete Setting button cannot be clicked if the input field is left empty\n- The updated time is immediately reflected on the Main Page\n- The updated time persists even after a page refresh\n\n# Component Splitting\n- Properly split the work into modular components\n- Split the components into `Timer`, `Controllers`, and `TimerSettingInput`\n- Store the components in the `/components` folder\n- If a `src` folder exists, store them in `src/components`\n- Must be stored in `/components`, NOT `app/components`\n\n# Miscellaneous\n- Do not build or run the Next.js app after completing the development\n- Explain the results in English as follows:\n- Explain unit by unit for each component (Name, Path, Role)\n- Explain in the order of Regular Components -> Page Components\n- In the Page Component explanation, include a list of the Regular Components it contains",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-850",
+              "source": 850,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "Also create the file (.claude/settings.json), to grant permissions to Claude. In the file, write:",
+              "links": [],
+              "source": 852
+            },
+            {
+              "type": "code",
+              "text": "{\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"ask\": [\n      \"Bash(git push *)\",\n      \"Bash(git commit *)\",\n      \"Bash(rm -rf *)\"\n    ]\n  }\n}",
+              "where": "VS Code editor · .claude/settings.json",
+              "mode": "file",
+              "label": "File contents",
+              "copy": true,
+              "source": 853,
+              "note": "Save this file before continuing."
+            },
+            {
+              "type": "check",
+              "text": "Confirm the named components and their paths, test all timer buttons, change the duration, and refresh to check persistence. Start the server yourself; the prompt deliberately tells Claude not to build or run it."
+            }
+          ],
+          "source": 848,
+          "kind": "Practice"
+        },
+        {
+          "id": "s855",
+          "title": "A look inside a component file",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Open the generated Timer.tsx and you'll find two things living together in one file:",
+              "links": [],
+              "source": 856
+            },
+            {
+              "type": "bullet",
+              "text": "HTML tags — the element's appearance and layout.",
+              "links": [],
+              "source": 857
+            },
+            {
+              "type": "bullet",
+              "text": "JavaScript functions — the element's behavior.",
+              "links": [],
+              "source": 858
+            },
+            {
+              "type": "paragraph",
+              "text": "A .tsx file contains TypeScript with JSX, which looks similar to HTML. Components can combine the interface and the logic that supports it.",
+              "links": [],
+              "source": 859
+            }
+          ],
+          "source": 855,
+          "kind": "Understand"
+        },
+        {
+          "id": "s860",
+          "title": "App Router: the folder structure IS the URL",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Unlike ordinary components, page components are saved under the app/ folder with the file name page.tsx — and the URL follows the folder path exactly. That mapping is your audit trail: given a URL, you know exactly which file to inspect.",
+              "links": [],
+              "source": 861
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "File path",
+                  "URL in the browser"
+                ],
+                [
+                  "app/page.tsx",
+                  "/  (the main page)"
+                ],
+                [
+                  "app/setting/page.tsx",
+                  "/setting"
+                ],
+                [
+                  "app/test/page.tsx",
+                  "/test"
+                ]
+              ],
+              "source": 862
+            },
+            {
+              "type": "paragraph",
+              "text": "Ask Claude Code to create a temporary page at /test. Check that app/test/page.tsx exists, or src/app/test/page.tsx if your project uses src, and visit /test in the browser.",
+              "links": [],
+              "source": 864
+            }
+          ],
+          "source": 860,
+          "kind": "Understand"
+        },
+        {
+          "id": "s865",
+          "title": "Directing edits at the component level",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Once you know the component concept, you can point the AI at an exact target by name:",
+              "links": [],
+              "source": 866
+            },
+            {
+              "type": "code",
+              "text": "Add a simple click animation to the Controllers component.",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-867",
+              "source": 867,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "A component name helps you scope the request. Review Claude’s changed files to confirm the change stayed within that scope.",
+              "links": [],
+              "source": 869
+            }
+          ],
+          "source": 865,
+          "kind": "Practice"
+        },
+        {
+          "id": "s870",
+          "title": "Concept summary",
+          "blocks": [
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Concept",
+                  "What it means"
+                ],
+                [
+                  "Component",
+                  "One reusable UI piece bundling appearance (HTML) and behavior (JS)"
+                ],
+                [
+                  "Page component",
+                  "A component saved as page.tsx under app/ — it becomes a page"
+                ],
+                [
+                  "App Router",
+                  "Next.js routing where the app/ folder structure maps directly to URLs"
+                ],
+                [
+                  ".tsx",
+                  "File format that holds TypeScript (JavaScript) and HTML together"
+                ]
+              ],
+              "source": 871
+            }
+          ],
+          "source": 870,
+          "kind": "Understand"
+        }
+      ],
+      "source": 838
+    }
+  ],
+  "shortTitle": "Next.js"
+}

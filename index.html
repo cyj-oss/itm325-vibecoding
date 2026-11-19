@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The ITM 325 interactive guide to Claude Code, web development, Git, Next.js, and Supabase. Follow the course one step at a time.">
+  <meta name="theme-color" content="#ffffff">
+  <title>ITM 325 · Vibe Coding</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lesson</a>
+  <header class="site-header">
+    <a class="brand" href="#"><strong>ITM 325</strong><span>Vibe Coding</span></a>
+    <div class="header-actions">
+      <label class="platform-label" for="platform">My computer</label>
+      <select id="platform" aria-label="My computer"><option value="Windows">Windows</option><option value="Mac">Mac</option></select>
+      <button id="outline-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Contents</button>
+    </div>
+  </header>
+  <div class="site-layout">
+    <aside id="sidebar" class="sidebar" aria-label="Book navigation">
+      <a class="overview-link" href="#">Course overview</a>
+      <label class="search-label" for="search">Find a lesson</label>
+      <input id="search" type="search" placeholder="Topic, command, or prompt" autocomplete="off">
+      <div id="search-results" hidden aria-label="Search results"></div>
+      <nav id="chapter-nav" aria-label="Chapters"></nav>
+      <div class="sidebar-foot"><a href="https://github.com/cyj-oss/itm325-setup" target="_blank" rel="noopener">First installation guide</a><a href="https://github.com/cyj-oss/itm325-setup2" target="_blank" rel="noopener">Project setup guide</a></div>
+    </aside>
+    <main id="main" tabindex="-1"><p class="loading">Opening your book…</p></main>
+  </div>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <dialog id="image-dialog" aria-label="Enlarged guidebook image"><button type="button" id="close-image">Close image</button><img alt=""><p></p></dialog>
+  <noscript><p>This interactive book needs JavaScript. Enable JavaScript, then reload the page.</p></noscript>
+</body>
+</html>

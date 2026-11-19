@@ -1,0 +1,932 @@
+{
+  "number": 7,
+  "title": "Starting the Ohana Link Project",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "Everything you've practiced so far comes together in this chapter: we kick off the course's capstone project, Ohana Link — a bookmark service where users save the pages they visit often and organize them into folders. Working on top of Next.js, you'll direct Claude to build the base UI, apply a professional design theme with Claude's Skills feature, and then deliver the app's first real features: full folder management and link management, including the project's first home-made API. Your role is the manager's role: write a clear spec, then judge what comes back. Along the way you'll practice the rhythm professional teams use: request one feature, verify it in the browser, commit, push, repeat.",
+      "links": [],
+      "source": 875
+    },
+    {
+      "type": "note",
+      "title": "Before you continue",
+      "text": "This chapter assumes you have the Next.js project from the previous chapters — the `ohana-link` project folder created with create-next-app, with Claude Code set up and the repository connected to GitHub. If you skipped ahead, go back and complete that setup first.",
+      "optional": false,
+      "source": 879
+    }
+  ],
+  "lessons": [
+    {
+      "id": "7.1",
+      "title": "Project Introduction",
+      "objective": "Get to know Ohana Link — the bookmark service you'll have Claude build for the rest of the course — its key features, and how the lessons will teach new concepts exactly when the project needs them. Knowing the target this well is what lets you judge every delivery against it.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s882",
+          "title": "Meet Ohana Link",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Starting in this chapter, we build the course's final project — Ohana Link — together, with Claude doing the coding and you directing and reviewing. Ohana Link is a bookmark service: a place to store the pages you keep coming back to and manage them with folders. We'll build it on top of Next.js, step by step, into something close to a real production service.",
+              "links": [],
+              "source": 883
+            },
+            {
+              "type": "paragraph",
+              "text": "Before requesting any code, spend a few minutes playing with the finished demo so you know exactly what you're asking for — a manager who knows the target can spot the gaps in a delivery. Click the folders in the sidebar to filter links, and try adding your own with the + New Folder and + New Link buttons. (The instructor demo at ohana-link.vercel.app is the original Korean-language version — the layout and features are exactly what your project will have.)",
+              "links": [],
+              "source": 884
+            }
+          ],
+          "source": 882,
+          "kind": "Understand"
+        },
+        {
+          "id": "s885",
+          "title": "What kind of project is it?",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "A bookmark service where users save links they like and file them into folders (Design / Dev / AI, and so on).",
+              "links": [],
+              "source": 886
+            },
+            {
+              "type": "bullet",
+              "text": "It looks like a small project, but it's deliberately designed to touch a wide range of the core concepts you need for real web development.",
+              "links": [],
+              "source": 887
+            }
+          ],
+          "source": 885,
+          "kind": "Understand"
+        },
+        {
+          "id": "s888",
+          "title": "Key features you'll deliver",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "Link CRUD — create, read, update, and delete links.",
+              "links": [],
+              "source": 889
+            },
+            {
+              "type": "bullet",
+              "text": "Folder management — create folders and filter links by folder.",
+              "links": [],
+              "source": 890
+            },
+            {
+              "type": "bullet",
+              "text": "Database integration — store data permanently so you see the same links no matter which device you sign in from.",
+              "links": [],
+              "source": 891
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "WHY “CRUD”?\nCRUD stands for Create, Read, Update, Delete — the four basic operations almost every data-driven app performs. When developers say “link CRUD,” they mean the full life cycle of a link record."
+                ]
+              ],
+              "source": 892
+            }
+          ],
+          "source": 888,
+          "kind": "Understand"
+        },
+        {
+          "id": "s894",
+          "title": "How the learning will flow",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Rather than studying theory first, we'll learn each core concept at the moment the project needs it:",
+              "links": [],
+              "source": 895
+            },
+            {
+              "type": "bullet",
+              "text": "When we reach the point where data must be saved, we'll dig into databases.",
+              "links": [],
+              "source": 896
+            },
+            {
+              "type": "bullet",
+              "text": "At the end of the course, you'll step back from the project to learn how authentication and authorization work — the concepts behind user accounts and data protection.",
+              "links": [],
+              "source": 897
+            },
+            {
+              "type": "paragraph",
+              "text": "The project is designed so these concepts connect naturally inside the flow of building one real service — the way you'd actually encounter them managing a team on the job.",
+              "links": [],
+              "source": 898
+            }
+          ],
+          "source": 894,
+          "kind": "Understand"
+        }
+      ],
+      "source": 880
+    },
+    {
+      "id": "7.2",
+      "title": "Building the Project's Base UI",
+      "objective": "Revert the practice code from the previous chapter using Git, then direct Claude to implement Ohana Link's index page, new-link page, and per-folder pages — learning dynamic routes well enough to confirm each delivered page behaves as specified.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s901",
+          "title": "Reset the project to its initial state",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Open ohana-link in VS Code. This step removes the earlier Pomodoro practice so you can build Ohana Link. First preserve a backup of any work you want to keep. Discard only restores uncommitted changes; it does not jump to a selected older commit.",
+              "links": [],
+              "source": 902
+            },
+            {
+              "type": "bullet",
+              "text": "Go to the Source Control tab in the left sidebar.",
+              "links": [],
+              "source": 903
+            },
+            {
+              "type": "bullet",
+              "text": "In Source Control, inspect the graph. If the latest commit is still Initial commit from Create Next App and your practice work is uncommitted, the discard workflow below can restore tracked starter files. If the practice was committed, use the revert workflow in Lesson 5.4 instead of assuming Discard will return to the initial commit.",
+              "links": [],
+              "source": 904
+            },
+            {
+              "type": "bullet",
+              "text": "For uncommitted practice work, review the changed files and discard only the practice changes you intend to remove. Keep prompt.md, .claude/settings.json, and .vscode/settings.json if present. Review newly created, untracked practice files separately; do not discard or delete unrelated files.",
+              "links": [],
+              "source": 905
+            },
+            {
+              "type": "note",
+              "title": "Before you continue",
+              "text": "Discarded work may not be recoverable. Keep the prompt and configuration files you need, and verify that the starter page runs before continuing.",
+              "optional": false,
+              "source": 906
+            }
+          ],
+          "source": 901,
+          "kind": "Understand"
+        },
+        {
+          "id": "s908",
+          "title": "Implement the index page UI",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Write the following request in `prompt.md`, then direct Claude to it:",
+              "links": [],
+              "source": 909
+            },
+            {
+              "type": "code",
+              "text": "Request: implement the index page UI for a bookmark service.\n– Page layout:\n   – Top header with a “Ohana Link” text logo on the left and a “+ Add Link” button on the right\n   – Left sidebar with an “All” button and the folder list\n   – Main section shows the registered links in a grid\n– Things to watch:\n   – Split the work into properly separated components\n   – Report the results component by component",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-910",
+              "source": 910,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "Run Claude in the terminal and execute the command by tagging the file with `@prompt.md`. Claude will generate components such as the header, the sidebar, a link card, and the link grid — that component-by-component report is your first review artifact. Then start the dev server:",
+              "links": [],
+              "source": 912
+            },
+            {
+              "type": "code",
+              "text": "npm run dev",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "windows": "npm.cmd run dev",
+              "source": 913,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Open http://localhost:3000 in your browser and review the delivery: does the layout match every line of the spec you wrote?",
+              "links": [],
+              "source": 915
+            }
+          ],
+          "source": 908,
+          "kind": "Practice"
+        },
+        {
+          "id": "s916",
+          "title": "Tidy the component folder location (optional)",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Claude sometimes creates components under `app/components`. That works fine, but if you'd rather keep them in a `components` folder at the project root, do not move the files yourself — ask Claude instead:",
+              "links": [],
+              "source": 917
+            },
+            {
+              "type": "code",
+              "text": "Request: move the component files out of the app/components folder and into the root-level /components folder.",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-918",
+              "source": 918,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "note",
+              "title": "Before you continue",
+              "text": "Moving files by hand can break the import paths that connect your files, so it's not recommended. When Claude moves them, it updates every import for you.",
+              "optional": false,
+              "source": 920
+            }
+          ],
+          "source": 916,
+          "kind": "Practice"
+        },
+        {
+          "id": "s922",
+          "title": "Implement the new-link page",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Next, create the page users land on when they press the `+ Add Link` button:",
+              "links": [],
+              "source": 923
+            },
+            {
+              "type": "code",
+              "text": "Request: implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-924",
+              "source": 924,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            }
+          ],
+          "source": 922,
+          "kind": "Practice"
+        },
+        {
+          "id": "s926",
+          "title": "Implement the per-folder link page",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Now create the page that shows only the links saved in whichever folder you click in the sidebar:",
+              "links": [],
+              "source": 927
+            },
+            {
+              "type": "code",
+              "text": "Request: implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-928",
+              "source": 928,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "A name wrapped in square brackets like `[folderId]` is Next.js's notation for dynamic routing — a route segment that accepts a changing value. Many different folder addresses, such as /folder/dev and /folder/design, all connect to the same page component. Knowing this lets you check the address bar and confirm the routing was built the way you specified.",
+              "links": [],
+              "source": 930
+            }
+          ],
+          "source": 926,
+          "kind": "Practice"
+        }
+      ],
+      "source": 899
+    },
+    {
+      "id": "7.3",
+      "title": "Setting a Design Theme (Claude Skills)",
+      "objective": "Register a design guide as a Claude Skill so that every UI task automatically follows your chosen theme's rules — then verify the Skill loaded, apply the theme, commit, and push.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s933",
+          "title": "What we're doing",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Apply a design theme to the base UI from Lesson 7.2. Register a theme guide as a Claude Skill so Claude can consult it for related design tasks. Check the result against the theme rather than assuming every rule was followed.",
+              "links": [],
+              "source": 934
+            }
+          ],
+          "source": 933,
+          "kind": "Understand"
+        },
+        {
+          "id": "s935",
+          "title": "Get the theme files",
+          "blocks": [
+            {
+              "type": "download",
+              "label": "Download the English themes",
+              "url": "themes-english.zip",
+              "text": "Extract the ZIP, then choose one theme. Copy the entire chosen file into .claude/skills/design-theme/SKILL.md in the next step."
+            },
+            {
+              "type": "paragraph",
+              "text": "Download themes-english.zip from this lesson and extract it. Open the themes folder and choose one of the English theme guides: Apple, DoorDash, Nextdoor, Notion, or Cash App inspired. Copy the themes folder into your project root. These are classroom design adaptations, not official brand specifications.",
+              "links": [],
+              "source": 936
+            }
+          ],
+          "source": 935,
+          "kind": "Practice"
+        },
+        {
+          "id": "s937",
+          "title": "Understand what a Skill is",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A Skill is a reusable instruction file that Claude Code can load for related tasks. A clear description helps Claude recognize when the instructions apply.",
+              "links": [],
+              "source": 938
+            },
+            {
+              "type": "paragraph",
+              "text": "A Skill saves instructions you would otherwise repeat in many prompts. You still check whether the result follows them.",
+              "links": [],
+              "source": 939
+            }
+          ],
+          "source": 937,
+          "kind": "Understand"
+        },
+        {
+          "id": "s940",
+          "title": "Register the Skill",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Under the `.claude` folder at the project root, create folders and a file with this exact structure:",
+              "links": [],
+              "source": 941
+            },
+            {
+              "type": "code",
+              "text": ".claude/\n  skills/\n    design-theme/\n      SKILL.md",
+              "where": ".claude folder structure",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 942
+            },
+            {
+              "type": "bullet",
+              "text": "`skills/` — the folder that collects all of your Skills.",
+              "links": [],
+              "source": 944
+            },
+            {
+              "type": "bullet",
+              "text": "`design-theme/` — the folder name becomes the Skill's name.",
+              "links": [],
+              "source": 945
+            },
+            {
+              "type": "bullet",
+              "text": "`SKILL.md` — the file that holds the actual manual text (keep the uppercase name exactly as shown).",
+              "links": [],
+              "source": 946
+            },
+            {
+              "type": "paragraph",
+              "text": "Open the theme you like from the themes folder (for example, the Notion theme), copy its entire contents, and paste them into SKILL.md. That's it — the Skill is registered.",
+              "links": [],
+              "source": 947
+            }
+          ],
+          "source": 940,
+          "kind": "Practice"
+        },
+        {
+          "id": "s948",
+          "title": "Why Skills fire automatically",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "At the very top of SKILL.md you'll see the Skill's `name` and `description`. Claude reads the description, and whenever a task like “UI styling,” “CSS,” or “design work” comes in, it knows on its own to open this Skill and apply it.",
+              "links": [],
+              "source": 949
+            }
+          ],
+          "source": 948,
+          "kind": "Understand"
+        },
+        {
+          "id": "s950",
+          "title": "Apply the theme",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Start Claude Code in the project. Type / and look for the available skills or use /skills if your version supports that command. Confirm design-theme is available before continuing.",
+              "links": [],
+              "source": 951
+            },
+            {
+              "type": "note",
+              "title": "Before you continue",
+              "text": "If the skill is missing, check the exact folder and SKILL.md filename, then restart Claude Code. Consult the current Claude Code skills documentation if the command differs in your version.",
+              "optional": false,
+              "source": 952
+            },
+            {
+              "type": "paragraph",
+              "text": "Once you've confirmed the Skill is registered, press ESC to leave the list and give this command:",
+              "links": [],
+              "source": 954
+            },
+            {
+              "type": "code",
+              "text": "Request: make the design look nicer.",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-955",
+              "source": 955,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "Claude can use the registered theme while restyling the interface. Review which Skill it used and check the result against the theme’s rules.",
+              "links": [],
+              "source": 957
+            },
+            {
+              "type": "code",
+              "text": "npm run dev",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "windows": "npm.cmd run dev",
+              "source": 958,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Refresh the browser and you'll see the project's overall design transformed to match the theme you registered. Don't stop at \"it looks nicer\" — spot-check the result against the theme document: are the colors and typography the ones the manual specifies?",
+              "links": [],
+              "source": 960
+            }
+          ],
+          "source": 950,
+          "kind": "Practice"
+        },
+        {
+          "id": "s961",
+          "title": "Commit and push",
+          "blocks": [
+            {
+              "type": "note",
+              "title": "Connect this project if needed",
+              "text": "If ohana-link has not been published to GitHub yet, follow Lesson 5.5 for this project before pushing. Publishing a previous Pomodoro repository does not connect this new project automatically."
+            },
+            {
+              "type": "paragraph",
+              "text": "When the work looks good, commit the changes and push them all the way to your remote repository on GitHub:",
+              "links": [],
+              "source": 962
+            },
+            {
+              "type": "bullet",
+              "text": "Stage all changes in the Source Control tab.",
+              "links": [],
+              "source": 963
+            },
+            {
+              "type": "bullet",
+              "text": "Commit with the message `Apply design theme`.",
+              "links": [],
+              "source": 964
+            },
+            {
+              "type": "bullet",
+              "text": "Push to the remote repository with the Sync Changes button.",
+              "links": [],
+              "source": 965
+            }
+          ],
+          "source": 961,
+          "kind": "Practice"
+        }
+      ],
+      "source": 931
+    },
+    {
+      "id": "7.4",
+      "title": "Implementing Folder Management",
+      "objective": "Direct Ohana Link's first real features — creating, deleting, and renaming folders — verifying each in the browser and committing after every completed feature.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s968",
+          "title": "What we're doing",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "From this lesson on, we fill Ohana Link with real functionality. The first feature set is folder management, built in three passes: add → delete → rename — each one a small spec you write, a delivery you check, and a commit you make.",
+              "links": [],
+              "source": 969
+            }
+          ],
+          "source": 968,
+          "kind": "Understand"
+        },
+        {
+          "id": "s970",
+          "title": "Get set up",
+          "blocks": [
+            {
+              "type": "note",
+              "title": "Use two terminals",
+              "text": "Keep npm run dev running in one terminal. Open another terminal in the same ohana-link folder and run claude there. Send prompts to Claude Code; keep ordinary shell commands in the normal terminal."
+            },
+            {
+              "type": "paragraph",
+              "text": "Open the project folder in VS Code and start the Next.js app with npm run dev. Start with `prompt.md` empty — either clear it out or move its old contents into a separate file.",
+              "links": [],
+              "source": 971
+            },
+            {
+              "type": "code",
+              "text": "npm run dev",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "windows": "npm.cmd run dev",
+              "source": 972,
+              "note": "Paste into the named input area. Press Enter to run."
+            }
+          ],
+          "source": 970,
+          "kind": "Practice"
+        },
+        {
+          "id": "s974",
+          "title": "The add-folder feature",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Write the following in prompt.md, then run it by tagging `@prompt.md` in Claude:",
+              "links": [],
+              "source": 975
+            },
+            {
+              "type": "code",
+              "text": "Request: build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-976",
+              "source": 976,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "WHAT'S A MODAL?\nA modal is a UI element that appears to float on top of the current screen — like the small dialog that pops up asking you to confirm an action."
+                ]
+              ],
+              "source": 978
+            },
+            {
+              "type": "paragraph",
+              "text": "When Claude finishes, you'll see new components such as `FolderContext` and `NewFolderModal`, plus some modules under a `lib` folder. The files in lib aren't ordinary UI components — they're modules dedicated to implementing functionality, which is why they're kept in a separate folder. You don't need to read every line, but you should know what files appeared and why.",
+              "links": [],
+              "source": 980
+            },
+            {
+              "type": "paragraph",
+              "text": "In the browser, test the whole flow yourself: New Folder button → modal → type a name → Save. If the folder shows up in the sidebar, the delivery matches the spec and this step is done.",
+              "links": [],
+              "source": 981
+            }
+          ],
+          "source": 974,
+          "kind": "Practice"
+        },
+        {
+          "id": "s982",
+          "title": "Commit as you go",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Get into the habit of committing every time a unit of functionality is finished:",
+              "links": [],
+              "source": 983
+            },
+            {
+              "type": "bullet",
+              "text": "Stage all changes.",
+              "links": [],
+              "source": 984
+            },
+            {
+              "type": "bullet",
+              "text": "Commit with the message `Implement add-folder feature`.",
+              "links": [],
+              "source": 985
+            },
+            {
+              "type": "bullet",
+              "text": "Push to the remote repository with Sync Changes.",
+              "links": [],
+              "source": 986
+            },
+            {
+              "type": "note",
+              "text": "“One feature, one commit. If something breaks later, you can always roll back to the last working feature.”",
+              "links": [],
+              "source": 987,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 982,
+          "kind": "Practice"
+        },
+        {
+          "id": "s988",
+          "title": "The delete-folder feature",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Clear out prompt.md and write the next request:",
+              "links": [],
+              "source": 989
+            },
+            {
+              "type": "code",
+              "text": "Request: implement folder deletion.\n– The delete button appears on the right side when the mouse hovers over a folder name in the left sidebar\n– Use a trash-can icon\n– On click, ask for confirmation one more time in a modal to prevent user mistakes",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-990",
+              "source": 990,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "If pressing Delete in the confirmation modal makes the folder disappear from the sidebar, it's working. Commit with `Implement delete-folder feature` and push.",
+              "links": [],
+              "source": 992
+            }
+          ],
+          "source": 988,
+          "kind": "Practice"
+        },
+        {
+          "id": "s993",
+          "title": "The rename-folder feature",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Finally, add the ability to edit a folder's name:",
+              "links": [],
+              "source": 994
+            },
+            {
+              "type": "code",
+              "text": "Request: implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-995",
+              "source": 995,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "Refresh the browser, confirm the behavior, and finish with one last commit and push. That wraps up folder management.",
+              "links": [],
+              "source": 997
+            }
+          ],
+          "source": 993,
+          "kind": "Practice"
+        }
+      ],
+      "source": 966
+    },
+    {
+      "id": "7.5",
+      "title": "Implementing Link Management",
+      "objective": "Understand Open Graph metadata and what an API is — well enough to direct and verify link add / delete / edit, including an Open Graph API that auto-collects each link's title, description, and thumbnail.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s1000",
+          "title": "What we're doing",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "With folder management done, we now have Claude implement Ohana Link's core features: adding, deleting, and editing links. The most important new concept this time is the Open Graph API, which automatically fetches extra information about any external link — understand it, and you can tell whether the \"auto-fill\" Claude delivers actually works.",
+              "links": [],
+              "source": 1001
+            }
+          ],
+          "source": 1000,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1002",
+          "title": "Open Graph: where the extra info comes from",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Making users type in a title, description, and thumbnail every time they save a link would be painful. That's why most services fill this in automatically from just the URL. Here's how:",
+              "links": [],
+              "source": 1003
+            },
+            {
+              "type": "bullet",
+              "text": "Inside a web page's HTML are Open Graph tags that summarize the page's title, description, and thumbnail. Think of them like the shipping label on a package — metadata that gathers the page's key facts in one place.",
+              "links": [],
+              "source": 1004
+            },
+            {
+              "type": "bullet",
+              "text": "If we fetch the HTML of the link the user typed and extract just the Open Graph tags, we get all the extra info we need.",
+              "links": [],
+              "source": 1005
+            }
+          ],
+          "source": 1002,
+          "kind": "Practice"
+        },
+        {
+          "id": "s1007",
+          "title": "Why the browser can't make that request itself",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Browsers restrict many cross-origin reads unless the other website allows them through CORS. A server-side API can fetch public page metadata and return the specific information your app needs.",
+              "links": [],
+              "source": 1008
+            },
+            {
+              "type": "paragraph",
+              "text": "The reason is security. That request could carry along personal information the user has stored in the browser — saved passwords, card numbers, and the like. So browsers stop pages from firing off direct requests to outside servers in the first place.",
+              "links": [],
+              "source": 1009
+            },
+            {
+              "type": "paragraph",
+              "text": "The solution is to route around it through our Next.js server:",
+              "links": [],
+              "source": 1011
+            },
+            {
+              "type": "bullet",
+              "text": "The browser asks our Next.js server: “get me the Open Graph info for this link.”",
+              "links": [],
+              "source": 1012
+            },
+            {
+              "type": "bullet",
+              "text": "The Next.js server contacts the external link on the browser's behalf and receives the HTML.",
+              "links": [],
+              "source": 1013
+            },
+            {
+              "type": "bullet",
+              "text": "The server extracts just the Open Graph tags and responds to the browser.",
+              "links": [],
+              "source": 1014
+            },
+            {
+              "type": "paragraph",
+              "text": "Think of it like a kid who can't ask their strict dad for a toy directly — so they ask mom, and mom talks to dad. Our Next.js server plays the role of mom.",
+              "links": [],
+              "source": 1015
+            },
+            {
+              "type": "paragraph",
+              "text": "This pattern — a server that receives a request, performs a defined action, and sends back a response — is what programmers call an API. Return Open Graph info and it's an Open Graph API; return weather data and it's a weather API; return government statistics and it's a public-data API. In the next step, Claude builds our own Open Graph API — and you verify it works.",
+              "links": [],
+              "source": 1016
+            }
+          ],
+          "source": 1007,
+          "kind": "Understand"
+        },
+        {
+          "id": "s1017",
+          "title": "The add-link feature",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Clear out prompt.md and write the following:",
+              "links": [],
+              "source": 1018
+            },
+            {
+              "type": "code",
+              "text": "Request: implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-1019",
+              "source": 1019,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "Run it with `@prompt.md` — the implementation takes about 2–3 minutes. Then, in the browser, go to the new-link page, enter an address like https://www.nytimes.com, and save it. You should see the thumbnail, title, and description collected and stored automatically — if any of those fields comes back empty, that's the first thing to flag.",
+              "links": [],
+              "source": 1021
+            },
+            {
+              "type": "paragraph",
+              "text": "Afterwards, commit with the message `Implement add-link feature + Open Graph API` and push.",
+              "links": [],
+              "source": 1022
+            }
+          ],
+          "source": 1017,
+          "kind": "Practice"
+        },
+        {
+          "id": "s1023",
+          "title": "The delete-link feature",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Clear prompt.md again and write:",
+              "links": [],
+              "source": 1024
+            },
+            {
+              "type": "code",
+              "text": "Request: implement link deletion.\n– The delete button appears as a trash-can icon in the top-right corner when the mouse hovers over a link card\n– On click, show a confirmation modal",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-1025",
+              "source": 1025,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "In the browser, hover a link card and run the flow: delete button → confirmation modal → deleted. If it behaves, commit with `Implement delete-link feature` and push.",
+              "links": [],
+              "source": 1027
+            }
+          ],
+          "source": 1023,
+          "kind": "Practice"
+        },
+        {
+          "id": "s1028",
+          "title": "The edit-link feature",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Last, add the ability to edit a saved link. This one's on you as the manager — it follows exactly the same flow as the previous two features: clear out prompt.md, write the spec with where the edit button appears and how the modal behaves as your conditions, run Claude, verify the result in the browser, then commit and push.",
+              "links": [],
+              "source": 1029
+            }
+          ],
+          "source": 1028,
+          "kind": "Understand"
+        }
+      ],
+      "source": 998
+    }
+  ],
+  "shortTitle": "Ohana Link"
+}

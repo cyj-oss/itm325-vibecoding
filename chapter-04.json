@@ -1,0 +1,1711 @@
+{
+  "number": 4,
+  "title": "Web Development Basics: Just the Essentials",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "You've been handing work to Claude Code without really knowing what it's producing — which means you can't yet tell good work from sloppy work. This chapter fixes that — just enough. You'll learn how the web actually works, then meet the three languages every web page is built from: HTML for layout, CSS for style, and JavaScript for behavior. Then you'll direct the AI through your first real mini-project — a pomodoro timer — reviewing its output at every step, and have it pushed to the cloud so anyone on the internet can use it.",
+      "links": [],
+      "source": 296
+    },
+    {
+      "type": "note",
+      "title": "Before you continue",
+      "text": "This chapter teaches just the essentials — enough HTML and CSS to review and fine-tune what AI writes for you, and enough JavaScript to read AI-generated code. You are not training to hand-write everything; you're training to be a good reviewer.",
+      "optional": false,
+      "source": 300
+    }
+  ],
+  "lessons": [
+    {
+      "id": "4.1",
+      "title": "The Internet and the Web",
+      "objective": "Understand what the web is and how it works under the hood — well enough to follow what your AI is building in the upcoming HTML, CSS, and JavaScript lessons, and to ask the right questions about it.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s303",
+          "title": "How the web works",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "When you type youtube.com into your browser's address bar and press Enter, the following things happen in order:",
+              "links": [],
+              "source": 304
+            },
+            {
+              "type": "bullet",
+              "text": "Your browser sends the site's server a request: “Please send me the information I need to draw this page.”",
+              "links": [],
+              "source": 305
+            },
+            {
+              "type": "bullet",
+              "text": "The server sends back a text file that describes the page.",
+              "links": [],
+              "source": 306
+            },
+            {
+              "type": "bullet",
+              "text": "The browser reads that text file line by line and draws the screen (this process is called rendering).",
+              "links": [],
+              "source": 307
+            },
+            {
+              "type": "note",
+              "text": "“If you want an analogy: a web page is a recipe, and the browser is the chef who cooks from that recipe.”",
+              "links": [],
+              "source": 308,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 303,
+          "kind": "Understand"
+        },
+        {
+          "id": "s309",
+          "title": "The three languages that describe a web page",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Plain English is too fuzzy to describe a page's structure precisely, so the web uses three programming languages together. Everything your AI produces for a web page will be written in one of these — so knowing which language owns which job tells you where to look when something's off:",
+              "links": [],
+              "source": 310
+            },
+            {
+              "type": "bullet",
+              "text": "HTML: describes which elements go on the page and how they're laid out.",
+              "links": [],
+              "source": 311
+            },
+            {
+              "type": "bullet",
+              "text": "CSS: decides each element's style — color, size, spacing, and so on.",
+              "links": [],
+              "source": 312
+            },
+            {
+              "type": "bullet",
+              "text": "JavaScript: describes behavior and features that react to the user — like what happens when a button is clicked.",
+              "links": [],
+              "source": 313
+            }
+          ],
+          "source": 309,
+          "kind": "Understand"
+        },
+        {
+          "id": "s314",
+          "title": "Why learn the basics at all?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Even when AI writes all the code, a manager needs a minimum of language knowledge to review the result and fine-tune it to what you actually wanted. Without it, you're approving work you can't judge. The good news: HTML and CSS have simple rules you can pick up fast, and we'll only cover JavaScript to the level where you can read and review code the AI wrote.",
+              "links": [],
+              "source": 315
+            }
+          ],
+          "source": 314,
+          "kind": "Understand"
+        }
+      ],
+      "source": 301
+    },
+    {
+      "id": "4.2",
+      "title": "Laying Out a Page with HTML",
+      "objective": "Understand how HTML lays out the elements of a web page, the basic unit called a tag, and the standard structure of an HTML document — well enough to open any HTML file the AI produces and spot when the skeleton is wrong.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s318",
+          "title": "What is a tag?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "HTML is a text file made up of tags.",
+              "links": [],
+              "source": 319
+            },
+            {
+              "type": "paragraph",
+              "text": "A tag is a piece of syntax wrapped in angle brackets (<>) that labels what an element of the page is — text, an image, a link, and so on.",
+              "links": [],
+              "source": 320
+            },
+            {
+              "type": "paragraph",
+              "text": "A human can glance at a printed page and instantly tell the hierarchy from big type and small type. A browser has no such intuition — so each piece of text has to be labeled: “this one's a heading, that one's a paragraph.” When you review AI-written HTML, you're checking that it applied those labels the way you intended.",
+              "links": [],
+              "source": 321
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Tag",
+                  "Example",
+                  "What the browser draws"
+                ],
+                [
+                  "<h1>",
+                  "<h1>Alex Carter</h1>",
+                  "Heading 1 — the biggest title text"
+                ],
+                [
+                  "<h2>",
+                  "<h2>Alex Carter</h2>",
+                  "Heading 2 — a slightly smaller title"
+                ],
+                [
+                  "<h3>",
+                  "<h3>Alex Carter</h3>",
+                  "Heading 3 — smaller still"
+                ],
+                [
+                  "<p>",
+                  "<p>Hello there</p>",
+                  "An ordinary paragraph of body text"
+                ]
+              ],
+              "source": 322
+            },
+            {
+              "type": "paragraph",
+              "text": "There's a designated tag for everything you might want to express. Headings are <h1> (short for heading), paragraph text is <p> (short for paragraph), images are <img>, links are <a> (for anchor), and so on.",
+              "links": [],
+              "source": 324
+            },
+            {
+              "type": "paragraph",
+              "text": "The very same text — “Alex Carter” — looks completely different depending on which tag holds it. Put it in <h1> and it renders as a huge heading; put it in <p> and it's one ordinary line of body text.",
+              "links": [],
+              "source": 325
+            },
+            {
+              "type": "note",
+              "text": "“A tag is a label that tells the browser what this text is.”",
+              "links": [],
+              "source": 326,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 318,
+          "kind": "Understand"
+        },
+        {
+          "id": "s327",
+          "title": "The basic rules of tags",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "HTML is a bundle of tags wrapped in angle brackets (<>), and they follow a few simple rules:",
+              "links": [],
+              "source": 328
+            },
+            {
+              "type": "bullet",
+              "text": "The text inside the brackets determines the tag's name. Example: <h1> is an h1 tag.",
+              "links": [],
+              "source": 329
+            },
+            {
+              "type": "bullet",
+              "text": "As a rule, every tag comes as a pair: an opening tag and a closing tag.",
+              "links": [],
+              "source": 330
+            },
+            {
+              "type": "bullet",
+              "text": "The closing tag has a slash (/) in front of the name.",
+              "links": [],
+              "source": 331
+            },
+            {
+              "type": "code",
+              "text": "<h1>Alex Carter</h1>\n │       │        └─ closing tag — the / means “this ends here”\n │       └─ content of the tag\n └─ opening tag — “h1” is the tag name",
+              "where": "anatomy of a tag",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 332
+            },
+            {
+              "type": "paragraph",
+              "text": "The text between the opening tag and the closing tag is that tag's content. In the examples above, “Alex Carter” is the content of the <h1>, and “Hello there” is the content of the <p>.",
+              "links": [],
+              "source": 334
+            },
+            {
+              "type": "note",
+              "title": "Before you continue",
+              "text": "Some tags finish in a single stroke, with no closing tag at all (for example <img> and <br>). We'll cover those in the next lesson.",
+              "optional": false,
+              "source": 335
+            }
+          ],
+          "source": 327,
+          "kind": "Understand"
+        },
+        {
+          "id": "s337",
+          "title": "Everyday content tags",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Start with the two most basic tags — the ones that show up directly on screen:",
+              "links": [],
+              "source": 338
+            },
+            {
+              "type": "bullet",
+              "text": "<h1> – <h6>: headings. The smaller the number, the bigger the heading — h1 is the largest and h6 the smallest.",
+              "links": [],
+              "source": 339
+            },
+            {
+              "type": "bullet",
+              "text": "<p>: an ordinary paragraph of text.",
+              "links": [],
+              "source": 340
+            },
+            {
+              "type": "paragraph",
+              "text": "h1 usually appears only once per page, and the hierarchy builds downward through h2 and h3. A well-planned heading hierarchy doubles as the page's table of contents — and it's one of the first things to check in AI-generated pages.",
+              "links": [],
+              "source": 341
+            }
+          ],
+          "source": 337,
+          "kind": "Understand"
+        },
+        {
+          "id": "s342",
+          "title": "Structure tags you don't see on screen",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Open any HTML file and you'll find tags that never show up on screen but are absolutely required. They're the ones responsible for the page's skeleton:",
+              "links": [],
+              "source": 343
+            },
+            {
+              "type": "bullet",
+              "text": "<!DOCTYPE html>: tells the browser this file is an HTML document.",
+              "links": [],
+              "source": 344
+            },
+            {
+              "type": "bullet",
+              "text": "<html>: the top-level frame that wraps every other HTML tag.",
+              "links": [],
+              "source": 345
+            },
+            {
+              "type": "bullet",
+              "text": "<head>: the area that holds settings about the page itself. The <title> inside it sets the page title shown on the browser tab.",
+              "links": [],
+              "source": 346
+            },
+            {
+              "type": "bullet",
+              "text": "<body>: the area that holds everything actually visible on screen. Content tags like h1 and p all go inside here.",
+              "links": [],
+              "source": 347
+            },
+            {
+              "type": "paragraph",
+              "text": "Put those four together and the simplest possible HTML file usually looks like this:",
+              "links": [],
+              "source": 348
+            },
+            {
+              "type": "code",
+              "text": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Alex's First Page</title>\n  </head>\n  <body>\n    <h1>Alex Carter</h1>\n    <p>Hello there</p>\n  </body>\n</html>",
+              "where": "index.html",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 349
+            },
+            {
+              "type": "paragraph",
+              "text": "The structure is: head and body sit side by side inside html, and every content tag gathers under body.",
+              "links": [],
+              "source": 351
+            }
+          ],
+          "source": 342,
+          "kind": "Understand"
+        }
+      ],
+      "source": 316
+    },
+    {
+      "id": "4.3",
+      "title": "HTML's Essential Tags",
+      "objective": "Continue from the last lesson with the core HTML tags used most in practice, and learn the concepts of attributes and self-closing tags — so you can read AI-generated HTML and confirm each element is the right kind.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s355",
+          "title": "A tour of the essential tags",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "<h1> – <h6>: headings, level 1 through 6. In practice you'll see down to about h2 most often.",
+              "links": [],
+              "source": 356
+            },
+            {
+              "type": "bullet",
+              "text": "<img>: displays an image. The src attribute specifies the image's path.",
+              "links": [],
+              "source": 357
+            },
+            {
+              "type": "bullet",
+              "text": "<input>: a form element that accepts user input — text, numbers, and so on.",
+              "links": [],
+              "source": 358
+            },
+            {
+              "type": "bullet",
+              "text": "<button>: a clickable button.",
+              "links": [],
+              "source": 359
+            },
+            {
+              "type": "bullet",
+              "text": "<div>: a region container for grouping elements that share a style.",
+              "links": [],
+              "source": 360
+            },
+            {
+              "type": "bullet",
+              "text": "<a>: a link that navigates to another page. The href attribute specifies the destination address.",
+              "links": [],
+              "source": 361
+            },
+            {
+              "type": "code",
+              "text": "<img src=\"./animal.png\" />\n<a href=\"https://google.com\">Google</a>\n<a href=\"./about.html\">about page</a>",
+              "where": "examples",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 362
+            }
+          ],
+          "source": 355,
+          "kind": "Understand"
+        },
+        {
+          "id": "s364",
+          "title": "Attributes and self-closing tags",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "The extras that follow a tag name — src, href, class, and friends — are attributes. They fine-tune how the tag behaves. When a link goes nowhere or an image is broken, a wrong attribute value is usually the culprit.",
+              "links": [],
+              "source": 365
+            },
+            {
+              "type": "bullet",
+              "text": "A tag like <img /> has no text to hold inside, so instead of a separate closing tag it closes itself: a slash at the end of the opening tag. This is called self-closing.",
+              "links": [],
+              "source": 366
+            },
+            {
+              "type": "code",
+              "text": "<img src=\"./animal.png\" />\n      └─ attribute, written as name=\"value\"\n        e.g. src tells the tag which image file path to point at",
+              "where": "anatomy of an attribute",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 367
+            }
+          ],
+          "source": 364,
+          "kind": "Understand"
+        }
+      ],
+      "source": 353
+    },
+    {
+      "id": "4.4",
+      "title": "Styling with CSS",
+      "objective": "Understand what CSS is, how styles get applied to HTML elements, and the two most-used selectors — well enough to check that AI-written styles target the elements you actually meant.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s371",
+          "title": "What CSS does",
+          "blocks": [
+            {
+              "type": "image",
+              "src": "image5.png",
+              "alt": "HTML supplies structure; CSS changes its appearance.",
+              "caption": "HTML supplies structure; CSS changes its appearance.",
+              "source": 372
+            },
+            {
+              "type": "paragraph",
+              "text": "The same HTML structure, before and after CSS: structure from HTML, looks from CSS.",
+              "links": [],
+              "source": 373
+            },
+            {
+              "type": "paragraph",
+              "text": "Build a page's skeleton with HTML alone and the screen is just text, neatly stacked. The colors, the sizes, the spacing — everything is the browser's plain default.",
+              "links": [],
+              "source": 374
+            },
+            {
+              "type": "paragraph",
+              "text": "Dressing that skeleton in visual style is CSS's job. Text color, backgrounds, spacing, alignment, fonts, shadows, even animation — pretty much every part of the screen you'd call “design” is CSS's responsibility. The exact same HTML can look completely different depending on which CSS is put on it — so when the AI's page looks wrong but behaves right, CSS is where to send it back for fixes.",
+              "links": [],
+              "source": 375
+            },
+            {
+              "type": "note",
+              "text": "“If HTML is the skeleton, CSS is the appearance.”",
+              "links": [],
+              "source": 376,
+              "title": "Another way to think about it",
+              "optional": true
+            },
+            {
+              "type": "paragraph",
+              "text": "Now, Insert this prompt into Claude:",
+              "links": [],
+              "source": 377
+            },
+            {
+              "type": "code",
+              "text": "Add CSS styling to the index.html file based on these instructions.\n - Apply only simple styles (fonts, colors, margins, etc.).\n - Do not create a separate CSS file. Use internal styling.\n - Style 3 or fewer tags using tag selectors.\n - Set the background color to a pastel blue tone.",
+              "where": "Claude Code input",
+              "mode": "prompt",
+              "label": "Claude Code prompt",
+              "copy": true,
+              "id": "prompt-378",
+              "source": 378,
+              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+            }
+          ],
+          "source": 371,
+          "kind": "Practice"
+        },
+        {
+          "id": "s380",
+          "title": "CSS basic syntax",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "CSS code is written inside a <style> tag in the HTML (or in a separate .css file). One bundle of style rules is put together like this:",
+              "links": [],
+              "source": 381
+            },
+            {
+              "type": "code",
+              "text": "<style>\n  body {                          ← selector\n    background-color: lightblue;  ← property: value\n    font-size: 16px;\n  }\n</style>",
+              "where": "CSS syntax",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 382
+            },
+            {
+              "type": "paragraph",
+              "text": "The selector before the curly braces decides which elements this applies to, and inside the braces go property: value pairs, one per line. Don't forget the semicolon at the end of each line — it's required, and a missing one is a common reason a style silently fails to apply.",
+              "links": [],
+              "source": 384
+            },
+            {
+              "type": "paragraph",
+              "text": "CSS has roughly 500 properties, but they're all plain English words, so the meaning is easy to guess. For example: font-size, margin, color, border-bottom.",
+              "links": [],
+              "source": 385
+            }
+          ],
+          "source": 380,
+          "kind": "Understand"
+        },
+        {
+          "id": "s386",
+          "title": "The two selectors you'll actually use",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Tag selector",
+              "links": [],
+              "source": 387
+            },
+            {
+              "type": "paragraph",
+              "text": "Write a tag's name as-is and the same style applies to every tag of that kind on the page:",
+              "links": [],
+              "source": 388
+            },
+            {
+              "type": "code",
+              "text": "h1 { color: navy; }\n└─ selector = the tag name: every h1 on the page turns navy at once",
+              "where": "tag selector",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 389
+            },
+            {
+              "type": "paragraph",
+              "text": "Now, Insert this prompt into Claude:",
+              "links": [],
+              "source": 391
+            },
+            {
+              "type": "code",
+              "text": "Request: Update the index.html file based on these instructions.\n- Add an 'a' tag that links to Google.\n- Assign a class name to this link and use a class selector to apply unique styles to it.\n- Make the link look exactly like a button.\n- Use only HTML and CSS.",
+              "where": "Claude Code input",
+              "mode": "prompt",
+              "label": "Claude Code prompt",
+              "copy": true,
+              "id": "prompt-392",
+              "source": 392,
+              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+            },
+            {
+              "type": "subheading",
+              "text": "Class selector",
+              "links": [],
+              "source": 393
+            },
+            {
+              "type": "paragraph",
+              "text": "Use this when you want to style only the specific elements you designate, regardless of tag type:",
+              "links": [],
+              "source": 394
+            },
+            {
+              "type": "code",
+              "text": "HTML — give the tag a name with the class attribute:\n  <a class=\"google-link\" href=\"...\">Google</a>\n\nCSS — a dot (.) plus the same name:\n  .google-link { color: green; }",
+              "where": "class selector",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 395
+            },
+            {
+              "type": "paragraph",
+              "text": "In HTML you attach a class to a tag with class=\"name\"; in CSS you select only the elements carrying that class by putting a dot in front of the same name: .name. Give the same class to several tags and they all get styled in one shot.",
+              "links": [],
+              "source": 397
+            },
+            {
+              "type": "bullet",
+              "text": "First give the HTML element a class=\"name\" attribute, then select it in CSS as .name.",
+              "links": [],
+              "source": 398
+            },
+            {
+              "type": "bullet",
+              "text": "This is the selector used most in real-world work — expect to see it all over AI-generated CSS.",
+              "links": [],
+              "source": 399
+            }
+          ],
+          "source": 386,
+          "kind": "Practice"
+        },
+        {
+          "id": "s400",
+          "title": "Splitting CSS into its own file",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Write all the CSS inside the <style> tag and the file gets long and hard to read. The usual practice — and what a well-organized AI should do — is to split it into a separate file like style.css and pull it in from the HTML's <head>.",
+              "links": [],
+              "source": 401
+            },
+            {
+              "type": "paragraph",
+              "text": "Now, Insert this prompt into Claude:",
+              "links": [],
+              "source": 402
+            },
+            {
+              "type": "code",
+              "text": "Extract all CSS code from the index.html file, move it into a separate .css file, and link it to the HTML file.",
+              "where": "Claude Code input",
+              "mode": "prompt",
+              "label": "Claude Code prompt",
+              "copy": true,
+              "id": "prompt-403",
+              "source": 403,
+              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+            }
+          ],
+          "source": 400,
+          "kind": "Practice"
+        }
+      ],
+      "source": 369
+    },
+    {
+      "id": "4.5",
+      "title": "Adding Behavior with JavaScript",
+      "objective": "Understand what JavaScript is and how it adds behavior and features to HTML elements — functions, events, and the flow of modifying HTML elements from JavaScript — well enough to trace whether AI-written code actually wires a button to the action you asked for.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s406",
+          "title": "What JavaScript does",
+          "blocks": [
+            {
+              "type": "note",
+              "title": "Check the starting page",
+              "text": "The next prompt refers to a Confirm button. If index.html does not yet contain a real button labeled Confirm, ask Claude to add that button first. Keep the Google link as a link. Then use the original prompt below."
+            },
+            {
+              "type": "paragraph",
+              "text": "JavaScript is the language that gives behavior to the elements laid out with HTML and styled with CSS. An alert pops when a button is pressed, new elements get added or removed — the parts we casually call “features” are JavaScript's department. When a feature you requested doesn't fire, this is the file to question.",
+              "links": [],
+              "source": 407
+            },
+            {
+              "type": "paragraph",
+              "text": "HTML and CSS build the screen; JavaScript makes that screen interact with the user.",
+              "links": [],
+              "source": 408
+            },
+            {
+              "type": "paragraph",
+              "text": "Now, Insert this prompt into Claude:",
+              "links": [],
+              "source": 410
+            },
+            {
+              "type": "code",
+              "text": "Request: Update the index.html file with an input field and JavaScript based on these instructions.\n- Add a text input field right before the confirm button.\n- When the confirm button is clicked, trigger an alert box that says \"Confirmed!\".\n- Do not create a separate JavaScript file.\n- Use the <script> tag.\n- Place the <script> tag inside the <head> section of the HTML.",
+              "where": "Claude Code input",
+              "mode": "prompt",
+              "label": "Claude Code prompt",
+              "copy": true,
+              "id": "prompt-411",
+              "source": 411,
+              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+            }
+          ],
+          "source": 406,
+          "kind": "Practice"
+        },
+        {
+          "id": "s412",
+          "title": "The script tag",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "JavaScript code is written inside HTML's <script> tag — exactly the same pattern as writing CSS inside <style>:",
+              "links": [],
+              "source": 413
+            },
+            {
+              "type": "code",
+              "text": "<script>\n  // your JavaScript code goes here\n</script>",
+              "where": "index.html",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 414
+            },
+            {
+              "type": "paragraph",
+              "text": "The browser reads HTML from top to bottom, and the moment it meets a <script>, it runs the code inside.",
+              "links": [],
+              "source": 416
+            }
+          ],
+          "source": 412,
+          "kind": "Understand"
+        },
+        {
+          "id": "s417",
+          "title": "Functions",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A bundle of code that performs a specific job is called a function. It's the same idea as the word “meal” bundling a whole series of actions — putting food in your mouth, chewing, swallowing — into a single word.",
+              "links": [],
+              "source": 418
+            },
+            {
+              "type": "code",
+              "text": "function  handleClick () {     ← keyword + function name\n  alert(\"Confirmed!\");         ← the code to run\n}",
+              "where": "declaring a function",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 419
+            },
+            {
+              "type": "paragraph",
+              "text": "A function is declared starting with the function keyword, then the function's name with () after it. The code inside the curly braces is the function's body, and calling the name — like handleClick() — runs the whole body at once.",
+              "links": [],
+              "source": 421
+            },
+            {
+              "type": "note",
+              "text": "“A function is a named bundle of actions.”",
+              "links": [],
+              "source": 422,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 417,
+          "kind": "Understand"
+        },
+        {
+          "id": "s423",
+          "title": "Event handlers: deciding when a function runs",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Just creating a function makes nothing happen. The page also has to be told when to run it — and a function that exists but is never wired up is one of the most common gaps to catch in AI-written code.",
+              "links": [],
+              "source": 424
+            },
+            {
+              "type": "paragraph",
+              "text": "Every single user action — clicking a button, hovering the mouse, pressing a key — is called an event. The thing that connects “when this event happens” to “run that function” is an event handler:",
+              "links": [],
+              "source": 425
+            },
+            {
+              "type": "code",
+              "text": "function handleClick() {\n  alert(\"Confirmed!\");\n}\n\n<button onclick=\"handleClick()\">OK</button>\n         └─ event handler: runs the function the moment this is clicked",
+              "where": "wiring a function to a click",
+              "mode": "reference",
+              "label": "Reference example",
+              "copy": false,
+              "source": 426
+            },
+            {
+              "type": "paragraph",
+              "text": "Attributes like onclick on an HTML tag are event handlers. The button above calls the handleClick() function when clicked — so pressing it pops the “Confirmed!” alert. Note that the handleClick name has to match in both places for the connection to work — a mismatch means a button that silently does nothing.",
+              "links": [],
+              "source": 428
+            },
+            {
+              "type": "paragraph",
+              "text": "Beyond onclick there's a handler attribute ready for every kind of event: onmouseover (mouse hovers), onkeydown (key pressed), and many more.",
+              "links": [],
+              "source": 429
+            }
+          ],
+          "source": 423,
+          "kind": "Understand"
+        },
+        {
+          "id": "s430",
+          "title": "Modifying HTML elements",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "JavaScript can also create brand-new HTML elements on a screen that's already drawn, change their contents, or delete them:",
+              "links": [],
+              "source": 431
+            },
+            {
+              "type": "bullet",
+              "text": "Read the value typed into an input form and add a new item to the screen.",
+              "links": [],
+              "source": 432
+            },
+            {
+              "type": "bullet",
+              "text": "Press a delete button and remove that element.",
+              "links": [],
+              "source": 433
+            },
+            {
+              "type": "bullet",
+              "text": "Every interaction on services like Instagram or X (Twitter) is built exactly this way.",
+              "links": [],
+              "source": 434
+            },
+            {
+              "type": "paragraph",
+              "text": "Now, Insert this prompt into Claude:",
+              "links": [],
+              "source": 435
+            },
+            {
+              "type": "code",
+              "text": "Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it. Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it.",
+              "where": "Claude Code input",
+              "mode": "prompt",
+              "label": "Claude Code prompt",
+              "copy": true,
+              "id": "prompt-436",
+              "source": 436,
+              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+            },
+            {
+              "type": "code",
+              "text": "Add functionality to add and delete phone numbers in the contact.html page.\n- Use the <script> tag.",
+              "where": "Claude Code input",
+              "mode": "prompt",
+              "label": "Claude Code prompt",
+              "copy": true,
+              "id": "prompt-438",
+              "source": 438,
+              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+            },
+            {
+              "type": "code",
+              "text": "Extract all JavaScript code from the contact.html file, move it into a separate .js file, and link it back to the HTML file.",
+              "where": "Claude Code input",
+              "mode": "prompt",
+              "label": "Claude Code prompt",
+              "copy": true,
+              "id": "prompt-440",
+              "source": 440,
+              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+            }
+          ],
+          "source": 430,
+          "kind": "Practice"
+        },
+        {
+          "id": "s441",
+          "title": "Splitting JavaScript into its own file",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Just like CSS, once the JavaScript grows, it gets split into a separate file like script.js and pulled into the HTML with <script src=\"./script.js\"></script>.",
+              "links": [],
+              "source": 442
+            }
+          ],
+          "source": 441,
+          "kind": "Understand"
+        }
+      ],
+      "source": 404
+    },
+    {
+      "id": "4.6",
+      "title": "Your First Project: A Pomodoro Timer",
+      "objective": "Direct the AI through your first mini-project — a pomodoro timer — using the HTML, CSS, and JavaScript you can now read, and pick up the manager's core habit: assigning work to AI step by step and verifying each step before moving on.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s445",
+          "title": "What we're building",
+          "blocks": [
+            {
+              "type": "image",
+              "src": "image6.png",
+              "alt": "Example Pomodoro interface. Your design may differ.",
+              "caption": "Example Pomodoro interface. Your design may differ.",
+              "source": 446
+            },
+            {
+              "type": "paragraph",
+              "text": "The finished pomodoro timer: a title, the remaining time, and Start / Stop / Reset buttons.",
+              "links": [],
+              "source": 447
+            },
+            {
+              "type": "bullet",
+              "text": "A main page with Start / Stop / Reset buttons.",
+              "links": [],
+              "source": 448
+            },
+            {
+              "type": "bullet",
+              "text": "A settings page where the timer length can be set anywhere from 1 to 60 minutes.",
+              "links": [],
+              "source": 449
+            },
+            {
+              "type": "bullet",
+              "text": "The chosen time survives a page refresh.",
+              "links": [],
+              "source": 450
+            },
+            {
+              "type": "paragraph",
+              "text": "Those three bullets are your acceptance criteria. By the end of this lesson the AI-built copy must really work — you'll change the time in settings, refresh the page, and check that the value sticks.",
+              "links": [],
+              "source": 451
+            }
+          ],
+          "source": 445,
+          "kind": "Understand"
+        },
+        {
+          "id": "s452",
+          "title": "The workflow: a prompt.md file, run with @",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Typing a complicated prompt straight into the terminal every time is clumsy to edit and hard to read once it gets long. So instead: create a `prompt.md` file in the file explorer on the left and write your prompt inside it, then run it by tagging @prompt.md in the Claude Code input box. A written prompt file is also your paper trail — you can always check what you actually asked for against what you got.",
+              "links": [],
+              "source": 453
+            },
+            {
+              "type": "paragraph",
+              "text": "Type the at-sign (@) and a list of taggable files pops up. Arrow down to prompt.md, press Enter, then command “run this file” — Claude reads the contents and works from them as written.",
+              "links": [],
+              "source": 454
+            },
+            {
+              "type": "note",
+              "title": "What is markdown (.md)?",
+              "text": ".md is a text file in Markdown format — plain text plus a light styling syntax like # for headings and **bold** for bold. Claude Code itself reads and writes Markdown files all the time, so it's a handy format to know.",
+              "optional": true,
+              "source": 455
+            }
+          ],
+          "source": 452,
+          "kind": "Understand"
+        },
+        {
+          "id": "s457",
+          "title": "Setup: one folder per project",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "When you build web services, the standard practice is to manage each project in its own folder. Create two subfolders inside your webdev folder:",
+              "links": [],
+              "source": 458
+            },
+            {
+              "type": "bullet",
+              "text": "1.web-basic — the HTML/CSS/JS practice files you've made so far (move them in here).",
+              "links": [],
+              "source": 459
+            },
+            {
+              "type": "bullet",
+              "text": "2.pomodoro — the pomodoro project we're building now.",
+              "links": [],
+              "source": 460
+            },
+            {
+              "type": "paragraph",
+              "text": "In VS Code, choose File > Open Folder and open 2.pomodoro. Open Terminal > New Terminal and confirm its current path ends in 2.pomodoro. Run Claude Code in that folder. Create prompt.md in the project folder and save it before asking Claude to read it.",
+              "links": [],
+              "source": 461
+            },
+            {
+              "type": "code",
+              "text": "claude",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 462,
+              "note": "Paste into the named input area. Press Enter to run."
+            }
+          ],
+          "source": 457,
+          "kind": "Practice"
+        },
+        {
+          "id": "s464",
+          "title": "Build the main page UI",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Write the following in prompt.md:",
+              "links": [],
+              "source": 465
+            },
+            {
+              "type": "code",
+              "text": "Build the main page of a pomodoro timer web app.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h1 tag with the title \"Pomodoro\"\n    –  Below it, the current remaining time\n    –  Below that, Start / Stop / Reset buttons\n    –  Below that, a button that goes to the settings page\n–  Keep the CSS for styling in an index.css file",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-466",
+              "source": 466,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "Save prompt.md, then ask Claude Code to read and carry out that file. Review requests to create the project files before approving. Open index.html in a browser and confirm that every required element appears. Timer behavior comes in the next step.",
+              "links": [],
+              "source": 468
+            },
+            {
+              "type": "note",
+              "title": "Why index.html and not main.html?",
+              "text": "In web development the main page is usually called the index page — index as in a book's table of contents. So when Claude creates a main page, it naturally names it index.html.",
+              "optional": true,
+              "source": 469
+            }
+          ],
+          "source": 464,
+          "kind": "Practice"
+        },
+        {
+          "id": "s471",
+          "title": "Add the main page features",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "You could simply delete the prompt you just wrote, but if you'd rather keep it, make a prompts/ folder and move it there as 1-main-ui.md for backup. Then empty out prompt.md and write the next prompt:",
+              "links": [],
+              "source": 472
+            },
+            {
+              "type": "code",
+              "text": "Use JavaScript to add features to the main page.\n–  Start button: an event handler that starts the timer\n–  Stop button: an event handler that stops the timer\n–  Reset button: an event handler that resets the timer to 25 minutes\n–  Set the event handlers using the onclick approach\n–  Keep all the JavaScript code in a separate index.js file",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-473",
+              "source": 473,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "Run @prompt.md again. Claude creates index.js and links it into index.html with a <script> tag. Refresh the browser and verify by clicking: confirm the Start / Stop / Reset buttons all behave as specified before you move on.",
+              "links": [],
+              "source": 475
+            }
+          ],
+          "source": 471,
+          "kind": "Practice"
+        },
+        {
+          "id": "s476",
+          "title": "Build the settings page UI",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Move the previous prompt to prompts/2-main-feature.md, then write a new prompt in prompt.md:",
+              "links": [],
+              "source": 477
+            },
+            {
+              "type": "code",
+              "text": "Build a brand-new settings page.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h3 tag with the title \"Setting\"\n    –  One input tag for setting the timer minutes\n    –  A done button\n–  Keep the settings page CSS in a separate setting.css file\n–  Make the main page's settings button navigate to this settings page (do not change its styles)",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-478",
+              "source": 478,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "Run it and setting.html + setting.css are generated, and the settings button in index.html is automatically converted to an <a> tag so page navigation works. Verify in the browser: press the settings button on the main page and confirm it navigates — and that the main page's styles weren't touched, since the prompt forbade it.",
+              "links": [],
+              "source": 480
+            }
+          ],
+          "source": 476,
+          "kind": "Practice"
+        },
+        {
+          "id": "s481",
+          "title": "Add the settings page features",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Move the previous prompt to prompts/3-setting-ui.md, and write the final prompt:",
+              "links": [],
+              "source": 482
+            },
+            {
+              "type": "code",
+              "text": "Implement the settings page features.\n–  The UI is already finished — do not change it\n–  Changing the timer length:\n    –  Only values from 1 to 60 minutes may be entered\n    –  If the time field is empty, the save button must not be clickable\n    –  A changed time is reflected immediately on the main page\n    –  A changed time persists even after a page refresh",
+              "where": "VS Code editor · prompt.md",
+              "mode": "prompt",
+              "label": "Prompt to save in prompt.md",
+              "copy": true,
+              "id": "prompt-483",
+              "source": 483,
+              "note": "Save in prompt.md, then use the Claude Code instruction below."
+            },
+            {
+              "type": "paragraph",
+              "text": "After it runs, walk the acceptance criteria: change the time on the settings page (say, to 10 minutes) → save → confirm the main page reflects it → and confirm the time is still there after you refresh the browser. Try an out-of-range value and an empty field too — the AI was told to block both.",
+              "links": [],
+              "source": 485
+            }
+          ],
+          "source": 481,
+          "kind": "Practice"
+        },
+        {
+          "id": "s486",
+          "title": "Why the time survives a refresh",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "No server, no database — yet the changed time sticks. The secret is a storage space the browser itself owns, called Local Storage. Knowing it exists lets you ask the right question when data should (or shouldn't) persist:",
+              "links": [],
+              "source": 487
+            },
+            {
+              "type": "bullet",
+              "text": "A small data store inside the browser. JavaScript can freely save and read key–value data in it.",
+              "links": [],
+              "source": 488
+            },
+            {
+              "type": "bullet",
+              "text": "Local Storage usually survives refreshes and browser restarts. It can be cleared by the user or browser, and private browsing has different persistence behavior.",
+              "links": [],
+              "source": 489
+            },
+            {
+              "type": "bullet",
+              "text": "But it's only reachable from that browser on that computer. Open the site on a different PC and the data isn't there. To share across devices you'd need a separate database.",
+              "links": [],
+              "source": 490
+            },
+            {
+              "type": "paragraph",
+              "text": "Local Storage keeps small values in the current browser. It is not a shared online database.",
+              "links": [],
+              "source": 491
+            },
+            {
+              "type": "paragraph",
+              "text": "Plenty of services lean on this space: temporarily saved shopping carts, personal preferences, and more. At the “little tool just for me” stage — like our pomodoro — local storage alone is plenty.",
+              "links": [],
+              "source": 492
+            },
+            {
+              "type": "subheading",
+              "text": "See it for yourself",
+              "links": [],
+              "source": 493
+            },
+            {
+              "type": "paragraph",
+              "text": "You can inspect the stored value directly with the browser's developer tools — a manager's window into what the AI's code is actually saving:",
+              "links": [],
+              "source": 494
+            },
+            {
+              "type": "bullet",
+              "text": "Open developer tools — Windows: F12 or Ctrl + Shift + I; macOS: Cmd + Option + I.",
+              "links": [],
+              "source": 495
+            },
+            {
+              "type": "bullet",
+              "text": "In the top tab strip, choose Application (it may hide behind the >> overflow menu).",
+              "links": [],
+              "source": 496
+            },
+            {
+              "type": "bullet",
+              "text": "In the left sidebar: Storage → Local Storage → click the domain entry.",
+              "links": [],
+              "source": 497
+            },
+            {
+              "type": "bullet",
+              "text": "On the right you'll see a key like timerMinutes with its value — change the time on the settings page and it updates instantly.",
+              "links": [],
+              "source": 498
+            },
+            {
+              "type": "image",
+              "src": "image7.png",
+              "alt": "Chrome DevTools showing a value in Local Storage.",
+              "caption": "Chrome DevTools showing a value in Local Storage.",
+              "source": 499
+            },
+            {
+              "type": "paragraph",
+              "text": "Chrome DevTools → Application → Local Storage: the timerMinutes key holding the saved value.",
+              "links": [],
+              "source": 500
+            }
+          ],
+          "source": 486,
+          "kind": "Understand"
+        }
+      ],
+      "source": 443
+    },
+    {
+      "id": "4.7",
+      "title": "Deploying to the Cloud",
+      "objective": "Understand what it takes for other people to use the web service you had built — the concept of deployment, and what servers and the cloud are along the way — so you can talk about launch plans without getting lost.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s504",
+          "title": "Why deployment is necessary",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "So far, we've run our pages by dragging the HTML file straight into our own browser. But other people's computers can't just reach into the files on your computer — if they could, that would basically be hacking. So to let the outside world reach your service safely, you need a separate mechanism. “It works on my machine” is not shipped — a distinction every manager needs.",
+              "links": [],
+              "source": 505
+            }
+          ],
+          "source": 504,
+          "kind": "Understand"
+        },
+        {
+          "id": "s506",
+          "title": "A program called a server",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "That “separate mechanism” is a server.",
+              "links": [],
+              "source": 507
+            },
+            {
+              "type": "paragraph",
+              "text": "A server is a program that stays switched on 24/7, 365 days a year on one computer. It sits there, continuously waiting for connection requests from outside. When someone visits your site's address, it accepts the request and hands back only the HTML/CSS/JS files you decided on in advance.",
+              "links": [],
+              "source": 508
+            },
+            {
+              "type": "note",
+              "text": "“A server is a 24/7 program that takes outside requests and safely serves only the files you've designated.”",
+              "links": [],
+              "source": 509,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 506,
+          "kind": "Understand"
+        },
+        {
+          "id": "s510",
+          "title": "The restaurant analogy",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "If that's hard to picture, think of a restaurant server. A customer calls out an order, the server takes it and brings food from the kitchen. But food that's not on the menu — say, the kitchen staff's own packed lunch — never gets served. Period.",
+              "links": [],
+              "source": 511
+            },
+            {
+              "type": "paragraph",
+              "text": "A server program is the same. It accepts outside requests but exposes absolutely nothing beyond the files designated in advance — which is why strangers can't get at the private files on your PC. The flow of outside request → predetermined response is exactly like a restaurant server, and that's where the name “server” (one who serves) comes from.",
+              "links": [],
+              "source": 512
+            }
+          ],
+          "source": 510,
+          "kind": "Understand"
+        },
+        {
+          "id": "s513",
+          "title": "Phrases you'll hear constantly",
+          "blocks": [
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Phrase",
+                  "What it means"
+                ],
+                [
+                  "“Spin up a server”",
+                  "Switch the server program on so it starts accepting outside requests"
+                ],
+                [
+                  "“The server crashed”",
+                  "Too many simultaneous requests piled in and the server computer stopped coping — think launch-day of a hot new game"
+                ],
+                [
+                  "“Server maintenance”",
+                  "The server is switched off briefly while the code or hardware is worked on; the site is unreachable in the meantime"
+                ]
+              ],
+              "source": 514
+            },
+            {
+              "type": "paragraph",
+              "text": "Building a web service, in the end, means setting up this server program to respond with the HTML/CSS/JS files that were made.",
+              "links": [],
+              "source": 516
+            }
+          ],
+          "source": 513,
+          "kind": "Understand"
+        },
+        {
+          "id": "s517",
+          "title": "Why we use a cloud service",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Running a server yourself means keeping a computer on 24/7/365, worrying about power cuts and accidental shutdowns, and handling the network and security settings on your own. Taking that burden off your hands is what a cloud service does:",
+              "links": [],
+              "source": 518
+            },
+            {
+              "type": "bullet",
+              "text": "You rent a slice of a professionally equipped server computer.",
+              "links": [],
+              "source": 519
+            },
+            {
+              "type": "bullet",
+              "text": "Stability, security, and networking are provided automatically.",
+              "links": [],
+              "source": 520
+            },
+            {
+              "type": "bullet",
+              "text": "Many services are free to start while your traffic is small.",
+              "links": [],
+              "source": 521
+            }
+          ],
+          "source": 517,
+          "kind": "Understand"
+        },
+        {
+          "id": "s522",
+          "title": "Services that do this for you",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Services like Netlify and Vercel host static web projects and give them a public web address. We will use Netlify to deploy the pomodoro timer from Section 4.6. Follow the steps below to create an account, upload your project, and make the website public.",
+              "links": [],
+              "source": 523
+            }
+          ],
+          "source": 522,
+          "kind": "Understand"
+        },
+        {
+          "id": "s524",
+          "title": "Open Netlify and start signing up",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Go to https://netlify.com in your browser.",
+              "links": [],
+              "source": 525
+            },
+            {
+              "type": "image",
+              "src": "image8.png",
+              "alt": "Guidebook screenshot for Open Netlify and start signing up",
+              "caption": "Open Netlify and start signing up",
+              "source": 526
+            },
+            {
+              "type": "paragraph",
+              "text": "Click Sign up in the upper-right corner.",
+              "links": [],
+              "source": 527
+            },
+            {
+              "type": "image",
+              "src": "image9.png",
+              "alt": "Guidebook screenshot for Open Netlify and start signing up",
+              "caption": "Open Netlify and start signing up",
+              "source": 528
+            }
+          ],
+          "source": 524,
+          "kind": "Practice"
+        },
+        {
+          "id": "s529",
+          "title": "Create your account and complete your profile",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Choose your preferred sign-up method. Google is one option.",
+              "links": [],
+              "source": 530
+            },
+            {
+              "type": "image",
+              "src": "image10.png",
+              "alt": "Guidebook screenshot for Create your account and complete your profile",
+              "caption": "Create your account and complete your profile",
+              "source": 531
+            },
+            {
+              "type": "paragraph",
+              "text": "Enter your name and complete the profile questions. Choose answers that fit you. The example uses the following responses:",
+              "links": [],
+              "source": 532
+            },
+            {
+              "type": "image",
+              "src": "image11.png",
+              "alt": "Guidebook screenshot for Create your account and complete your profile",
+              "caption": "Create your account and complete your profile",
+              "source": 533
+            },
+            {
+              "type": "paragraph",
+              "text": "Name: your own name. Use: Personal. Experience: Beginner. First project: Web app. Role: Product Engineer. How you heard about Netlify: Someone else. Team name: a name you choose, such as onebite.",
+              "links": [],
+              "source": 534
+            }
+          ],
+          "source": 529,
+          "kind": "Practice"
+        },
+        {
+          "id": "s535",
+          "title": "Open the dashboard",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "On the Deploy your first project screen, click Skip this step for now to open the dashboard.",
+              "links": [],
+              "source": 536
+            },
+            {
+              "type": "image",
+              "src": "image12.png",
+              "alt": "Guidebook screenshot for Open the dashboard",
+              "caption": "Open the dashboard",
+              "source": 537
+            },
+            {
+              "type": "paragraph",
+              "text": "The dashboard is where you will upload and manage your project.",
+              "links": [],
+              "source": 538
+            },
+            {
+              "type": "image",
+              "src": "image13.png",
+              "alt": "Guidebook screenshot for Open the dashboard",
+              "caption": "Open the dashboard",
+              "source": 539
+            }
+          ],
+          "source": 535,
+          "kind": "Practice"
+        },
+        {
+          "id": "s540",
+          "title": "Select your project folder",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "On the dashboard, find Upload your project files near the bottom. Click choose a folder.",
+              "links": [],
+              "source": 541
+            },
+            {
+              "type": "image",
+              "src": "image14.png",
+              "alt": "Guidebook screenshot for Select your project folder",
+              "caption": "Select your project folder",
+              "source": 542
+            },
+            {
+              "type": "paragraph",
+              "text": "Select the 2.pomodoro project folder you created in Section 4.6. This is the folder containing index.html and the app’s CSS and JavaScript files. Upload this project folder, not the entire webdev folder.",
+              "links": [],
+              "source": 543
+            }
+          ],
+          "source": 540,
+          "kind": "Practice"
+        },
+        {
+          "id": "s545",
+          "title": "Upload the files and wait for deployment",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "If your browser asks you to confirm the upload, check that you selected your project folder, then click Upload. The folder picker and confirmation message may use your computer’s language.",
+              "links": [],
+              "source": 546
+            },
+            {
+              "type": "paragraph",
+              "text": "Netlify uploads the files and deploys the project. When it finishes, the project overview opens.",
+              "links": [],
+              "source": 548
+            },
+            {
+              "type": "image",
+              "src": "image17.png",
+              "alt": "Guidebook screenshot for Upload the files and wait for deployment",
+              "caption": "Upload the files and wait for deployment",
+              "source": 549
+            }
+          ],
+          "source": 545,
+          "kind": "Practice"
+        },
+        {
+          "id": "s550",
+          "title": "Make the website public",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Check the visibility label near the project name. If it says Private, visitors outside your team cannot open the website. If the project is already public, continue to Step 7.",
+              "links": [],
+              "source": 551
+            },
+            {
+              "type": "image",
+              "src": "image18.png",
+              "alt": "Guidebook screenshot for Make the website public",
+              "caption": "Make the website public",
+              "source": 552
+            },
+            {
+              "type": "paragraph",
+              "text": "For a private project, click Make public.",
+              "links": [],
+              "source": 553
+            },
+            {
+              "type": "image",
+              "src": "image19.png",
+              "alt": "Guidebook screenshot for Make the website public",
+              "caption": "Make the website public",
+              "source": 554
+            },
+            {
+              "type": "paragraph",
+              "text": "In the dialog, you can edit the website name. If you change it, click the green check mark to confirm. Then click Make public at the bottom.",
+              "links": [],
+              "source": 555
+            },
+            {
+              "type": "image",
+              "src": "image20.png",
+              "alt": "Guidebook screenshot for Make the website public",
+              "caption": "Make the website public",
+              "source": 556
+            }
+          ],
+          "source": 550,
+          "kind": "Practice"
+        },
+        {
+          "id": "s557",
+          "title": "Open your website and find its address settings",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "When Netlify confirms that your project is public, open the displayed address. Check that the timer and settings page work.",
+              "links": [],
+              "source": 558
+            },
+            {
+              "type": "image",
+              "src": "image21.png",
+              "alt": "Guidebook screenshot for Open your website and find its address settings",
+              "caption": "Open your website and find its address settings",
+              "source": 559
+            },
+            {
+              "type": "paragraph",
+              "text": "To change the address later, open the project overview and click Go to Domain management. Steps 8 and 9 show how to rename the default netlify.app address.",
+              "links": [],
+              "source": 560
+            },
+            {
+              "type": "image",
+              "src": "image22.png",
+              "alt": "Guidebook screenshot for Open your website and find its address settings",
+              "caption": "Open your website and find its address settings",
+              "source": 561
+            }
+          ],
+          "source": 557,
+          "kind": "Practice"
+        },
+        {
+          "id": "s562",
+          "title": "Change the default website address",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Under Production domains, open Options next to the Netlify address and choose Edit project name.",
+              "links": [],
+              "source": 563
+            },
+            {
+              "type": "image",
+              "src": "image23.png",
+              "alt": "Guidebook screenshot for Change the default website address",
+              "caption": "Change the default website address",
+              "source": 564
+            },
+            {
+              "type": "paragraph",
+              "text": "Enter an available project name and click Save. Netlify updates the default address to your-project-name.netlify.app.",
+              "links": [],
+              "source": 565
+            },
+            {
+              "type": "image",
+              "src": "image24.png",
+              "alt": "Guidebook screenshot for Change the default website address",
+              "caption": "Change the default website address",
+              "source": 566
+            }
+          ],
+          "source": 562,
+          "kind": "Practice"
+        },
+        {
+          "id": "s567",
+          "title": "Check the updated address",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Click Project overview in the left sidebar to return to your project.",
+              "links": [],
+              "source": 568
+            },
+            {
+              "type": "image",
+              "src": "image25.png",
+              "alt": "Guidebook screenshot for Check the updated address",
+              "caption": "Check the updated address",
+              "source": 569
+            },
+            {
+              "type": "paragraph",
+              "text": "Confirm that the new address appears, then open it to check your website. Use this updated address when sharing your project.",
+              "links": [],
+              "source": 570
+            },
+            {
+              "type": "image",
+              "src": "image26.png",
+              "alt": "Guidebook screenshot for Check the updated address",
+              "caption": "Check the updated address",
+              "source": 571
+            }
+          ],
+          "source": 567,
+          "kind": "Practice"
+        }
+      ],
+      "source": 502
+    }
+  ],
+  "shortTitle": "Web basics"
+}

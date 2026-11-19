@@ -1,0 +1,321 @@
+{
+  "source": "ITM325_Vibe_Coding_Guidebook_Netlify_Updated.docx",
+  "sourceSha256": "d47a63c55a312685503702b2eda12cbdfd271c7fec8cfd75682a3ab301673f54",
+  "prompts": [
+    {
+      "id": "prompt-220",
+      "sourceBlock": 220,
+      "lesson": "2.5",
+      "destination": "Claude Code input",
+      "text": "Request: Build me a simple personal-intro website.\n- My name is Alex Carter\n- Don't decorate it; keep the code under 200 characters\n- When it's done, open it in a web browser\n- Save the code as index.html",
+      "sourceText": "Request: Build me a simple personal-intro website.\n- My name is Alex Carter\n- Don't decorate it; keep the code under 200 characters\n- When it's done, open it in a web browser\n- Save the code as index.html",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-378",
+      "sourceBlock": 378,
+      "lesson": "4.4",
+      "destination": "Claude Code input",
+      "text": "Add CSS styling to the index.html file based on these instructions.\n - Apply only simple styles (fonts, colors, margins, etc.).\n - Do not create a separate CSS file. Use internal styling.\n - Style 3 or fewer tags using tag selectors.\n - Set the background color to a pastel blue tone.",
+      "sourceText": "Add CSS styling to the index.html file based on these instructions.\n - Apply only simple styles (fonts, colors, margins, etc.).\n - Do not create a separate CSS file. Use internal styling.\n - Style 3 or fewer tags using tag selectors.\n - Set the background color to a pastel blue tone.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-392",
+      "sourceBlock": 392,
+      "lesson": "4.4",
+      "destination": "Claude Code input",
+      "text": "Request: Update the index.html file based on these instructions.\n- Add an 'a' tag that links to Google.\n- Assign a class name to this link and use a class selector to apply unique styles to it.\n- Make the link look exactly like a button.\n- Use only HTML and CSS.",
+      "sourceText": "Request: Update the index.html file based on these instructions.\n- Add an 'a' tag that links to Google.\n- Assign a class name to this link and use a class selector to apply unique styles to it.\n- Make the link look exactly like a button.\n- Use only HTML and CSS.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-403",
+      "sourceBlock": 403,
+      "lesson": "4.4",
+      "destination": "Claude Code input",
+      "text": "Extract all CSS code from the index.html file, move it into a separate .css file, and link it to the HTML file.",
+      "sourceText": "Extract all CSS code from the index.html file, move it into a separate .css file, and link it to the HTML file.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-411",
+      "sourceBlock": 411,
+      "lesson": "4.5",
+      "destination": "Claude Code input",
+      "text": "Request: Update the index.html file with an input field and JavaScript based on these instructions.\n- Add a text input field right before the confirm button.\n- When the confirm button is clicked, trigger an alert box that says \"Confirmed!\".\n- Do not create a separate JavaScript file.\n- Use the <script> tag.\n- Place the <script> tag inside the <head> section of the HTML.",
+      "sourceText": "Request: Update the index.html file with an input field and JavaScript based on these instructions.\n- Add a text input field right before the confirm button.\n- When the confirm button is clicked, trigger an alert box that says \"Confirmed!\".\n- Do not create a separate JavaScript file.\n- Use the <script> tag.\n- Place the <script> tag inside the <head> section of the HTML.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-436",
+      "sourceBlock": 436,
+      "lesson": "4.5",
+      "destination": "Claude Code input",
+      "text": "Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it. Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it.",
+      "sourceText": "Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it. Create a new phonebook page named contact.html.\n- Include a form to add new phone numbers.\n- Use only HTML and CSS for now.\n- Restrict HTML tags to only those used in the index.html file.\n- Keep the styling complexity similar to index.html.\n- Place all CSS code in a separate contact.css file and link it.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-438",
+      "sourceBlock": 438,
+      "lesson": "4.5",
+      "destination": "Claude Code input",
+      "text": "Add functionality to add and delete phone numbers in the contact.html page.\n- Use the <script> tag.",
+      "sourceText": "Add functionality to add and delete phone numbers in the contact.html page.\n- Use the <script> tag.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-440",
+      "sourceBlock": 440,
+      "lesson": "4.5",
+      "destination": "Claude Code input",
+      "text": "Extract all JavaScript code from the contact.html file, move it into a separate .js file, and link it back to the HTML file.",
+      "sourceText": "Extract all JavaScript code from the contact.html file, move it into a separate .js file, and link it back to the HTML file.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-466",
+      "sourceBlock": 466,
+      "lesson": "4.6",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Build the main page of a pomodoro timer web app.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h1 tag with the title \"Pomodoro\"\n    –  Below it, the current remaining time\n    –  Below that, Start / Stop / Reset buttons\n    –  Below that, a button that goes to the settings page\n–  Keep the CSS for styling in an index.css file",
+      "sourceText": "Build the main page of a pomodoro timer web app.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h1 tag with the title \"Pomodoro\"\n    –  Below it, the current remaining time\n    –  Below that, Start / Stop / Reset buttons\n    –  Below that, a button that goes to the settings page\n–  Keep the CSS for styling in an index.css file",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-473",
+      "sourceBlock": 473,
+      "lesson": "4.6",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Use JavaScript to add features to the main page.\n–  Start button: an event handler that starts the timer\n–  Stop button: an event handler that stops the timer\n–  Reset button: an event handler that resets the timer to 25 minutes\n–  Set the event handlers using the onclick approach\n–  Keep all the JavaScript code in a separate index.js file",
+      "sourceText": "Use JavaScript to add features to the main page.\n–  Start button: an event handler that starts the timer\n–  Stop button: an event handler that stops the timer\n–  Reset button: an event handler that resets the timer to 25 minutes\n–  Set the event handlers using the onclick approach\n–  Keep all the JavaScript code in a separate index.js file",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-478",
+      "sourceBlock": 478,
+      "lesson": "4.6",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Build a brand-new settings page.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h3 tag with the title \"Setting\"\n    –  One input tag for setting the timer minutes\n    –  A done button\n–  Keep the settings page CSS in a separate setting.css file\n–  Make the main page's settings button navigate to this settings page (do not change its styles)",
+      "sourceText": "Build a brand-new settings page.\n–  Use only HTML and CSS — implement the UI only\n–  HTML layout:\n    –  An h3 tag with the title \"Setting\"\n    –  One input tag for setting the timer minutes\n    –  A done button\n–  Keep the settings page CSS in a separate setting.css file\n–  Make the main page's settings button navigate to this settings page (do not change its styles)",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-483",
+      "sourceBlock": 483,
+      "lesson": "4.6",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Implement the settings page features.\n–  The UI is already finished — do not change it\n–  Changing the timer length:\n    –  Only values from 1 to 60 minutes may be entered\n    –  If the time field is empty, the save button must not be clickable\n    –  A changed time is reflected immediately on the main page\n    –  A changed time persists even after a page refresh",
+      "sourceText": "Implement the settings page features.\n–  The UI is already finished — do not change it\n–  Changing the timer length:\n    –  Only values from 1 to 60 minutes may be entered\n    –  If the time field is empty, the save button must not be clickable\n    –  A changed time is reflected immediately on the main page\n    –  A changed time persists even after a page refresh",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-736",
+      "sourceBlock": 736,
+      "lesson": "5.7",
+      "destination": "Claude Code input",
+      "text": "Add a feature to index.html that displays the current time.",
+      "sourceText": "Add a feature to index.html that displays the current time.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-850",
+      "sourceBlock": 850,
+      "lesson": "6.6",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Build a Pomodoro timer web application.\n\n# Main Page\n\n## Main Page UI\n- Display the title \"pomodoro\" using an `h1` tag\n- Display the current remaining time (load and use from localStorage, default is 25 minutes)\n- Place Start, Stop, and Reset buttons\n- Place a Settings button (navigates to the Settings page)\n\n## Main Page Features\n- Clicking the Start button starts the timer\n- Clicking the Stop button pauses/stops the timer\n- Clicking the Reset button resets the timer\n\n# Settings Page\n\n## Settings Page UI\n- Place the title \"Setting\" using an `h3` tag\n- Place a single input field to set the timer duration\n- Place a Complete Setting (Save) button\n\n## Settings Page Features\n- Change timer duration\n- Can only be set between 1 minute and 60 minutes (inclusive)\n- The Complete Setting button cannot be clicked if the input field is left empty\n- The updated time is immediately reflected on the Main Page\n- The updated time persists even after a page refresh\n\n# Component Splitting\n- Properly split the work into modular components\n- Split the components into `Timer`, `Controllers`, and `TimerSettingInput`\n- Store the components in the `/components` folder\n- If a `src` folder exists, store them in `src/components`\n- Must be stored in `/components`, NOT `app/components`\n\n# Miscellaneous\n- Do not build or run the Next.js app after completing the development\n- Explain the results in English as follows:\n- Explain unit by unit for each component (Name, Path, Role)\n- Explain in the order of Regular Components -> Page Components\n- In the Page Component explanation, include a list of the Regular Components it contains",
+      "sourceText": "Build a Pomodoro timer web application.\n\n# Main Page\n\n## Main Page UI\n- Display the title \"pomodoro\" using an `h1` tag\n- Display the current remaining time (load and use from localStorage, default is 25 minutes)\n- Place Start, Stop, and Reset buttons\n- Place a Settings button (navigates to the Settings page)\n\n## Main Page Features\n- Clicking the Start button starts the timer\n- Clicking the Stop button pauses/stops the timer\n- Clicking the Reset button resets the timer\n\n# Settings Page\n\n## Settings Page UI\n- Place the title \"Setting\" using an `h3` tag\n- Place a single input field to set the timer duration\n- Place a Complete Setting (Save) button\n\n## Settings Page Features\n- Change timer duration\n- Can only be set between 1 minute and 60 minutes (inclusive)\n- The Complete Setting button cannot be clicked if the input field is left empty\n- The updated time is immediately reflected on the Main Page\n- The updated time persists even after a page refresh\n\n# Component Splitting\n- Properly split the work into modular components\n- Split the components into `Timer`, `Controllers`, and `TimerSettingInput`\n- Store the components in the `/components` folder\n- If a `src` folder exists, store them in `src/components`\n- Must be stored in `/components`, NOT `app/components`\n\n# Miscellaneous\n- Do not build or run the Next.js app after completing the development\n- Explain the results in Korean as follows:\n- Explain unit by unit for each component (Name, Path, Role)\n- Explain in the order of Regular Components -> Page Components\n- In the Page Component explanation, include a list of the Regular Components it contains",
+      "normalization": "English response language"
+    },
+    {
+      "id": "prompt-867",
+      "sourceBlock": 867,
+      "lesson": "6.6",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Add a simple click animation to the Controllers component.",
+      "sourceText": "Add a simple click animation to the Controllers component.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-910",
+      "sourceBlock": 910,
+      "lesson": "7.2",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement the index page UI for a bookmark service.\n– Page layout:\n   – Top header with a “Ohana Link” text logo on the left and a “+ Add Link” button on the right\n   – Left sidebar with an “All” button and the folder list\n   – Main section shows the registered links in a grid\n– Things to watch:\n   – Split the work into properly separated components\n   – Report the results component by component",
+      "sourceText": "Request: implement the index page UI for a bookmark service.\n– Page layout:\n   – Top header with a “Ohana Link” text logo on the left and a “+ Add Link” button on the right\n   – Left sidebar with an “All” button and the folder list\n   – Main section shows the registered links in a grid\n– Things to watch:\n   – Split the work into properly separated components\n   – Report the results component by component",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-918",
+      "sourceBlock": 918,
+      "lesson": "7.2",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: move the component files out of the app/components folder and into the root-level /components folder.",
+      "sourceText": "Request: move the component files out of the app/components folder and into the root-level /components folder.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-924",
+      "sourceBlock": 924,
+      "lesson": "7.2",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
+      "sourceText": "Request: implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-928",
+      "sourceBlock": 928,
+      "lesson": "7.2",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
+      "sourceText": "Request: implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-955",
+      "sourceBlock": 955,
+      "lesson": "7.3",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: make the design look nicer.",
+      "sourceText": "Request: make the design look nicer.",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-976",
+      "sourceBlock": 976,
+      "lesson": "7.4",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
+      "sourceText": "Request: build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-990",
+      "sourceBlock": 990,
+      "lesson": "7.4",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement folder deletion.\n– The delete button appears on the right side when the mouse hovers over a folder name in the left sidebar\n– Use a trash-can icon\n– On click, ask for confirmation one more time in a modal to prevent user mistakes",
+      "sourceText": "Request: implement folder deletion.\n– The delete button appears on the right side when the mouse hovers over a folder name in the left sidebar\n– Use a trash-can icon\n– On click, ask for confirmation one more time in a modal to prevent user mistakes",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-995",
+      "sourceBlock": 995,
+      "lesson": "7.4",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
+      "sourceText": "Request: implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1019",
+      "sourceBlock": 1019,
+      "lesson": "7.5",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
+      "sourceText": "Request: implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1025",
+      "sourceBlock": 1025,
+      "lesson": "7.5",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement link deletion.\n– The delete button appears as a trash-can icon in the top-right corner when the mouse hovers over a link card\n– On click, show a confirmation modal",
+      "sourceText": "Request: implement link deletion.\n– The delete button appears as a trash-can icon in the top-right corner when the mouse hovers over a link card\n– On click, show a confirmation modal",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1165",
+      "sourceBlock": 1165,
+      "lesson": "8.4",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Create a link table\n- Columns: id, url, title, description, thumbnail_url, created_at\n- Give the id column auto-increment and make it the primary key\n- Make id, url, and created_at required; set the rest as optional columns\n- Turn RLS off",
+      "sourceText": "Create a link table\n- Columns: id, url, title, description, thumbnail_url, created_at\n- Give the id column auto-increment and make it the primary key\n- Make id, url, and created_at required; set the rest as optional columns\n- Turn RLS off",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1172",
+      "sourceBlock": 1172,
+      "lesson": "8.4",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Create a folder table\n- Columns: id, name, created_at\n- Give the id column auto-increment and make it the primary key\n- Make every column required\n- Turn RLS off",
+      "sourceText": "Create a folder table\n- Columns: id, name, created_at\n- Give the id column auto-increment and make it the primary key\n- Make every column required\n- Turn RLS off",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1175",
+      "sourceBlock": 1175,
+      "lesson": "8.4",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Connect the link table and the folder table\n- Add a folder_id column to the link table\n- Make the folder_id column optional\n- Set folder_id as a foreign key referencing the folder table's id column\n- When folder data is deleted (folder removed), clear the folder_id on the connected link rows",
+      "sourceText": "Connect the link table and the folder table\n- Add a folder_id column to the link table\n- Make the folder_id column optional\n- Set folder_id as a foreign key referencing the folder table's id column\n- When folder data is deleted (folder removed), clear the folder_id on the connected link rows",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1194",
+      "sourceBlock": 1194,
+      "lesson": "8.5",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement the add-folder feature.\n- Add every folder the user creates to the Supabase folder table\n- Block double-clicks on the add-folder button so multiple folders can't be created at once\n- Load the folders stored in the folder table and list them in the left sidebar\n- Do not implement anything beyond this\n- Use MCP to check the table structure first, then do the work",
+      "sourceText": "Request: implement the add-folder feature.\n- Add every folder the user creates to the Supabase folder table\n- Block double-clicks on the add-folder button so multiple folders can't be created at once\n- Load the folders stored in the folder table and list them in the left sidebar\n- Do not implement anything beyond this\n- Use MCP to check the table structure first, then do the work",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1203",
+      "sourceBlock": 1203,
+      "lesson": "8.5",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement folder renaming.\n- When a folder is renamed, update the new name in the folder table",
+      "sourceText": "Request: implement folder renaming.\n- When a folder is renamed, update the new name in the folder table",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1206",
+      "sourceBlock": 1206,
+      "lesson": "8.5",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement folder deletion.\n- When a folder is deleted, remove that folder's data from the folder table",
+      "sourceText": "Request: implement folder deletion.\n- When a folder is deleted, remove that folder's data from the folder table",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1209",
+      "sourceBlock": 1209,
+      "lesson": "8.5",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement the add-link feature.\n- Add links saved on the new-link page to the Supabase link table\n- Block double-clicks on the save button\n- On the index page and each folder page, load the links stored in the link table and show them in the grid\n- Do not implement anything beyond this",
+      "sourceText": "Request: implement the add-link feature.\n- Add links saved on the new-link page to the Supabase link table\n- Block double-clicks on the save button\n- On the index page and each folder page, load the links stored in the link table and show them in the grid\n- Do not implement anything beyond this",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1212",
+      "sourceBlock": 1212,
+      "lesson": "8.5",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement link editing.\n- When a link is edited, update the link table with the edited values",
+      "sourceText": "Request: implement link editing.\n- When a link is edited, update the link table with the edited values",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1215",
+      "sourceBlock": 1215,
+      "lesson": "8.5",
+      "destination": "VS Code editor · prompt.md",
+      "text": "Request: implement link deletion.\n- When a link is deleted, remove that link's data from the link table",
+      "sourceText": "Request: implement link deletion.\n- When a link is deleted, remove that link's data from the link table",
+      "normalization": "Removed terminal display markers only"
+    },
+    {
+      "id": "prompt-1244",
+      "sourceBlock": 1244,
+      "lesson": "8.6",
+      "destination": "VS Code editor · prompt.md",
+      "text": "[paste the error message here]\nI checked the Network tab and the links request is failing for this reason. Fix it.",
+      "sourceText": "[paste the error message here]\nI checked the Network tab and the links request is failing for this reason. Fix it.",
+      "normalization": "Removed terminal display markers only"
+    }
+  ]
+}

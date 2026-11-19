@@ -1,0 +1,694 @@
+{
+  "number": 1,
+  "title": "Talking to Your Computer: The Terminal",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "As a manager of an AI coding assistant, you won't write the code — but you will need to work in the place where the AI actually operates: the terminal. It's where you'll launch Claude Code, watch what it does, and run the quick checks that tell you whether the work was done right. This chapter takes you from “what is that black window?” to confidently creating, exploring, and verifying folders from the command line on your own machine.",
+      "links": [],
+      "source": 9
+    },
+    {
+      "type": "note",
+      "title": "Before you continue",
+      "text": "Lessons 1.2 and 1.3 cover the same skills on different operating systems. Work through the one that matches your laptop — you only need one of them. Commands differ slightly between Windows and macOS, so follow the lesson for your OS.",
+      "optional": false,
+      "source": 13
+    }
+  ],
+  "lessons": [
+    {
+      "id": "1.1",
+      "title": "The CLI and the Terminal",
+      "objective": "Understand GUI, CLI, and the terminal so you can use and supervise an AI coding agent.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s16",
+          "title": "There are two ways to use a computer",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Today we mostly control computers through a graphical screen: right-click to make a new folder, double-click to open it, drag a file to move it. It feels so natural that we forget it isn't the only way to talk to a computer.",
+              "links": [],
+              "source": 17
+            },
+            {
+              "type": "subheading",
+              "text": "GUI (Graphical User Interface)",
+              "links": [],
+              "source": 18
+            },
+            {
+              "type": "paragraph",
+              "text": "That familiar way of working. You click icons you can see on the screen and drag files into folders — a graphics-based interface. Because you operate the computer with a mouse and graphics, it's called a Graphical User Interface — GUI for short. You just press what you see, so it's intuitive: anyone can pick it up in minutes.",
+              "links": [],
+              "source": 19
+            },
+            {
+              "type": "image",
+              "src": "image1.png",
+              "alt": "A graphical interface uses windows, icons, and buttons.",
+              "caption": "A graphical interface uses windows, icons, and buttons.",
+              "source": 20
+            },
+            {
+              "type": "paragraph",
+              "text": "Point, click, and drag what you can see — that's a GUI (Graphical User Interface).",
+              "links": [],
+              "source": 21
+            },
+            {
+              "type": "subheading",
+              "text": "CLI (Command Line Interface)",
+              "links": [],
+              "source": 22
+            },
+            {
+              "type": "paragraph",
+              "text": "The complete opposite. Almost no mouse, almost no graphics. A dark window with a blinking cursor, where you type commands on the keyboard to make the computer do things. Because you drive the computer with lines of commands, it's called a Command Line Interface — CLI for short.",
+              "links": [],
+              "source": 23
+            },
+            {
+              "type": "image",
+              "src": "image2.jpeg",
+              "alt": "A text-based interface receives typed commands.",
+              "caption": "A text-based interface receives typed commands.",
+              "source": 24
+            },
+            {
+              "type": "paragraph",
+              "text": "Typing commands to talk to the computer — that's the CLI (Command Line Interface).",
+              "links": [],
+              "source": 25
+            },
+            {
+              "type": "paragraph",
+              "text": "“Who still types commands in this day and age?” you might wonder. But the CLI is alive and well — it's still the main way developers work. Think of it like ordering food: tapping through the menu on a McDonald's self-order kiosk is the GUI; walking up to the counter and telling the cashier exactly what you want is the CLI.",
+              "links": [],
+              "source": 26
+            },
+            {
+              "type": "note",
+              "text": "“Almost every developer tool you'll use in this course — including Claude Code — runs in the CLI.”",
+              "links": [],
+              "source": 27,
+              "title": "Another way to think about it",
+              "optional": true
+            },
+            {
+              "type": "paragraph",
+              "text": "That's why anyone managing AI-built software needs to be comfortable with the basics of the CLI. The AI does its work here, and this is where you'll watch it work, spot when something looks off, and run your own checks instead of taking the AI's word for it.",
+              "links": [],
+              "source": 28
+            }
+          ],
+          "source": 16,
+          "kind": "Understand"
+        },
+        {
+          "id": "s29",
+          "title": "So what is a “terminal”?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A terminal is simply the program that gives you a place to type those commands. It comes pre-installed on every computer — there's nothing to download.",
+              "links": [],
+              "source": 30
+            },
+            {
+              "type": "subheading",
+              "text": "Opening the terminal on Windows",
+              "links": [],
+              "source": 31
+            },
+            {
+              "type": "bullet",
+              "text": "Click the Search box in the taskbar.",
+              "links": [],
+              "source": 32
+            },
+            {
+              "type": "bullet",
+              "text": "Type PowerShell.",
+              "links": [],
+              "source": 33
+            },
+            {
+              "type": "bullet",
+              "text": "Click Windows PowerShell to launch it.",
+              "links": [],
+              "source": 34
+            },
+            {
+              "type": "paragraph",
+              "text": "Windows — search for PowerShell in the taskbar and run it.",
+              "links": [],
+              "source": 36
+            },
+            {
+              "type": "subheading",
+              "text": "Opening the terminal on macOS",
+              "links": [],
+              "source": 37
+            },
+            {
+              "type": "bullet",
+              "text": "Press Cmd + Space to open Spotlight.",
+              "links": [],
+              "source": 38
+            },
+            {
+              "type": "bullet",
+              "text": "Type terminal.",
+              "links": [],
+              "source": 39
+            },
+            {
+              "type": "bullet",
+              "text": "Press Enter to launch Terminal.",
+              "links": [],
+              "source": 40
+            }
+          ],
+          "source": 29,
+          "kind": "Understand"
+        }
+      ],
+      "source": 14
+    },
+    {
+      "id": "1.2",
+      "title": "Terminal Basics — Windows",
+      "objective": "Learn the core PowerShell commands well enough to verify with your own eyes what an AI assistant has created, moved, or deleted on Windows.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s43",
+          "title": "Open the terminal",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Type powershell (or terminal) into the Windows search box and launch it. The path you see right away — something like C:\\Users\\yourname — is your current working directory: the folder your commands will run in. This matters for a manager: when the AI creates files, they land relative to a working directory, and this is how you confirm you're looking in the right place.",
+              "links": [],
+              "source": 44
+            },
+            {
+              "type": "note",
+              "text": "“A ‘directory’ is just another word for a folder.”",
+              "links": [],
+              "source": 45,
+              "title": "Another way to think about it",
+              "optional": true
+            }
+          ],
+          "source": 43,
+          "kind": "Practice"
+        },
+        {
+          "id": "s46",
+          "title": "The core commands",
+          "blocks": [
+            {
+              "type": "note",
+              "title": "Practice in a disposable folder",
+              "text": "The commands below illustrate separate operations. After deleting test, create it again before trying cd test. Do not practice deletion on a folder containing work you need."
+            },
+            {
+              "type": "subheading",
+              "text": "Create a folder:  mkdir",
+              "links": [],
+              "source": 47
+            },
+            {
+              "type": "code",
+              "text": "mkdir test",
+              "where": "Windows PowerShell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 48,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Short for make directory. Creates a folder named test in your current location.",
+              "links": [],
+              "source": 50
+            },
+            {
+              "type": "subheading",
+              "text": "List what's here:  ls",
+              "links": [],
+              "source": 51
+            },
+            {
+              "type": "code",
+              "text": "ls",
+              "where": "Windows PowerShell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 52,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Short for list. Prints the files and folders in your current location — your quickest audit tool. When the AI says it created something, ls is how you see for yourself.",
+              "links": [],
+              "source": 54
+            },
+            {
+              "type": "subheading",
+              "text": "Delete:  rm",
+              "links": [],
+              "source": 55
+            },
+            {
+              "type": "code",
+              "text": "rm test",
+              "where": "Windows PowerShell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 56,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Short for remove. Deletes the file or folder you name.",
+              "links": [],
+              "source": 58
+            },
+            {
+              "type": "subheading",
+              "text": "Move around:  cd",
+              "links": [],
+              "source": 59
+            },
+            {
+              "type": "code",
+              "text": "cd test",
+              "where": "Windows PowerShell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 60,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "code",
+              "text": "cd ..",
+              "where": "Windows PowerShell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 60,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "code",
+              "text": "cd ../..",
+              "where": "Windows PowerShell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 60,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "code",
+              "text": "cd /",
+              "where": "Windows PowerShell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 60,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Short for change directory.",
+              "links": [],
+              "source": 62
+            },
+            {
+              "type": "bullet",
+              "text": ". means the current folder; .. means the parent folder.",
+              "links": [],
+              "source": 63
+            },
+            {
+              "type": "bullet",
+              "text": "Type the first few letters of a folder name and press Tab — the terminal autocompletes it for you.",
+              "links": [],
+              "source": 64
+            },
+            {
+              "type": "bullet",
+              "text": "The top-level folder you can't go above is called the root folder.",
+              "links": [],
+              "source": 65
+            },
+            {
+              "type": "subheading",
+              "text": "Clear the screen:  clear",
+              "links": [],
+              "source": 66
+            },
+            {
+              "type": "code",
+              "text": "clear",
+              "where": "Windows PowerShell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 67,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Wipes the terminal output so you get a clean screen.",
+              "links": [],
+              "source": 69
+            }
+          ],
+          "source": 46,
+          "kind": "Practice"
+        }
+      ],
+      "source": 41,
+      "platform": "Windows"
+    },
+    {
+      "id": "1.3",
+      "title": "Terminal Basics — macOS",
+      "objective": "Learn the core macOS Terminal commands well enough to verify with your own eyes what an AI assistant has created, moved, or deleted.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s72",
+          "title": "Open the terminal",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Press Cmd + Space to open Spotlight, type terminal, and press Enter.",
+              "links": [],
+              "source": 73
+            }
+          ],
+          "source": 72,
+          "kind": "Practice"
+        },
+        {
+          "id": "s74",
+          "title": "Read the prompt",
+          "blocks": [
+            {
+              "type": "bullet",
+              "text": "To the left of the cursor you'll see something like yourname ~ %.",
+              "links": [],
+              "source": 75
+            },
+            {
+              "type": "bullet",
+              "text": "The ~ (tilde) is your home folder — your personal account folder, where Downloads, Documents, and friends live.",
+              "links": [],
+              "source": 76
+            },
+            {
+              "type": "bullet",
+              "text": "You type commands after the %.",
+              "links": [],
+              "source": 77
+            }
+          ],
+          "source": 74,
+          "kind": "Understand"
+        },
+        {
+          "id": "s78",
+          "title": "The core commands",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Where am I?  pwd",
+              "links": [],
+              "source": 79
+            },
+            {
+              "type": "code",
+              "text": "pwd",
+              "where": "Mac Terminal",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 80,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Short for print working directory. Prints the full path of the folder you're in right now — the first thing to check before judging any AI output, so you know you're inspecting the right project.",
+              "links": [],
+              "source": 82
+            },
+            {
+              "type": "subheading",
+              "text": "Open the current folder in Finder:  open .",
+              "links": [],
+              "source": 83
+            },
+            {
+              "type": "code",
+              "text": "open .",
+              "where": "Mac Terminal",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 84,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "The . means the current folder — this pops it open in Finder so you can see it the GUI way.",
+              "links": [],
+              "source": 86
+            },
+            {
+              "type": "subheading",
+              "text": "Create a folder:  mkdir",
+              "links": [],
+              "source": 87
+            },
+            {
+              "type": "code",
+              "text": "mkdir test",
+              "where": "Mac Terminal",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 88,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Short for make directory. Creates a folder in the current location. (Directory = folder.)",
+              "links": [],
+              "source": 90
+            },
+            {
+              "type": "subheading",
+              "text": "List what's here:  ls",
+              "links": [],
+              "source": 91
+            },
+            {
+              "type": "code",
+              "text": "ls",
+              "where": "Mac Terminal",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 92,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Prints the files and folders in the current location — your quickest way to confirm that what the AI says it made is actually there.",
+              "links": [],
+              "source": 94
+            },
+            {
+              "type": "subheading",
+              "text": "Delete:  rm",
+              "links": [],
+              "source": 95
+            },
+            {
+              "type": "code",
+              "text": "rm filename   # delete a file\nrm -r foldername   # delete a folder AND everything inside it\nrm -rf foldername   # force delete a folder AND everything inside it",
+              "where": "Mac Terminal",
+              "mode": "reference",
+              "label": "Deletion examples",
+              "copy": false,
+              "source": 96
+            },
+            {
+              "type": "paragraph",
+              "text": "These examples permanently delete files or folders. Do not run them against a course project you want to keep.",
+              "source": 96
+            },
+            {
+              "type": "note",
+              "title": "Before you continue",
+              "text": "rm -rf deletes instantly and permanently — nothing goes to the Trash. Double-check the folder name before you press Enter, and be extra alert whenever an AI assistant proposes running it.",
+              "optional": false,
+              "source": 98
+            },
+            {
+              "type": "subheading",
+              "text": "Move around:  cd",
+              "links": [],
+              "source": 100
+            },
+            {
+              "type": "code",
+              "text": "cd test",
+              "where": "Mac Terminal",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 101,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "code",
+              "text": "cd ..",
+              "where": "Mac Terminal",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 101,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Short for change directory. Type part of a folder name and press Tab to autocomplete.",
+              "links": [],
+              "source": 103
+            },
+            {
+              "type": "subheading",
+              "text": "Clear the screen:  clear",
+              "links": [],
+              "source": 104
+            },
+            {
+              "type": "code",
+              "text": "clear",
+              "where": "Mac Terminal",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 105,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "Wipes the terminal output.",
+              "links": [],
+              "source": 107
+            }
+          ],
+          "source": 78,
+          "kind": "Practice"
+        }
+      ],
+      "source": 70,
+      "platform": "Mac"
+    },
+    {
+      "id": "1.4",
+      "title": "Terminal Shortcuts Worth Knowing",
+      "objective": "Pick up the three keyboard shortcuts that make working in the terminal fast: recalling the previous command, wiping a mistyped line, and deleting word by word.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s110",
+          "title": "Recall your previous command",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Press the up-arrow key (↑) and the command you just ran is pulled right back onto the line, ready to run or edit.",
+              "links": [],
+              "source": 111
+            },
+            {
+              "type": "paragraph",
+              "text": "P.S. Extremely handy when you need to run the same command several times in a row — like re-running a version check after a fix.",
+              "links": [],
+              "source": 112
+            }
+          ],
+          "source": 110,
+          "kind": "Understand"
+        },
+        {
+          "id": "s113",
+          "title": "Erase the whole line",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Typed something wrong and want a clean start? One keystroke wipes everything you've entered:",
+              "links": [],
+              "source": 114
+            },
+            {
+              "type": "bullet",
+              "text": "Windows: ESC",
+              "links": [],
+              "source": 115
+            },
+            {
+              "type": "bullet",
+              "text": "macOS: Ctrl + U",
+              "links": [],
+              "source": 116
+            }
+          ],
+          "source": 113,
+          "kind": "Understand"
+        },
+        {
+          "id": "s117",
+          "title": "Delete word by word",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "If you'd rather delete what you typed one word at a time instead of all at once:",
+              "links": [],
+              "source": 118
+            },
+            {
+              "type": "bullet",
+              "text": "Windows: Ctrl + Backspace",
+              "links": [],
+              "source": 119
+            },
+            {
+              "type": "bullet",
+              "text": "macOS: Option + Backspace",
+              "links": [],
+              "source": 120
+            }
+          ],
+          "source": 117,
+          "kind": "Practice"
+        }
+      ],
+      "source": 108
+    }
+  ],
+  "shortTitle": "The terminal"
+}

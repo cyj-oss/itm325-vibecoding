@@ -1,0 +1,407 @@
+{
+  "number": 3,
+  "title": "Installing a Code Editor",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "So far you've watched Claude Code build a small website without ever opening the code yourself. That works for tiny projects — but the projects ahead are bigger, and a manager who can't open the work can't judge it. To supervise an AI assistant, you need a window into what it actually produced: a way to open, review, and spot-check the files it writes. This chapter introduces VSCode, the editor we'll use for the rest of the course, then walks you through installing it, adding the extensions that help flag sloppy work for you, and running Claude Code right inside the editor so instruction and inspection happen on one screen.",
+      "links": [],
+      "source": 226
+    }
+  ],
+  "lessons": [
+    {
+      "id": "3.1",
+      "title": "Introducing the VSCode Editor",
+      "objective": "Understand why anyone directing an AI coder needs a code editor — well enough to explain what it's for — and meet VSCode, the editor we'll use throughout this course.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s231",
+          "title": "Why do we need a code editor?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Last chapter you had Claude Code build a simple self-introduction website without writing a single line yourself. At that scale, you don't even need to look at the code. But the projects you'll direct from here on are different:",
+              "links": [],
+              "source": 232
+            },
+            {
+              "type": "bullet",
+              "text": "The number of files grows, and the code inside each file gets longer.",
+              "links": [],
+              "source": 233
+            },
+            {
+              "type": "bullet",
+              "text": "As complexity goes up, the chance the AI makes a mistake goes up with it.",
+              "links": [],
+              "source": 234
+            },
+            {
+              "type": "bullet",
+              "text": "That's why the human in charge needs to be able to open the code the AI wrote, review it, and — when needed — fix parts of it directly. You can't sign off on work you can't see.",
+              "links": [],
+              "source": 235
+            },
+            {
+              "type": "paragraph",
+              "text": "Just as you need a word processor like Microsoft Word to open a document file, you need a dedicated source-code editor to open and inspect code.",
+              "links": [],
+              "source": 236
+            }
+          ],
+          "source": 231,
+          "kind": "Understand"
+        },
+        {
+          "id": "s237",
+          "title": "What is VSCode?",
+          "blocks": [
+            {
+              "type": "image",
+              "src": "image4.png",
+              "alt": "An example code-editing workspace.",
+              "caption": "An example code-editing workspace.",
+              "source": 238
+            },
+            {
+              "type": "paragraph",
+              "text": "VSCode at work — a code file on the left, an AI coding session running alongside it.",
+              "links": [],
+              "source": 239
+            },
+            {
+              "type": "bullet",
+              "text": "Short for Visual Studio Code — a source-code editor developed by Microsoft itself.",
+              "links": [],
+              "source": 240
+            },
+            {
+              "type": "bullet",
+              "text": "It's widely regarded as the most-used editor among developers worldwide.",
+              "links": [],
+              "source": 241
+            },
+            {
+              "type": "bullet",
+              "text": "It's open source, so it's completely free.",
+              "links": [],
+              "source": 242
+            },
+            {
+              "type": "bullet",
+              "text": "It runs everywhere: Windows, macOS, and Linux.",
+              "links": [],
+              "source": 243
+            }
+          ],
+          "source": 237,
+          "kind": "Understand"
+        },
+        {
+          "id": "s244",
+          "title": "How it relates to other editors",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tools you may have heard of lately — Cursor, Antigravity, and friends — are actually derivative editors built on top of VSCode. Learn VSCode once, and you'll be able to find your way around any editor your future team happens to use.",
+              "links": [],
+              "source": 245
+            }
+          ],
+          "source": 244,
+          "kind": "Understand"
+        }
+      ],
+      "source": 229
+    },
+    {
+      "id": "3.2",
+      "title": "Installing VSCode and Learning the Basics",
+      "objective": "Install VSCode, set up the extensions that will help you review AI-written code all course long, and learn the basic inspect-and-verify workflow — all in one sitting.",
+      "intro": [],
+      "steps": [
+        {
+          "id": "s248",
+          "title": "Install VSCode",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Follow the setup guide for your computer to install VS Code:",
+              "links": [],
+              "source": 249
+            },
+            {
+              "type": "paragraph",
+              "text": "https://github.com/cyj-oss/itm325-setup",
+              "links": [
+                {
+                  "text": "https://github.com/cyj-oss/itm325-setup",
+                  "target": "https://github.com/cyj-oss/itm325-setup",
+                  "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink"
+                }
+              ],
+              "source": 250
+            }
+          ],
+          "source": 248,
+          "kind": "Practice"
+        },
+        {
+          "id": "s251",
+          "title": "Install the essential extensions",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "An extension is a kind of plugin that adds new features to VSCode. The two below are your first quality-control tools: they flag problems in code automatically, so you can spot trouble before you have to understand every line.",
+              "links": [],
+              "source": 252
+            },
+            {
+              "type": "paragraph",
+              "text": "Click Extensions in the left sidebar. Look for the icon made of four squares.",
+              "links": [],
+              "source": 253
+            },
+            {
+              "type": "paragraph",
+              "text": "Use the search box to find each extension below. Select the matching result and click Install. Keep any extension that is already installed.",
+              "links": [],
+              "source": 254
+            },
+            {
+              "type": "subheading",
+              "text": "1. ESLint by Microsoft",
+              "links": [],
+              "source": 255
+            },
+            {
+              "type": "paragraph",
+              "text": "An analysis tool that checks source code for errors. When Claude produces something broken or odd, ESLint points at exactly where things went wrong — a red squiggle you can see without reading the whole file. For a manager, that's an early-warning system.",
+              "links": [],
+              "source": 256
+            },
+            {
+              "type": "subheading",
+              "text": "2. Prettier - Code formatter by Prettier",
+              "links": [],
+              "source": 257
+            },
+            {
+              "type": "paragraph",
+              "text": "A tool that automatically tidies up messy code so it's easy to read — and code you can read is code you can review. Together with ESLint, it's a must-have extension that nearly every developer uses.",
+              "links": [],
+              "source": 258
+            },
+            {
+              "type": "subheading",
+              "text": "3. A language pack (optional)",
+              "links": [],
+              "source": 259
+            },
+            {
+              "type": "paragraph",
+              "text": "VS Code uses English by default. To use another language, search for its name, such as Spanish, Japanese, or Korean. Select the Language Pack published by Microsoft and click Install. Choose Change Language and Restart when prompted. If you prefer English, skip this extension.",
+              "links": [],
+              "source": 260
+            }
+          ],
+          "source": 251,
+          "kind": "Practice"
+        },
+        {
+          "id": "s261",
+          "title": "Configure Prettier",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "1. Open Settings by pressing Ctrl+, (comma) on Windows or Command+, (comma) on Mac. Select the User tab.",
+              "links": [],
+              "source": 262
+            },
+            {
+              "type": "paragraph",
+              "text": "2. Search for Format On Save and check Editor: Format On Save.",
+              "links": [],
+              "source": 263
+            },
+            {
+              "type": "paragraph",
+              "text": "3. Search for Default Formatter. Under Editor: Default Formatter, select Prettier - Code formatter.",
+              "links": [],
+              "source": 264
+            }
+          ],
+          "source": 261,
+          "kind": "Understand"
+        },
+        {
+          "id": "s265",
+          "title": "Using VSCode",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "VSCode manages files folder by folder. You open one folder (= one project) at a time and move freely among the files inside it.",
+              "links": [],
+              "source": 266
+            },
+            {
+              "type": "subheading",
+              "text": "Open a folder",
+              "links": [],
+              "source": 267
+            },
+            {
+              "type": "paragraph",
+              "text": "From the menu in the top left, choose File → Open Folder, then select the webdev folder you created in the previous chapter.",
+              "links": [],
+              "source": 268
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "LOST THE PATH?\nIf you're not sure where the folder lives — on Windows it's usually C:\\webdev, and on macOS it's ~/webdev, right under your home folder."
+                ]
+              ],
+              "source": 269
+            },
+            {
+              "type": "paragraph",
+              "text": "Once the folder opens, the File Explorer appears in the left sidebar showing the files inside.",
+              "links": [],
+              "source": 271
+            },
+            {
+              "type": "note",
+              "title": "Before you continue",
+              "text": "Screen looks different from the lesson? The Extensions tab is probably still open from earlier. Click the file-shaped icon at the top of the Activity Bar to get back to the Explorer tab.",
+              "optional": false,
+              "source": 272
+            },
+            {
+              "type": "subheading",
+              "text": "Edit and save files",
+              "links": [],
+              "source": 274
+            },
+            {
+              "type": "paragraph",
+              "text": "Click a file like index.html in the Explorer and its contents open in the area on the right. This is how you'll inspect what the AI produced — and you can also edit freely there when a small fix is quicker than another prompt.",
+              "links": [],
+              "source": 275
+            },
+            {
+              "type": "paragraph",
+              "text": "The moment you start editing, a white dot appears next to the file name. That's the “not saved yet” indicator. Save with Ctrl + S (or Cmd + S) and the white dot disappears — your changes are now written to disk.",
+              "links": [],
+              "source": 276
+            },
+            {
+              "type": "subheading",
+              "text": "Create, move, and delete files and folders",
+              "links": [],
+              "source": 277
+            },
+            {
+              "type": "paragraph",
+              "text": "Right-click an empty spot in the Explorer and a context menu opens. Three items are worth memorizing:",
+              "links": [],
+              "source": 278
+            },
+            {
+              "type": "bullet",
+              "text": "New File — type a file name to create a new file (for example: test.txt).",
+              "links": [],
+              "source": 279
+            },
+            {
+              "type": "bullet",
+              "text": "New Folder — type a folder name to create a new folder. If you right-click on a folder and choose New File, the file is created inside that folder.",
+              "links": [],
+              "source": 280
+            },
+            {
+              "type": "bullet",
+              "text": "Delete — removes a file or folder.",
+              "links": [],
+              "source": 281
+            },
+            {
+              "type": "paragraph",
+              "text": "For moving files, drag and drop is the fastest way. Use it just as naturally as you would when organizing folders anywhere else on your computer.",
+              "links": [],
+              "source": 282
+            }
+          ],
+          "source": 265,
+          "kind": "Understand"
+        },
+        {
+          "id": "s283",
+          "title": "Run Claude Code inside VSCode",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Finally, let's make it possible to use Claude Code right from a single VSCode window. VSCode ships with a built-in terminal.",
+              "links": [],
+              "source": 284
+            },
+            {
+              "type": "subheading",
+              "text": "Open the terminal",
+              "links": [],
+              "source": 285
+            },
+            {
+              "type": "paragraph",
+              "text": "Press Ctrl + J (Cmd + J on macOS) and a terminal pops up at the bottom of the screen.",
+              "links": [],
+              "source": 286
+            },
+            {
+              "type": "note",
+              "title": "Before you continue",
+              "text": "You might see a different panel there instead — the Debug Console, for example. If so, click TERMINAL in the tabs at the top of the panel to switch to the terminal.",
+              "optional": false,
+              "source": 287
+            },
+            {
+              "type": "subheading",
+              "text": "Run  claude",
+              "links": [],
+              "source": 289
+            },
+            {
+              "type": "paragraph",
+              "text": "The terminal's working directory is automatically set to the folder you have open (webdev). No need to cd anywhere — just run:",
+              "links": [],
+              "source": 290
+            },
+            {
+              "type": "code",
+              "text": "claude",
+              "where": "VS Code terminal · normal shell",
+              "mode": "command",
+              "label": "Terminal command",
+              "copy": true,
+              "source": 291,
+              "note": "Paste into the named input area. Press Enter to run."
+            },
+            {
+              "type": "paragraph",
+              "text": "When the welcome message appears, press Enter to reach the prompt screen. Give it an instruction there, and the resulting files show up instantly in the Explorer on the left. In other words: give the order → verify the result, all on one screen, with no window-switching. This is the supervision loop you'll use for the rest of the course.",
+              "links": [],
+              "source": 293
+            }
+          ],
+          "source": 283,
+          "kind": "Practice"
+        }
+      ],
+      "source": 246
+    }
+  ],
+  "shortTitle": "VS Code"
+}
