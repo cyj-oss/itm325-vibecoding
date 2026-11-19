@@ -333,97 +333,97 @@
       "steps": [
         {
           "id": "s178",
-          "title": "Before you run it: make a safe working folder",
+          "title": "Open your existing course folder",
           "blocks": [
             {
-              "type": "note",
-              "title": "Returning from setup?",
-              "text": "Setup already created your webdev folder. In VS Code, use File → Open Folder to open that existing folder: C:\\webdev on Windows, or webdev inside your Mac home folder. Skip the new-folder commands below and select Next step. If you used an older Windows location, follow the Windows setup guide’s folder help before moving work.",
-              "optional": false
-            },
-            {
               "type": "paragraph",
-              "text": "Use a dedicated course workspace. If the installation guide already created webdev, use that existing folder. Find it in File Explorer or Finder and confirm its actual location before starting Claude Code. Do not create a second webdev folder just because it is in a different location.",
-              "links": [],
-              "source": 179
-            },
-            {
-              "type": "paragraph",
-              "text": "If webdev already exists, open that folder and skip creating it. These are new-folder examples; use only the commands for your operating system.",
-              "source": 180
-            },
-            {
-              "type": "code",
-              "text": "cd C:\\",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "platform": "Windows",
-              "source": 180,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "code",
-              "text": "mkdir webdev",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "platform": "Windows",
-              "source": 180,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "code",
-              "text": "cd webdev",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "platform": "Windows",
-              "source": 180,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "code",
-              "text": "cd ~",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "platform": "Mac",
-              "source": 180,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "code",
-              "text": "mkdir -p webdev",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "platform": "Mac",
-              "source": 180,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "code",
-              "text": "cd webdev",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "platform": "Mac",
-              "source": 180,
-              "note": "Paste into the named input area. Press Enter to run."
+              "text": "Setup already created webdev. In VS Code, choose File → Open Folder and open that existing folder: C:\\webdev on Windows, or webdev inside your Mac home folder. If it is already open, select Next step. Do not create a second webdev folder."
             },
             {
               "type": "note",
-              "title": "Workspace note",
-              "text": "The current setup uses C:\\webdev on Windows and ~/webdev on Mac. Keep each project in its own subfolder. If you have an older Windows course folder, use the setup guide’s folder help; do not create a second workspace or overwrite existing work.",
-              "optional": false,
-              "source": 182
+              "title": "Used an older Windows folder?",
+              "text": "Use the Windows setup guide’s folder help before moving work. Keep existing files and do not merge or overwrite another webdev folder.",
+              "optional": true
+            },
+            {
+              "type": "details",
+              "title": "Only if webdev is missing",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "First confirm that you completed the installation lesson. If no webdev folder exists, use these commands in a regular terminal, outside Claude. Follow only your computer’s commands."
+                },
+                {
+                  "type": "code",
+                  "text": "cd C:\\",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "platform": "Windows",
+                  "source": 180,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "mkdir webdev",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "platform": "Windows",
+                  "source": 180,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "cd webdev",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "platform": "Windows",
+                  "source": 180,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "cd ~",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "platform": "Mac",
+                  "source": 180,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "mkdir -p webdev",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "platform": "Mac",
+                  "source": 180,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "cd webdev",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "platform": "Mac",
+                  "source": 180,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Then open the new webdev folder with File → Open Folder in VS Code."
+                }
+              ]
             }
           ],
           "source": 178,
@@ -450,34 +450,40 @@
               "note": "Paste into the named input area. Press Enter to run."
             },
             {
-              "type": "paragraph",
-              "text": "You may already have completed these first-run prompts during setup. If they appear again, follow them for your own course folder:",
-              "links": [],
-              "source": 187
-            },
-            {
-              "type": "bullet",
-              "text": "Workspace access: it asks whether it may read/modify/run the files in the current folder. If it's your safe folder, choose Yes, I trust this folder.",
-              "links": [],
-              "source": 188
-            },
-            {
-              "type": "bullet",
-              "text": "Text style: pick a terminal color theme. You can change it later.",
-              "links": [],
-              "source": 189
-            },
-            {
-              "type": "bullet",
-              "text": "Account: choose Claude account with subscription and log in with your subscription account (the API pay-per-use option makes costs hard to predict — not recommended).",
-              "links": [],
-              "source": 190
-            },
-            {
-              "type": "bullet",
-              "text": "Security note: a warning to always review the results and never blindly run code of unclear origin — this protects you against attacks like prompt injection.",
-              "links": [],
-              "source": 191
+              "type": "details",
+              "title": "Only if first-run prompts appear",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "You may already have completed these first-run prompts during setup. If they appear again, follow them for your own course folder:",
+                  "links": [],
+                  "source": 187
+                },
+                {
+                  "type": "bullet",
+                  "text": "Workspace access: it asks whether it may read/modify/run the files in the current folder. If it's your safe folder, choose Yes, I trust this folder.",
+                  "links": [],
+                  "source": 188
+                },
+                {
+                  "type": "bullet",
+                  "text": "Text style: pick a terminal color theme. You can change it later.",
+                  "links": [],
+                  "source": 189
+                },
+                {
+                  "type": "bullet",
+                  "text": "Account: choose Claude account with subscription and log in with your subscription account (the API pay-per-use option makes costs hard to predict — not recommended).",
+                  "links": [],
+                  "source": 190
+                },
+                {
+                  "type": "bullet",
+                  "text": "Security note: a warning to always review the results and never blindly run code of unclear origin — this protects you against attacks like prompt injection.",
+                  "links": [],
+                  "source": 191
+                }
+              ]
             }
           ],
           "source": 184,
