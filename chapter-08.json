@@ -258,7 +258,9 @@
             "Connection files and real settings are saved; .env.local is ignored by Git and is not tracked.",
             "The app starts without setup errors. Database reads and writes are tested later in the lesson."
           ],
-          "returnText": "Stop at DONE for Part 3 setup. Switch back to this book tab, Lesson 8.2, Step 1. Continue below with Connection files and environment variables. Do not repeat the setup prompt. Table creation comes later in Lesson 8.4."
+          "returnText": "Stop at DONE for Part 3 setup. Switch back to this book tab, Lesson 8.2, Step 1. Continue below with Connection files and environment variables. Do not repeat the setup prompt. Table creation comes later in Lesson 8.4.",
+          "returnUrl": "#lesson=8.2&step=0",
+          "returnLabel": "Return to 8.2 · Connection files"
         },
         {
           "type": "details",
