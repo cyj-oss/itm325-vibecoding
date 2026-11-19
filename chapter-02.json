@@ -115,28 +115,33 @@
           "title": "Before you start",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Claude Code runs on Claude, the AI made by a company called Anthropic. So you need two things:",
-              "links": [],
-              "source": 148
-            },
-            {
-              "type": "bullet",
-              "text": "An Anthropic account — free",
-              "links": [],
-              "source": 149
-            },
-            {
-              "type": "bullet",
-              "text": "A Pro (or higher) subscription — about $20 per month",
-              "links": [],
-              "source": 150
-            },
-            {
-              "type": "paragraph",
-              "text": "Create or sign in to your Claude account, then confirm the monthly plan and price before subscribing.",
-              "links": [],
-              "source": 151
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Claude Code runs on Claude, the AI made by a company called Anthropic. So you need two things:",
+                  "links": [],
+                  "source": 148
+                },
+                {
+                  "type": "bullet",
+                  "text": "An Anthropic account — free",
+                  "links": [],
+                  "source": 149
+                },
+                {
+                  "type": "bullet",
+                  "text": "A Pro (or higher) subscription — about $20 per month",
+                  "links": [],
+                  "source": 150
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Create or sign in to your Claude account, then confirm the monthly plan and price before subscribing.",
+                  "links": [],
+                  "source": 151
+                }
+              ]
             },
             {
               "type": "setup",
@@ -153,7 +158,7 @@
             }
           ],
           "source": 147,
-          "kind": "Understand"
+          "kind": "Practice"
         },
         {
           "id": "s154",
@@ -166,40 +171,46 @@
               "optional": false
             },
             {
-              "type": "subheading",
-              "text": "Go to the pricing page",
-              "links": [],
-              "source": 155
+              "type": "action",
+              "where": "Browser · Claude account",
+              "title": "Open the plan options",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Click the account menu in the bottom-left corner, or the Upgrade button in the top-right.",
+                  "links": [],
+                  "source": 156
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Click the account menu in the bottom-left corner, or the Upgrade button in the top-right.",
-              "links": [],
-              "source": 156
-            },
-            {
-              "type": "subheading",
-              "text": "Pro vs. Max",
-              "links": [],
-              "source": 157
-            },
-            {
-              "type": "paragraph",
-              "text": "Anthropic offers two main paid plans:",
-              "links": [],
-              "source": 158
-            },
-            {
-              "type": "bullet",
-              "text": "Pro — about $20/month (about $17/month billed annually). Plenty for following this course.",
-              "links": [],
-              "source": 159
-            },
-            {
-              "type": "bullet",
-              "text": "Max — about $100–200/month. Much higher Claude Code usage limits, meant for working developers who code all day.",
-              "links": [],
-              "source": 160
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Pro vs. Max",
+                  "links": [],
+                  "source": 157
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Anthropic offers two main paid plans:",
+                  "links": [],
+                  "source": 158
+                },
+                {
+                  "type": "bullet",
+                  "text": "Pro — about $20/month (about $17/month billed annually). Plenty for following this course.",
+                  "links": [],
+                  "source": 159
+                },
+                {
+                  "type": "bullet",
+                  "text": "Max — about $100–200/month. Much higher Claude Code usage limits, meant for working developers who code all day.",
+                  "links": [],
+                  "source": 160
+                }
+              ]
             },
             {
               "type": "note",
@@ -210,29 +221,47 @@
               "optional": true
             },
             {
-              "type": "paragraph",
-              "text": "After the course activity, cancel if you will no longer use the subscription. To avoid another charge, cancel at least 24 hours before your next billing date. Your paid access continues until the end of the current billing period.",
-              "links": [],
-              "source": 162
+              "type": "action",
+              "where": "Browser · Claude billing",
+              "title": "Choose the monthly plan and subscribe",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Click the Subscribe button under Pro and you'll be taken to the payment page. Enter your card details and complete the payment.",
+                  "links": [],
+                  "source": 164
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "Enter payment details",
-              "links": [],
-              "source": 163
+              "type": "action",
+              "where": "Your calendar",
+              "title": "Set a cancellation reminder",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "After the course activity, cancel if you will no longer use the subscription. To avoid another charge, cancel at least 24 hours before your next billing date. Your paid access continues until the end of the current billing period.",
+                  "links": [],
+                  "source": 162
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Click the Subscribe button under Pro and you'll be taken to the payment page. Enter your card details and complete the payment.",
-              "links": [],
-              "source": 164
+              "type": "details",
+              "title": "If your payment is declined",
+              "blocks": [
+                {
+                  "type": "note",
+                  "title": "Before you continue",
+                  "text": "If the charge doesn't go through, your bank may be flagging a new online subscription. Check your banking app for a declined-transaction alert, approve it, and try again.",
+                  "optional": false,
+                  "source": 165
+                }
+              ]
             },
             {
-              "type": "note",
-              "title": "Before you continue",
-              "text": "If the charge doesn't go through, your bank may be flagging a new online subscription. Check your banking app for a declined-transaction alert, approve it, and try again.",
-              "optional": false,
-              "source": 165
+              "type": "check",
+              "text": "Your account has the Claude Code access required for this class. If you subscribed for this course, you have a reminder to cancel before the next monthly renewal."
             }
           ],
           "source": 154,
@@ -243,16 +272,27 @@
           "title": "Confirm the payment",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Open your Claude account settings and confirm that the plan or school access you will use for class is active. If you subscribed to Pro, check that the account shows Pro.",
-              "links": [],
-              "source": 168
+              "type": "action",
+              "where": "Browser · Claude account settings",
+              "title": "Confirm your access",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open your Claude account settings and confirm that the plan or school access you will use for class is active. If you subscribed to Pro, check that the account shows Pro.",
+                  "links": [],
+                  "source": 168
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When you install Claude Code in the next lesson, you'll log in with this account and start using it right away.",
+                  "links": [],
+                  "source": 169
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "When you install Claude Code in the next lesson, you'll log in with this account and start using it right away.",
-              "links": [],
-              "source": 169
+              "type": "check",
+              "text": "The account you will use for Claude Code shows an eligible plan. Use this same account during sign-in."
             }
           ],
           "source": 167,
@@ -336,8 +376,15 @@
           "title": "Open your existing course folder",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Setup already created webdev. In VS Code, choose File → Open Folder and open that existing folder: C:\\webdev on Windows, or webdev inside your Mac home folder. If it is already open, select Next step. Do not create a second webdev folder."
+              "type": "action",
+              "where": "VS Code",
+              "title": "Open your existing webdev folder",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Setup already created webdev. In VS Code, choose File → Open Folder and open that existing folder: C:\\webdev on Windows, or webdev inside your Mac home folder. If it is already open, select Next step. Do not create a second webdev folder."
+                }
+              ]
             },
             {
               "type": "note",
@@ -424,6 +471,10 @@
                   "text": "Then open the new webdev folder with File → Open Folder in VS Code."
                 }
               ]
+            },
+            {
+              "type": "check",
+              "text": "VS Code has the webdev folder created during setup open. Keep using this folder throughout the book."
             }
           ],
           "source": 178,
@@ -440,14 +491,21 @@
               "optional": false
             },
             {
-              "type": "code",
-              "text": "claude",
-              "where": "Normal terminal · PowerShell or Mac shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 185,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "action",
+              "where": "Terminal · in your webdev folder",
+              "title": "Start Claude Code only if it is not already running",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "claude",
+                  "where": "Normal terminal · PowerShell or Mac shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 185,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
               "type": "details",
@@ -484,6 +542,10 @@
                   "source": 191
                 }
               ]
+            },
+            {
+              "type": "check",
+              "text": "Claude shows its message area and is ready to receive your prompt."
             }
           ],
           "source": 184,
@@ -526,102 +588,106 @@
           "title": "Commands you must know",
           "blocks": [
             {
-              "type": "subheading",
-              "text": "Change the AI model:  /model",
-              "links": [],
-              "source": 199
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Open the model menu",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "/model",
+                  "where": "Claude Code input",
+                  "mode": "command",
+                  "label": "Claude Code command",
+                  "copy": true,
+                  "source": 201,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "output",
+                  "text": "Select Model\n    Haiku\n  > Sonnet\n    Opus",
+                  "label": "Example output — do not type",
+                  "source": 201
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Choose a model with the arrow keys and confirm with Enter.",
+                  "links": [],
+                  "source": 203
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Type /model in the prompt box to pick which model to use:",
-              "links": [],
-              "source": 200
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "Haiku — light and fast, but less capable.",
+                  "links": [],
+                  "source": 204
+                },
+                {
+                  "type": "bullet",
+                  "text": "Sonnet — the best-balanced default on the Pro plan.",
+                  "links": [],
+                  "source": 205
+                },
+                {
+                  "type": "bullet",
+                  "text": "Opus — the smartest, but it burns tokens quickly; save it for genuinely hard tasks.",
+                  "links": [],
+                  "source": 206
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "/model",
-              "where": "Claude Code input",
-              "mode": "command",
-              "label": "Claude Code command",
-              "copy": true,
-              "source": 201,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Check your usage",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "/usage",
+                  "where": "Claude Code input",
+                  "mode": "command",
+                  "label": "Claude Code command",
+                  "copy": true,
+                  "source": 210,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "output",
+                  "text": "Claude Usage\n  Current Session   42%\n  Current Week      18%",
+                  "label": "Example output — do not type",
+                  "source": 210
+                }
+              ]
             },
             {
-              "type": "output",
-              "text": "Select Model\n    Haiku\n  > Sonnet\n    Opus",
-              "label": "Example output — do not type",
-              "source": 201
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "Current Session — short-term usage that refills every 5 hours.",
+                  "links": [],
+                  "source": 212
+                },
+                {
+                  "type": "bullet",
+                  "text": "Current Week — usage accumulated over the week.",
+                  "links": [],
+                  "source": 213
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If either one gets close to 100%, responses may be limited for a while — glance at this gauge before assigning a big task; it's your budget meter for AI work.",
+                  "links": [],
+                  "source": 214
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Choose a model with the arrow keys and confirm with Enter.",
-              "links": [],
-              "source": 203
-            },
-            {
-              "type": "bullet",
-              "text": "Haiku — light and fast, but less capable.",
-              "links": [],
-              "source": 204
-            },
-            {
-              "type": "bullet",
-              "text": "Sonnet — the best-balanced default on the Pro plan.",
-              "links": [],
-              "source": 205
-            },
-            {
-              "type": "bullet",
-              "text": "Opus — the smartest, but it burns tokens quickly; save it for genuinely hard tasks.",
-              "links": [],
-              "source": 206
-            },
-            {
-              "type": "subheading",
-              "text": "Check token usage:  /usage",
-              "links": [],
-              "source": 208
-            },
-            {
-              "type": "paragraph",
-              "text": "Type /usage to see how much you've used:",
-              "links": [],
-              "source": 209
-            },
-            {
-              "type": "code",
-              "text": "/usage",
-              "where": "Claude Code input",
-              "mode": "command",
-              "label": "Claude Code command",
-              "copy": true,
-              "source": 210,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "output",
-              "text": "Claude Usage\n  Current Session   42%\n  Current Week      18%",
-              "label": "Example output — do not type",
-              "source": 210
-            },
-            {
-              "type": "bullet",
-              "text": "Current Session — short-term usage that refills every 5 hours.",
-              "links": [],
-              "source": 212
-            },
-            {
-              "type": "bullet",
-              "text": "Current Week — usage accumulated over the week.",
-              "links": [],
-              "source": 213
-            },
-            {
-              "type": "paragraph",
-              "text": "If either one gets close to 100%, responses may be limited for a while — glance at this gauge before assigning a big task; it's your budget meter for AI work.",
-              "links": [],
-              "source": 214
+              "type": "check",
+              "text": "You found the model selector and usage information. Return to Claude’s message area before the next prompt."
             }
           ],
           "source": 198,
@@ -647,27 +713,43 @@
           "title": "Build your first website",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Time to delegate your first real task: a light personal-intro page, requested with a prompt like this:",
-              "links": [],
-              "source": 219
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Ask Claude to create your first page",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Paste this entire prompt into Claude Code and press Enter. Review its requests to create or change files."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: Build me a simple personal-intro website.\n- My name is Alex Carter\n- Don't decorate it; keep the code under 200 characters\n- When it's done, open it in a web browser\n- Save the code as index.html",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-220",
+                  "source": 220,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "Request: Build me a simple personal-intro website.\n- My name is Alex Carter\n- Don't decorate it; keep the code under 200 characters\n- When it's done, open it in a web browser\n- Save the code as index.html",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-220",
-              "source": 220,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+              "type": "action",
+              "where": "Browser · generated index.html",
+              "title": "Open and review the page",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Claude Code creates index.html. Review any requested changes, then open the file in a browser if it does not open automatically. Check the name and the simple layout. In the next chapter, you will use VS Code to inspect and edit the file. If VS Code was installed during setup, keep that installation.",
+                  "links": [],
+                  "source": 222
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Claude Code creates index.html. Review any requested changes, then open the file in a browser if it does not open automatically. Check the name and the simple layout. In the next chapter, you will use VS Code to inspect and edit the file. If VS Code was installed during setup, keep that installation.",
-              "links": [],
-              "source": 222
+              "type": "check",
+              "text": "index.html opens in a browser and shows the requested name and introduction."
             }
           ],
           "source": 218,
