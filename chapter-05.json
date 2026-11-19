@@ -279,38 +279,55 @@
           "title": "Initialize Git",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "In VS Code, choose File → Open Folder and open 2.pomodoro, the project from Chapter 4. Open Terminal → New Terminal and confirm the path ends in 2.pomodoro, not the parent webdev folder. Run this command outside Claude:",
-              "links": [],
-              "source": 618
+              "type": "action",
+              "where": "VS Code",
+              "title": "Open the project folder",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "In VS Code, choose File → Open Folder and open 2.pomodoro, the project from Chapter 4. Open Terminal → New Terminal and confirm the path ends in 2.pomodoro, not the parent webdev folder. Run this command outside Claude:",
+                  "links": [],
+                  "source": 618
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "git init",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 619,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Initialize Git in 2.pomodoro",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "git init",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 619,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "output",
+                  "text": "Initialized empty Git repository in .../pomodoro/.git/",
+                  "label": "Example output — do not type",
+                  "source": 619
+                }
+              ]
             },
             {
-              "type": "output",
-              "text": "Initialized empty Git repository in .../pomodoro/.git/",
-              "label": "Example output — do not type",
-              "source": 619
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "A Git repository is the storage space that keeps the folder's version history. A hidden folder named .git is created inside your project.",
+                  "links": [],
+                  "source": 622
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "If you see the message “Initialized empty Git repository”, it worked.",
-              "links": [],
-              "source": 621
-            },
-            {
-              "type": "bullet",
-              "text": "A Git repository is the storage space that keeps the folder's version history. A hidden folder named .git is created inside your project.",
-              "links": [],
-              "source": 622
+              "type": "check",
+              "text": "Git reports that a repository was initialized, or reinitialized if it already existed, inside 2.pomodoro."
             }
           ],
           "source": 617,
@@ -333,54 +350,56 @@
               "optional": true
             },
             {
-              "type": "paragraph",
-              "text": "You'll work in three small steps from the Source Control tab on the left side of VS Code.",
-              "links": [],
-              "source": 625
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Stage the project files",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Click Source Control in the left sidebar. Hover over Changes and click + to stage the files you want to include."
+                }
+              ]
             },
             {
-              "type": "note",
-              "text": "“Stage → write a message → commit. This flow is the backbone of every version you'll ever record.”",
-              "links": [],
-              "source": 626,
-              "title": "Another way to think about it",
-              "optional": true
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "note",
+                  "text": "“Stage → write a message → commit. This flow is the backbone of every version you'll ever record.”",
+                  "links": [],
+                  "source": 626,
+                  "title": "Another way to think about it",
+                  "optional": true
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "1. Staging",
-              "links": [],
-              "source": 627
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Write a commit message",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Describe in one line what this change is. For a first version, something as simple as INIT is fine. Good messages become signposts later, when you're walking back up the graph looking for a specific point in time.",
+                  "links": [],
+                  "source": 630
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Staging means putting your changed files “on stage” — think of it as adding items to a shopping cart before checkout. Hover over a file to reveal a + button and add it individually, or click the + on the Changes header to stage everything at once.",
-              "links": [],
-              "source": 628
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Commit the staged files",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Click Commit (the check mark)."
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "2. Write a commit message",
-              "links": [],
-              "source": 629
-            },
-            {
-              "type": "paragraph",
-              "text": "Describe in one line what this change is. For a first version, something as simple as INIT is fine. Good messages become signposts later, when you're walking back up the graph looking for a specific point in time.",
-              "links": [],
-              "source": 630
-            },
-            {
-              "type": "subheading",
-              "text": "3. Commit",
-              "links": [],
-              "source": 631
-            },
-            {
-              "type": "paragraph",
-              "text": "Press the ✓ Commit button and a new version is created — a dot appears in the Graph area below. Each dot is a snapshot of your code at that moment, and you can return to it at any time.",
-              "links": [],
-              "source": 632
+              "type": "check",
+              "text": "Your new commit appears in the Source Control graph."
             }
           ],
           "source": 624,
@@ -405,66 +424,95 @@
           "title": "Fixing the AI's mistakes",
           "blocks": [
             {
-              "type": "subheading",
-              "text": "Discard — cancel changes that aren't committed yet",
-              "links": [],
-              "source": 636
+              "type": "note",
+              "title": "Only when you need to undo a mistake",
+              "text": "Read this as a recovery guide. Do not discard or revert working project files just to complete this page."
             },
             {
-              "type": "paragraph",
-              "text": "Discard removes uncommitted changes from the selected files. Review the files first: this can permanently remove work that Git has never saved. For tracked files, discard restores their latest committed version. Do not discard unrelated work.",
-              "links": [],
-              "source": 637
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Discard — cancel changes that aren't committed yet",
+                  "links": [],
+                  "source": 636
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Discard removes uncommitted changes from the selected files. Review the files first: this can permanently remove work that Git has never saved. For tracked files, discard restores their latest committed version. Do not discard unrelated work.",
+                  "links": [],
+                  "source": 637
+                },
+                {
+                  "type": "subheading",
+                  "text": "Revert — undo a mistake that was already committed",
+                  "links": [],
+                  "source": 638
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If the bad code was already committed, git revert creates a new commit that cancels it out. Two steps:",
+                  "links": [],
+                  "source": 639
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "Revert — undo a mistake that was already committed",
-              "links": [],
-              "source": 638
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Choose the specific bad commit",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "Copy the bad commit's ID from the graph — right-click the commit in the Source Control graph (or use the ... button next to it) to open the menu, then choose Copy Commit ID.",
+                  "links": [],
+                  "source": 640
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "If the bad code was already committed, git revert creates a new commit that cancels it out. Two steps:",
-              "links": [],
-              "source": 639
-            },
-            {
-              "type": "bullet",
-              "text": "Copy the bad commit's ID from the graph — right-click the commit in the Source Control graph (or use the ... button next to it) to open the menu, then choose Copy Commit ID.",
-              "links": [],
-              "source": 640
-            },
-            {
-              "type": "bullet",
-              "text": "Run git revert with the actual commit ID, replacing the placeholder below. Git normally creates a new commit that reverses the selected commit. If a conflict occurs, resolve it before completing the revert.",
-              "links": [],
-              "source": 641
-            },
-            {
-              "type": "code",
-              "text": "git revert <copied-commit-ID>",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 643,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Revert that commit only if needed",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "Run git revert with the actual commit ID, replacing the placeholder below. Git normally creates a new commit that reverses the selected commit. If a conflict occurs, resolve it before completing the revert.",
+                  "links": [],
+                  "source": 641
+                },
+                {
+                  "type": "code",
+                  "text": "git revert <copied-commit-ID>",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 643,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "bullet",
+                  "text": "If a commit-message editor opens, save the message and close that editor so Git can finish. Check the Source Control graph for the new revert commit. If Git reports a conflict, do not assume the revert is finished.",
+                  "links": [],
+                  "source": 645
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "If a commit-message editor opens, save the message and close that editor so Git can finish. Check the Source Control graph for the new revert commit. If Git reports a conflict, do not assume the revert is finished.",
-              "links": [],
-              "source": 645
-            },
-            {
-              "type": "paragraph",
-              "text": "git reset can move the current branch and, depending on its options, discard working files. This course uses revert for changes that have already been committed.",
-              "links": [],
-              "source": 647
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "git reset can move the current branch and, depending on its options, discard working files. This course uses revert for changes that have already been committed.",
+                  "links": [],
+                  "source": 647
+                }
+              ]
             }
           ],
           "source": 635,
-          "kind": "Practice"
+          "kind": "Only if needed"
         }
       ],
       "source": 615
@@ -572,60 +620,97 @@
           "title": "Use your prepared GitHub account",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Use the GitHub account you prepared in Lesson 5.2 or 5.3. Already signed in at https://github.com/login? Continue to the next step. VS Code may still request authorization when you publish.",
-              "links": [
+              "type": "action",
+              "where": "Browser · GitHub",
+              "title": "Use your existing account",
+              "blocks": [
                 {
-                  "text": "https://github.com/login",
-                  "target": "https://github.com/login",
-                  "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink"
+                  "type": "paragraph",
+                  "text": "Use the GitHub account you prepared in Lesson 5.2 or 5.3. Already signed in at https://github.com/login? Continue to the next step. VS Code may still request authorization when you publish.",
+                  "links": [
+                    {
+                      "text": "https://github.com/login",
+                      "target": "https://github.com/login",
+                      "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink"
+                    }
+                  ],
+                  "source": 666
                 }
-              ],
-              "source": 666
+              ]
+            },
+            {
+              "type": "check",
+              "text": "You are signed in to the GitHub account you prepared earlier."
             }
           ],
           "source": 665,
-          "kind": "Understand"
+          "kind": "Practice"
         },
         {
           "id": "s667",
           "title": "Publish your local repository to GitHub",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "You'll publish straight from the Source Control tab in VS Code. The flow has three beats: Publish Branch button → type a repository name → choose the visibility.",
-              "links": [],
-              "source": 668
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Publish the current project",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "In the Source Control tab (Graph view), click the blue Publish Branch button.",
+                  "links": [],
+                  "source": 669
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "In the Source Control tab (Graph view), click the blue Publish Branch button.",
-              "links": [],
-              "source": 669
+              "type": "action",
+              "where": "Browser · GitHub authorization",
+              "title": "Authorize VS Code if asked",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "The first time, GitHub login and a VS Code authorization step (Authorize) run in order. If email verification is requested, complete that too.",
+                  "links": [],
+                  "source": 670
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "The first time, GitHub login and a VS Code authorization step (Authorize) run in order. If email verification is requested, complete that too.",
-              "links": [],
-              "source": 670
+              "type": "action",
+              "where": "VS Code",
+              "title": "Name the repository and choose its visibility",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "In the input box at the top, type a repository name (e.g. pomodoro-timer-web). Avoid spaces and special characters (except - and _), and stick to English letters and digits.",
+                  "links": [],
+                  "source": 671
+                },
+                {
+                  "type": "bullet",
+                  "text": "Choose the visibility required for your course project. Public repositories are visible to everyone. Private repositories are visible only to people with access.",
+                  "links": [],
+                  "source": 672
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "In the input box at the top, type a repository name (e.g. pomodoro-timer-web). Avoid spaces and special characters (except - and _), and stick to English letters and digits.",
-              "links": [],
-              "source": 671
+              "type": "action",
+              "where": "Browser · GitHub sign-in",
+              "title": "Complete any remaining sign-in request",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "Finally, one more login may pop up to connect the Git program with GitHub (“Sign in with your browser”) — go ahead and finish it.",
+                  "links": [],
+                  "source": 673
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Choose the visibility required for your course project. Public repositories are visible to everyone. Private repositories are visible only to people with access.",
-              "links": [],
-              "source": 672
-            },
-            {
-              "type": "bullet",
-              "text": "Finally, one more login may pop up to connect the Git program with GitHub (“Sign in with your browser”) — go ahead and finish it.",
-              "links": [],
-              "source": 673
+              "type": "check",
+              "text": "Publishing finishes without an error. Check the repository on GitHub in the next Check the result step."
             }
           ],
           "source": 667,
@@ -656,10 +741,21 @@
           "title": "Check the result",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "On GitHub, open your profile menu (top right) → Your repositories to find the repository you just uploaded. On the repository page, click the Commits link near the top — you'll see every version you've committed so far, carried over intact.",
-              "links": [],
-              "source": 679
+              "type": "action",
+              "where": "Browser · GitHub",
+              "title": "Find your project and its commits",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "On GitHub, open your profile menu (top right) → Your repositories to find the repository you just uploaded. On the repository page, click the Commits link near the top — you'll see every version you've committed so far, carried over intact.",
+                  "links": [],
+                  "source": 679
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "GitHub shows your project files and commit history."
             }
           ],
           "source": 678,
@@ -705,22 +801,34 @@
           "title": "Push — local → remote",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Pushing sends commits you created locally up to the remote.",
-              "links": [],
-              "source": 689
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Pushing sends commits you created locally up to the remote.",
+                  "links": [],
+                  "source": 689
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "In VS Code Source Control, use Push to upload your local commits. Sync Changes combines a pull and a push, so it can also bring remote changes into your project.",
-              "links": [],
-              "source": 690
-            },
-            {
-              "type": "bullet",
-              "text": "If a pull/push confirmation dialog appears, click OK.",
-              "links": [],
-              "source": 691
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Push your commits",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "In VS Code Source Control, use Push to upload your local commits. Sync Changes combines a pull and a push, so it can also bring remote changes into your project.",
+                  "links": [],
+                  "source": 690
+                },
+                {
+                  "type": "bullet",
+                  "text": "If a pull/push confirmation dialog appears, click OK.",
+                  "links": [],
+                  "source": 691
+                }
+              ]
             },
             {
               "type": "note",
@@ -729,6 +837,10 @@
               "source": 693,
               "title": "Another way to think about it",
               "optional": true
+            },
+            {
+              "type": "check",
+              "text": "Push finishes successfully and GitHub shows your latest commit."
             }
           ],
           "source": 688,
@@ -739,99 +851,159 @@
           "title": "Pull — remote → local",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Pulling brings down commits that were added from another computer (or from GitHub's web editor) into your local copy.",
-              "links": [],
-              "source": 695
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Pulling brings down commits that were added from another computer (or from GitHub's web editor) into your local copy.",
+                  "links": [],
+                  "source": 695
+                },
+                {
+                  "type": "bullet",
+                  "text": "Example scenario: you edit a file directly on github.com and commit it with “Commit changes”; back on your machine, you Pull to fetch that commit.",
+                  "links": [],
+                  "source": 697
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Click the arrow icon on the right side of the Source Control graph → Pull.",
-              "links": [],
-              "source": 696
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Pull when the remote has newer commits",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "Click the arrow icon on the right side of the Source Control graph → Pull.",
+                  "links": [],
+                  "source": 696
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Example scenario: you edit a file directly on github.com and commit it with “Commit changes”; back on your machine, you Pull to fetch that commit.",
-              "links": [],
-              "source": 697
+              "type": "check",
+              "text": "The remote changes are now present locally, or Git reports that you are already up to date."
             }
           ],
           "source": 694,
-          "kind": "Practice"
+          "kind": "Only if needed"
         },
         {
           "id": "s699",
           "title": "Clone — copy an entire remote to a new local machine",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Use clone when the project folder doesn't exist at all — for example, when you start working on a new computer.",
-              "links": [],
-              "source": 700
+              "type": "note",
+              "title": "Only on a computer without this project",
+              "text": "Keep working in your existing project for this course. Clone only when you need another local copy."
             },
             {
-              "type": "bullet",
-              "text": "On the GitHub repository page, click the green Code button → copy the clone URL.",
-              "links": [],
-              "source": 701
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Use clone when the project folder doesn't exist at all — for example, when you start working on a new computer.",
+                  "links": [],
+                  "source": 700
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "In a terminal, move to the directory you want to work in, then run the command below.",
-              "links": [],
-              "source": 702
+              "type": "action",
+              "where": "Browser · GitHub repository",
+              "title": "Copy the repository URL",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "On the GitHub repository page, click the green Code button → copy the clone URL.",
+                  "links": [],
+                  "source": 701
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "git clone <copied-URL> <local-folder-name>",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 703,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Read the clone pattern first",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The command below is a pattern. Before running it, replace both placeholders and move to your webdev folder as explained below."
+                },
+                {
+                  "type": "code",
+                  "text": "git clone <copied-URL> <local-folder-name>",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 703,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Example — download the project into a folder named pomodoro under your web-dev folder:",
-              "links": [],
-              "source": 705
-            },
-            {
-              "type": "paragraph",
-              "text": "Example locations from the guidebook: ~/webdev on Mac and C:\\webdev on Windows. Use the actual location of your own workspace.",
-              "source": 706
-            },
-            {
-              "type": "code",
-              "text": "cd \"PASTE_FULL_PATH_TO_WEBDEV_HERE\"",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "note": "Replace the placeholder before running.",
-              "source": 706
+              "title": "Move to webdev, then run your completed clone command",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Replace PASTE_FULL_PATH_TO_WEBDEV_HERE with your actual folder path, keeping the quotation marks."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Example locations from the guidebook: ~/webdev on Mac and C:\\webdev on Windows. Use the actual location of your own workspace.",
+                  "source": 706
+                },
+                {
+                  "type": "code",
+                  "text": "cd \"PASTE_FULL_PATH_TO_WEBDEV_HERE\"",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "note": "Replace the placeholder before running.",
+                  "source": 706
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "git clone https://github.com/user/pomodoro-timer-web.git pomodoro",
-              "where": "VS Code terminal · normal shell",
-              "mode": "reference",
-              "label": "Example only",
-              "copy": false,
-              "note": "Replace the example URL with your own repository URL before using it.",
-              "source": 706
+              "type": "details",
+              "title": "Example only — use your own repository URL",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Example — download the project into a folder named pomodoro under your web-dev folder:",
+                  "links": [],
+                  "source": 705
+                },
+                {
+                  "type": "code",
+                  "text": "git clone https://github.com/user/pomodoro-timer-web.git pomodoro",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "reference",
+                  "label": "Example only",
+                  "copy": false,
+                  "note": "Replace the example URL with your own repository URL before using it.",
+                  "source": 706
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "When the command finishes, every file and the full version history of the remote repository comes back down to your local machine.",
-              "links": [],
-              "source": 708
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "When the command finishes, every file and the full version history of the remote repository comes back down to your local machine.",
+                  "links": [],
+                  "source": 708
+                }
+              ]
             }
           ],
           "source": 699,
-          "kind": "Practice"
+          "kind": "Only if needed"
         },
         {
           "id": "s709",
@@ -891,59 +1063,68 @@
           "title": "Two approaches",
           "blocks": [
             {
-              "type": "subheading",
-              "text": "1. bypass permissions mode (not recommended)",
-              "links": [],
-              "source": 717
+              "type": "details",
+              "title": "Reference: bypass mode — not used in this course",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "1. bypass permissions mode (not recommended)",
+                  "links": [],
+                  "source": 717
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The simplest — and riskiest — approach is to skip every permission check:",
+                  "links": [],
+                  "source": 718
+                },
+                {
+                  "type": "code",
+                  "text": "claude --permission-mode bypassPermissions",
+                  "where": "Terminal",
+                  "mode": "reference",
+                  "label": "Reference example",
+                  "copy": false,
+                  "source": 719
+                },
+                {
+                  "type": "bullet",
+                  "text": "Bypass mode skips many permission checks. We do not use it for the course exercises.",
+                  "links": [],
+                  "source": 721
+                },
+                {
+                  "type": "bullet",
+                  "text": "We won't use this mode while you're learning.",
+                  "links": [],
+                  "source": 722
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "The simplest — and riskiest — approach is to skip every permission check:",
-              "links": [],
-              "source": 718
+              "type": "action",
+              "where": "VS Code · Explorer",
+              "title": "Create the project settings file",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "In your project folder, create a folder named .claude if it does not exist. Inside it, create settings.json. If you already have this file, review its existing settings before making changes."
+                },
+                {
+                  "type": "code",
+                  "text": "{\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"ask\": [\n      \"Bash(git push *)\",\n      \"Bash(git commit *)\",\n      \"Bash(rm -rf *)\"\n    ]\n  }\n}",
+                  "where": "VS Code editor · .claude/settings.json",
+                  "mode": "file",
+                  "label": "File contents",
+                  "copy": true,
+                  "source": 726,
+                  "note": "Save this file before continuing."
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "claude --permission-mode bypassPermissions",
-              "where": "Terminal",
-              "mode": "reference",
-              "label": "Reference example",
-              "copy": false,
-              "source": 719
-            },
-            {
-              "type": "bullet",
-              "text": "Bypass mode skips many permission checks. We do not use it for the course exercises.",
-              "links": [],
-              "source": 721
-            },
-            {
-              "type": "bullet",
-              "text": "We won't use this mode while you're learning.",
-              "links": [],
-              "source": 722
-            },
-            {
-              "type": "subheading",
-              "text": "2. Fine-grained control with a settings file (recommended)",
-              "links": [],
-              "source": 724
-            },
-            {
-              "type": "paragraph",
-              "text": "Create a .claude/settings.json file in your project root and define permissions precisely:",
-              "links": [],
-              "source": 725
-            },
-            {
-              "type": "code",
-              "text": "{\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"ask\": [\n      \"Bash(git push *)\",\n      \"Bash(git commit *)\",\n      \"Bash(rm -rf *)\"\n    ]\n  }\n}",
-              "where": "VS Code editor · .claude/settings.json",
-              "mode": "file",
-              "label": "File contents",
-              "copy": true,
-              "source": 726,
-              "note": "Save this file before continuing."
+              "type": "check",
+              "text": "The settings are saved in .claude/settings.json inside this project."
             }
           ],
           "source": 716,
@@ -954,63 +1135,72 @@
           "title": "What the options mean",
           "blocks": [
             {
-              "type": "bullet",
-              "text": "defaultMode: \"acceptEdits\" allows file edits and some common file operations in the permitted workspace without asking each time. Other behavior depends on the command, permission rules, and current Claude Code version.",
-              "links": [],
-              "source": 729
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "defaultMode: \"acceptEdits\" allows file edits and some common file operations in the permitted workspace without asking each time. Other behavior depends on the command, permission rules, and current Claude Code version.",
+                  "links": [],
+                  "source": 729
+                },
+                {
+                  "type": "bullet",
+                  "text": "The ask array — registers commands that must get your approval before running.",
+                  "links": [],
+                  "source": 730
+                },
+                {
+                  "type": "bullet",
+                  "text": "Bash(...) matches commands run through Claude Code’s Bash tool. PowerShell tool commands need their own matching rules.",
+                  "links": [],
+                  "source": 731
+                },
+                {
+                  "type": "bullet",
+                  "text": "* is a wildcard that matches whatever arguments follow.",
+                  "links": [],
+                  "source": 732
+                },
+                {
+                  "type": "bullet",
+                  "text": "These sample rules cover the listed Bash command patterns. They are not a universal block on every possible command or tool. Check the current permissions documentation and review any requested action.",
+                  "links": [],
+                  "source": 733
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "The ask array — registers commands that must get your approval before running.",
-              "links": [],
-              "source": 730
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Check the mode before testing",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Save the settings file and restart Claude Code so it can load the settings. Check the mode shown at the bottom. Use Shift + Tab to select accept edits if needed."
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Bash(...) matches commands run through Claude Code’s Bash tool. PowerShell tool commands need their own matching rules.",
-              "links": [],
-              "source": 731
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Test a small file change",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "Add a feature to index.html that displays the current time.",
+                  "where": "Claude Code input",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true,
+                  "id": "prompt-736",
+                  "source": 736,
+                  "note": "Paste into Claude Code and press Enter. Review its proposed changes."
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "* is a wildcard that matches whatever arguments follow.",
-              "links": [],
-              "source": 732
-            },
-            {
-              "type": "bullet",
-              "text": "These sample rules cover the listed Bash command patterns. They are not a universal block on every possible command or tool. Check the current permissions documentation and review any requested action.",
-              "links": [],
-              "source": 733
-            },
-            {
-              "type": "paragraph",
-              "text": "Let's test if Claude's permission mode works properly.",
-              "links": [],
-              "source": 734
-            },
-            {
-              "type": "paragraph",
-              "text": "Open claude in the terminal and make sure the mode at the bottom is set to accept edits on (press Shift + Tab to switch modes).",
-              "links": [],
-              "source": 735
-            },
-            {
-              "type": "code",
-              "text": "Add a feature to index.html that displays the current time.",
-              "where": "Claude Code input",
-              "mode": "prompt",
-              "label": "Claude Code prompt",
-              "copy": true,
-              "id": "prompt-736",
-              "source": 736,
-              "note": "Paste into Claude Code and press Enter. Review its proposed changes."
-            },
-            {
-              "type": "paragraph",
-              "text": "You will now see that Claude proceeds automatically without asking for permission to edit the file or apply specific changes.",
-              "links": [],
-              "source": 737
+              "type": "check",
+              "text": "The requested feature appears in index.html. Review the changed files and confirm how Claude handled file-edit approvals."
             }
           ],
           "source": 728,
@@ -1021,20 +1211,34 @@
           "title": "Behavior after applying it",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Save the settings and restart Claude Code. File edits now proceed automatically — Claude just reports the results. Once you've reviewed the changes, finish up in the Source Control tab with stage → commit → push.",
-              "links": [],
-              "source": 740
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Save the reviewed result in Git",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "After checking Claude’s changes, stage the files, write a commit message, commit, and push."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Ctrl + J on Windows or Command + J on Mac shows or hides the bottom panel. Hiding the panel does not stop the terminal or its running program.",
-              "links": [],
-              "source": 741
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Ctrl + J on Windows or Command + J on Mac shows or hides the bottom panel. Hiding the panel does not stop the terminal or its running program.",
+                  "links": [],
+                  "source": 741
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "Your reviewed change is committed locally and uploaded to GitHub."
             }
           ],
           "source": 739,
-          "kind": "Understand"
+          "kind": "Practice"
         }
       ],
       "source": 712
