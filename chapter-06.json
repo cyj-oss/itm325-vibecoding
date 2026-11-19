@@ -227,9 +227,19 @@
             },
             {
               "type": "paragraph",
-              "text": "Open your existing webdev folder in File Explorer or Finder and copy its full path. Use that path in the terminal. If the setup guide already created ohana-link and it contains package.json, do not create the app again; continue with running the existing app.",
+              "text": "Find your existing webdev folder containing the earlier course projects. Copy its full path using the instructions for your computer below.",
               "links": [],
               "source": 786
+            },
+            {
+              "type": "paragraph",
+              "text": "Windows: Open webdev in File Explorer. Click the address bar and copy the full path.",
+              "platform": "Windows"
+            },
+            {
+              "type": "paragraph",
+              "text": "Mac: Open webdev in Finder. Choose View → Show Path Bar. Control-click webdev in the path bar and choose Copy “webdev” as Pathname.",
+              "platform": "Mac"
             },
             {
               "type": "code",
@@ -238,7 +248,7 @@
               "mode": "command",
               "label": "Terminal command",
               "copy": true,
-              "note": "Replace the placeholder with the full path to your existing webdev folder. Keep the quotation marks.",
+              "note": "Replace the placeholder with the path you copied. Keep the quotes. If cd reports an error, correct it before continuing.",
               "source": 787
             },
             {
@@ -253,7 +263,7 @@
             },
             {
               "type": "paragraph",
-              "text": "The displayed path should end in webdev. If ohana-link already contains package.json, skip creating it again.",
+              "text": "The displayed path must end in webdev. If ohana-link already contains package.json, skip the creation command and open that existing app in Step 2. If that folder exists but is incomplete, ask for help before creating another copy.",
               "source": 787
             },
             {
@@ -438,31 +448,36 @@
               "source": 812
             },
             {
-              "type": "paragraph",
-              "text": "For an existing project with missing packages, run one of the following from the folder containing package.json.",
-              "source": 813
-            },
-            {
-              "type": "code",
-              "text": "npm ci",
-              "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "windows": "npm.cmd ci",
-              "note": "Use this when package-lock.json exists.",
-              "source": 813
-            },
-            {
-              "type": "code",
-              "text": "npm install",
-              "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "windows": "npm.cmd install",
-              "note": "Use this when there is no package-lock.json.",
-              "source": 813
+              "type": "details",
+              "title": "Only if an existing app is missing its packages",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A newly created app already has its packages; skip this section. For an existing app without node_modules, use a regular terminal in the folder containing package.json. Run only one of the following commands."
+                },
+                {
+                  "type": "code",
+                  "text": "npm ci",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "windows": "npm.cmd ci",
+                  "note": "Use this when package-lock.json exists.",
+                  "source": 813
+                },
+                {
+                  "type": "code",
+                  "text": "npm install",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "windows": "npm.cmd install",
+                  "note": "Use this when there is no package-lock.json.",
+                  "source": 813
+                }
+              ]
             }
           ],
           "source": 809,
@@ -481,6 +496,11 @@
           "id": "s817",
           "title": "A Next app has its own built-in server",
           "blocks": [
+            {
+              "type": "note",
+              "title": "Reuse your running server",
+              "text": "If the app from Lesson 6.4 is still running, keep that terminal open and read the output below. Do not start a second server. Use this command in the ohana-link folder only when the server is stopped."
+            },
             {
               "type": "code",
               "text": "npm run dev",
@@ -700,7 +720,7 @@
             {
               "type": "note",
               "title": "Use the Next.js project",
-              "text": "Open ohana-link, where package.json is visible. Keep the development server in one normal terminal and run Claude Code in a second terminal. Save and review the starter state in Git before changing it."
+              "text": "Open ohana-link, where package.json is visible. Keep the development server in its existing terminal. Choose Terminal → New Terminal, confirm this second terminal is also in ohana-link, and type claude there. Use Claude’s message area for AI prompts. Save and review the starter state in Git before changing it."
             },
             {
               "type": "paragraph",
