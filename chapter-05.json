@@ -280,7 +280,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Open your project's root folder in VS Code, then run this command in the built-in terminal:",
+              "text": "In VS Code, choose File → Open Folder and open 2.pomodoro, the project from Chapter 4. Open Terminal → New Terminal and confirm the path ends in 2.pomodoro, not the parent webdev folder. Run this command outside Claude:",
               "links": [],
               "source": 618
             },
@@ -569,11 +569,11 @@
         },
         {
           "id": "s665",
-          "title": "Sign up and log in",
+          "title": "Use your prepared GitHub account",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Prepare your GitHub account: https://github.com/login",
+              "text": "Use the GitHub account you prepared in Lesson 5.2 or 5.3. Already signed in at https://github.com/login? Continue to the next step. VS Code may still request authorization when you publish.",
               "links": [
                 {
                   "text": "https://github.com/login",
