@@ -119,30 +119,48 @@
     {
       "id": "3.2",
       "title": "Installing VSCode and Learning the Basics",
-      "objective": "Install VSCode, set up the extensions that will help you review AI-written code all course long, and learn the basic inspect-and-verify workflow — all in one sitting.",
+      "objective": "Use your existing VS Code installation, add the course extensions, and learn to inspect and edit your project files.",
       "intro": [],
       "steps": [
         {
           "id": "s248",
-          "title": "Install VSCode",
+          "title": "Check your existing VS Code",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Follow the setup guide for your computer to install VS Code:",
-              "links": [],
-              "source": 249
+              "type": "note",
+              "title": "Already completed Lesson 2.3 or 2.4?",
+              "text": "VS Code is already installed. Open it, then continue to Step 2, Install the essential extensions. Do not repeat the installation helper.",
+              "optional": false
             },
             {
-              "type": "paragraph",
-              "text": "https://github.com/cyj-oss/itm325-setup",
-              "links": [
-                {
-                  "text": "https://github.com/cyj-oss/itm325-setup",
-                  "target": "https://github.com/cyj-oss/itm325-setup",
-                  "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink"
-                }
+              "type": "setup",
+              "label": "Only if VS Code is missing · Windows",
+              "url": "https://github.com/cyj-oss/itm325-setup/blob/main/WINDOWS.md#step-1-install-vs-code",
+              "text": "The guide opens in a new tab. Keep this book tab open.",
+              "scope": "Complete only Step 1, Install VS Code. The extension installation and Prettier settings are the next steps in this book.",
+              "checks": [
+                "The VS Code editor or welcome screen opens."
               ],
-              "source": 250
+              "returnText": "Return to Lesson 3.2, Step 2, Install the essential extensions.",
+              "returnUrl": "#lesson=3.2&step=1",
+              "returnLabel": "Continue to 3.2 · Install extensions",
+              "platform": "Windows",
+              "optional": true
+            },
+            {
+              "type": "setup",
+              "label": "Only if VS Code is missing · Mac",
+              "url": "https://github.com/cyj-oss/itm325-setup/blob/main/MAC.md#step-1-install-vs-code",
+              "text": "The guide opens in a new tab. Keep this book tab open.",
+              "scope": "Complete only Step 1, Install VS Code. The extension installation and Prettier settings are the next steps in this book.",
+              "checks": [
+                "The VS Code editor or welcome screen opens."
+              ],
+              "returnText": "Return to Lesson 3.2, Step 2, Install the essential extensions.",
+              "returnUrl": "#lesson=3.2&step=1",
+              "returnLabel": "Continue to 3.2 · Install extensions",
+              "platform": "Mac",
+              "optional": true
             }
           ],
           "source": 248,
@@ -344,7 +362,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Finally, let's make it possible to use Claude Code right from a single VSCode window. VSCode ships with a built-in terminal.",
+              "text": "You tested Claude inside VS Code during setup. This step shows how to reopen that same workflow. If Claude is already open in your course folder, use the existing session.",
               "links": [],
               "source": 284
             },
@@ -375,7 +393,7 @@
             },
             {
               "type": "paragraph",
-              "text": "The terminal's working directory is automatically set to the folder you have open (webdev). No need to cd anywhere — just run:",
+              "text": "Open a new terminal in your webdev folder. If Claude is not already running in that terminal, run:",
               "links": [],
               "source": 290
             },
