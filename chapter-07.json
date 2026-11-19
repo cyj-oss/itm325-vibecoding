@@ -320,7 +320,7 @@
     {
       "id": "7.3",
       "title": "Setting a Design Theme (Claude Skills)",
-      "objective": "Register a design guide as a Claude Skill so that every UI task automatically follows your chosen theme's rules — then verify the Skill loaded, apply the theme, commit, and push.",
+      "objective": "Register a design guide as a Claude Skill that Claude can use for related UI tasks. Verify the Skill is available, apply the theme, check the result, then commit and push.",
       "intro": [],
       "steps": [
         {
@@ -345,7 +345,7 @@
               "type": "download",
               "label": "Download the English themes",
               "url": "themes-english.zip",
-              "text": "Extract the ZIP, then choose one theme. Copy the entire chosen file into .claude/skills/design-theme/SKILL.md in the next step."
+              "text": "Extract the ZIP, then choose one theme. In the Register the Skill step, copy the entire chosen file into .claude/skills/design-theme/SKILL.md."
             },
             {
               "type": "paragraph",
