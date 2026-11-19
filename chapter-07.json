@@ -28,16 +28,27 @@
           "title": "Meet Ohana Link",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Starting in this chapter, we build the course's final project — Ohana Link — together, with Claude doing the coding and you directing and reviewing. Ohana Link is a bookmark service: a place to store the pages you keep coming back to and manage them with folders. We'll build it on top of Next.js, step by step, into something close to a real production service.",
-              "links": [],
-              "source": 883
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Starting in this chapter, we build the course's final project — Ohana Link — together, with Claude doing the coding and you directing and reviewing. Ohana Link is a bookmark service: a place to store the pages you keep coming back to and manage them with folders. We'll build it on top of Next.js, step by step, into something close to a real production service.",
+                  "links": [],
+                  "source": 883
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Before requesting any code, spend a few minutes playing with the finished demo so you know exactly what you're asking for — a manager who knows the target can spot the gaps in a delivery. Click the folders in the sidebar to filter links, and try adding your own with the + New Folder and + New Link buttons. (The instructor demo at ohana-link.vercel.app is the original Korean-language version — the layout and features are exactly what your project will have.)",
-              "links": [],
-              "source": 884
+              "type": "details",
+              "title": "Optional: explore the original demo",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Before requesting any code, spend a few minutes playing with the finished demo so you know exactly what you're asking for — a manager who knows the target can spot the gaps in a delivery. Click the folders in the sidebar to filter links, and try adding your own with the + New Folder and + New Link buttons. (The instructor demo at ohana-link.vercel.app is the original Korean-language version — the layout and features are exactly what your project will have.)",
+                  "links": [],
+                  "source": 884
+                }
+              ]
             }
           ],
           "source": 882,
@@ -86,13 +97,14 @@
               "source": 891
             },
             {
-              "type": "table",
-              "rows": [
-                [
-                  "WHY “CRUD”?\nCRUD stands for Create, Read, Update, Delete — the four basic operations almost every data-driven app performs. When developers say “link CRUD,” they mean the full life cycle of a link record."
-                ]
-              ],
-              "source": 892
+              "type": "details",
+              "title": "Why “crud”?",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "CRUD stands for Create, Read, Update, Delete — the four basic operations almost every data-driven app performs. When developers say “link CRUD,” they mean the full life cycle of a link record."
+                }
+              ]
             }
           ],
           "source": 888,
@@ -144,28 +156,42 @@
           "title": "Reset the project to its initial state",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Open ohana-link in VS Code. This step removes the earlier Pomodoro practice so you can build Ohana Link. First preserve a backup of any work you want to keep. Discard only restores uncommitted changes; it does not jump to a selected older commit.",
-              "links": [],
-              "source": 902
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Review your backup and commit history",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open ohana-link in VS Code. This step removes the earlier Pomodoro practice so you can build Ohana Link. First preserve a backup of any work you want to keep. Discard only restores uncommitted changes; it does not jump to a selected older commit.",
+                  "links": [],
+                  "source": 902
+                },
+                {
+                  "type": "bullet",
+                  "text": "Go to the Source Control tab in the left sidebar.",
+                  "links": [],
+                  "source": 903
+                },
+                {
+                  "type": "bullet",
+                  "text": "In Source Control, inspect the graph. If the latest commit is still Initial commit from Create Next App and your practice work is uncommitted, the discard workflow below can restore tracked starter files. If the practice was committed, use the revert workflow in Lesson 5.4 instead of assuming Discard will return to the initial commit.",
+                  "links": [],
+                  "source": 904
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Go to the Source Control tab in the left sidebar.",
-              "links": [],
-              "source": 903
-            },
-            {
-              "type": "bullet",
-              "text": "In Source Control, inspect the graph. If the latest commit is still Initial commit from Create Next App and your practice work is uncommitted, the discard workflow below can restore tracked starter files. If the practice was committed, use the revert workflow in Lesson 5.4 instead of assuming Discard will return to the initial commit.",
-              "links": [],
-              "source": 904
-            },
-            {
-              "type": "bullet",
-              "text": "For uncommitted practice work, review the changed files and discard only the practice changes you intend to remove. Keep prompt.md, .claude/settings.json, and .vscode/settings.json if present. Review newly created, untracked practice files separately; do not discard or delete unrelated files.",
-              "links": [],
-              "source": 905
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Remove only the Pomodoro practice changes you intend to remove",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "For uncommitted practice work, review the changed files and discard only the practice changes you intend to remove. Keep prompt.md, .claude/settings.json, and .vscode/settings.json if present. Review newly created, untracked practice files separately; do not discard or delete unrelated files.",
+                  "links": [],
+                  "source": 905
+                }
+              ]
             },
             {
               "type": "note",
@@ -173,54 +199,81 @@
               "text": "Discarded work may not be recoverable. Keep the prompt and configuration files you need, and verify that the starter page runs before continuing.",
               "optional": false,
               "source": 906
+            },
+            {
+              "type": "check",
+              "text": "The original Next.js starter page runs, and the prompt and configuration files you need are still present."
             }
           ],
           "source": 901,
-          "kind": "Understand"
+          "kind": "Practice"
         },
         {
           "id": "s908",
           "title": "Implement the index page UI",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Write the following request in `prompt.md`, then direct Claude to it:",
-              "links": [],
-              "source": 909
-            },
-            {
-              "type": "code",
-              "text": "Request: implement the index page UI for a bookmark service.\n– Page layout:\n   – Top header with a “Ohana Link” text logo on the left and a “+ Add Link” button on the right\n   – Left sidebar with an “All” button and the folder list\n   – Main section shows the registered links in a grid\n– Things to watch:\n   – Split the work into properly separated components\n   – Report the results component by component",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-910",
-              "source": 910,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Build the bookmark page layout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: implement the index page UI for a bookmark service.\n– Page layout:\n   – Top header with a “Ohana Link” text logo on the left and a “+ Add Link” button on the right\n   – Left sidebar with an “All” button and the folder list\n   – Main section shows the registered links in a grid\n– Things to watch:\n   – Split the work into properly separated components\n   – Report the results component by component",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-910",
+                  "source": 910,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Save prompt.md and use the Claude Code instruction above once. Review the component report and changed files. Keep the existing development server running; use the command below in a regular terminal only if it has stopped.",
-              "links": [],
-              "source": 912
-            },
-            {
-              "type": "code",
-              "text": "npm run dev",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "windows": "npm.cmd run dev",
-              "source": 913,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Reuse the existing server, or start it if stopped",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Save prompt.md and use the Claude Code instruction above once. Review the component report and changed files. Keep the existing development server running; use the command below in a regular terminal only if it has stopped.",
+                  "links": [],
+                  "source": 912
+                },
+                {
+                  "type": "code",
+                  "text": "npm run dev",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "windows": "npm.cmd run dev",
+                  "source": 913,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Open the Local address printed by the server, usually http://localhost:3000. Check the layout against every part of your prompt.",
-              "links": [],
-              "source": 915
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Check the layout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open the Local address printed by the server, usually http://localhost:3000. Check the layout against every part of your prompt.",
+                  "links": [],
+                  "source": 915
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "The header, sidebar, and main content match the prompt."
             }
           ],
           "source": 908,
@@ -237,15 +290,26 @@
               "source": 917
             },
             {
-              "type": "code",
-              "text": "Request: move the component files out of the app/components folder and into the root-level /components folder.",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-918",
-              "source": 918,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Request the folder move only if you want it",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: move the component files out of the app/components folder and into the root-level /components folder.",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-918",
+                  "source": 918,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
               "type": "note",
@@ -253,31 +317,44 @@
               "text": "Moving files by hand can break the import paths that connect your files, so it's not recommended. When Claude moves them, it updates every import for you.",
               "optional": false,
               "source": 920
+            },
+            {
+              "type": "check",
+              "text": "If you made this optional change, the components are in the requested folder and the app still opens."
             }
           ],
           "source": 916,
-          "kind": "Practice"
+          "kind": "Optional"
         },
         {
           "id": "s922",
           "title": "Implement the new-link page",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Next, create the page users land on when they press the `+ Add Link` button:",
-              "links": [],
-              "source": 923
+              "type": "action",
+              "where": "VS Code editor · prompt.md",
+              "title": "Build the new-link page",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-924",
+                  "source": 924,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "Request: implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
-              "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-924",
-              "source": 924,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "type": "check",
+              "text": "In the browser, click + Add Link. The new-link page opens and includes the fields requested in the prompt."
             }
           ],
           "source": 922,
@@ -288,27 +365,41 @@
           "title": "Implement the per-folder link page",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Now create the page that shows only the links saved in whichever folder you click in the sidebar:",
-              "links": [],
-              "source": 927
-            },
-            {
-              "type": "code",
-              "text": "Request: implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-928",
-              "source": 928,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Build the per-folder page",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-928",
+                  "source": 928,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "A name wrapped in square brackets like `[folderId]` is Next.js's notation for dynamic routing — a route segment that accepts a changing value. Many different folder addresses, such as /folder/dev and /folder/design, all connect to the same page component. Knowing this lets you check the address bar and confirm the routing was built the way you specified.",
-              "links": [],
-              "source": 930
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A name wrapped in square brackets like `[folderId]` is Next.js's notation for dynamic routing — a route segment that accepts a changing value. Many different folder addresses, such as /folder/dev and /folder/design, all connect to the same page component. Knowing this lets you check the address bar and confirm the routing was built the way you specified.",
+                  "links": [],
+                  "source": 930
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "Click a folder in the browser sidebar. The address changes to that folder’s route and its page displays the requested layout."
             }
           ],
           "source": 926,
@@ -348,10 +439,21 @@
               "text": "Extract the ZIP, then choose one theme. In the Register the Skill step, copy the entire chosen file into .claude/skills/design-theme/SKILL.md."
             },
             {
-              "type": "paragraph",
-              "text": "Download themes-english.zip from this lesson and extract it. Open the themes folder and choose one of the English theme guides: Apple, DoorDash, Nextdoor, Notion, or Cash App inspired. Copy the themes folder into your project root. These are classroom design adaptations, not official brand specifications.",
-              "links": [],
-              "source": 936
+              "type": "action",
+              "where": "File Explorer on Windows · Finder on Mac",
+              "title": "Extract and choose your theme",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Download themes-english.zip from this lesson and extract it. Open the themes folder and choose one of the English theme guides: Apple, DoorDash, Nextdoor, Notion, or Cash App inspired. Copy the themes folder into your project root. These are classroom design adaptations, not official brand specifications.",
+                  "links": [],
+                  "source": 936
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "The project contains the themes folder and you have chosen one theme file."
             }
           ],
           "source": 935,
@@ -382,43 +484,68 @@
           "title": "Register the Skill",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Under the `.claude` folder at the project root, create folders and a file with this exact structure:",
-              "links": [],
-              "source": 941
+              "type": "action",
+              "where": "VS Code · Explorer",
+              "title": "Create the Skill folders and file",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Expand .claude in Explorer. Create a skills folder inside it, then a design-theme folder inside skills. In design-theme, create SKILL.md with exactly this capitalization."
+                },
+                {
+                  "type": "code",
+                  "text": ".claude/\n  skills/\n    design-theme/\n      SKILL.md",
+                  "where": ".claude folder structure",
+                  "mode": "reference",
+                  "label": "Reference example",
+                  "copy": false,
+                  "source": 942
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": ".claude/\n  skills/\n    design-theme/\n      SKILL.md",
-              "where": ".claude folder structure",
-              "mode": "reference",
-              "label": "Reference example",
-              "copy": false,
-              "source": 942
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "`skills/` — the folder that collects all of your Skills.",
+                  "links": [],
+                  "source": 944
+                },
+                {
+                  "type": "bullet",
+                  "text": "`design-theme/` — the folder name becomes the Skill's name.",
+                  "links": [],
+                  "source": 945
+                },
+                {
+                  "type": "bullet",
+                  "text": "`SKILL.md` — the file that holds the actual manual text (keep the uppercase name exactly as shown).",
+                  "links": [],
+                  "source": 946
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "`skills/` — the folder that collects all of your Skills.",
-              "links": [],
-              "source": 944
+              "type": "action",
+              "where": "VS Code · theme file and SKILL.md",
+              "title": "Copy the entire chosen theme into SKILL.md",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open the theme you like from the themes folder (for example, the Notion theme), copy its entire contents, and paste them into SKILL.md. That's it — the Skill is registered.",
+                  "links": [],
+                  "source": 947
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Save the file with Ctrl + S on Windows or Command + S on Mac."
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "`design-theme/` — the folder name becomes the Skill's name.",
-              "links": [],
-              "source": 945
-            },
-            {
-              "type": "bullet",
-              "text": "`SKILL.md` — the file that holds the actual manual text (keep the uppercase name exactly as shown).",
-              "links": [],
-              "source": 946
-            },
-            {
-              "type": "paragraph",
-              "text": "Open the theme you like from the themes folder (for example, the Notion theme), copy its entire contents, and paste them into SKILL.md. That's it — the Skill is registered.",
-              "links": [],
-              "source": 947
+              "type": "check",
+              "text": "The full chosen theme is saved in .claude/skills/design-theme/SKILL.md."
             }
           ],
           "source": 940,
@@ -443,57 +570,102 @@
           "title": "Apply the theme",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Start Claude Code in the project. Type / and look for the available skills or use /skills if your version supports that command. Confirm design-theme is available before continuing.",
-              "links": [],
-              "source": 951
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Confirm that the Skill is available",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Start Claude Code in the project. Type / and look for the available skills or use /skills if your version supports that command. Confirm design-theme is available before continuing.",
+                  "links": [],
+                  "source": 951
+                },
+                {
+                  "type": "note",
+                  "title": "Before you continue",
+                  "text": "If the skill is missing, check the exact folder and SKILL.md filename, then restart Claude Code. Consult the current Claude Code skills documentation if the command differs in your version.",
+                  "optional": false,
+                  "source": 952
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Once you've confirmed the Skill is registered, press ESC to leave the list and give this command:",
+                  "links": [],
+                  "source": 954
+                }
+              ]
             },
             {
-              "type": "note",
-              "title": "Before you continue",
-              "text": "If the skill is missing, check the exact folder and SKILL.md filename, then restart Claude Code. Consult the current Claude Code skills documentation if the command differs in your version.",
-              "optional": false,
-              "source": 952
-            },
-            {
-              "type": "paragraph",
-              "text": "Once you've confirmed the Skill is registered, press ESC to leave the list and give this command:",
-              "links": [],
-              "source": 954
-            },
-            {
-              "type": "code",
-              "text": "Request: make the design look nicer.",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-955",
-              "source": 955,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Request the theme update",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: make the design look nicer.",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-955",
+                  "source": 955,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Claude can use the registered theme while restyling the interface. Review which Skill it used and check the result against the theme’s rules.",
-              "links": [],
-              "source": 957
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Claude can use the registered theme while restyling the interface. Review which Skill it used and check the result against the theme’s rules.",
+                  "links": [],
+                  "source": 957
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "npm run dev",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "windows": "npm.cmd run dev",
-              "source": 958,
-              "note": "If the development server is already running, keep it open and skip this command. Otherwise, run it in a regular terminal inside ohana-link, outside Claude."
+              "title": "Keep the server running",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Use the command below only if the development server has stopped."
+                },
+                {
+                  "type": "code",
+                  "text": "npm run dev",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "windows": "npm.cmd run dev",
+                  "source": 958,
+                  "note": "If the development server is already running, keep it open and skip this command. Otherwise, run it in a regular terminal inside ohana-link, outside Claude."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Refresh the browser and you'll see the project's overall design transformed to match the theme you registered. Don't stop at \"it looks nicer\" — spot-check the result against the theme document: are the colors and typography the ones the manual specifies?",
-              "links": [],
-              "source": 960
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Review the design",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Refresh the browser and you'll see the project's overall design transformed to match the theme you registered. Don't stop at \"it looks nicer\" — spot-check the result against the theme document: are the colors and typography the ones the manual specifies?",
+                  "links": [],
+                  "source": 960
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "The page reflects your theme’s colors and typography, and its existing layout and links still work."
             }
           ],
           "source": 950,
@@ -509,28 +681,33 @@
               "text": "If ohana-link has not been published to GitHub yet, follow Lesson 5.5 for this project before pushing. Publishing a previous Pomodoro repository does not connect this new project automatically."
             },
             {
-              "type": "paragraph",
-              "text": "When the work looks good, commit the changes and push them all the way to your remote repository on GitHub:",
-              "links": [],
-              "source": 962
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Stage, commit, and push",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "Stage all changes in the Source Control tab.",
+                  "links": [],
+                  "source": 963
+                },
+                {
+                  "type": "bullet",
+                  "text": "Commit with the message `Apply design theme`.",
+                  "links": [],
+                  "source": 964
+                },
+                {
+                  "type": "bullet",
+                  "text": "Push to the remote repository with the Sync Changes button.",
+                  "links": [],
+                  "source": 965
+                }
+              ]
             },
             {
-              "type": "bullet",
-              "text": "Stage all changes in the Source Control tab.",
-              "links": [],
-              "source": 963
-            },
-            {
-              "type": "bullet",
-              "text": "Commit with the message `Apply design theme`.",
-              "links": [],
-              "source": 964
-            },
-            {
-              "type": "bullet",
-              "text": "Push to the remote repository with the Sync Changes button.",
-              "links": [],
-              "source": 965
+              "type": "check",
+              "text": "GitHub shows the Apply design theme commit for ohana-link."
             }
           ],
           "source": 961,
@@ -569,21 +746,39 @@
               "text": "Keep npm run dev running in one terminal. Open another terminal in the same ohana-link folder and run claude there. Send prompts to Claude Code; keep ordinary shell commands in the normal terminal."
             },
             {
-              "type": "paragraph",
-              "text": "Open ohana-link in VS Code. Keep its existing server running, or start it with the command below if it has stopped. Start with prompt.md empty: clear it or save its old contents in another file.",
-              "links": [],
-              "source": 971
+              "type": "action",
+              "where": "VS Code",
+              "title": "Open the project and prepare prompt.md",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open ohana-link in VS Code. Keep its existing server running, or start it with the command below if it has stopped. Start with prompt.md empty: clear it or save its old contents in another file.",
+                  "links": [],
+                  "source": 971
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "npm run dev",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "windows": "npm.cmd run dev",
-              "source": 972,
-              "note": "If the development server is already running, keep it open and skip this command. Otherwise, run it in a regular terminal inside ohana-link, outside Claude."
+              "title": "Start the server only if it is stopped",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "npm run dev",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "windows": "npm.cmd run dev",
+                  "source": 972,
+                  "note": "If the development server is already running, keep it open and skip this command. Otherwise, run it in a regular terminal inside ohana-link, outside Claude."
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "The app is open in the browser, Claude is in a separate terminal, and prompt.md is ready for the next request."
             }
           ],
           "source": 970,
@@ -594,42 +789,64 @@
           "title": "The add-folder feature",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Write the following in prompt.md, then run it by tagging `@prompt.md` in Claude:",
-              "links": [],
-              "source": 975
-            },
-            {
-              "type": "code",
-              "text": "Request: build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-976",
-              "source": 976,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Request folder creation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-976",
+                  "source": 976,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "table",
-              "rows": [
-                [
-                  "WHAT'S A MODAL?\nA modal is a UI element that appears to float on top of the current screen — like the small dialog that pops up asking you to confirm an action."
-                ]
-              ],
-              "source": 978
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "details",
+                  "title": "What's a modal?",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "A modal is a UI element that appears to float on top of the current screen — like the small dialog that pops up asking you to confirm an action."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When Claude finishes, you'll see new components such as `FolderContext` and `NewFolderModal`, plus some modules under a `lib` folder. The files in lib aren't ordinary UI components — they're modules dedicated to implementing functionality, which is why they're kept in a separate folder. You don't need to read every line, but you should know what files appeared and why.",
+                  "links": [],
+                  "source": 980
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "When Claude finishes, you'll see new components such as `FolderContext` and `NewFolderModal`, plus some modules under a `lib` folder. The files in lib aren't ordinary UI components — they're modules dedicated to implementing functionality, which is why they're kept in a separate folder. You don't need to read every line, but you should know what files appeared and why.",
-              "links": [],
-              "source": 980
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Create a test folder",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "In the browser, test the whole flow yourself: New Folder button → modal → type a name → Save. If the folder shows up in the sidebar, the delivery matches the spec and this step is done.",
+                  "links": [],
+                  "source": 981
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "In the browser, test the whole flow yourself: New Folder button → modal → type a name → Save. If the folder shows up in the sidebar, the delivery matches the spec and this step is done.",
-              "links": [],
-              "source": 981
+              "type": "check",
+              "text": "The saved folder appears in the sidebar."
             }
           ],
           "source": 974,
@@ -640,28 +857,29 @@
           "title": "Commit as you go",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Get into the habit of committing every time a unit of functionality is finished:",
-              "links": [],
-              "source": 983
-            },
-            {
-              "type": "bullet",
-              "text": "Stage all changes.",
-              "links": [],
-              "source": 984
-            },
-            {
-              "type": "bullet",
-              "text": "Commit with the message `Implement add-folder feature`.",
-              "links": [],
-              "source": 985
-            },
-            {
-              "type": "bullet",
-              "text": "Push to the remote repository with Sync Changes.",
-              "links": [],
-              "source": 986
+              "type": "action",
+              "where": "VS Code · Source Control",
+              "title": "Save the working feature",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "Stage all changes.",
+                  "links": [],
+                  "source": 984
+                },
+                {
+                  "type": "bullet",
+                  "text": "Commit with the message `Implement add-folder feature`.",
+                  "links": [],
+                  "source": 985
+                },
+                {
+                  "type": "bullet",
+                  "text": "Push to the remote repository with Sync Changes.",
+                  "links": [],
+                  "source": 986
+                }
+              ]
             },
             {
               "type": "note",
@@ -670,6 +888,10 @@
               "source": 987,
               "title": "Another way to think about it",
               "optional": true
+            },
+            {
+              "type": "check",
+              "text": "The add-folder feature is committed and pushed."
             }
           ],
           "source": 982,
@@ -680,27 +902,43 @@
           "title": "The delete-folder feature",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Clear out prompt.md and write the next request:",
-              "links": [],
-              "source": 989
-            },
-            {
-              "type": "code",
-              "text": "Request: implement folder deletion.\n– The delete button appears on the right side when the mouse hovers over a folder name in the left sidebar\n– Use a trash-can icon\n– On click, ask for confirmation one more time in a modal to prevent user mistakes",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-990",
-              "source": 990,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Add folder deletion",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: implement folder deletion.\n– The delete button appears on the right side when the mouse hovers over a folder name in the left sidebar\n– Use a trash-can icon\n– On click, ask for confirmation one more time in a modal to prevent user mistakes",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-990",
+                  "source": 990,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "If pressing Delete in the confirmation modal makes the folder disappear from the sidebar, it's working. Commit with `Implement delete-folder feature` and push.",
-              "links": [],
-              "source": 992
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the result and save your work",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "If pressing Delete in the confirmation modal makes the folder disappear from the sidebar, it's working. Commit with `Implement delete-folder feature` and push.",
+                  "links": [],
+                  "source": 992
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "Delete a disposable test folder. It disappears only after you confirm. Commit and push the working change."
             }
           ],
           "source": 988,
@@ -711,27 +949,43 @@
           "title": "The rename-folder feature",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Finally, add the ability to edit a folder's name:",
-              "links": [],
-              "source": 994
-            },
-            {
-              "type": "code",
-              "text": "Request: implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-995",
-              "source": 995,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Add folder renaming",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-995",
+                  "source": 995,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Refresh the browser, confirm the behavior, and finish with one last commit and push. That wraps up folder management.",
-              "links": [],
-              "source": 997
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the result and save your work",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Refresh the browser, confirm the behavior, and finish with one last commit and push. That wraps up folder management.",
+                  "links": [],
+                  "source": 997
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "Rename a test folder and verify the new name in the sidebar. Commit and push the working change."
             }
           ],
           "source": 993,
@@ -784,7 +1038,7 @@
             }
           ],
           "source": 1002,
-          "kind": "Practice"
+          "kind": "Understand"
         },
         {
           "id": "s1007",
@@ -847,33 +1101,49 @@
           "title": "The add-link feature",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Clear out prompt.md and write the following:",
-              "links": [],
-              "source": 1018
-            },
-            {
-              "type": "code",
-              "text": "Request: implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-1019",
-              "source": 1019,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Build link creation and the Open Graph API",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-1019",
+                  "source": 1019,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Run it with `@prompt.md` — the implementation takes about 2–3 minutes. Then, in the browser, go to the new-link page, enter an address like https://www.nytimes.com, and save it. You should see the thumbnail, title, and description collected and stored automatically — if any of those fields comes back empty, that's the first thing to flag.",
-              "links": [],
-              "source": 1021
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the result and save your work",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Run it with `@prompt.md` — the implementation takes about 2–3 minutes. Then, in the browser, go to the new-link page, enter an address like https://www.nytimes.com, and save it. You should see the thumbnail, title, and description collected and stored automatically — if any of those fields comes back empty, that's the first thing to flag.",
+                  "links": [],
+                  "source": 1021
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Afterwards, commit with the message `Implement add-link feature + Open Graph API` and push.",
+                  "links": [],
+                  "source": 1022
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Afterwards, commit with the message `Implement add-link feature + Open Graph API` and push.",
-              "links": [],
-              "source": 1022
+              "type": "check",
+              "text": "Add a test link and review its saved title, description, and thumbnail. Commit and push the working feature."
             }
           ],
           "source": 1017,
@@ -884,27 +1154,43 @@
           "title": "The delete-link feature",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Clear prompt.md again and write:",
-              "links": [],
-              "source": 1024
-            },
-            {
-              "type": "code",
-              "text": "Request: implement link deletion.\n– The delete button appears as a trash-can icon in the top-right corner when the mouse hovers over a link card\n– On click, show a confirmation modal",
+              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "mode": "prompt",
-              "label": "Prompt to save in prompt.md",
-              "copy": true,
-              "id": "prompt-1025",
-              "source": 1025,
-              "note": "Save in prompt.md, then use the Claude Code instruction below."
+              "title": "Add link deletion",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                },
+                {
+                  "type": "code",
+                  "text": "Request: implement link deletion.\n– The delete button appears as a trash-can icon in the top-right corner when the mouse hovers over a link card\n– On click, show a confirmation modal",
+                  "where": "VS Code editor · prompt.md",
+                  "mode": "prompt",
+                  "label": "Prompt to save in prompt.md",
+                  "copy": true,
+                  "id": "prompt-1025",
+                  "source": 1025,
+                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "In the browser, hover a link card and run the flow: delete button → confirmation modal → deleted. If it behaves, commit with `Implement delete-link feature` and push.",
-              "links": [],
-              "source": 1027
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the result and save your work",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "In the browser, hover a link card and run the flow: delete button → confirmation modal → deleted. If it behaves, commit with `Implement delete-link feature` and push.",
+                  "links": [],
+                  "source": 1027
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "Delete a disposable test link. Confirm that it disappears, then commit and push."
             }
           ],
           "source": 1023,
@@ -915,14 +1201,45 @@
           "title": "The edit-link feature",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Last, add the ability to edit a saved link. This one's on you as the manager — it follows exactly the same flow as the previous two features: clear out prompt.md, write the spec with where the edit button appears and how the modal behaves as your conditions, run Claude, verify the result in the browser, then commit and push.",
-              "links": [],
-              "source": 1029
+              "type": "action",
+              "where": "VS Code editor · prompt.md",
+              "title": "Write your own edit-link request",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Clear prompt.md. Write a request that specifies where the edit button appears and what the edit dialog should do. Save the file with Ctrl + S on Windows or Command + S on Mac."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Ask Claude to implement your saved request",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Ask Claude to read @prompt.md and carry out the instructions in that file."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Test the edit flow",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Edit a disposable test link and verify that the changed values appear. Then stage, commit, and push the working change in VS Code Source Control."
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "The link-editing flow works and the change is committed and pushed."
             }
           ],
           "source": 1028,
-          "kind": "Understand"
+          "kind": "Practice"
         }
       ],
       "source": 998
