@@ -119,17 +119,17 @@
     {
       "id": "3.2",
       "title": "Installing VSCode and Learning the Basics",
-      "objective": "Use your existing VS Code installation, add the course extensions, and learn to inspect and edit your project files.",
+      "objective": "Install ESLint and Prettier, turn on automatic formatting, then practice using your project files in VS Code.",
       "intro": [],
       "steps": [
         {
           "id": "s248",
-          "title": "Check your existing VS Code",
+          "title": "Start here: two required tasks",
           "blocks": [
             {
               "type": "note",
-              "title": "Already completed Lesson 2.3 or 2.4?",
-              "text": "VS Code is already installed. Open it, then continue to Step 2, Install the essential extensions. Do not repeat the installation helper.",
+              "title": "Required: complete Steps 2 and 3",
+              "text": "Open VS Code. Install ESLint and Prettier in Step 2, then turn on Format On Save and choose Prettier as your Default Formatter in Step 3. The earlier installation guide installed VS Code; these extension and formatting tasks still need to be completed.",
               "optional": false
             },
             {
@@ -141,7 +141,7 @@
               "checks": [
                 "The VS Code editor or welcome screen opens."
               ],
-              "returnText": "Return to Lesson 3.2, Step 2, Install the essential extensions.",
+              "returnText": "Return to Lesson 3.2, Step 2, Install ESLint and Prettier — required.",
               "returnUrl": "#lesson=3.2&step=1",
               "returnLabel": "Continue to 3.2 · Install extensions",
               "platform": "Windows",
@@ -156,7 +156,7 @@
               "checks": [
                 "The VS Code editor or welcome screen opens."
               ],
-              "returnText": "Return to Lesson 3.2, Step 2, Install the essential extensions.",
+              "returnText": "Return to Lesson 3.2, Step 2, Install ESLint and Prettier — required.",
               "returnUrl": "#lesson=3.2&step=1",
               "returnLabel": "Continue to 3.2 · Install extensions",
               "platform": "Mac",
@@ -168,61 +168,83 @@
         },
         {
           "id": "s251",
-          "title": "Install the essential extensions",
+          "title": "Install ESLint and Prettier — required",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "An extension is a kind of plugin that adds new features to VSCode. The two below are your first quality-control tools: they flag problems in code automatically, so you can spot trouble before you have to understand every line.",
-              "links": [],
-              "source": 252
-            },
-            {
-              "type": "paragraph",
-              "text": "Click Extensions in the left sidebar. Look for the icon made of four squares.",
-              "links": [],
-              "source": 253
-            },
-            {
-              "type": "paragraph",
-              "text": "Use the search box to find each extension below. Select the matching result and click Install. Keep any extension that is already installed.",
-              "links": [],
-              "source": 254
+              "type": "note",
+              "title": "Do this now in VS Code",
+              "text": "Install both extensions below. Use the Extensions search box in VS Code.",
+              "optional": false
             },
             {
               "type": "subheading",
-              "text": "1. ESLint by Microsoft",
-              "links": [],
-              "source": 255
+              "text": "1. Open Extensions"
             },
             {
               "type": "paragraph",
-              "text": "An analysis tool that checks source code for errors. When Claude produces something broken or odd, ESLint points at exactly where things went wrong — a red squiggle you can see without reading the whole file. For a manager, that's an early-warning system.",
-              "links": [],
-              "source": 256
+              "text": "Click Extensions in the left sidebar. Look for the icon made of four squares."
+            },
+            {
+              "type": "note",
+              "title": "Cannot see the Extensions icon?",
+              "text": "Choose View → Extensions from the top menu.",
+              "optional": true
             },
             {
               "type": "subheading",
-              "text": "2. Prettier - Code formatter by Prettier",
-              "links": [],
-              "source": 257
+              "text": "2. Search for ESLint and click Install"
             },
             {
               "type": "paragraph",
-              "text": "A tool that automatically tidies up messy code so it's easy to read — and code you can read is code you can review. Together with ESLint, it's a must-have extension that nearly every developer uses.",
-              "links": [],
-              "source": 258
+              "text": "Click the search box at the top of the Extensions panel. Type `ESLint`."
+            },
+            {
+              "type": "paragraph",
+              "text": "Select `ESLint` by `Microsoft`. Click `Install` and wait for it to finish."
             },
             {
               "type": "subheading",
-              "text": "3. A language pack (optional)",
-              "links": [],
-              "source": 259
+              "text": "3. Search for Prettier and click Install"
             },
             {
               "type": "paragraph",
-              "text": "VS Code uses English by default. To use another language, search for its name, such as Spanish, Japanese, or Korean. Select the Language Pack published by Microsoft and click Install. Choose Change Language and Restart when prompted. If you prefer English, skip this extension.",
-              "links": [],
-              "source": 260
+              "text": "Clear the same search box. Type `Prettier`."
+            },
+            {
+              "type": "paragraph",
+              "text": "Select `Prettier - Code formatter` by `Prettier`. Click `Install` and wait for it to finish."
+            },
+            {
+              "type": "paragraph",
+              "text": "If VS Code asks you to trust the publisher, check that it matches the publisher named above before confirming."
+            },
+            {
+              "type": "note",
+              "title": "Already installed?",
+              "text": "If the extension shows a Manage gear or Uninstall instead of Install, keep the existing installation. If it is marked Disabled, choose Enable from its controls.",
+              "optional": true
+            },
+            {
+              "type": "check",
+              "text": "Both ESLint and Prettier are installed and enabled. Select Next step to configure Prettier. There are two settings to complete."
+            },
+            {
+              "type": "note",
+              "title": "What do these extensions do?",
+              "text": "ESLint flags code problems. Prettier tidies code formatting, such as indentation and spacing.",
+              "optional": true
+            },
+            {
+              "type": "details",
+              "title": "Optional: install a language pack",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "VS Code uses English by default. To use another language, search for its name, such as Spanish, Japanese, or Korean. Select the Language Pack published by Microsoft and click Install. Choose Change Language and Restart when prompted. If you prefer English, skip this extension.",
+                  "links": [],
+                  "source": 260
+                }
+              ]
             }
           ],
           "source": 251,
@@ -230,29 +252,73 @@
         },
         {
           "id": "s261",
-          "title": "Configure Prettier",
+          "title": "Set up Prettier — required",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "1. Open Settings by pressing Ctrl+, (comma) on Windows or Command+, (comma) on Mac. Select the User tab.",
-              "links": [],
-              "source": 262
+              "type": "note",
+              "title": "Do this now in VS Code Settings",
+              "text": "Complete both settings below: turn on Format On Save and set Default Formatter to Prettier.",
+              "optional": false
+            },
+            {
+              "type": "subheading",
+              "text": "1. Open Settings"
             },
             {
               "type": "paragraph",
-              "text": "2. Search for Format On Save and check Editor: Format On Save.",
-              "links": [],
-              "source": 263
+              "text": "Windows: hold `Ctrl` and press the comma key `,`.",
+              "platform": "Windows"
             },
             {
               "type": "paragraph",
-              "text": "3. Search for Default Formatter. Under Editor: Default Formatter, select Prettier - Code formatter.",
-              "links": [],
-              "source": 264
+              "text": "Mac: hold `Command` and press the comma key `,`.",
+              "platform": "Mac"
+            },
+            {
+              "type": "paragraph",
+              "text": "At the top of Settings, select the `User` tab."
+            },
+            {
+              "type": "subheading",
+              "text": "2. Turn on Format On Save"
+            },
+            {
+              "type": "paragraph",
+              "text": "Click the Settings search box at the top. Type `format on save`."
+            },
+            {
+              "type": "paragraph",
+              "text": "Find `Editor: Format On Save` and check its checkbox. If it is already checked, leave it checked."
+            },
+            {
+              "type": "subheading",
+              "text": "3. Select Prettier as the Default Formatter"
+            },
+            {
+              "type": "paragraph",
+              "text": "Clear the Settings search box. Type `default formatter`."
+            },
+            {
+              "type": "paragraph",
+              "text": "Find `Editor: Default Formatter`. Open its dropdown and select `Prettier - Code formatter`."
+            },
+            {
+              "type": "paragraph",
+              "text": "Settings save automatically. You can close the Settings tab after checking both choices."
+            },
+            {
+              "type": "check",
+              "text": "Editor: Format On Save is checked, and Editor: Default Formatter shows Prettier - Code formatter. Both are required. Then select Next step."
+            },
+            {
+              "type": "note",
+              "title": "Prettier is missing from the dropdown?",
+              "text": "Return to Step 2 and confirm that Prettier - Code formatter is installed and enabled. Then reopen Settings and try again.",
+              "optional": true
             }
           ],
           "source": 261,
-          "kind": "Understand"
+          "kind": "Practice"
         },
         {
           "id": "s265",
