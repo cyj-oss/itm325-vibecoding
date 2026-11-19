@@ -139,22 +139,17 @@
               "source": 151
             },
             {
-              "type": "paragraph",
-              "text": "Create or sign in to your Claude account using the account setup section:",
-              "links": [],
-              "source": 152
-            },
-            {
-              "type": "paragraph",
-              "text": "https://github.com/cyj-oss/itm325-setup#prepare-your-claude-account",
-              "links": [
-                {
-                  "text": "https://github.com/cyj-oss/itm325-setup#prepare-your-claude-account",
-                  "target": "https://github.com/cyj-oss/itm325-setup",
-                  "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink"
-                }
+              "type": "setup",
+              "label": "Claude account preparation",
+              "url": "https://github.com/cyj-oss/itm325-setup/blob/main/README.md#prepare-your-claude-account",
+              "text": "The guide opens in a new tab. Keep this book tab open.",
+              "scope": "Use only Prepare your Claude account. Sign in or create your account. Leave installation Steps 1–3 for Lesson 2.3 or 2.4.",
+              "checks": [
+                "You can sign in to the Claude account you will use for class."
               ],
-              "source": 153
+              "returnText": "Return to Lesson 2.2, Step 2, to review monthly Pro access. If you already have course-approved Claude Code access, keep it.",
+              "returnUrl": "#lesson=2.2&step=1",
+              "returnLabel": "Continue to 2.2 · Subscribe to Pro"
             }
           ],
           "source": 147,
@@ -164,6 +159,12 @@
           "id": "s154",
           "title": "Subscribe to Pro",
           "blocks": [
+            {
+              "type": "note",
+              "title": "Already have access?",
+              "text": "If this account already has the Claude Code access approved for class, do not buy another subscription. Continue to Step 3 and confirm that access.",
+              "optional": false
+            },
             {
               "type": "subheading",
               "text": "Go to the pricing page",
@@ -243,7 +244,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Once payment finishes you're returned to the claude.ai main screen. If the account menu in the bottom-left now shows a Pro (or Max) label, everything worked.",
+              "text": "Open your Claude account settings and confirm that the plan or school access you will use for class is active. If you subscribed to Pro, check that the account shows Pro.",
               "links": [],
               "source": 168
             },
@@ -268,18 +269,22 @@
       "steps": [
         {
           "id": "setup",
-          "title": "Open the installation guide",
+          "title": "Install, sign in, and get a reply",
           "source": 170,
           "blocks": [
             {
               "type": "setup",
-              "label": "Windows setup",
+              "label": "Windows setup · Steps 1–3",
               "url": "https://github.com/cyj-oss/itm325-setup/blob/main/WINDOWS.md",
-              "text": "Follow the linked guide for your operating system. It checks existing installations so you can keep working tools. Return to this book after the guide’s success checks are complete."
-            },
-            {
-              "type": "check",
-              "text": "Confirm the tool checks in the linked guide succeed before continuing."
+              "text": "The guide opens in a new tab. Keep this book tab open.",
+              "scope": "Complete Steps 1, 2, and 3 in this guide: open VS Code, run the helper, then sign in to Claude Code inside VS Code. Follow only your computer’s guide.",
+              "checks": [
+                "Your webdev course folder is open in VS Code.",
+                "Claude replies with Ready for ITM 325 inside the VS Code terminal. A version number alone is not enough."
+              ],
+              "returnText": "Stop at the guide’s DONE box. Switch back to this book and continue with Lesson 2.5. Keep your existing installation and course folder.",
+              "returnUrl": "#lesson=2.5&step=0",
+              "returnLabel": "Continue to Lesson 2.5"
             }
           ],
           "kind": "Practice"
@@ -296,18 +301,22 @@
       "steps": [
         {
           "id": "setup",
-          "title": "Open the installation guide",
+          "title": "Install, sign in, and get a reply",
           "source": 173,
           "blocks": [
             {
               "type": "setup",
-              "label": "Mac setup",
+              "label": "Mac setup · Steps 1–3",
               "url": "https://github.com/cyj-oss/itm325-setup/blob/main/MAC.md",
-              "text": "Follow the linked guide for your operating system. It checks existing installations so you can keep working tools. Return to this book after the guide’s success checks are complete."
-            },
-            {
-              "type": "check",
-              "text": "Confirm the tool checks in the linked guide succeed before continuing."
+              "text": "The guide opens in a new tab. Keep this book tab open.",
+              "scope": "Complete Steps 1, 2, and 3 in this guide: open VS Code, run the helper, then sign in to Claude Code inside VS Code. Follow only your computer’s guide.",
+              "checks": [
+                "Your webdev course folder is open in VS Code.",
+                "Claude replies with Ready for ITM 325 inside the VS Code terminal. A version number alone is not enough."
+              ],
+              "returnText": "Stop at the guide’s DONE box. Switch back to this book and continue with Lesson 2.5. Keep your existing installation and course folder.",
+              "returnUrl": "#lesson=2.5&step=0",
+              "returnLabel": "Continue to Lesson 2.5"
             }
           ],
           "kind": "Practice"
@@ -326,6 +335,12 @@
           "id": "s178",
           "title": "Before you run it: make a safe working folder",
           "blocks": [
+            {
+              "type": "note",
+              "title": "Returning from setup?",
+              "text": "Setup already created your webdev folder. In VS Code, use File → Open Folder to open that existing folder: C:\\webdev on Windows, or webdev inside your Mac home folder. Skip the new-folder commands below and select Next step. If you used an older Windows location, follow the Windows setup guide’s folder help before moving work.",
+              "optional": false
+            },
             {
               "type": "paragraph",
               "text": "Use a dedicated course workspace. If the installation guide already created webdev, use that existing folder. Find it in File Explorer or Finder and confirm its actual location before starting Claude Code. Do not create a second webdev folder just because it is in a different location.",
@@ -406,7 +421,7 @@
             {
               "type": "note",
               "title": "Workspace note",
-              "text": "For a new Windows workspace, C:\\webdev is one option. On Mac, ~/webdev is a common choice. An existing working course folder can stay where it is; use its actual path. Keep each project in its own subfolder.",
+              "text": "The current setup uses C:\\webdev on Windows and ~/webdev on Mac. Keep each project in its own subfolder. If you have an older Windows course folder, use the setup guide’s folder help; do not create a second workspace or overwrite existing work.",
               "optional": false,
               "source": 182
             }
@@ -419,6 +434,12 @@
           "title": "Run Claude Code",
           "blocks": [
             {
+              "type": "note",
+              "title": "Use the session you already opened",
+              "text": "If Claude’s message area is still open from setup, keep using it and select Next step. Otherwise, open a regular VS Code terminal in webdev and run the command below. You do not need to install or subscribe again.",
+              "optional": false
+            },
+            {
               "type": "code",
               "text": "claude",
               "where": "Normal terminal · PowerShell or Mac shell",
@@ -430,7 +451,7 @@
             },
             {
               "type": "paragraph",
-              "text": "The very first run walks you through these steps:",
+              "text": "You may already have completed these first-run prompts during setup. If they appear again, follow them for your own course folder:",
               "links": [],
               "source": 187
             },
