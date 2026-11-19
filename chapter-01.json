@@ -118,58 +118,64 @@
               "source": 30
             },
             {
-              "type": "subheading",
-              "text": "Opening the terminal on Windows",
-              "links": [],
-              "source": 31
-            },
-            {
-              "type": "bullet",
-              "text": "Click the Search box in the taskbar.",
-              "links": [],
-              "source": 32
-            },
-            {
-              "type": "bullet",
-              "text": "Type PowerShell.",
-              "links": [],
-              "source": 33
-            },
-            {
-              "type": "bullet",
-              "text": "Click Windows PowerShell to launch it.",
-              "links": [],
-              "source": 34
-            },
-            {
-              "type": "paragraph",
-              "text": "Windows — search for PowerShell in the taskbar and run it.",
-              "links": [],
-              "source": 36
-            },
-            {
-              "type": "subheading",
-              "text": "Opening the terminal on macOS",
-              "links": [],
-              "source": 37
-            },
-            {
-              "type": "bullet",
-              "text": "Press Cmd + Space to open Spotlight.",
-              "links": [],
-              "source": 38
-            },
-            {
-              "type": "bullet",
-              "text": "Type terminal.",
-              "links": [],
-              "source": 39
-            },
-            {
-              "type": "bullet",
-              "text": "Press Enter to launch Terminal.",
-              "links": [],
-              "source": 40
+              "type": "details",
+              "title": "How to open it on each computer",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Opening the terminal on Windows",
+                  "links": [],
+                  "source": 31
+                },
+                {
+                  "type": "bullet",
+                  "text": "Click the Search box in the taskbar.",
+                  "links": [],
+                  "source": 32
+                },
+                {
+                  "type": "bullet",
+                  "text": "Type PowerShell.",
+                  "links": [],
+                  "source": 33
+                },
+                {
+                  "type": "bullet",
+                  "text": "Click Windows PowerShell to launch it.",
+                  "links": [],
+                  "source": 34
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Windows — search for PowerShell in the taskbar and run it.",
+                  "links": [],
+                  "source": 36
+                },
+                {
+                  "type": "subheading",
+                  "text": "Opening the terminal on macOS",
+                  "links": [],
+                  "source": 37
+                },
+                {
+                  "type": "bullet",
+                  "text": "Press Cmd + Space to open Spotlight.",
+                  "links": [],
+                  "source": 38
+                },
+                {
+                  "type": "bullet",
+                  "text": "Type terminal.",
+                  "links": [],
+                  "source": 39
+                },
+                {
+                  "type": "bullet",
+                  "text": "Press Enter to launch Terminal.",
+                  "links": [],
+                  "source": 40
+                }
+              ]
             }
           ],
           "source": 29,
@@ -189,18 +195,36 @@
           "title": "Open the terminal",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Type powershell (or terminal) into the Windows search box and launch it. The path you see right away — something like C:\\Users\\yourname — is your current working directory: the folder your commands will run in. This matters for a manager: when the AI creates files, they land relative to a working directory, and this is how you confirm you're looking in the right place.",
-              "links": [],
-              "source": 44
+              "type": "action",
+              "where": "Windows · Start menu",
+              "title": "Open PowerShell",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open Start, type PowerShell, and select Windows PowerShell. Leave this window open for the next step."
+                }
+              ]
             },
             {
-              "type": "note",
-              "text": "“A ‘directory’ is just another word for a folder.”",
-              "links": [],
-              "source": 45,
-              "title": "Another way to think about it",
-              "optional": true
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The path in the prompt, such as C:\\Users\\yourname, is your current working directory. Commands run relative to this folder. Check it when you need to find files created by a command or by AI."
+                },
+                {
+                  "type": "note",
+                  "text": "“A ‘directory’ is just another word for a folder.”",
+                  "links": [],
+                  "source": 45,
+                  "title": "Another way to think about it",
+                  "optional": true
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "A PowerShell window is open, with a prompt showing your current folder."
             }
           ],
           "source": 43,
@@ -216,162 +240,204 @@
               "text": "The commands below illustrate separate operations. After deleting test, create it again before trying cd test. Do not practice deletion on a folder containing work you need."
             },
             {
-              "type": "subheading",
-              "text": "Create a folder:  mkdir",
-              "links": [],
-              "source": 47
+              "type": "action",
+              "where": "Windows · PowerShell",
+              "title": "Create a practice folder",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "mkdir test",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 48,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "mkdir test",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 48,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Short for make directory. Creates a folder named test in your current location.",
+                  "links": [],
+                  "source": 50
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Short for make directory. Creates a folder named test in your current location.",
-              "links": [],
-              "source": 50
+              "type": "action",
+              "where": "Windows · PowerShell",
+              "title": "List this folder",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "ls",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 52,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "List what's here:  ls",
-              "links": [],
-              "source": 51
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Short for list. Prints the files and folders in your current location — your quickest audit tool. When the AI says it created something, ls is how you see for yourself.",
+                  "links": [],
+                  "source": 54
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "ls",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 52,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "check",
+              "text": "The list includes the test folder."
             },
             {
-              "type": "paragraph",
-              "text": "Short for list. Prints the files and folders in your current location — your quickest audit tool. When the AI says it created something, ls is how you see for yourself.",
-              "links": [],
-              "source": 54
+              "type": "action",
+              "where": "Windows · PowerShell",
+              "title": "Remove only the empty test folder",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "rm test",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 56,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "Delete:  rm",
-              "links": [],
-              "source": 55
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Short for remove. Deletes the file or folder you name.",
+                  "links": [],
+                  "source": 58
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "rm test",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 56,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "action",
+              "where": "Windows · PowerShell",
+              "title": "Recreate test, then move between folders",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Run the earlier mkdir test command again before continuing. Then run the following commands one at a time. Press Enter after each command and watch the path in the prompt."
+                },
+                {
+                  "type": "code",
+                  "text": "cd test",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 60,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "cd ..",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 60,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "cd ../..",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 60,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "cd /",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 60,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Short for remove. Deletes the file or folder you name.",
-              "links": [],
-              "source": 58
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Short for change directory.",
+                  "links": [],
+                  "source": 62
+                },
+                {
+                  "type": "bullet",
+                  "text": ". means the current folder; .. means the parent folder.",
+                  "links": [],
+                  "source": 63
+                },
+                {
+                  "type": "bullet",
+                  "text": "Type the first few letters of a folder name and press Tab — the terminal autocompletes it for you.",
+                  "links": [],
+                  "source": 64
+                },
+                {
+                  "type": "bullet",
+                  "text": "The top-level folder you can't go above is called the root folder.",
+                  "links": [],
+                  "source": 65
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "Move around:  cd",
-              "links": [],
-              "source": 59
+              "type": "action",
+              "where": "Windows · PowerShell",
+              "title": "Clear the terminal display",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "clear",
+                  "where": "Windows PowerShell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 67,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "cd test",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 60,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Wipes the terminal output so you get a clean screen.",
+                  "links": [],
+                  "source": 69
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "cd ..",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 60,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "code",
-              "text": "cd ../..",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 60,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "code",
-              "text": "cd /",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 60,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "paragraph",
-              "text": "Short for change directory.",
-              "links": [],
-              "source": 62
-            },
-            {
-              "type": "bullet",
-              "text": ". means the current folder; .. means the parent folder.",
-              "links": [],
-              "source": 63
-            },
-            {
-              "type": "bullet",
-              "text": "Type the first few letters of a folder name and press Tab — the terminal autocompletes it for you.",
-              "links": [],
-              "source": 64
-            },
-            {
-              "type": "bullet",
-              "text": "The top-level folder you can't go above is called the root folder.",
-              "links": [],
-              "source": 65
-            },
-            {
-              "type": "subheading",
-              "text": "Clear the screen:  clear",
-              "links": [],
-              "source": 66
-            },
-            {
-              "type": "code",
-              "text": "clear",
-              "where": "Windows PowerShell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 67,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "paragraph",
-              "text": "Wipes the terminal output so you get a clean screen.",
-              "links": [],
-              "source": 69
+              "type": "check",
+              "text": "You created and removed an empty folder, changed directories, and cleared the display."
             }
           ],
           "source": 46,
@@ -392,10 +458,19 @@
           "title": "Open the terminal",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Press Cmd + Space to open Spotlight, type terminal, and press Enter.",
-              "links": [],
-              "source": 73
+              "type": "action",
+              "where": "Mac · Spotlight",
+              "title": "Open Terminal",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Press Command + Space, type Terminal, and press Return."
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "A Terminal window is open. Leave it open for this lesson."
             }
           ],
           "source": 72,
@@ -432,173 +507,218 @@
           "title": "The core commands",
           "blocks": [
             {
-              "type": "subheading",
-              "text": "Where am I?  pwd",
-              "links": [],
-              "source": 79
+              "type": "action",
+              "where": "Mac · Terminal",
+              "title": "Check your current folder",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "pwd",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 80,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "pwd",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 80,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Short for print working directory. Prints the full path of the folder you're in right now — the first thing to check before judging any AI output, so you know you're inspecting the right project.",
+                  "links": [],
+                  "source": 82
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Short for print working directory. Prints the full path of the folder you're in right now — the first thing to check before judging any AI output, so you know you're inspecting the right project.",
-              "links": [],
-              "source": 82
+              "type": "action",
+              "where": "Mac · Terminal",
+              "title": "Show it in Finder",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "open .",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 84,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "Open the current folder in Finder:  open .",
-              "links": [],
-              "source": 83
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The . means the current folder — this pops it open in Finder so you can see it the GUI way.",
+                  "links": [],
+                  "source": 86
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "open .",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 84,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "action",
+              "where": "Mac · Terminal",
+              "title": "Create a practice folder",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "mkdir test",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 88,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "The . means the current folder — this pops it open in Finder so you can see it the GUI way.",
-              "links": [],
-              "source": 86
+              "type": "action",
+              "where": "Mac · Terminal",
+              "title": "List this folder",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "ls",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 92,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "Create a folder:  mkdir",
-              "links": [],
-              "source": 87
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Short for make directory. Creates a folder in the current location. (Directory = folder.)",
+                  "links": [],
+                  "source": 90
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Prints the files and folders in the current location — your quickest way to confirm that what the AI says it made is actually there.",
+                  "links": [],
+                  "source": 94
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "mkdir test",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 88,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "details",
+              "title": "Reference: removing files and folders — do not run these examples",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Delete:  rm",
+                  "links": [],
+                  "source": 95
+                },
+                {
+                  "type": "code",
+                  "text": "rm filename   # delete a file\nrm -r foldername   # delete a folder AND everything inside it\nrm -rf foldername   # force delete a folder AND everything inside it",
+                  "where": "Mac Terminal",
+                  "mode": "reference",
+                  "label": "Deletion examples",
+                  "copy": false,
+                  "source": 96
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These examples permanently delete files or folders. Do not run them against a course project you want to keep.",
+                  "source": 96
+                },
+                {
+                  "type": "note",
+                  "title": "Before you continue",
+                  "text": "rm -rf deletes instantly and permanently — nothing goes to the Trash. Double-check the folder name before you press Enter, and be extra alert whenever an AI assistant proposes running it.",
+                  "optional": false,
+                  "source": 98
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Short for make directory. Creates a folder in the current location. (Directory = folder.)",
-              "links": [],
-              "source": 90
+              "type": "action",
+              "where": "Mac · Terminal",
+              "title": "Enter test, then return to its parent",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Run these two commands one at a time."
+                },
+                {
+                  "type": "code",
+                  "text": "cd test",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 101,
+                  "note": "Paste into the named input area. Press Enter to run."
+                },
+                {
+                  "type": "code",
+                  "text": "cd ..",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 101,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "List what's here:  ls",
-              "links": [],
-              "source": 91
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Short for change directory. Type part of a folder name and press Tab to autocomplete.",
+                  "links": [],
+                  "source": 103
+                }
+              ]
             },
             {
-              "type": "code",
-              "text": "ls",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 92,
-              "note": "Paste into the named input area. Press Enter to run."
+              "type": "action",
+              "where": "Mac · Terminal",
+              "title": "Clear the terminal display",
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "clear",
+                  "where": "Mac Terminal",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 105,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Prints the files and folders in the current location — your quickest way to confirm that what the AI says it made is actually there.",
-              "links": [],
-              "source": 94
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Wipes the terminal output.",
+                  "links": [],
+                  "source": 107
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "Delete:  rm",
-              "links": [],
-              "source": 95
-            },
-            {
-              "type": "code",
-              "text": "rm filename   # delete a file\nrm -r foldername   # delete a folder AND everything inside it\nrm -rf foldername   # force delete a folder AND everything inside it",
-              "where": "Mac Terminal",
-              "mode": "reference",
-              "label": "Deletion examples",
-              "copy": false,
-              "source": 96
-            },
-            {
-              "type": "paragraph",
-              "text": "These examples permanently delete files or folders. Do not run them against a course project you want to keep.",
-              "source": 96
-            },
-            {
-              "type": "note",
-              "title": "Before you continue",
-              "text": "rm -rf deletes instantly and permanently — nothing goes to the Trash. Double-check the folder name before you press Enter, and be extra alert whenever an AI assistant proposes running it.",
-              "optional": false,
-              "source": 98
-            },
-            {
-              "type": "subheading",
-              "text": "Move around:  cd",
-              "links": [],
-              "source": 100
-            },
-            {
-              "type": "code",
-              "text": "cd test",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 101,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "code",
-              "text": "cd ..",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 101,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "paragraph",
-              "text": "Short for change directory. Type part of a folder name and press Tab to autocomplete.",
-              "links": [],
-              "source": 103
-            },
-            {
-              "type": "subheading",
-              "text": "Clear the screen:  clear",
-              "links": [],
-              "source": 104
-            },
-            {
-              "type": "code",
-              "text": "clear",
-              "where": "Mac Terminal",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 105,
-              "note": "Paste into the named input area. Press Enter to run."
-            },
-            {
-              "type": "paragraph",
-              "text": "Wipes the terminal output.",
-              "links": [],
-              "source": 107
+              "type": "check",
+              "text": "You found your current folder, opened it in Finder, created test, and moved into and out of it."
             }
           ],
           "source": 78,
@@ -684,7 +804,7 @@
             }
           ],
           "source": 117,
-          "kind": "Practice"
+          "kind": "Understand"
         }
       ],
       "source": 108
