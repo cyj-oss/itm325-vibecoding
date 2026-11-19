@@ -325,102 +325,120 @@
           "title": "Using VSCode",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "VSCode manages files folder by folder. You open one folder (= one project) at a time and move freely among the files inside it.",
-              "links": [],
-              "source": 266
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "VSCode manages files folder by folder. You open one folder (= one project) at a time and move freely among the files inside it.",
+                  "links": [],
+                  "source": 266
+                }
+              ]
             },
             {
-              "type": "subheading",
-              "text": "Open a folder",
-              "links": [],
-              "source": 267
+              "type": "action",
+              "where": "VS Code",
+              "title": "Open your course folder",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "From the menu in the top left, choose File → Open Folder, then select the webdev folder you created in the previous chapter.",
+                  "links": [],
+                  "source": 268
+                },
+                {
+                  "type": "details",
+                  "title": "Lost the path?",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "If you're not sure where the folder lives — on Windows it's usually C:\\webdev, and on macOS it's ~/webdev, right under your home folder."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Once the folder opens, the File Explorer appears in the left sidebar showing the files inside.",
+                  "links": [],
+                  "source": 271
+                },
+                {
+                  "type": "note",
+                  "title": "Before you continue",
+                  "text": "Screen looks different from the lesson? The Extensions tab is probably still open from earlier. Click the file-shaped icon at the top of the Activity Bar to get back to the Explorer tab.",
+                  "optional": false,
+                  "source": 272
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "From the menu in the top left, choose File → Open Folder, then select the webdev folder you created in the previous chapter.",
-              "links": [],
-              "source": 268
+              "type": "action",
+              "where": "VS Code · editor",
+              "title": "Open and save a file",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Click a file like index.html in the Explorer and its contents open in the area on the right. This is how you'll inspect what the AI produced — and you can also edit freely there when a small fix is quicker than another prompt.",
+                  "links": [],
+                  "source": 275
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The moment you start editing, a white dot appears next to the file name. That's the “not saved yet” indicator. Save with Ctrl + S (or Cmd + S) and the white dot disappears — your changes are now written to disk.",
+                  "links": [],
+                  "source": 276
+                }
+              ]
             },
             {
-              "type": "table",
-              "rows": [
-                [
-                  "LOST THE PATH?\nIf you're not sure where the folder lives — on Windows it's usually C:\\webdev, and on macOS it's ~/webdev, right under your home folder."
-                ]
-              ],
-              "source": 269
+              "type": "details",
+              "title": "Reference: creating, moving, and deleting files",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Create, move, and delete files and folders",
+                  "links": [],
+                  "source": 277
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Right-click an empty spot in the Explorer and a context menu opens. Three items are worth memorizing:",
+                  "links": [],
+                  "source": 278
+                },
+                {
+                  "type": "bullet",
+                  "text": "New File — type a file name to create a new file (for example: test.txt).",
+                  "links": [],
+                  "source": 279
+                },
+                {
+                  "type": "bullet",
+                  "text": "New Folder — type a folder name to create a new folder. If you right-click on a folder and choose New File, the file is created inside that folder.",
+                  "links": [],
+                  "source": 280
+                },
+                {
+                  "type": "bullet",
+                  "text": "Delete — removes a file or folder.",
+                  "links": [],
+                  "source": 281
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For moving files, drag and drop is the fastest way. Use it just as naturally as you would when organizing folders anywhere else on your computer.",
+                  "links": [],
+                  "source": 282
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Once the folder opens, the File Explorer appears in the left sidebar showing the files inside.",
-              "links": [],
-              "source": 271
-            },
-            {
-              "type": "note",
-              "title": "Before you continue",
-              "text": "Screen looks different from the lesson? The Extensions tab is probably still open from earlier. Click the file-shaped icon at the top of the Activity Bar to get back to the Explorer tab.",
-              "optional": false,
-              "source": 272
-            },
-            {
-              "type": "subheading",
-              "text": "Edit and save files",
-              "links": [],
-              "source": 274
-            },
-            {
-              "type": "paragraph",
-              "text": "Click a file like index.html in the Explorer and its contents open in the area on the right. This is how you'll inspect what the AI produced — and you can also edit freely there when a small fix is quicker than another prompt.",
-              "links": [],
-              "source": 275
-            },
-            {
-              "type": "paragraph",
-              "text": "The moment you start editing, a white dot appears next to the file name. That's the “not saved yet” indicator. Save with Ctrl + S (or Cmd + S) and the white dot disappears — your changes are now written to disk.",
-              "links": [],
-              "source": 276
-            },
-            {
-              "type": "subheading",
-              "text": "Create, move, and delete files and folders",
-              "links": [],
-              "source": 277
-            },
-            {
-              "type": "paragraph",
-              "text": "Right-click an empty spot in the Explorer and a context menu opens. Three items are worth memorizing:",
-              "links": [],
-              "source": 278
-            },
-            {
-              "type": "bullet",
-              "text": "New File — type a file name to create a new file (for example: test.txt).",
-              "links": [],
-              "source": 279
-            },
-            {
-              "type": "bullet",
-              "text": "New Folder — type a folder name to create a new folder. If you right-click on a folder and choose New File, the file is created inside that folder.",
-              "links": [],
-              "source": 280
-            },
-            {
-              "type": "bullet",
-              "text": "Delete — removes a file or folder.",
-              "links": [],
-              "source": 281
-            },
-            {
-              "type": "paragraph",
-              "text": "For moving files, drag and drop is the fastest way. Use it just as naturally as you would when organizing folders anywhere else on your computer.",
-              "links": [],
-              "source": 282
+              "type": "check",
+              "text": "The webdev folder is visible in Explorer and you can open index.html in the editor."
             }
           ],
           "source": 265,
-          "kind": "Understand"
+          "kind": "Practice"
         },
         {
           "id": "s283",
@@ -433,51 +451,64 @@
               "source": 284
             },
             {
-              "type": "subheading",
-              "text": "Open the terminal",
-              "links": [],
-              "source": 285
+              "type": "action",
+              "where": "VS Code",
+              "title": "Open the Terminal panel",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Press Ctrl + J (Cmd + J on macOS) and a terminal pops up at the bottom of the screen.",
+                  "links": [],
+                  "source": 286
+                },
+                {
+                  "type": "note",
+                  "title": "Before you continue",
+                  "text": "You might see a different panel there instead — the Debug Console, for example. If so, click TERMINAL in the tabs at the top of the panel to switch to the terminal.",
+                  "optional": false,
+                  "source": 287
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "Press Ctrl + J (Cmd + J on macOS) and a terminal pops up at the bottom of the screen.",
-              "links": [],
-              "source": 286
-            },
-            {
-              "type": "note",
-              "title": "Before you continue",
-              "text": "You might see a different panel there instead — the Debug Console, for example. If so, click TERMINAL in the tabs at the top of the panel to switch to the terminal.",
-              "optional": false,
-              "source": 287
-            },
-            {
-              "type": "subheading",
-              "text": "Run  claude",
-              "links": [],
-              "source": 289
-            },
-            {
-              "type": "paragraph",
-              "text": "Open a new terminal in your webdev folder. If Claude is not already running in that terminal, run:",
-              "links": [],
-              "source": 290
-            },
-            {
-              "type": "code",
-              "text": "claude",
+              "type": "action",
               "where": "VS Code terminal · normal shell",
-              "mode": "command",
-              "label": "Terminal command",
-              "copy": true,
-              "source": 291,
-              "note": "Paste into the named input area. Press Enter to run."
+              "title": "Start Claude in webdev",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open a new terminal in your webdev folder. If Claude is not already running in that terminal, run:",
+                  "links": [],
+                  "source": 290
+                },
+                {
+                  "type": "code",
+                  "text": "claude",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Terminal command",
+                  "copy": true,
+                  "source": 291,
+                  "note": "Paste into the named input area. Press Enter to run."
+                }
+              ]
             },
             {
-              "type": "paragraph",
-              "text": "When the welcome message appears, press Enter to reach the prompt screen. Give it an instruction there, and the resulting files show up instantly in the Explorer on the left. In other words: give the order → verify the result, all on one screen, with no window-switching. This is the supervision loop you'll use for the rest of the course.",
-              "links": [],
-              "source": 293
+              "type": "action",
+              "where": "Claude Code input · in the terminal",
+              "title": "Complete the first-run prompts if shown",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "When the welcome message appears, press Enter to reach the prompt screen. Give it an instruction there, and the resulting files show up instantly in the Explorer on the left. In other words: give the order → verify the result, all on one screen, with no window-switching. This is the supervision loop you'll use for the rest of the course.",
+                  "links": [],
+                  "source": 293
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "text": "Claude’s message area is visible inside VS Code."
             }
           ],
           "source": 283,
