@@ -1170,11 +1170,13 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Save prompt.md, then ask Claude Code to read and carry out that file. Review requests to create the project files before approving. Open index.html in a browser and confirm that every required element appears. Timer behavior comes in the next step.",
-                  "links": [],
-                  "source": 468
+                  "text": "After Claude finishes and you review its file changes, open index.html in a browser. Check the title, remaining time, timer buttons, and settings button. Timer behavior comes in the next step."
                 }
               ]
+            },
+            {
+              "type": "check",
+              "text": "All elements requested in the prompt are visible. The CSS is in index.css."
             },
             {
               "type": "note",
@@ -1232,11 +1234,13 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Run @prompt.md again. Claude creates index.js and links it into index.html with a <script> tag. Refresh the browser and verify by clicking: confirm the Start / Stop / Reset buttons all behave as specified before you move on.",
-                  "links": [],
-                  "source": 475
+                  "text": "Refresh index.html. Click Start, Stop, and Reset and check the behavior requested in the prompt. Claude should have created index.js and linked it from index.html."
                 }
               ]
+            },
+            {
+              "type": "check",
+              "text": "All three timer buttons work as requested."
             }
           ],
           "source": 471,
@@ -1287,11 +1291,13 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Run it and setting.html + setting.css are generated, and the settings button in index.html is automatically converted to an <a> tag so page navigation works. Verify in the browser: press the settings button on the main page and confirm it navigates — and that the main page's styles weren't touched, since the prompt forbade it.",
-                  "links": [],
-                  "source": 480
+                  "text": "Refresh the main page and click the settings button. Check that the settings page opens and the main page’s styles are unchanged. Claude should have created setting.html and setting.css."
                 }
               ]
+            },
+            {
+              "type": "check",
+              "text": "The settings page has the requested controls and you can navigate to it from the main page."
             }
           ],
           "source": 476,
@@ -1342,11 +1348,13 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "After it runs, walk the acceptance criteria: change the time on the settings page (say, to 10 minutes) → save → confirm the main page reflects it → and confirm the time is still there after you refresh the browser. Try an out-of-range value and an empty field too — the AI was told to block both.",
-                  "links": [],
-                  "source": 485
+                  "text": "After it runs, walk the acceptance criteria: change the time on the settings page (say, to 10 minutes) → save → confirm the main page reflects it → and confirm the time is still there after you refresh the browser. Try an out-of-range value and an empty field too — the AI was told to block both."
                 }
               ]
+            },
+            {
+              "type": "check",
+              "text": "The saved duration reaches the main page and survives refresh. Empty and out-of-range values are rejected."
             }
           ],
           "source": 481,
