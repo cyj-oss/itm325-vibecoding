@@ -849,7 +849,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "In Lesson 8.4, we create empty tables and the rules for storing data. In Lesson 8.5, we connect the app so its buttons can save, load, change, and delete rows."
+                  "text": "First, we create empty tables and the rules for storing data. Then we connect the app to those tables, starting with folder creation on the last page of this lesson. Lesson 8.5 continues with renaming and deleting folders and saving, editing, and deleting links."
                 },
                 {
                   "type": "table",
@@ -1287,33 +1287,23 @@
           ],
           "source": 1180,
           "kind": "Understand"
-        }
-      ],
-      "source": 1140
-    },
-    {
-      "id": "8.5",
-      "title": "Wiring Features to the Database",
-      "objective": "Connect the app’s folder and link features to Supabase, then check how each action changes the saved rows.",
-      "intro": [
-        {
-          "type": "paragraph",
-          "text": "The tables are ready, but creating a table does not connect an app button to it. Each prompt below asks Claude to implement one part of that connection."
         },
-        {
-          "type": "paragraph",
-          "text": "Claude uses MCP while building and checking the feature. The running app uses its Supabase connection to read and write data; you do not need to keep Claude open to use the finished feature."
-        },
-        {
-          "type": "paragraph",
-          "text": "The examples show what changes in the database. Read them, then run the prompt and test through your app. Do not enter the example rows manually."
-        }
-      ],
-      "steps": [
         {
           "id": "s1186",
           "title": "Find the tables you created",
           "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The tables are ready, but creating a table does not connect an app button to it. Each prompt below asks Claude to implement one part of that connection."
+            },
+            {
+              "type": "paragraph",
+              "text": "Claude uses MCP while building and checking the feature. The running app uses its Supabase connection to read and write data; you do not need to keep Claude open to use the finished feature."
+            },
+            {
+              "type": "paragraph",
+              "text": "The examples show what changes in the database. Read them, then run the prompt and test through your app. Do not enter the example rows manually."
+            },
             {
               "type": "action",
               "title": "Open Database",
@@ -1527,7 +1517,16 @@
           ],
           "source": 1192,
           "kind": "Practice"
-        },
+        }
+      ],
+      "source": 1140
+    },
+    {
+      "id": "8.5",
+      "title": "Wiring Features to the Database",
+      "objective": "Connect the app’s folder and link features to Supabase, then check how each action changes the saved rows.",
+      "intro": [],
+      "steps": [
         {
           "id": "s1201",
           "title": "Rename folders",
