@@ -189,7 +189,7 @@
       "id": "prompt-955",
       "sourceBlock": 955,
       "lesson": "7.3",
-      "destination": "VS Code editor · prompt.md",
+      "destination": "Claude Code input · in the VS Code terminal panel",
       "text": "Please refine the design to make it look better.",
       "sourceText": "Request: make the design look nicer.",
       "normalization": "Removed terminal display markers only; removed leading Request: at instructor request",
