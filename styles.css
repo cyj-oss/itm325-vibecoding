@@ -33,3 +33,5 @@
 .lesson-part+.lesson-part{border-top:1px solid var(--line);padding-top:1.7rem;margin-top:2rem}
 .lesson-part>.part-title{font-size:1.4rem;line-height:1.35;margin-bottom:1rem}
 @media(max-width:800px){.lesson-part{scroll-margin-top:84px}.lesson-part>.part-title{font-size:1.3rem}}
+/* Keep the small Explorer screenshot at its original readable size. */
+.guide-image:has(img[src="image-claude-settings-location.png"]){width:348px;max-width:100%}
