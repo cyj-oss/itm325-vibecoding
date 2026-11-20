@@ -190,9 +190,15 @@
       "sourceBlock": 955,
       "lesson": "7.3",
       "destination": "VS Code editor · prompt.md",
-      "text": "make the design look nicer.",
+      "text": "Please refine the design to make it look better.",
       "sourceText": "Request: make the design look nicer.",
-      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request"
+      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request",
+      "instructorRevision": {
+        "date": "2026-11-19",
+        "source": "Exact English replacement supplied by the instructor for Lesson 7.3.",
+        "translation": "Please refine the design to make it look better.",
+        "note": "Replaced the previous design-refinement prompt at the instructor's request."
+      }
     },
     {
       "id": "prompt-976",
