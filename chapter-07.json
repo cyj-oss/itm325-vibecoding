@@ -806,68 +806,6 @@
       "intro": [],
       "steps": [
         {
-          "id": "s968",
-          "title": "What we're doing",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "From this lesson on, we fill Ohana Link with real functionality. The first feature set is folder management, built in three passes: add → delete → rename — each one a small spec you write, a delivery you check, and a commit you make.",
-              "links": [],
-              "source": 969
-            }
-          ],
-          "source": 968,
-          "kind": "Understand"
-        },
-        {
-          "id": "s970",
-          "title": "Get set up",
-          "blocks": [
-            {
-              "type": "note",
-              "title": "Use two terminals",
-              "text": "Keep npm run dev running in one terminal. Open another terminal in the same ohana-link folder and run claude there. Send prompts to Claude Code; keep ordinary shell commands in the normal terminal."
-            },
-            {
-              "type": "action",
-              "where": "VS Code",
-              "title": "Open the project and prepare prompt.md",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Open ohana-link in VS Code. Keep its existing server running, or start it with the command below if it has stopped. Start with prompt.md empty: clear it or save its old contents in another file.",
-                  "links": [],
-                  "source": 971
-                }
-              ]
-            },
-            {
-              "type": "action",
-              "where": "VS Code terminal · normal shell",
-              "title": "Start the server only if it is stopped",
-              "blocks": [
-                {
-                  "type": "code",
-                  "text": "npm run dev",
-                  "where": "VS Code terminal · normal shell",
-                  "mode": "command",
-                  "label": "Terminal command",
-                  "copy": true,
-                  "windows": "npm.cmd run dev",
-                  "source": 972,
-                  "note": "If the development server is already running, keep it open and skip this command. Otherwise, run it in a regular terminal inside ohana-link, outside Claude."
-                }
-              ]
-            },
-            {
-              "type": "check",
-              "text": "The app is open in the browser, Claude is in a separate terminal, and prompt.md is ready for the next request."
-            }
-          ],
-          "source": 970,
-          "kind": "Practice"
-        },
-        {
           "id": "s974",
           "title": "The add-folder feature",
           "blocks": [
