@@ -175,9 +175,15 @@
       "sourceBlock": 928,
       "lesson": "7.2",
       "destination": "VS Code editor · prompt.md",
-      "text": "implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
+      "text": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
       "sourceText": "Request: implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
-      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request"
+      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request",
+      "instructorRevision": {
+        "date": "2026-11-19",
+        "source": "Korean replacement supplied by the instructor for Build the per-folder page",
+        "translation": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
+        "note": "Preserved the source structure and requirements. Used [folderId] for the folder ID placeholder, matching the existing dynamic-route explanation."
+      }
     },
     {
       "id": "prompt-955",
