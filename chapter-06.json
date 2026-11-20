@@ -261,6 +261,16 @@
                   "type": "paragraph",
                   "text": "The displayed path must end in webdev. If ohana-link already contains package.json, skip the creation command and open that existing app in Step 2. If that folder exists but is incomplete, ask for help before creating another copy.",
                   "source": 787
+                },
+                {
+                  "type": "details",
+                  "title": "Your existing webdev folder is somewhere else?",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "Keep using that folder. In VS Code, choose File → Open Folder and select your existing webdev folder. Choose Terminal → New Terminal, then run pwd to confirm its location. Continue with app creation below only if ohana-link does not already exist."
+                    }
+                  ]
                 }
               ]
             },
@@ -338,9 +348,18 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Choose File > Open Folder in VS Code and open ohana-link. Confirm package.json appears in Explorer. Open a normal terminal in this folder and run the command below.",
+                  "text": "Choose File → Open Folder in VS Code and open your existing ohana-link folder. Confirm package.json appears in Explorer. Choose Terminal → New Terminal. Run the check below in this regular terminal, outside Claude Code.",
                   "links": [],
                   "source": 795
+                },
+                {
+                  "type": "code",
+                  "text": "ls package.json",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Check the app folder",
+                  "copy": true,
+                  "note": "Continue only when package.json is listed. If it is not found, open your existing ohana-link folder in VS Code, then open a new terminal."
                 }
               ]
             },
@@ -376,8 +395,37 @@
               ]
             },
             {
+              "type": "details",
+              "title": "The app does not open?",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "ENOENT or package.json not found: the terminal is in the wrong folder. Run the app from ohana-link, where package.json is stored."
+                },
+                {
+                  "type": "bullet",
+                  "text": "Windows says npm.ps1 cannot be loaded: use npm.cmd run dev. You do not need to change PowerShell security settings.",
+                  "platform": "Windows"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Cannot find module @tailwindcss/turbopack: open the Tailwind error guide in a new tab. Use it only for this exact error, then return here.",
+                  "links": [
+                    {
+                      "text": "Tailwind error guide",
+                      "target": "https://github.com/cyj-oss/itm325-setup2/blob/main/HELP.md#cannot-find-module-tailwindcssturbopack"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For a different error, keep the message and ask for help before reinstalling or creating another app."
+                }
+              ]
+            },
+            {
               "type": "check",
-              "text": "The Next.js page opens in your browser. Keep the server terminal running."
+              "text": "The Next.js page opens in your browser without an error. Ready alone is not enough; check the browser page before continuing. Keep the server terminal running."
             }
           ],
           "source": 794,
@@ -473,6 +521,11 @@
                   "text": "Any command registered under scripts can be run as npm run <script-name>. npm itself is the package-management program installed together with Node.js.",
                   "links": [],
                   "source": 808
+                },
+                {
+                  "type": "paragraph",
+                  "text": "On Windows PowerShell, use npm.cmd in place of npm for the commands in this table.",
+                  "platform": "Windows"
                 }
               ]
             },
@@ -517,7 +570,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A newly created app already has its packages; skip this section. For an existing app without node_modules, use a regular terminal in the folder containing package.json. Run only one of the following commands."
+                  "text": "A newly created app already has its packages; skip this section. If you are restoring an existing app, stop its development server with Control+C first. Keep package.json and package-lock.json. Use a regular terminal in the folder containing package.json and run only one of the following commands."
                 },
                 {
                   "type": "code",
@@ -540,6 +593,10 @@
                   "windows": "npm.cmd install",
                   "note": "Use this when there is no package-lock.json.",
                   "source": 813
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Wait for the command to finish successfully before starting the server again. Keep the lockfile when sharing the project so others can restore the same recorded package versions."
                 }
               ]
             }
@@ -614,7 +671,7 @@
             },
             {
               "type": "check",
-              "text": "The running terminal shows Ready and a Local address. Keep this terminal open."
+              "text": "The terminal shows Ready and a Local address, and that address opens your app in the browser without an error. Keep this terminal open."
             }
           ],
           "source": 817,
@@ -923,7 +980,25 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "In the new terminal, confirm the path ends in ohana-link. Enter the following command in this regular terminal, not in Claude Code’s message input."
+                  "text": "Check the new terminal’s path. If it ends in webdev, run the next command. If it already ends in ohana-link, skip this command. Use the regular terminal, not Claude Code’s message input."
+                },
+                {
+                  "type": "code",
+                  "text": "cd ohana-link",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Enter the project folder — only if needed",
+                  "copy": true,
+                  "note": "Run only when the terminal is in webdev."
+                },
+                {
+                  "type": "code",
+                  "text": "ls package.json",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Check the app folder",
+                  "copy": true,
+                  "note": "Continue only when package.json is listed. If it is not found, open your existing ohana-link folder in VS Code, then open a new terminal."
                 },
                 {
                   "type": "code",
@@ -932,21 +1007,24 @@
                   "mode": "command",
                   "label": "Start the development server",
                   "copy": true,
-                  "note": "Press Enter. Leave the terminal running after Ready appears."
+                  "note": "Press Enter once. Keep this terminal running while you use the app.",
+                  "windows": "npm.cmd run dev",
+                  "mac": "npm run dev"
                 },
                 {
-                  "type": "code",
-                  "text": "npm.cmd run dev",
-                  "where": "VS Code terminal · PowerShell",
-                  "mode": "command",
-                  "label": "Windows PowerShell alternative",
+                  "type": "details",
+                  "title": "Why does Windows use npm.cmd?",
                   "platform": "Windows",
-                  "copy": true,
-                  "note": "Use this if npm run dev reports that scripts are disabled. Do not run both commands."
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "npm run dev and npm.cmd run dev run the same project script. PowerShell may block npm.ps1, so use the npm.cmd command shown above. Run only one of them. No security-setting change is needed."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Wait for Ready and a Local address to appear. Keep this terminal running while you use the app."
+                  "text": "Wait for Ready and a Local address, then open or refresh that address below. Confirm the actual app appears without an error."
                 }
               ]
             },
@@ -958,6 +1036,35 @@
                 {
                   "type": "paragraph",
                   "text": "Open the Local address printed in the server terminal, usually http://localhost:3000. If the browser tab is already open, refresh it to see Claude’s completed changes. If the terminal shows a different port, use that printed address."
+                }
+              ]
+            },
+            {
+              "type": "details",
+              "title": "The app does not open?",
+              "blocks": [
+                {
+                  "type": "bullet",
+                  "text": "ENOENT or package.json not found: the terminal is in the wrong folder. Run the app from ohana-link, where package.json is stored."
+                },
+                {
+                  "type": "bullet",
+                  "text": "Windows says npm.ps1 cannot be loaded: use npm.cmd run dev. You do not need to change PowerShell security settings.",
+                  "platform": "Windows"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Cannot find module @tailwindcss/turbopack: open the Tailwind error guide in a new tab. Use it only for this exact error, then return here.",
+                  "links": [
+                    {
+                      "text": "Tailwind error guide",
+                      "target": "https://github.com/cyj-oss/itm325-setup2/blob/main/HELP.md#cannot-find-module-tailwindcssturbopack"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For a different error, keep the message and ask for help before reinstalling or creating another app."
                 }
               ]
             },
