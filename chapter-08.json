@@ -742,13 +742,13 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "When New MCP server found in this project: supabase appears, use the arrow keys to select Use this MCP server, the first option, and press Enter."
+                  "text": "When New MCP server found in this project: supabase appears, use the arrow keys to select Use this and all future MCP servers in this project, as shown below, and press Enter."
                 },
                 {
                   "type": "image",
                   "src": "image-supabase-mcp-restart.png",
                   "alt": "Claude Code detects the Supabase MCP server after restarting. The menu offers Use this MCP server and other options.",
-                  "caption": "Choose Use this MCP server, the first option, to enable Supabase."
+                  "caption": "Select the highlighted option and press Enter to enable the project’s MCP servers."
                 }
               ]
             },
@@ -790,7 +790,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Select Authenticate and press Enter."
+                  "text": "If authentication is needed, select Authenticate and press Enter."
                 },
                 {
                   "type": "image",
