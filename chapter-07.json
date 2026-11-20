@@ -196,7 +196,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Remove the Pomodoro practice code, including its Settings page and the test page, and restore a simple Next.js starter page.\n\nBack up files before changing or deleting them. Keep prompt.md, project settings (including Next.js and Tailwind), dependencies, Git history, and unrelated work.\n\nBriefly report the changes and backup location.",
+                  "text": "Remove the Pomodoro practice code, including its Settings page and the test page, and restore a simple Next.js starter page.\n\nKeep prompt.md, project settings (including Next.js and Tailwind), dependencies, Git history, and unrelated work.\n\nBriefly report the changes.",
                   "where": "Claude Code input · in the VS Code terminal panel",
                   "mode": "prompt",
                   "label": "Pomodoro cleanup prompt",
@@ -240,7 +240,7 @@
             },
             {
               "type": "check",
-              "text": "The app opens without an error and no longer shows the Pomodoro timer. Claude reports the backup location, and your prompt and configuration files are still present. Continue to the next page to build the Ohana Link UI."
+              "text": "The app opens without an error and no longer shows the Pomodoro timer. Your prompt and configuration files are still present. Continue to the next page to build the Ohana Link UI."
             }
           ],
           "source": 901,
