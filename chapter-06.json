@@ -980,39 +980,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Use the new regular terminal, not Claude Code’s message input. If its path already ends in ohana-link, continue with the check below."
-                },
-                {
-                  "type": "details",
-                  "title": "Only if the terminal is outside ohana-link",
-                  "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "If the terminal path ends in webdev, run this command once. If it already ends in ohana-link, skip it."
-                    },
-                    {
-                      "type": "code",
-                      "text": "cd ohana-link",
-                      "where": "VS Code terminal · normal shell",
-                      "mode": "command",
-                      "label": "Enter the project folder — only if needed",
-                      "copy": true,
-                      "note": "Run only when the terminal is in webdev."
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "If the terminal is somewhere else, choose File → Open Folder in VS Code, select your existing ohana-link folder, and open a new terminal."
-                    }
-                  ]
-                },
-                {
-                  "type": "code",
-                  "text": "ls package.json",
-                  "where": "VS Code terminal · normal shell",
-                  "mode": "command",
-                  "label": "Check the app folder",
-                  "copy": true,
-                  "note": "Continue only when package.json is listed. If it is not found, open your existing ohana-link folder in VS Code, then open a new terminal."
+                  "text": "In the new regular terminal, run the command below."
                 },
                 {
                   "type": "code",
