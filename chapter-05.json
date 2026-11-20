@@ -215,10 +215,10 @@
           "blocks": [
             {
               "type": "setup",
-              "label": "Setup 2 · Part 1 · GitHub",
-              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB.md",
+              "label": "Setup 2 · Part 1 · GitHub · Windows",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB-WINDOWS.md",
               "text": "The guide opens in a new tab. Keep this book tab open.",
-              "scope": "Complete Part 1, Steps 1–3 only: check Git, sign in to GitHub, and set your Git name and email. Windows and Mac use the same page. Keep Git if it already works.",
+              "scope": "Complete Part 1, Steps 1–3 only: check your existing Git version, sign in to GitHub, and check or set your Git name and email. If Git prints a version, keep it and continue without reinstalling.",
               "checks": [
                 "Git prints a version number.",
                 "You can sign in to the GitHub account you will use for class.",
@@ -248,10 +248,10 @@
           "blocks": [
             {
               "type": "setup",
-              "label": "Setup 2 · Part 1 · GitHub",
-              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB.md",
+              "label": "Setup 2 · Part 1 · GitHub · Mac",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB-MAC.md",
               "text": "The guide opens in a new tab. Keep this book tab open.",
-              "scope": "Complete Part 1, Steps 1–3 only: check Git, sign in to GitHub, and set your Git name and email. Windows and Mac use the same page. Keep Git if it already works.",
+              "scope": "Complete Part 1, Steps 1–3 only: run xcode-select --install first and finish the installer if it opens. If the tools are already installed, continue to the Git version check. Then sign in to GitHub and check or set your Git name and email.",
               "checks": [
                 "Git prints a version number.",
                 "You can sign in to the GitHub account you will use for class.",
@@ -340,7 +340,7 @@
             {
               "type": "setup",
               "label": "Only if your Git name or email still needs attention",
-              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB.md#3-set-your-git-name-and-email",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB-WINDOWS.md#3-set-your-git-name-and-email",
               "text": "The guide opens in a new tab. Keep this book tab open.",
               "scope": "If you completed Part 1 and the values are correct, keep reading below. Otherwise, use only Step 3, Set your Git name and email.",
               "checks": [
@@ -349,7 +349,23 @@
               "returnText": "Return to this same step, Lesson 5.4, Step 2. Continue below with staging, writing a message, and committing.",
               "optional": true,
               "returnUrl": "#lesson=5.4&step=1",
-              "returnLabel": "Return to 5.4 · Record your first commit"
+              "returnLabel": "Return to 5.4 · Record your first commit",
+              "platform": "Windows"
+            },
+            {
+              "type": "setup",
+              "label": "Only if your Git name or email still needs attention",
+              "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/GITHUB-MAC.md#3-set-your-git-name-and-email",
+              "text": "The guide opens in a new tab. Keep this book tab open.",
+              "scope": "If you completed Part 1 and the values are correct, keep reading below. Otherwise, use only Step 3, Set your Git name and email.",
+              "checks": [
+                "The two Git identity check commands show your intended name and email."
+              ],
+              "returnText": "Return to this same step, Lesson 5.4, Step 2. Continue below with staging, writing a message, and committing.",
+              "optional": true,
+              "returnUrl": "#lesson=5.4&step=1",
+              "returnLabel": "Return to 5.4 · Record your first commit",
+              "platform": "Mac"
             },
             {
               "type": "action",
