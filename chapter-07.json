@@ -664,19 +664,19 @@
           "blocks": [
             {
               "type": "action",
-              "where": "VS Code editor · prompt.md",
+              "where": "Claude Code input · in the VS Code terminal panel",
               "title": "Ask Claude to improve the design",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Replace the text in `prompt.md` with the prompt below and save the file."
+                  "text": "Paste the prompt below directly into Claude Code and press Enter."
                 },
                 {
                   "type": "code",
                   "text": "Please refine the design to make it look better.",
-                  "where": "VS Code editor · prompt.md",
+                  "where": "Claude Code input · in the VS Code terminal panel",
                   "mode": "prompt",
-                  "label": "Prompt to save in prompt.md",
+                  "label": "Claude Code prompt",
                   "copy": true,
                   "id": "prompt-955",
                   "source": 955
@@ -701,7 +701,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Then send `@prompt.md` at the Claude Code input."
+                  "text": "Then paste the prompt above into Claude Code and press Enter."
                 }
               ]
             },
