@@ -903,8 +903,67 @@
               ]
             },
             {
+              "type": "action",
+              "where": "VS Code terminal · normal shell",
+              "title": "Open a split terminal and start the app if needed",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Wait until Claude Code finishes. If your development server is still running in another terminal, keep it running and go directly to Open or refresh your app below."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If the server is stopped, click Split Terminal, the button outlined in red in the image below. This opens another terminal beside Claude Code."
+                },
+                {
+                  "type": "image",
+                  "src": "image-split-terminal.png",
+                  "alt": "VS Code terminal panel with the Split Terminal button outlined in red at the top right.",
+                  "caption": "Click the highlighted Split Terminal button to open another terminal beside Claude Code."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In the new terminal, confirm the path ends in ohana-link. Enter the following command in this regular terminal, not in Claude Code’s message input."
+                },
+                {
+                  "type": "code",
+                  "text": "npm run dev",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Start the development server",
+                  "copy": true,
+                  "note": "Press Enter. Leave the terminal running after Ready appears."
+                },
+                {
+                  "type": "code",
+                  "text": "npm.cmd run dev",
+                  "where": "VS Code terminal · PowerShell",
+                  "mode": "command",
+                  "label": "Windows PowerShell alternative",
+                  "platform": "Windows",
+                  "copy": true,
+                  "note": "Use this if npm run dev reports that scripts are disabled. Do not run both commands."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Wait for Ready and a Local address to appear. Keep this terminal running while you use the app."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Open or refresh your app",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Open the Local address printed in the server terminal, usually http://localhost:3000. If the browser tab is already open, refresh it to see Claude’s completed changes. If the terminal shows a different port, use that printed address."
+                }
+              ]
+            },
+            {
               "type": "check",
-              "text": "Confirm the named components and their paths, test all timer buttons, change the duration, and refresh to check persistence. Start the server yourself; the prompt deliberately tells Claude not to build or run it."
+              "text": "The updated app opens in your browser. Confirm the named components and their paths, test all timer buttons, change the duration, and refresh to check persistence."
             }
           ],
           "source": 848,
