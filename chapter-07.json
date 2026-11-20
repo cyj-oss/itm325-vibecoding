@@ -148,61 +148,99 @@
     {
       "id": "7.2",
       "title": "Building the Project's Base UI",
-      "objective": "Revert the practice code from the previous chapter using Git, then direct Claude to implement Ohana Link's index page, new-link page, and per-folder pages — learning dynamic routes well enough to confirm each delivered page behaves as specified.",
+      "objective": "Use Claude Code to remove the earlier Pomodoro practice, then direct Claude to implement Ohana Link's index page, new-link page, and per-folder pages — learning dynamic routes well enough to confirm each delivered page behaves as specified.",
       "intro": [],
       "steps": [
         {
           "id": "s901",
-          "title": "Reset the project to its initial state",
+          "title": "Prepare the project for Ohana Link",
           "blocks": [
             {
               "type": "action",
-              "where": "VS Code · Source Control",
-              "title": "Review your backup and commit history",
+              "where": "VS Code · ohana-link",
+              "title": "Open Claude Code in your existing project",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Open ohana-link in VS Code. This step removes the earlier Pomodoro practice so you can build Ohana Link. First preserve a backup of any work you want to keep. Discard only restores uncommitted changes; it does not jump to a selected older commit.",
-                  "links": [],
-                  "source": 902
+                  "text": "Keep your existing ohana-link project open in VS Code. Use the terminal where Claude Code is already running. You do not need to select or delete files yourself."
                 },
                 {
-                  "type": "bullet",
-                  "text": "Go to the Source Control tab in the left sidebar.",
-                  "links": [],
-                  "source": 903
-                },
-                {
-                  "type": "bullet",
-                  "text": "In Source Control, inspect the graph. If the latest commit is still Initial commit from Create Next App and your practice work is uncommitted, the discard workflow below can restore tracked starter files. If the practice was committed, use the revert workflow in Lesson 5.4 instead of assuming Discard will return to the initial commit.",
-                  "links": [],
-                  "source": 904
+                  "type": "details",
+                  "title": "Claude Code is not open?",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "Choose Terminal → New Terminal in the open ohana-link project, then run:"
+                    },
+                    {
+                      "type": "code",
+                      "text": "claude",
+                      "where": "VS Code terminal · normal shell",
+                      "mode": "command",
+                      "label": "Start Claude Code",
+                      "copy": true,
+                      "note": "Wait for Claude Code’s message input, then continue below."
+                    }
+                  ]
                 }
               ]
             },
             {
               "type": "action",
-              "where": "VS Code · Source Control",
-              "title": "Remove only the Pomodoro practice changes you intend to remove",
+              "where": "Claude Code input · in the VS Code terminal panel",
+              "title": "Ask Claude to remove the Pomodoro practice",
               "blocks": [
                 {
-                  "type": "bullet",
-                  "text": "For uncommitted practice work, review the changed files and discard only the practice changes you intend to remove. Keep prompt.md, .claude/settings.json, and .vscode/settings.json if present. Review newly created, untracked practice files separately; do not discard or delete unrelated files.",
-                  "links": [],
-                  "source": 905
+                  "type": "paragraph",
+                  "text": "Copy the entire prompt below. Paste it directly into Claude Code’s message input and press Enter. This cleanup prompt does not go in prompt.md. Wait for Claude to finish."
+                },
+                {
+                  "type": "code",
+                  "text": "Prepare this existing ohana-link Next.js project for the Ohana Link lessons by removing the earlier Pomodoro practice.\n\nFirst inspect the project and Git changes. Before editing, back up the files you will change or remove to a uniquely named sibling folder outside this project. Preserve their relative paths. Do not copy node_modules, .next, .git, or environment files.\n\nRemove the Pomodoro timer UI, timer-specific components and styles, timer storage logic, and the practice Settings and test routes created in the previous lessons. Remove related imports. In shared files, remove only the practice-specific code. Leave a simple working Next.js starter page in place of the timer. Use the existing app or src/app structure.\n\nKeep prompt.md, .claude/settings.json, .vscode/settings.json, environment files, Git history and connection, package.json, and package-lock.json. Keep the working Next.js and Tailwind configuration, including existing fixes. Preserve Tailwind imports or directives needed by the app. Keep unrelated work. If you cannot confidently identify something as practice code, leave it and mention it in your report.\n\nDo not recreate the project, install or remove packages, reset Git, discard all changes, commit, or push. Do not start or stop the development server.\n\nCheck for broken imports after cleanup. In English, report the backup location, what you changed or removed, and anything you left for review. Do not build the Ohana Link UI yet.",
+                  "where": "Claude Code input · in the VS Code terminal panel",
+                  "mode": "prompt",
+                  "label": "Pomodoro cleanup prompt",
+                  "copy": true,
+                  "id": "prompt-pomodoro-cleanup",
+                  "note": "Paste directly into Claude Code and press Enter."
                 }
               ]
             },
             {
-              "type": "note",
-              "title": "Before you continue",
-              "text": "Discarded work may not be recoverable. Keep the prompt and configuration files you need, and verify that the starter page runs before continuing.",
-              "optional": false,
-              "source": 906
+              "type": "action",
+              "where": "Browser · your app",
+              "title": "Check the starter page",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Read Claude’s cleanup report. If your development server is still running, refresh its Local address in the browser. The timer should be gone and a simple Next.js starter page should appear."
+                },
+                {
+                  "type": "details",
+                  "title": "The development server is stopped?",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "Open a separate regular terminal in your ohana-link project and run:"
+                    },
+                    {
+                      "type": "code",
+                      "text": "npm run dev",
+                      "windows": "npm.cmd run dev",
+                      "mac": "npm run dev",
+                      "where": "VS Code terminal · normal shell",
+                      "mode": "command",
+                      "label": "Start the development server",
+                      "copy": true,
+                      "note": "Open the Local address printed in this terminal. Keep the terminal running."
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "check",
-              "text": "The original Next.js starter page runs, and the prompt and configuration files you need are still present."
+              "text": "The app opens without an error and no longer shows the Pomodoro timer. Claude reports the backup location, and your prompt and configuration files are still present. Continue to the next page to build the Ohana Link UI."
             }
           ],
           "source": 901,
