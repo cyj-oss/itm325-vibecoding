@@ -686,7 +686,7 @@
           "steps": 7,
           "pages": [
             {
-              "title": "Choose a theme and understand Skills",
+              "title": "Download and choose a theme",
               "steps": [
                 0,
                 1,
@@ -694,7 +694,7 @@
               ]
             },
             {
-              "title": "Register the Skill and understand how it works",
+              "title": "Create SKILL.md",
               "steps": [
                 3,
                 4
