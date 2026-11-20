@@ -1498,10 +1498,14 @@
         },
         {
           "id": "s506",
-          "title": "What does a web server do?",
+          "title": "How web servers and Netlify work",
           "kind": "Understand",
           "source": 506,
           "blocks": [
+            {
+              "type": "subheading",
+              "text": "What does a web server do?"
+            },
             {
               "type": "paragraph",
               "text": "A web server is software that receives a browser’s request and sends back the files or data it needs."
@@ -1525,15 +1529,11 @@
                   "text": "You will hear both uses. A computer can be called a server, and the software running on it can also be called a server. Here, focus on its job: respond to the browser’s request."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "s517",
-          "title": "What Netlify does for you",
-          "kind": "Understand",
-          "source": 517,
-          "blocks": [
+            },
+            {
+              "type": "subheading",
+              "text": "What Netlify does for you"
+            },
             {
               "type": "paragraph",
               "text": "The cloud means using computers managed by a provider over the internet. Netlify is the hosting service we will use for this lesson."
@@ -1773,7 +1773,7 @@
         },
         {
           "id": "s540",
-          "title": "Select your project folder",
+          "title": "Upload, publish, and check your website",
           "blocks": [
             {
               "type": "action",
@@ -1804,15 +1804,7 @@
             {
               "type": "check",
               "text": "You selected 2.pomodoro, which contains index.html and the project’s CSS and JavaScript files."
-            }
-          ],
-          "source": 540,
-          "kind": "Practice"
-        },
-        {
-          "id": "s545",
-          "title": "Upload the files and wait for deployment",
-          "blocks": [
+            },
             {
               "type": "action",
               "where": "Browser · Netlify",
@@ -1842,15 +1834,7 @@
             {
               "type": "check",
               "text": "Deployment finishes and the project overview opens."
-            }
-          ],
-          "source": 545,
-          "kind": "Practice"
-        },
-        {
-          "id": "s550",
-          "title": "Make the website public",
-          "blocks": [
+            },
             {
               "type": "action",
               "where": "Browser · Netlify",
@@ -1858,7 +1842,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Check the visibility label near the project name. If it says Private, visitors outside your team cannot open the website. If the project is already public, continue to Open your website and find its address settings.",
+                  "text": "Check the visibility label near the project name. If it says Private, visitors outside your team cannot open the website. If the project is already public, continue to Open and test your public site below.",
                   "links": [],
                   "source": 551
                 },
@@ -1899,16 +1883,8 @@
             },
             {
               "type": "check",
-              "text": "The site is public. Continue to Open your website and find its address settings."
-            }
-          ],
-          "source": 550,
-          "kind": "Practice"
-        },
-        {
-          "id": "s557",
-          "title": "Open your website and find its address settings",
-          "blocks": [
+              "text": "The site is public. Continue to Open and test your public site below."
+            },
             {
               "type": "action",
               "where": "Browser · Netlify",
@@ -1945,15 +1921,7 @@
             {
               "type": "check",
               "text": "The public address opens your timer, and the timer and settings page work."
-            }
-          ],
-          "source": 557,
-          "kind": "Practice"
-        },
-        {
-          "id": "s562",
-          "title": "Change the default website address",
-          "blocks": [
+            },
             {
               "type": "action",
               "where": "Browser · Netlify",
@@ -1990,15 +1958,7 @@
             {
               "type": "check",
               "text": "If you changed the name, Netlify displays the new default address."
-            }
-          ],
-          "source": 562,
-          "kind": "Optional"
-        },
-        {
-          "id": "s567",
-          "title": "Check the updated address",
-          "blocks": [
+            },
             {
               "type": "action",
               "where": "Browser · Netlify",
@@ -2037,7 +1997,7 @@
               "text": "The address you plan to share opens the correct website."
             }
           ],
-          "source": 567,
+          "source": 540,
           "kind": "Practice"
         }
       ],
