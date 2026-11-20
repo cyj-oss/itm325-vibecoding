@@ -971,22 +971,19 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Replace PASTE_FULL_PATH_TO_WEBDEV_HERE with your actual folder path, keeping the quotation marks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Example locations from the guidebook: ~/webdev on Mac and C:\\webdev on Windows. Use the actual location of your own workspace.",
-                  "source": 706
+                  "text": "Move to the webdev folder created by the first setup, then run your completed clone command."
                 },
                 {
                   "type": "code",
-                  "text": "cd \"PASTE_FULL_PATH_TO_WEBDEV_HERE\"",
+                  "text": "cd ~/webdev",
                   "where": "VS Code terminal · normal shell",
                   "mode": "command",
                   "label": "Terminal command",
                   "copy": true,
-                  "note": "Replace the placeholder before running.",
-                  "source": 706
+                  "note": "Run this before your completed clone command. If the folder is not found, stop and check its location.",
+                  "source": 706,
+                  "windows": "cd C:\\webdev",
+                  "mac": "cd ~/webdev"
                 }
               ]
             },
