@@ -614,90 +614,113 @@
       "intro": [],
       "steps": [
         {
-          "id": "s1142",
-          "title": "Warm-up: a peek at the Supabase dashboard",
-          "blocks": [
-            {
-              "type": "action",
-              "where": "Browser · Supabase project",
-              "title": "Look at the Table Editor",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Open your existing Ohana Link project in Supabase. Select Table Editor in the left sidebar. You can inspect New Table, then close it without creating anything. Claude will create the tables in the steps below."
-                }
-              ]
-            },
-            {
-              "type": "check",
-              "text": "You found the Table Editor. No table needs to be created manually here."
-            }
-          ],
-          "source": 1142,
-          "kind": "Practice"
-        },
-        {
           "id": "s1144",
-          "title": "Connect the Supabase MCP",
+          "title": "Connect Claude Code to Supabase with MCP",
           "blocks": [
             {
               "type": "explanation",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "MCP is the tool that lets the AI reach an outside service directly — here, Supabase. The setup goes like this:",
-                  "links": [],
-                  "source": 1145
+                  "text": "MCP stands for Model Context Protocol. It is a standard way for AI tools to connect to outside services. Supabase MCP gives Claude Code tools to inspect our database and create tables for us."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The connection in Lesson 8.2 lets our app use Supabase. Now we will connect Claude Code so it can create the tables in this lesson."
                 }
               ]
             },
             {
               "type": "action",
-              "where": "Browser · Supabase project",
-              "title": "Copy the MCP setup prompt",
+              "where": "Browser · Supabase",
+              "title": "Open your project and select Connect",
               "blocks": [
                 {
-                  "type": "bullet",
-                  "text": "In your Supabase project, click the green Connect button at the top right.",
-                  "links": [],
-                  "source": 1146
+                  "type": "paragraph",
+                  "text": "In Supabase, select your ohana-link project."
                 },
                 {
-                  "type": "bullet",
-                  "text": "In the panel that opens, choose the MCP tab.",
-                  "links": [],
-                  "source": 1147
+                  "type": "image",
+                  "src": "image-supabase-mcp-project.png",
+                  "alt": "Supabase Projects page with the ohana-link project outlined in red.",
+                  "caption": "Select your ohana-link project."
                 },
                 {
-                  "type": "bullet",
-                  "text": "Set the options — Client: Claude Code; Read-only: off (we need to write and modify, not just read); Feature Groups: check Documentation, Database, Debugging, and Storage.",
-                  "links": [],
-                  "source": 1148
+                  "type": "paragraph",
+                  "text": "Click Connect at the top of the project dashboard."
                 },
                 {
-                  "type": "bullet",
-                  "text": "Press the Copy Prompt button to copy the setup prompt.",
-                  "links": [],
-                  "source": 1149
+                  "type": "image",
+                  "src": "image-supabase-mcp-connect.png",
+                  "alt": "Supabase project toolbar with the Connect button outlined in red.",
+                  "caption": "Click Connect."
                 }
               ]
             },
             {
               "type": "action",
-              "where": "Claude Code input · in the terminal",
-              "title": "Run the copied Supabase prompt",
+              "where": "Browser · Supabase → Connect → MCP",
+              "title": "Choose the MCP options and copy the prompt",
               "blocks": [
                 {
-                  "type": "bullet",
-                  "text": "In VS Code, paste it into Claude and run it.",
-                  "links": [],
-                  "source": 1150
+                  "type": "paragraph",
+                  "text": "Select the MCP tab, then set these options:"
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Setting",
+                      "Choose"
+                    ],
+                    [
+                      "Client",
+                      "Claude Code"
+                    ],
+                    [
+                      "Read-only",
+                      "Off — Claude needs to create tables"
+                    ],
+                    [
+                      "Feature groups",
+                      "Documentation (docs), Database, Debugging, Storage"
+                    ]
+                  ]
+                },
+                {
+                  "type": "image",
+                  "src": "image-supabase-mcp-options.png",
+                  "alt": "Supabase MCP options: Claude Code client, Read-only off, docs, database, debugging, and storage selected, with Copy prompt outlined in red.",
+                  "caption": "Choose the four feature groups shown, then click Copy prompt."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Click Copy prompt at the bottom of the panel. This copies the MCP setup instructions for your selected project."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "Claude Code input · in the VS Code terminal panel · ohana-link",
+              "title": "Paste the copied prompt into Claude Code",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Return to your ohana-link project in VS Code. If Claude Code is not running, type `claude` in the terminal and press Enter."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Paste the prompt copied from Supabase into Claude Code using Control+V on Windows or Command+V on Mac, then press Enter."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review the setup commands Claude proposes and let it finish adding the MCP connection."
                 }
               ]
             },
             {
               "type": "check",
-              "text": "The project contains .mcp.json with the Supabase MCP configuration."
+              "text": "Claude has finished adding the Supabase MCP connection. Continue below to authorize it and confirm it is connected."
             }
           ],
           "source": 1144,
@@ -714,7 +737,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Quit Claude Code and launch it again. When it announces that a new MCP was found, agree to use it (option 1). Then check the registered list with the /mcp command — Supabase should be in it.",
+                  "text": "Exit Claude Code, then type `claude` in the same VS Code terminal to start it again. If asked to enable the project’s MCP server, enable Supabase. Enter `/mcp` to view the connection list.",
                   "links": [],
                   "source": 1153
                 },
