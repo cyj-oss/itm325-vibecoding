@@ -175,15 +175,23 @@
       "sourceBlock": 928,
       "lesson": "7.2",
       "destination": "VS Code editor · prompt.md",
-      "text": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
+      "text": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- Use unique numeric folder IDs such as 1 and 2, giving URLs such as /folder/1 and /folder/2.\n- Update the existing sample folders and their linked folder references to use these IDs.\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
       "sourceText": "Request: implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
       "normalization": "Removed terminal display markers only; removed leading Request: at instructor request",
       "instructorRevision": {
         "date": "2026-11-19",
-        "source": "Korean replacement supplied by the instructor for Build the per-folder page",
-        "translation": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
-        "note": "Preserved the source structure and requirements. Used [folderId] for the folder ID placeholder, matching the existing dynamic-route explanation."
-      }
+        "source": "Instructor approved numeric folder IDs for lessons 7.2 and 7.4.",
+        "translation": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- Use unique numeric folder IDs such as 1 and 2, giving URLs such as /folder/1 and /folder/2.\n- Update the existing sample folders and their linked folder references to use these IDs.\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
+        "note": "Preserved the existing prompt and added numeric ID requirements for routing, creation, or renaming."
+      },
+      "instructorRevisionHistory": [
+        {
+          "date": "2026-11-19",
+          "source": "Korean replacement supplied by the instructor for Build the per-folder page",
+          "translation": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
+          "note": "Preserved the source structure and requirements. Used [folderId] for the folder ID placeholder, matching the existing dynamic-route explanation."
+        }
+      ]
     },
     {
       "id": "prompt-955",
@@ -205,9 +213,15 @@
       "sourceBlock": 976,
       "lesson": "7.4",
       "destination": "VS Code editor · prompt.md",
-      "text": "build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
+      "text": "build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately\n– Give new folders increasing integer IDs, continuing after the existing IDs. Do not reuse deleted IDs.\n– Use the numeric ID in the folder URL, such as /folder/3, separately from the folder name.",
       "sourceText": "Request: build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
-      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request"
+      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request",
+      "instructorRevision": {
+        "date": "2026-11-19",
+        "source": "Instructor approved numeric folder IDs for lessons 7.2 and 7.4.",
+        "translation": "build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately\n– Give new folders increasing integer IDs, continuing after the existing IDs. Do not reuse deleted IDs.\n– Use the numeric ID in the folder URL, such as /folder/3, separately from the folder name.",
+        "note": "Preserved the existing prompt and added numeric ID requirements for routing, creation, or renaming."
+      }
     },
     {
       "id": "prompt-990",
@@ -223,9 +237,15 @@
       "sourceBlock": 995,
       "lesson": "7.4",
       "destination": "VS Code editor · prompt.md",
-      "text": "implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
+      "text": "implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name\n– Change only the folder name. Keep its numeric ID, URL, and link associations unchanged.",
       "sourceText": "Request: implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
-      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request"
+      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request",
+      "instructorRevision": {
+        "date": "2026-11-19",
+        "source": "Instructor approved numeric folder IDs for lessons 7.2 and 7.4.",
+        "translation": "implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name\n– Change only the folder name. Keep its numeric ID, URL, and link associations unchanged.",
+        "note": "Preserved the existing prompt and added numeric ID requirements for routing, creation, or renaming."
+      }
     },
     {
       "id": "prompt-1019",
