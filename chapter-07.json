@@ -411,7 +411,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
+                  "text": "Implement the UI for the per-folder link page.\n\n- Page URL: /folder/[folderId]\n- Use unique numeric folder IDs such as 1 and 2, giving URLs such as /folder/1 and /folder/2.\n- Update the existing sample folders and their linked folder references to use these IDs.\n- When a folder in the sidebar is clicked, navigate to this page.\n\n# Page layout\n- Display the links saved in this folder in a grid, just like the index page.\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -427,7 +427,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A name wrapped in square brackets like `[folderId]` is Next.js's notation for dynamic routing — a route segment that accepts a changing value. Many different folder addresses, such as /folder/dev and /folder/design, all connect to the same page component. Knowing this lets you check the address bar and confirm the routing was built the way you specified.",
+                  "text": "`[folderId]` is the changing part of the URL. In this course, use numeric folder IDs: `/folder/1` and `/folder/2` use the same page component to show different folders. The ID identifies the folder; the name is the label shown in the sidebar.",
                   "links": [],
                   "source": 930
                 }
@@ -435,7 +435,7 @@
             },
             {
               "type": "check",
-              "text": "Click a folder in the browser sidebar. The address changes to that folder’s route and its page displays the requested layout."
+              "text": "Click each folder in the sidebar. Its URL uses a numeric ID, such as /folder/1, and the page shows the links belonging to that folder."
             }
           ],
           "source": 926,
@@ -820,7 +820,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
+                  "text": "build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately\n– Give new folders increasing integer IDs, continuing after the existing IDs. Do not reuse deleted IDs.\n– Use the numeric ID in the folder URL, such as /folder/3, separately from the folder name.",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -828,6 +828,29 @@
                   "id": "prompt-976",
                   "source": 976,
                   "note": "Save in prompt.md, then use the Claude Code instruction below."
+                }
+              ]
+            },
+            {
+              "type": "details",
+              "title": "Already built this with text IDs?",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "If your URLs look like /folder/class-notes, paste this directly into Claude Code:"
+                },
+                {
+                  "type": "code",
+                  "id": "prompt-numeric-folder-repair",
+                  "text": "Use numeric folder IDs such as 1, 2, and 3 instead of names or prefixed IDs. Update existing folders, URLs, and all linked folder references together without losing any folders or links. Give new folders increasing IDs that are not reused. Keep a folder's ID and URL unchanged when it is renamed.",
+                  "where": "Claude Code input · in the VS Code terminal panel",
+                  "mode": "prompt",
+                  "label": "Claude Code prompt",
+                  "copy": true
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Then click each folder and check its numeric URL and links."
                 }
               ]
             },
@@ -859,7 +882,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "In the browser, test the whole flow yourself: New Folder button → modal → type a name → Save. If the folder shows up in the sidebar, the delivery matches the spec and this step is done.",
+                  "text": "In the browser, test the whole flow yourself: New Folder button → modal → type a name → Save. If the folder shows up in the sidebar, the delivery matches the spec and this step is done. Click the new folder in the sidebar and check that its URL uses a numeric ID, such as /folder/3.",
                   "links": [],
                   "source": 981
                 }
@@ -867,7 +890,7 @@
             },
             {
               "type": "check",
-              "text": "The saved folder appears in the sidebar."
+              "text": "The new folder appears in the sidebar and opens at a URL with its own numeric ID."
             }
           ],
           "source": 974,
@@ -989,7 +1012,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
+                  "text": "implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name\n– Change only the folder name. Keep its numeric ID, URL, and link associations unchanged.",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1007,7 +1030,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Rename a disposable test folder. Confirm that the sidebar displays the new name."
+                  "text": "Open a test folder and note its URL. Rename it. The sidebar shows the new name, while the numeric URL and the links inside the folder stay the same."
                 }
               ]
             },
@@ -1024,7 +1047,7 @@
             },
             {
               "type": "check",
-              "text": "Rename a test folder and verify the new name in the sidebar. Commit and push the working change."
+              "text": "Renaming changes the folder name but keeps its numeric ID, URL, and links. Commit and push the working change."
             }
           ],
           "source": 993,
