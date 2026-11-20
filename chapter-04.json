@@ -584,7 +584,7 @@
               "blocks": [
                 {
                   "type": "code",
-                  "text": "Request: Update the index.html file based on these instructions.\n- Add an 'a' tag that links to Google.\n- Assign a class name to this link and use a class selector to apply unique styles to it.\n- Make the link look exactly like a button.\n- Use only HTML and CSS.",
+                  "text": "Update the index.html file based on these instructions.\n- Add an 'a' tag that links to Google.\n- Assign a class name to this link and use a class selector to apply unique styles to it.\n- Make the link look exactly like a button.\n- Use only HTML and CSS.",
                   "where": "Claude Code input",
                   "mode": "prompt",
                   "label": "Claude Code prompt",
@@ -730,7 +730,7 @@
               "blocks": [
                 {
                   "type": "code",
-                  "text": "Request: Update the index.html file with an input field and JavaScript based on these instructions.\n- Add a text input field right before the confirm button.\n- When the confirm button is clicked, trigger an alert box that says \"Confirmed!\".\n- Do not create a separate JavaScript file.\n- Use the <script> tag.\n- Place the <script> tag inside the <head> section of the HTML.",
+                  "text": "Update the index.html file with an input field and JavaScript based on these instructions.\n- Add a text input field right before the confirm button.\n- When the confirm button is clicked, trigger an alert box that says \"Confirmed!\".\n- Do not create a separate JavaScript file.\n- Use the <script> tag.\n- Place the <script> tag inside the <head> section of the HTML.",
                   "where": "Claude Code input",
                   "mode": "prompt",
                   "label": "Claude Code prompt",
