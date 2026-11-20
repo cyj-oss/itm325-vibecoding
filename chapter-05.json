@@ -1133,6 +1133,12 @@
                   "text": "In your project folder, create a folder named .claude if it does not exist. Inside it, create settings.json. If you already have this file, review its existing settings before making changes."
                 },
                 {
+                  "type": "image",
+                  "src": "image-claude-settings-location.png",
+                  "alt": "VS Code Explorer showing settings.json inside the .claude folder in the 2.pomodoro project.",
+                  "caption": "Create settings.json inside .claude, which belongs inside your project folder. Example: 2.pomodoro → .claude → settings.json."
+                },
+                {
                   "type": "code",
                   "text": "{\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"ask\": [\n      \"Bash(git push *)\",\n      \"Bash(git commit *)\",\n      \"Bash(rm -rf *)\"\n    ]\n  }\n}",
                   "where": "VS Code editor · .claude/settings.json",
