@@ -1312,42 +1312,49 @@
       "steps": [
         {
           "id": "s1186",
-          "title": "Getting ready",
+          "title": "Find the tables you created",
           "blocks": [
             {
               "type": "action",
-              "where": "VS Code",
-              "title": "Open the project with two terminals",
+              "title": "Open Database",
+              "where": "Browser · Supabase · ohana-link",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Open ohana-link in VS Code. Keep the server running in its existing terminal and Claude in a second terminal. Use the command below only if the server has stopped; do not paste it into Claude’s message area.",
-                  "links": [],
-                  "source": 1187
+                  "text": "Open your ohana-link project in Supabase. In the left sidebar, select Database."
+                },
+                {
+                  "type": "image",
+                  "src": "image-supabase-database-menu.png",
+                  "alt": "Supabase project sidebar with Database outlined in red.",
+                  "caption": "Select Database in your project sidebar."
                 }
               ]
             },
             {
               "type": "action",
-              "where": "VS Code terminal · normal shell",
-              "title": "Start the server only if it is stopped",
+              "title": "Open Tables and check the list",
+              "where": "Browser · Supabase → Database → Tables",
               "blocks": [
                 {
-                  "type": "code",
-                  "text": "npm run dev",
-                  "where": "VS Code terminal · normal shell",
-                  "mode": "command",
-                  "label": "Terminal command",
-                  "copy": true,
-                  "windows": "npm.cmd run dev",
-                  "source": 1188,
-                  "note": "Paste into the named input area. Press Enter to run."
+                  "type": "paragraph",
+                  "text": "Under Database Management, select Tables. Look for the `link` and `folder` tables you created in Lesson 8.4."
+                },
+                {
+                  "type": "image",
+                  "src": "image-supabase-database-tables.png",
+                  "alt": "Supabase Database Tables screen with Tables outlined in red and a link table showing six columns and zero rows.",
+                  "caption": "This screenshot is from the earlier link-table step. Your list should now include both link and folder."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Rows (estimated) is an approximate count of saved records. A value of 0 is normal if you have only created the table. Next, we will make the app save data into these tables."
                 }
               ]
             },
             {
               "type": "check",
-              "text": "Your app is open in the browser and Claude is available in a separate terminal."
+              "text": "Both link and folder appear in the table list. They may still have 0 rows."
             }
           ],
           "source": 1186,

@@ -871,7 +871,7 @@
           "steps": 8,
           "pages": [
             {
-              "title": "Prepare the database connection and add folders",
+              "title": "Check your tables and add folders",
               "steps": [
                 0,
                 1,
