@@ -228,45 +228,24 @@
             },
             {
               "type": "action",
-              "where": "File Explorer on Windows · Finder on Mac",
-              "title": "Copy the path to your existing webdev folder",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Find your existing webdev folder containing the earlier course projects. Copy its full path using the instructions for your computer below.",
-                  "links": [],
-                  "source": 786
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Windows: Open webdev in File Explorer. Click the address bar and copy the full path.",
-                  "platform": "Windows"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mac: Open webdev in Finder. Choose View → Show Path Bar. Control-click webdev in the path bar and choose Copy “webdev” as Pathname.",
-                  "platform": "Mac"
-                }
-              ]
-            },
-            {
-              "type": "action",
               "where": "VS Code terminal · normal shell",
               "title": "Move to webdev and verify the path",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Replace PASTE_FULL_PATH_TO_WEBDEV_HERE with that full path. Keep the quotation marks. Run the two commands below one at a time."
+                  "text": "In VS Code, choose Terminal → New Terminal. Run the commands below one at a time, outside Claude Code."
                 },
                 {
                   "type": "code",
-                  "text": "cd \"PASTE_FULL_PATH_TO_WEBDEV_HERE\"",
+                  "text": "cd ~/webdev",
                   "where": "VS Code terminal · normal shell",
                   "mode": "command",
                   "label": "Terminal command",
                   "copy": true,
-                  "note": "Replace the placeholder with the path you copied. Keep the quotes. If cd reports an error, correct it before continuing.",
-                  "source": 787
+                  "note": "Paste and press Enter. If the folder is not found, stop and check its location before continuing.",
+                  "source": 787,
+                  "windows": "cd C:\\webdev",
+                  "mac": "cd ~/webdev"
                 },
                 {
                   "type": "code",
@@ -415,7 +394,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "In Explorer, click package.json. Read the fields below; no changes are needed."
+                  "text": "In VS Code Explorer, open your app’s package.json. If Explorer shows webdev, expand ohana-link first. Read the fields below; no changes are needed."
                 }
               ]
             },
