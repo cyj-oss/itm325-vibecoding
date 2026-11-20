@@ -795,13 +795,12 @@
           "id": "8.2",
           "title": "Setting Up Supabase",
           "platform": null,
-          "steps": 2,
+          "steps": 1,
           "pages": [
             {
-              "title": "Connect your project and review the setup",
+              "title": "Two files to remember",
               "steps": [
-                0,
-                1
+                0
               ]
             }
           ]

@@ -251,7 +251,7 @@
     {
       "id": "8.2",
       "title": "Setting Up Supabase",
-      "objective": "Create a Supabase project, direct the AI to connect it to the Ohana Link Next.js app, and verify the connection files landed where they should.",
+      "objective": "Connect your Ohana Link app to Supabase using the setup guide.",
       "intro": [
         {
           "type": "setup",
@@ -264,252 +264,30 @@
             "Connection files and real settings are saved; .env.local is ignored by Git and is not tracked.",
             "The app starts without setup errors. Database reads and writes are tested later in the lesson."
           ],
-          "returnText": "Stop at DONE for Part 3 setup. Use the return button in the guide to come back here. Review the connection files below; do not run the setup prompt again. Table creation comes later in Lesson 8.4.",
+          "returnText": "When you reach DONE for Part 3, use the guide’s return button to come back here. Read the short explanation below, then continue to the next lesson.",
           "returnUrl": "#lesson=8.2&step=0",
-          "returnLabel": "Return to 8.2 · Connection files"
-        },
-        {
-          "type": "subheading",
-          "text": "Find the connection screen"
-        },
-        {
-          "type": "image",
-          "src": "image-supabase-connect-button.png",
-          "alt": "Supabase project dashboard with the Connect button highlighted.",
-          "caption": "Click Connect at the top of your Supabase project."
-        },
-        {
-          "type": "image",
-          "src": "image-supabase-nextjs-app-router.png",
-          "alt": "Supabase Connect dialog with Framework selected, Next.js as the framework, and App Router as the variant.",
-          "caption": "Select Framework, then choose Next.js and App Router."
-        },
-        {
-          "type": "image",
-          "src": "image-supabase-copy-prompt.png",
-          "alt": "Supabase Connect panel with Next.js and App Router selected and the Copy prompt button outlined in red.",
-          "caption": "In the setup guide, use Copy prompt to copy the full Supabase instructions into Claude Code. The section may be called Connect your app or Follow these steps."
-        },
-        {
-          "type": "details",
-          "title": "What the Supabase setup fields mean",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "In Supabase, an Organization is like a team that shares projects.",
-              "links": [],
-              "source": 1074
-            },
-            {
-              "type": "details",
-              "title": "Quick aside",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Wondering what each field means? Name is the organization's name, Type is what kind of organization it is, and Plan is the pricing plan — pick Free."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "text": "In Supabase, a project is one unit that uses the database, authentication, and other features. As a rule of thumb, one service = one project.",
-              "links": [],
-              "source": 1077
-            },
-            {
-              "type": "subheading",
-              "text": "Region",
-              "links": [],
-              "source": 1078
-            },
-            {
-              "type": "paragraph",
-              "text": "Region determines where Supabase hosts your project. For this course, choose Americas in the Region menu.",
-              "links": [],
-              "source": 1079
-            },
-            {
-              "type": "details",
-              "title": "Quick aside",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "What's a Variant? A Variant is the framework's specific mode of operation. Next.js supports two — the App Router and the Page Router — and these days the App Router is the recommended one, so choosing it is the right call."
-                }
-              ]
-            }
-          ]
+          "returnLabel": "Return to 8.2 · Continue the lesson"
         }
       ],
       "steps": [
         {
           "id": "s1082",
-          "title": "Connection files and environment variables",
+          "title": "Two files to remember",
           "blocks": [
             {
-              "type": "note",
-              "title": "Review the files you just prepared",
-              "text": "The setup guide used Supabase’s Copy prompt to prepare the connection in Claude Code. Review the files it created below. Keep your real .env.local values; do not replace them with the examples.",
-              "optional": false
-            },
-            {
-              "type": "details",
-              "title": "What did Claude create?",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Claude installs the needed packages and prepares the Supabase connection files. You may see client.ts and server.ts inside utils/supabase or lib/supabase. Exact filenames can vary; follow Claude’s change summary. The main file to check now is .env.local."
-                }
-              ]
-            },
-            {
-              "type": "explanation",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "The .env.local file stores the environment variables used by your app.",
-                  "links": [],
-                  "source": 1083
-                },
-                {
-                  "type": "details",
-                  "title": "Quick aside",
-                  "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "What's an environment variable? It's a settings value a program reads when it runs. Environment-variable files are usually named .env or .env.local — “env” is short for environment. In Next.js, values whose names begin with NEXT_PUBLIC_ can be included in browser code, so those values must not contain secrets."
-                    }
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The app reads its Supabase project URL and publishable key from these environment variables:",
-                  "links": [],
-                  "source": 1086
-                }
-              ]
-            },
-            {
-              "type": "image",
-              "src": "image-supabase-env-local-english.png",
-              "alt": "English VS Code example showing .env.local in the ohana-link project root beside package.json. The project URL variable is blue and the publishable key variable is purple.",
-              "caption": "Open .env.local in the project root, beside package.json. Adapted example: your file should contain your own project URL and publishable key."
-            },
-            {
-              "type": "details",
-              "title": "Example format only — keep your real working values",
-              "blocks": [
-                {
-                  "type": "code",
-                  "text": "NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co\nNEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_XXXXXXXXXXXXXXXX",
-                  "where": "VS Code editor · .env.local",
-                  "mode": "file",
-                  "label": "File contents",
-                  "copy": true,
-                  "note": "Already saved your real values in setup? Read this example without pasting it again. Use it only for missing entries, replace its placeholders, and preserve the rest of .env.local.",
-                  "source": 1087
-                }
-              ]
-            },
-            {
-              "type": "explanation",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "The project URL and publishable key are intended for use in the app, including its browser code. Database permissions and Row Level Security policies control access to the data. Secret keys, service_role keys, and database passwords must stay private.",
-                  "links": [],
-                  "source": 1089
-                },
-                {
-                  "type": "paragraph",
-                  "text": ".gitignore is simply the list of files Git should not track. The .env* pattern excludes .env.local and other matching files that have not already been tracked:",
-                  "links": [],
-                  "source": 1090
-                },
-                {
-                  "type": "code",
-                  "text": "# env files (can opt-in for committing if needed)\n.env*",
-                  "where": ".gitignore (excerpt)",
-                  "mode": "reference",
-                  "label": "Reference example",
-                  "copy": false,
-                  "source": 1091
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep .env.local out of version control, and keep secret credentials private.",
-                  "links": [],
-                  "source": 1093
-                }
-              ]
-            },
-            {
-              "type": "action",
-              "where": "VS Code · Explorer",
-              "title": "Inspect your existing connection files",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Open .env.local beside package.json. Check that `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` match your Supabase project’s Add files → .env.local tab."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Open .gitignore and find .env*. This tells Git to ignore new environment files such as .env.local. The setup guide’s two Git checks confirm the file is ignored and untracked."
-                },
-                {
-                  "type": "image",
-                  "src": "image-supabase-gitignore-env.png",
-                  "alt": "VS Code .gitignore editor with the .env* rule highlighted.",
-                  "caption": "The .env* rule in .gitignore excludes environment files that Git is not already tracking."
-                }
-              ]
-            },
-            {
-              "type": "note",
-              "title": "Before you continue",
-              "text": "Verify that .env.local is ignored by Git and is not already tracked before publishing. Never place a secret key, service_role key, or database password in a NEXT_PUBLIC_ variable. If a secret credential is exposed, rotate it in Supabase.",
-              "optional": false,
-              "source": 1094
-            },
-            {
-              "type": "check",
-              "text": "Your real connection settings are present and .env.local is ignored and untracked."
-            }
-          ],
-          "source": 1082,
-          "kind": "Practice"
-        },
-        {
-          "id": "s1096",
-          "title": "Good to know",
-          "blocks": [
-            {
-              "type": "subheading",
-              "text": "Region is a one-time decision",
-              "links": [],
-              "source": 1097
-            },
-            {
-              "type": "note",
-              "title": "Before you continue",
-              "text": "Choose Americas when creating your project. If you already have a working project, continue using it.",
-              "optional": false,
-              "source": 1098
-            },
-            {
-              "type": "subheading",
-              "text": "The free plan auto-pauses",
-              "links": [],
-              "source": 1100
+              "type": "paragraph",
+              "text": "`.env.local` stores the settings your app reads to connect to Supabase, including your project URL and publishable key."
             },
             {
               "type": "paragraph",
-              "text": "On the free plan, a project is automatically paused after a stretch of inactivity. Don't panic — reactivate it from the dashboard and your data comes back untouched.",
-              "links": [],
-              "source": 1101
+              "text": "`.gitignore` tells Git which new files to ignore. In this project, it keeps `.env.local` out of your GitHub repository."
+            },
+            {
+              "type": "paragraph",
+              "text": "Your connection setup is ready. Next, you will learn how a database organizes data into tables."
             }
           ],
-          "source": 1096,
+          "source": 1082,
           "kind": "Understand"
         }
       ],
