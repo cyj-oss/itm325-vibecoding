@@ -849,27 +849,31 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This step is pure management: deciding what to build before telling anyone to build it. Open the Ohana Link service in your browser (localhost:3000) and look at the index page. Two kinds of data clearly need permanent storage:",
-                  "links": [],
-                  "source": 1159
+                  "text": "In Lesson 8.4, we create empty tables and the rules for storing data. In Lesson 8.5, we connect the app so its buttons can save, load, change, and delete rows."
                 },
                 {
-                  "type": "bullet",
-                  "text": "Links: the user's bookmarks — they must not vanish on refresh",
-                  "links": [],
-                  "source": 1160
-                },
-                {
-                  "type": "bullet",
-                  "text": "Folders: the categories users create, rename, and delete",
-                  "links": [],
-                  "source": 1161
+                  "type": "table",
+                  "rows": [
+                    [
+                      "In the app",
+                      "Database table",
+                      "One row represents"
+                    ],
+                    [
+                      "A saved link",
+                      "link",
+                      "One bookmark"
+                    ],
+                    [
+                      "A folder in the sidebar",
+                      "folder",
+                      "One folder"
+                    ]
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "And since one folder must hold many links, the two tables have to be connected with a foreign key.",
-                  "links": [],
-                  "source": 1162
+                  "text": "The sample rows below are examples to read, not data to enter. The table-creation prompts do not add these rows. Your IDs, dates, and saved values may differ."
                 }
               ]
             },
@@ -889,6 +893,52 @@
               "type": "note",
               "title": "Classroom demonstration only",
               "text": "The original practice prompt below turns RLS off to isolate the database lesson. Use only disposable example data. This does not create a protected multi-user service. Keep the database-backed practice app unshared until appropriate permissions and RLS policies are implemented. Chapter 9 explains the concepts; it does not implement that protection."
+            },
+            {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Why this prompt?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The `link` table gives each saved bookmark its own record. Think of one row as one link card, with separate columns for its information. The primary key, `id`, identifies the row even if its title changes."
+                },
+                {
+                  "type": "subheading",
+                  "text": "Example: link table"
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "id",
+                      "url",
+                      "title"
+                    ],
+                    [
+                      "1",
+                      "https://www.youtube.com",
+                      "YouTube"
+                    ],
+                    [
+                      "2",
+                      "https://developer.mozilla.org",
+                      "MDN Web Docs"
+                    ],
+                    [
+                      "3",
+                      "https://www.nasa.gov",
+                      "NASA"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This preview shows three columns. The prompt also creates `description`, `thumbnail_url`, and `created_at`. We will add the folder connection in the next step."
+                }
+              ]
             },
             {
               "type": "action",
@@ -913,25 +963,59 @@
               ]
             },
             {
-              "type": "explanation",
+              "type": "details",
+              "title": "More about the link columns",
               "blocks": [
                 {
-                  "type": "bullet",
-                  "text": "Multi-word column names are joined with _ (e.g., thumbnail_url).",
-                  "links": [],
-                  "source": 1167
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Column",
+                      "What it stores"
+                    ],
+                    [
+                      "id",
+                      "A unique number identifying this link. Auto-increment supplies a number for a new row."
+                    ],
+                    [
+                      "url",
+                      "The website address. This is required."
+                    ],
+                    [
+                      "title",
+                      "A display title, if available."
+                    ],
+                    [
+                      "description",
+                      "A short description, if available."
+                    ],
+                    [
+                      "thumbnail_url",
+                      "The address of a preview image, if available."
+                    ],
+                    [
+                      "created_at",
+                      "The date and time the row was created. This is required."
+                    ]
+                  ]
                 },
                 {
-                  "type": "bullet",
-                  "text": "title / description / thumbnail may simply not exist for some links, so they stay optional columns. Make them all required and saving any link that's missing Open Graph info will fail.",
-                  "links": [],
-                  "source": 1168
+                  "type": "paragraph",
+                  "text": "Optional values can be NULL, meaning no value is stored. Missing Open Graph information should not prevent a valid URL from being saved."
                 },
                 {
-                  "type": "bullet",
-                  "text": "RLS (Row Level Security) is a data-security option. We proceed with it off for now and come back to it in a later chapter.",
-                  "links": [],
-                  "source": 1169
+                  "type": "paragraph",
+                  "text": "An underscore joins words in column names, such as `thumbnail_url`. RLS controls access to rows; this classroom prompt leaves it off as described above."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reference: Supabase tables and data.",
+                  "links": [
+                    {
+                      "text": "Supabase tables and data",
+                      "target": "https://supabase.com/docs/guides/database/tables"
+                    }
+                  ]
                 }
               ]
             },
@@ -964,6 +1048,47 @@
               "type": "note",
               "title": "Same classroom scope",
               "text": "This original prompt also turns RLS off. Use only the practice project and example data described in the previous step."
+            },
+            {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Why this prompt?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The `folder` table stores each folder once. Its `id` stays the same when the folder is renamed, so links can keep pointing to the same folder."
+                },
+                {
+                  "type": "subheading",
+                  "text": "Example: folder table"
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "id",
+                      "name",
+                      "created_at"
+                    ],
+                    [
+                      "1",
+                      "Class Notes",
+                      "2026-11-19 09:00"
+                    ],
+                    [
+                      "2",
+                      "Research",
+                      "2026-11-19 09:05"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The dates are shortened for this example. Creating a folder table gives the app a place to store folder names; it does not create these example folders."
+                }
+              ]
             },
             {
               "type": "action",
@@ -1013,6 +1138,61 @@
           "title": "Connect the two tables with a foreign key",
           "blocks": [
             {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "Why this prompt?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The tables exist, but a link still needs a way to identify its folder. This prompt adds `folder_id` to the `link` table. It points to an existing `id` in the `folder` table."
+                },
+                {
+                  "type": "subheading",
+                  "text": "Example: link table after adding folder_id"
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "id",
+                      "title",
+                      "folder_id"
+                    ],
+                    [
+                      "1",
+                      "YouTube",
+                      "1"
+                    ],
+                    [
+                      "2",
+                      "MDN Web Docs",
+                      "1"
+                    ],
+                    [
+                      "3",
+                      "NASA",
+                      "2"
+                    ],
+                    [
+                      "4",
+                      "Wikipedia",
+                      "NULL"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Using the folder table above, YouTube and MDN Web Docs belong to Class Notes, and NASA belongs to Research. Wikipedia has no folder. Several links can share one `folder_id`."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Notice the difference: `link.id` identifies the bookmark; `link.folder_id` identifies its folder."
+                }
+              ]
+            },
+            {
               "type": "action",
               "where": "VS Code editor · prompt.md",
               "title": "Connect link to folder",
@@ -1035,19 +1215,22 @@
               ]
             },
             {
-              "type": "explanation",
+              "type": "details",
+              "title": "Why a link can have no folder",
               "blocks": [
                 {
-                  "type": "bullet",
-                  "text": "folder_id stays optional on purpose: it's what allows unfiled links.",
-                  "links": [],
-                  "source": 1177
+                  "type": "paragraph",
+                  "text": "The prompt makes `folder_id` optional. NULL means the link is not assigned to a folder. It also requests an ON DELETE SET NULL rule: deleting a folder clears that reference while keeping the link row."
                 },
                 {
-                  "type": "bullet",
-                  "text": "The foreign-key policy makes sure that deleting a folder does not delete the links inside it — only their folder_id gets emptied.",
-                  "links": [],
-                  "source": 1178
+                  "type": "paragraph",
+                  "text": "Reference: PostgreSQL foreign keys.",
+                  "links": [
+                    {
+                      "text": "PostgreSQL foreign keys",
+                      "target": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK"
+                    }
+                  ]
                 }
               ]
             },
@@ -1096,6 +1279,10 @@
                 ]
               ],
               "source": 1181
+            },
+            {
+              "type": "paragraph",
+              "text": "The structure is ready. The tables may still be empty. Next, we will make the app save and retrieve rows in these tables."
             }
           ],
           "source": 1180,
@@ -1107,13 +1294,19 @@
     {
       "id": "8.5",
       "title": "Wiring Features to the Database",
-      "objective": "Direct the AI — entirely in natural language through the Supabase MCP — to make the Ohana Link app store and load its data from the link and folder tables, verifying each feature in the dashboard as it lands.",
+      "objective": "Connect the app’s folder and link features to Supabase, then check how each action changes the saved rows.",
       "intro": [
         {
           "type": "paragraph",
-          "text": "Last lesson we built the link and folder tables. This time you'll direct database integration: the app's real data gets saved to, and read from, those tables. We keep using the Supabase MCP exactly as before, one plain-English command at a time — and after each one, you check the dashboard for the receipt.",
-          "links": [],
-          "source": 1185
+          "text": "The tables are ready, but creating a table does not connect an app button to it. Each prompt below asks Claude to implement one part of that connection."
+        },
+        {
+          "type": "paragraph",
+          "text": "Claude uses MCP while building and checking the feature. The running app uses its Supabase connection to read and write data; you do not need to keep Claude open to use the finished feature."
+        },
+        {
+          "type": "paragraph",
+          "text": "The examples show what changes in the database. Read them, then run the prompt and test through your app. Do not enter the example rows manually."
         }
       ],
       "steps": [
@@ -1165,10 +1358,42 @@
           "title": "Why folders come first",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "Folders come first because a link can optionally reference a folder. The folder_id field is nullable, so a link may also remain outside any folder.",
-              "links": [],
-              "source": 1191
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "We connect folders first so the app has saved folders to offer when a user adds a link. A link can also have no folder, stored as NULL."
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "What the app does",
+                      "Database operation"
+                    ],
+                    [
+                      "Save a new folder or link",
+                      "Create a row"
+                    ],
+                    [
+                      "Show folders or links",
+                      "Read rows"
+                    ],
+                    [
+                      "Rename a folder or edit a link",
+                      "Update a row"
+                    ],
+                    [
+                      "Remove a folder or link",
+                      "Delete a row"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These four operations are often called CRUD: Create, Read, Update, and Delete."
+                }
+              ]
             }
           ],
           "source": 1190,
@@ -1178,6 +1403,44 @@
           "id": "s1192",
           "title": "Add folders",
           "blocks": [
+            {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "What will this prompt change?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Adding a folder will create a row in `folder`. Loading the sidebar will read those rows back. For example, adding Class Notes, Research, and Practice could produce:"
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "id",
+                      "name"
+                    ],
+                    [
+                      "1",
+                      "Class Notes"
+                    ],
+                    [
+                      "2",
+                      "Research"
+                    ],
+                    [
+                      "3",
+                      "Practice"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Only the identifying columns are shown here. After a refresh, the sidebar should show the same saved folders. Blocking repeated clicks helps avoid duplicate rows."
+                }
+              ]
+            },
             {
               "type": "action",
               "where": "VS Code editor · prompt.md",
@@ -1201,7 +1464,8 @@
               ]
             },
             {
-              "type": "explanation",
+              "type": "details",
+              "title": "Why the add-folder prompt includes these requirements",
               "blocks": [
                 {
                   "type": "bullet",
@@ -1262,6 +1526,43 @@
           "title": "Rename folders",
           "blocks": [
             {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "What will this prompt change?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Renaming a folder changes its `name` in the existing row. It does not create a new folder or change the folder’s ID."
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "folder row",
+                      "Before renaming",
+                      "After renaming"
+                    ],
+                    [
+                      "id",
+                      "1",
+                      "1"
+                    ],
+                    [
+                      "name",
+                      "Class Notes",
+                      "Course Notes"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Any links pointing to folder 1 still belong to that folder. Only the displayed folder name changes."
+                }
+              ]
+            },
+            {
               "type": "action",
               "where": "VS Code editor · prompt.md",
               "title": "Connect folder renaming to Supabase",
@@ -1309,6 +1610,38 @@
           "title": "Delete folders",
           "blocks": [
             {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "What will this prompt change?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Deleting a folder removes its row from `folder` and removes it from the sidebar. For example, deleting the Practice folder would do this:"
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "folder id",
+                      "Before deletion",
+                      "After deletion"
+                    ],
+                    [
+                      "3",
+                      "Practice",
+                      "No row with id 3"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Other folders remain. If this folder has saved links, the rule from Lesson 8.4 keeps those link rows and changes their `folder_id` to NULL."
+                }
+              ]
+            },
+            {
               "type": "action",
               "where": "VS Code editor · prompt.md",
               "title": "Connect folder deletion to Supabase",
@@ -1337,7 +1670,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Thanks to the foreign-key constraint, deleting a folder automatically empties the `folder_id` on the links that belonged to it — they become unfiled instead of disappearing. Verify that behavior yourself, then commit and push.",
+                  "text": "Delete a disposable folder in the app and confirm its row disappears from the folder table. If it has saved links, check that those links remain with `folder_id` set to NULL. If the link table is still empty, you can check that part after completing Add links. Then commit and push.",
                   "links": [],
                   "source": 1207
                 }
@@ -1345,7 +1678,7 @@
             },
             {
               "type": "check",
-              "text": "The folder row is removed. Its links remain, with folder_id empty."
+              "text": "The folder row is removed. If it had saved links, those links remain with folder_id set to NULL."
             }
           ],
           "source": 1205,
@@ -1355,6 +1688,44 @@
           "id": "s1208",
           "title": "Add links",
           "blocks": [
+            {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "What will this prompt change?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Saving a link will add a row to `link`. The home page will read the saved links, and a folder page will read the links whose `folder_id` matches that folder."
+                },
+                {
+                  "type": "subheading",
+                  "text": "Example: save YouTube in Research"
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "id",
+                      "url",
+                      "title",
+                      "folder_id"
+                    ],
+                    [
+                      "1",
+                      "https://www.youtube.com",
+                      "YouTube",
+                      "2"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Here, Research has folder ID 2. YouTube should appear on All Links and on the Research folder page. Its preview information may differ from this example."
+                }
+              ]
+            },
             {
               "type": "action",
               "where": "VS Code editor · prompt.md",
@@ -1382,7 +1753,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The app now collects the Open Graph info (title, description, thumbnail), stores it straight into the link table, and the index page and folder pages draw their links directly from the database.",
+                  "text": "The app saves available preview information, such as the title, description, and thumbnail. A website may block preview requests, so missing preview information should not block saving a valid URL.",
                   "links": [],
                   "source": 1210
                 }
@@ -1411,6 +1782,48 @@
           "id": "s1211",
           "title": "Edit links",
           "blocks": [
+            {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "What will this prompt change?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Editing a link updates the existing row. For example, moving YouTube from Research to Course Notes changes its folder reference:"
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "link row",
+                      "Before moving",
+                      "After moving"
+                    ],
+                    [
+                      "id",
+                      "1",
+                      "1"
+                    ],
+                    [
+                      "title",
+                      "YouTube",
+                      "YouTube"
+                    ],
+                    [
+                      "folder_id",
+                      "2 · Research",
+                      "1 · Course Notes"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The stored `folder_id` is the number only. The names above explain it. The link keeps its own ID and moves to the other folder’s page."
+                }
+              ]
+            },
             {
               "type": "action",
               "where": "VS Code editor · prompt.md",
@@ -1458,6 +1871,43 @@
           "id": "s1214",
           "title": "Delete links",
           "blocks": [
+            {
+              "type": "explanation",
+              "blocks": [
+                {
+                  "type": "subheading",
+                  "text": "What will this prompt change?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Deleting a link removes that bookmark’s row from `link`. It does not delete the folder it belonged to."
+                },
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Record",
+                      "Before deletion",
+                      "After deletion"
+                    ],
+                    [
+                      "link id 1",
+                      "YouTube · folder_id 1",
+                      "No row with id 1"
+                    ],
+                    [
+                      "folder id 1",
+                      "Course Notes",
+                      "Course Notes"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "YouTube should disappear from All Links and Course Notes, including after a refresh."
+                }
+              ]
+            },
             {
               "type": "action",
               "where": "VS Code editor · prompt.md",
