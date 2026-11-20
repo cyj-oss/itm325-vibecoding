@@ -723,7 +723,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: Build me a simple personal-intro website.\n- My name is Alex Carter\n- Don't decorate it; keep the code under 200 characters\n- When it's done, open it in a web browser\n- Save the code as index.html",
+                  "text": "Build me a simple personal-intro website.\n- My name is Alex Carter\n- Don't decorate it; keep the code under 200 characters\n- When it's done, open it in a web browser\n- Save the code as index.html",
                   "where": "Claude Code input",
                   "mode": "prompt",
                   "label": "Claude Code prompt",
