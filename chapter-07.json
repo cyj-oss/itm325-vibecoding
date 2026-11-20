@@ -447,7 +447,7 @@
     {
       "id": "7.3",
       "title": "Setting a Design Theme (Claude Skills)",
-      "objective": "Register a design guide as a Claude Skill that Claude can use for related UI tasks. Verify the Skill is available, apply the theme, check the result, then commit and push.",
+      "objective": "Choose a style, save it as a Claude Skill, and use it to improve your app.",
       "intro": [],
       "steps": [
         {
@@ -456,9 +456,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Apply a design theme to the base UI from Lesson 7.2. Register a theme guide as a Claude Skill so Claude can consult it for related design tasks. Check the result against the theme rather than assuming every rule was followed.",
-              "links": [],
-              "source": 934
+              "text": "Download → choose a style → create SKILL.md → apply the theme."
             }
           ],
           "source": 933,
@@ -469,27 +467,73 @@
           "title": "Get the theme files",
           "blocks": [
             {
-              "type": "download",
-              "label": "Download the English themes",
-              "url": "themes-english.zip",
-              "text": "Extract the ZIP, then choose one theme. In the Register the Skill step, copy the entire chosen file into .claude/skills/design-theme/SKILL.md."
+              "type": "action",
+              "where": "Downloads · File Explorer on Windows / Finder on Mac",
+              "title": "Download and unzip",
+              "blocks": [
+                {
+                  "type": "download",
+                  "label": "Download the English themes",
+                  "url": "themes-english.zip",
+                  "text": "Includes Apple, DoorDash, Nextdoor, Notion, and Cash App styles."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Right-click `themes-english.zip` → Extract All → Extract.",
+                  "platform": "Windows"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Double-click `themes-english.zip` to unzip it.",
+                  "platform": "Mac"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Find the extracted `themes` folder. It contains files such as `apple.md` and `doordash.md`."
+                }
+              ]
             },
             {
               "type": "action",
-              "where": "File Explorer on Windows · Finder on Mac",
-              "title": "Extract and choose your theme",
+              "where": "File Explorer / Finder → VS Code Explorer sidebar",
+              "title": "Copy the themes folder into your project",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Download themes-english.zip from this lesson and extract it. Open the themes folder and choose one of the English theme guides: Apple, DoorDash, Nextdoor, Notion, or Cash App inspired. Copy the themes folder into your project root. These are classroom design adaptations, not official brand specifications.",
-                  "links": [],
-                  "source": 936
+                  "text": "Select the extracted `themes` folder and press Ctrl + C.",
+                  "platform": "Windows"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In VS Code, click the `ohana-link` project folder in the Explorer sidebar. Press Ctrl + V.",
+                  "platform": "Windows"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Select the extracted `themes` folder and press Command + C.",
+                  "platform": "Mac"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In VS Code, click the `ohana-link` project folder in the Explorer sidebar. Press Command + V.",
+                  "platform": "Mac"
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "VS Code · Explorer",
+              "title": "Choose one style",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Expand `themes`. Open the theme files and choose the style you like, such as `apple.md` or `doordash.md`."
                 }
               ]
             },
             {
               "type": "check",
-              "text": "The project contains the themes folder and you have chosen one theme file."
+              "text": "You can see themes under ohana-link in VS Code and have chosen one theme file."
             }
           ],
           "source": 935,
@@ -500,16 +544,18 @@
           "title": "Understand what a Skill is",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "A Skill is a reusable instruction file that Claude Code can load for related tasks. A clear description helps Claude recognize when the instructions apply.",
-              "links": [],
-              "source": 938
-            },
-            {
-              "type": "paragraph",
-              "text": "A Skill saves instructions you would otherwise repeat in many prompts. You still check whether the result follows them.",
-              "links": [],
-              "source": 939
+              "type": "details",
+              "title": "What is a Skill?",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A Skill is a saved set of instructions Claude Code can use for related tasks. Here, it stores your chosen design style so you do not need to repeat the design instructions in every prompt."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These themes are classroom adaptations, not official brand specifications."
+                }
+              ]
             }
           ],
           "source": 937,
@@ -517,71 +563,72 @@
         },
         {
           "id": "s940",
-          "title": "Register the Skill",
+          "title": "Create SKILL.md",
           "blocks": [
             {
               "type": "action",
               "where": "VS Code · Explorer",
-              "title": "Create the Skill folders and file",
+              "title": "Create the folders and file",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Expand .claude in Explorer. Create a skills folder inside it, then a design-theme folder inside skills. In design-theme, create SKILL.md with exactly this capitalization."
+                  "text": "Find `.claude` under `ohana-link`. If it is missing, right-click `ohana-link` → New Folder → type `.claude`."
+                },
+                {
+                  "type": "bullet",
+                  "text": "Right-click `.claude` → New Folder → type `skills` → press Enter."
+                },
+                {
+                  "type": "bullet",
+                  "text": "Right-click `skills` → New Folder → type `design-theme` → press Enter."
+                },
+                {
+                  "type": "bullet",
+                  "text": "Right-click `design-theme` → New File → type `SKILL.md` → press Enter."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reuse any folder that already exists. Keep `SKILL.md` uppercase."
                 },
                 {
                   "type": "code",
-                  "text": ".claude/\n  skills/\n    design-theme/\n      SKILL.md",
-                  "where": ".claude folder structure",
+                  "text": "ohana-link/\n  .claude/\n    skills/\n      design-theme/\n        SKILL.md",
+                  "where": "VS Code Explorer · folder structure",
                   "mode": "reference",
-                  "label": "Reference example",
+                  "label": "Your folder structure",
                   "copy": false,
                   "source": 942
                 }
               ]
             },
             {
-              "type": "explanation",
-              "blocks": [
-                {
-                  "type": "bullet",
-                  "text": "`skills/` — the folder that collects all of your Skills.",
-                  "links": [],
-                  "source": 944
-                },
-                {
-                  "type": "bullet",
-                  "text": "`design-theme/` — the folder name becomes the Skill's name.",
-                  "links": [],
-                  "source": 945
-                },
-                {
-                  "type": "bullet",
-                  "text": "`SKILL.md` — the file that holds the actual manual text (keep the uppercase name exactly as shown).",
-                  "links": [],
-                  "source": 946
-                }
-              ]
-            },
-            {
               "type": "action",
-              "where": "VS Code · theme file and SKILL.md",
-              "title": "Copy the entire chosen theme into SKILL.md",
+              "where": "VS Code editor · chosen theme file → SKILL.md",
+              "title": "Copy the entire theme into SKILL.md",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Open the theme you like from the themes folder (for example, the Notion theme), copy its entire contents, and paste them into SKILL.md. That's it — the Skill is registered.",
-                  "links": [],
-                  "source": 947
+                  "text": "Open your chosen file, such as `themes/apple.md`, and click inside its text."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Save the file with Ctrl + S on Windows or Command + S on Mac."
+                  "text": "Press Ctrl + A, then Ctrl + C. Open `SKILL.md`, click inside it, and press Ctrl + V. Save with Ctrl + S.",
+                  "platform": "Windows"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Press Command + A, then Command + C. Open `SKILL.md`, click inside it, and press Command + V. Save with Command + S.",
+                  "platform": "Mac"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Copy all the text, including the `name` and `description` at the top."
                 }
               ]
             },
             {
               "type": "check",
-              "text": "The full chosen theme is saved in .claude/skills/design-theme/SKILL.md."
+              "text": "Your chosen theme is saved in .claude/skills/design-theme/SKILL.md."
             }
           ],
           "source": 940,
@@ -589,13 +636,17 @@
         },
         {
           "id": "s948",
-          "title": "Why Skills fire automatically",
+          "title": "How Claude uses your theme",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "At the very top of SKILL.md you'll see the Skill's `name` and `description`. Claude reads the description, and whenever a task like “UI styling,” “CSS,” or “design work” comes in, it knows on its own to open this Skill and apply it.",
-              "links": [],
-              "source": 949
+              "type": "details",
+              "title": "How does Claude know when to use it?",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The description at the top of SKILL.md tells Claude when the Skill is relevant. Claude can use it for design tasks. Check the finished app to see whether it follows your chosen style."
+                }
+              ]
             }
           ],
           "source": 948,
@@ -607,101 +658,86 @@
           "blocks": [
             {
               "type": "action",
-              "where": "Claude Code input · in the terminal",
-              "title": "Confirm that the Skill is available",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Start Claude Code in the project. Type / and look for the available skills or use /skills if your version supports that command. Confirm design-theme is available before continuing.",
-                  "links": [],
-                  "source": 951
-                },
-                {
-                  "type": "note",
-                  "title": "Before you continue",
-                  "text": "If the skill is missing, check the exact folder and SKILL.md filename, then restart Claude Code. Consult the current Claude Code skills documentation if the command differs in your version.",
-                  "optional": false,
-                  "source": 952
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Once you've confirmed the Skill is registered, press ESC to leave the list and give this command:",
-                  "links": [],
-                  "source": 954
-                }
-              ]
-            },
-            {
-              "type": "action",
               "where": "VS Code editor · prompt.md",
-              "title": "Request the theme update",
+              "title": "Ask Claude to improve the design",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                  "text": "Replace the text in `prompt.md` with the prompt below and save the file."
                 },
                 {
                   "type": "code",
-                  "text": "make the design look nicer.",
+                  "text": "Please refine the design to make it look better.",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
                   "copy": true,
                   "id": "prompt-955",
-                  "source": 955,
-                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                  "source": 955
                 }
               ]
             },
             {
-              "type": "explanation",
+              "type": "details",
+              "title": "Claude Code is not open?",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Claude can use the registered theme while restyling the interface. Review which Skill it used and check the result against the theme’s rules.",
-                  "links": [],
-                  "source": 957
-                }
-              ]
-            },
-            {
-              "type": "action",
-              "where": "VS Code terminal · normal shell",
-              "title": "Keep the server running",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Use the command below only if the development server has stopped."
+                  "text": "In the VS Code terminal for ohana-link, run:"
                 },
                 {
                   "type": "code",
-                  "text": "npm run dev",
+                  "text": "claude",
                   "where": "VS Code terminal · normal shell",
                   "mode": "command",
-                  "label": "Terminal command",
-                  "copy": true,
-                  "windows": "npm.cmd run dev",
-                  "source": 958,
-                  "note": "If the development server is already running, keep it open and skip this command. Otherwise, run it in a regular terminal inside ohana-link, outside Claude."
+                  "label": "Open Claude Code",
+                  "copy": true
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Then send `@prompt.md` at the Claude Code input."
                 }
               ]
             },
             {
               "type": "action",
               "where": "Browser · your app",
-              "title": "Review the design",
+              "title": "Check the new design",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Refresh the browser and you'll see the project's overall design transformed to match the theme you registered. Don't stop at \"it looks nicer\" — spot-check the result against the theme document: are the colors and typography the ones the manual specifies?",
-                  "links": [],
-                  "source": 960
+                  "text": "Wait for Claude to finish, then refresh your app. Check the colors, fonts, and cards. Make sure the links still work."
+                },
+                {
+                  "type": "details",
+                  "title": "The app is not showing your changes?",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "In the regular terminal for ohana-link, stop the development server with Ctrl + C if it is running. Then run:"
+                    },
+                    {
+                      "type": "code",
+                      "text": "npm run dev",
+                      "where": "VS Code terminal · normal shell",
+                      "mode": "command",
+                      "label": "Terminal command",
+                      "copy": true,
+                      "windows": "npm.cmd run dev",
+                      "source": 958,
+                      "note": "Run this in the regular terminal for ohana-link, outside Claude Code."
+                    },
+                    {
+                      "type": "paragraph",
+                      "text": "When the server is ready, refresh your app. If the style is still missing, check the SKILL.md file and folder location from the previous page."
+                    }
+                  ]
                 }
               ]
             },
             {
               "type": "check",
-              "text": "The page reflects your theme’s colors and typography, and its existing layout and links still work."
+              "text": "The app reflects your chosen style and its links still work."
             }
           ],
           "source": 950,
@@ -712,9 +748,14 @@
           "title": "Commit and push",
           "blocks": [
             {
-              "type": "note",
+              "type": "details",
               "title": "Connect this project if needed",
-              "text": "If ohana-link has not been published to GitHub yet, follow Lesson 5.5 for this project before pushing. Publishing a previous Pomodoro repository does not connect this new project automatically."
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "If ohana-link has not been published to GitHub yet, follow Lesson 5.5 for this project before pushing. Publishing a previous Pomodoro repository does not connect this new project automatically."
+                }
+              ]
             },
             {
               "type": "action",
