@@ -845,7 +845,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "In VS Code Explorer, right-click the ohana-link folder and choose New File. Type prompt.md and press Enter. The new file should appear directly inside ohana-link, alongside package.json. Paste the prompt below into this file. Save with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                  "text": "In VS Code Explorer, right-click the ohana-link folder and choose New File. Type prompt.md and press Enter. The new file should appear directly inside ohana-link, alongside package.json. Paste the prompt below into this file. Save with Ctrl + S on Windows or Command + S on Mac. Next, create and save settings.json in the following step."
                 },
                 {
                   "type": "code",
@@ -856,7 +856,8 @@
                   "copy": true,
                   "id": "prompt-850",
                   "source": 850,
-                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                  "note": "Save prompt.md, then complete settings.json below before sending the prompt to Claude Code.",
+                  "autoLaunch": false
                 }
               ]
             },
@@ -867,7 +868,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Inside the project’s .claude folder, open or create settings.json. Review the contents below and save the file."
+                  "text": "Inside ohana-link, create a .claude folder if needed. Inside .claude, create or open settings.json. Paste the file contents below and save with Ctrl + S on Windows or Command + S on Mac."
                 },
                 {
                   "type": "code",
@@ -878,6 +879,26 @@
                   "copy": true,
                   "source": 853,
                   "note": "Save this file before continuing."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "Claude Code input · in the VS Code terminal panel",
+              "title": "Send the prompt after saving both files",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "After saving prompt.md and .claude/settings.json, return to the terminal where Claude Code is running. Paste the instruction below into Claude Code’s message input and press Enter."
+                },
+                {
+                  "type": "code",
+                  "text": "@prompt.md",
+                  "where": "Claude Code input · in the VS Code terminal panel",
+                  "mode": "command",
+                  "label": "Claude Code instruction",
+                  "copy": true,
+                  "note": "Send this only after both files have been saved."
                 }
               ]
             },
