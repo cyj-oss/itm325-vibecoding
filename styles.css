@@ -42,3 +42,6 @@
 /* Keep the design Skill screenshot at its original size. */
 .guide-image:has(img[src="image-design-theme-skill-location.png"]){width:292px;max-width:100%}
 .supabase-env-name{font-weight:700}.supabase-env-url{color:#1457bf}.supabase-env-key{color:#7033a6}
+/* Compact Supabase previews; click-to-enlarge keeps the original resolution. */
+.guide-image:has(img[src^="image-supabase-"]){width:540px;max-width:100%;margin:1.1rem 0}
+.guide-image:has(img[src="image-supabase-env-local-english.png"]),.guide-image:has(img[src="image-supabase-connect-button.png"]){width:620px}
