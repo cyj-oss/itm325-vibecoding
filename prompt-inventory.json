@@ -160,9 +160,15 @@
       "sourceBlock": 924,
       "lesson": "7.2",
       "destination": "VS Code editor · prompt.md",
-      "text": "implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
+      "text": "Implement the UI for the new link page.\n\n- Set the page URL to /new.\n- When the + Add Link button on the index page is clicked, navigate to this page.\n\n# Page layout\n- Use the same top header and left sidebar as the index page.\n- Main section\n  - An input field for entering a link\n  - A select box for choosing a folder\n  - A Save button\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
       "sourceText": "Request: implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
-      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request"
+      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request",
+      "instructorRevision": {
+        "date": "2026-11-19",
+        "source": "Korean replacement supplied by the instructor for Implement the new-link page",
+        "translation": "Implement the UI for the new link page.\n\n- Set the page URL to /new.\n- When the + Add Link button on the index page is clicked, navigate to this page.\n\n# Page layout\n- Use the same top header and left sidebar as the index page.\n- Main section\n  - An input field for entering a link\n  - A select box for choosing a folder\n  - A Save button\n\n# Notes\n- Split the implementation into appropriate components.\n- Report the results by component.\n- Reuse existing components as much as possible.",
+        "note": "Preserved the source structure and requirements. Kept + Add Link to match the existing index-page button label."
+      }
     },
     {
       "id": "prompt-928",
