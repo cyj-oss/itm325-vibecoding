@@ -252,9 +252,15 @@
       "sourceBlock": 1019,
       "lesson": "7.5",
       "destination": "VS Code editor · prompt.md",
-      "text": "implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
+      "text": "Implement the add-link feature.\n– Keep the existing new-link page UI, including the URL input, Folder dropdown, and Save button.\n– Fill the dropdown from the current folder list and include a No folder option.\n– Implement a server-side API that reads the link's Open Graph information.\n– Validate that the URL is a public HTTP or HTTPS address before fetching or saving.\n– On Save, store the URL, the selected folder's numeric ID (or null for No folder), and any available title, description, and thumbnail.\n– If preview fetching fails, including a 403 response or timeout, still save the valid URL and selected folder. Use the website's domain as the title, an empty description, and no thumbnail. Use these defaults for individual missing fields too.\n– Show the saved link in All Links and in the selected folder. Keep the current design.",
       "sourceText": "Request: implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
-      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request"
+      "normalization": "Removed terminal display markers only; removed leading Request: at instructor request",
+      "instructorRevision": {
+        "date": "2026-11-19",
+        "source": "Instructor requested folder selection, reliable link saving when previews fail, and a new test URL.",
+        "translation": "Implement the add-link feature.\n– Keep the existing new-link page UI, including the URL input, Folder dropdown, and Save button.\n– Fill the dropdown from the current folder list and include a No folder option.\n– Implement a server-side API that reads the link's Open Graph information.\n– Validate that the URL is a public HTTP or HTTPS address before fetching or saving.\n– On Save, store the URL, the selected folder's numeric ID (or null for No folder), and any available title, description, and thumbnail.\n– If preview fetching fails, including a 403 response or timeout, still save the valid URL and selected folder. Use the website's domain as the title, an empty description, and no thumbnail. Use these defaults for individual missing fields too.\n– Show the saved link in All Links and in the selected folder. Keep the current design.",
+        "note": "Retained link creation and Open Graph collection; clarified folder associations, metadata fallback, and existing UI preservation."
+      }
     },
     {
       "id": "prompt-1025",
