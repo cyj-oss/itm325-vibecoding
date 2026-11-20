@@ -223,7 +223,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement the index page UI for a bookmark service.\n– Page layout:\n   – Top header with a “Ohana Link” text logo on the left and a “+ Add Link” button on the right\n   – Left sidebar with an “All” button and the folder list\n   – Main section shows the registered links in a grid\n– Things to watch:\n   – Split the work into properly separated components\n   – Report the results component by component",
+                  "text": "implement the index page UI for a bookmark service.\n– Page layout:\n   – Top header with a “Ohana Link” text logo on the left and a “+ Add Link” button on the right\n   – Left sidebar with an “All” button and the folder list\n   – Main section shows the registered links in a grid\n– Things to watch:\n   – Split the work into properly separated components\n   – Report the results component by component",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -298,7 +298,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: move the component files out of the app/components folder and into the root-level /components folder.",
+                  "text": "move the component files out of the app/components folder and into the root-level /components folder.",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -339,7 +339,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
+                  "text": "implement the new-link registration page that opens when the + Add Link button is pressed.\n– Page address: /new\n– Pressing + Add Link on the index page navigates to this page\n– Header and sidebar are identical to the index page\n– Main section contains a link input field and a save button\n– Things to watch: reuse the components we already built as much as possible (avoid duplicate components)",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -373,7 +373,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
+                  "text": "implement the page that shows only the links stored in a folder when that folder is clicked in the sidebar.\n– Page address: a dynamic route in the form /folder/[folderId]\n– Clicking a folder in the sidebar navigates to this page\n– Main section displays a link grid, just like the index page",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -604,7 +604,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: make the design look nicer.",
+                  "text": "make the design look nicer.",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -797,7 +797,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
+                  "text": "build the add-folder feature.\n– Place the New Folder button to the left of the New Link button in the header component\n– Clicking it opens a modal centered on the screen\n– Inside the modal: a folder-name input, a Cancel button, and a Save button\n– On save, the new folder appears in the left sidebar immediately",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -910,7 +910,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement folder deletion.\n– The delete button appears on the right side when the mouse hovers over a folder name in the left sidebar\n– Use a trash-can icon\n– On click, ask for confirmation one more time in a modal to prevent user mistakes",
+                  "text": "implement folder deletion.\n– The delete button appears on the right side when the mouse hovers over a folder name in the left sidebar\n– Use a trash-can icon\n– On click, ask for confirmation one more time in a modal to prevent user mistakes",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -966,7 +966,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
+                  "text": "implement folder renaming.\n– The edit button appears on the right side when the mouse hovers over a folder name in the sidebar\n– Use a pencil icon\n– On click, open a modal for editing the folder name",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1127,7 +1127,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
+                  "text": "implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1183,7 +1183,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement link deletion.\n– The delete button appears as a trash-can icon in the top-right corner when the mouse hovers over a link card\n– On click, show a confirmation modal",
+                  "text": "implement link deletion.\n– The delete button appears as a trash-can icon in the top-right corner when the mouse hovers over a link card\n– On click, show a confirmation modal",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
