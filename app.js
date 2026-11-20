@@ -25,7 +25,7 @@
   function codeHtml(b,extra=''){
     const text=actualCode(b),note=b.note||'',where=normalShell(b.where||'');
     if(!b.copy)return '<div class="reference"><div class="kind">'+escape(b.label||'Read this example — do not type')+'</div><pre><code>'+escape(text)+'</code></pre>'+(note?'<p>'+inline(note)+'</p>':'')+'</div>';
-    const filePrompt=b.mode==='prompt'&&where.includes('prompt.md');
+    const filePrompt=b.mode==='prompt'&&where.includes('prompt.md')&&b.autoLaunch!==false;
     return '<section class="input-area '+extra+'" aria-label="'+escape(b.label||'Input')+'"><div class="input-destination"><div class="input-location"><span class="where-label">Where to paste</span><strong>'+escape(where)+'</strong></div><button type="button" class="copy" aria-label="Copy '+escape(b.label||'input')+'">Copy</button></div><pre><code>'+escape(text)+'</code></pre>'+(note?'<p class="input-note">'+inline(note)+'</p>':'')+'</section>'+(filePrompt?'<div class="launch-prompt"><p>After saving the file, paste this instruction into <strong>Claude Code</strong> and press Enter.</p>'+codeHtml({mode:'command',copy:true,where:'Claude Code input · in the VS Code terminal panel',label:'Claude Code instruction',text:b.launchText||'@prompt.md'},'compact')+'</div>':'');
   }
   function setupHtml(b){
@@ -131,8 +131,8 @@
   window.addEventListener('hashchange',()=>{positionReading(render(),true)});
   async function start(){
     try{
-      const r=await fetch('book.json');if(!r.ok)throw new Error('Book index is unavailable.');manifest=await r.json();
-      chapters=await Promise.all(manifest.chapters.map(async c=>{const res=await fetch(c.file);if(!res.ok)throw new Error('A chapter could not be loaded.');return res.json()}));
+      const r=await fetch('book.json',{cache:'no-cache'});if(!r.ok)throw new Error('Book index is unavailable.');manifest=await r.json();
+      chapters=await Promise.all(manifest.chapters.map(async c=>{const res=await fetch(c.file,{cache:'no-cache'});if(!res.ok)throw new Error('A chapter could not be loaded.');return res.json()}));
       const entries=new Map(manifest.chapters.flatMap(c=>c.lessons.map(l=>[l.id,l])));
       lessons=chapters.flatMap(c=>c.lessons.map(l=>({...l,chapter:c.number,pages:entries.get(l.id)?.pages})));positionReading(render());
     }catch(e){$('#main').innerHTML='<section class="error-state"><h1>The book could not open</h1><p>Check your connection and reload this page.</p><button class="button" id="reload-book" type="button">Reload book</button><p><a href="https://github.com/cyj-oss/itm325-vibecoding">Open the course repository</a></p></section>';$('#reload-book').addEventListener('click',()=>location.reload());}
