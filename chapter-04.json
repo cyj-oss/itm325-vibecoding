@@ -1159,7 +1159,8 @@
                   "copy": true,
                   "id": "prompt-466",
                   "source": 466,
-                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                  "note": "Save in prompt.md, then use the Claude Code instruction below.",
+                  "launchText": "@prompt.md"
                 }
               ]
             },
@@ -1223,7 +1224,8 @@
                   "copy": true,
                   "id": "prompt-473",
                   "source": 473,
-                  "note": "Save in prompt.md, then use the Claude Code instruction below."
+                  "note": "Save in prompt.md, then use the Claude Code instruction below.",
+                  "launchText": "@prompt.md"
                 }
               ]
             },
