@@ -31,7 +31,7 @@
   function setupHtml(b){
     const scope=b.scope?'<div class="setup-scope"><h4>Do in the guide</h4><p>'+inline(b.scope)+'</p></div>':'';
     const checks=Array.isArray(b.checks)&&b.checks.length?'<section class="check"><h3>Stop when</h3><ul>'+b.checks.map(t=>'<li>'+inline(t)+'</li>').join('')+'</ul></section>':'';
-    const returnLink=b.returnUrl&&/^#lesson=[0-9.]+&step=\d+$/.test(b.returnUrl)?'<a class="button" href="'+escape(b.returnUrl)+'">'+escape(b.returnLabel||'Continue in this book')+'</a>':'';
+    const returnLink=b.returnUrl&&/^#lesson=[0-9.]+&step=\d+$/.test(b.returnUrl)?'<a class="button" href="'+escape(b.returnUrl+'&resume=1')+'">'+escape(b.returnLabel||'Continue in this book')+'</a>':'';
     const back=b.returnText?'<section class="setup-return"><h4>Back in this book</h4><p>'+inline(b.returnText)+'</p>'+returnLink+'</section>':'';
     const html='<section class="setup-card"><h3>'+escape(b.label)+'</h3><p>'+inline(b.text)+'</p>'+scope+'<a class="button primary" href="'+escape(safeUrl(b.url))+'" target="_blank" rel="noopener">Open guide</a>'+checks+back+'</section>';
     return b.optional?'<details class="optional"><summary>'+escape(b.label)+'</summary>'+html+'</details>':html;
@@ -102,7 +102,7 @@
     const params=new URLSearchParams(location.hash.replace(/^#/,'')),id=params.get('lesson');
     const l=lessons.find(x=>x.id===id);let index=Number(params.get('step')||0);
     let target=null;
-    if(l){if(!Number.isInteger(index)||index<0||index>=l.steps.length)index=0;target=lessonPage(l,index)}else home();
+    if(l){if(!Number.isInteger(index)||index<0||index>=l.steps.length)index=0;target=lessonPage(l,index);if(params.get('resume')==='1')target='lesson-step-'+index}else home();
     $('#sidebar').classList.remove('is-open');$('#outline-toggle').setAttribute('aria-expanded','false');
     return target;
   }
