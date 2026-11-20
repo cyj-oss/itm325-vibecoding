@@ -302,7 +302,7 @@
             },
             {
               "type": "paragraph",
-              "text": "This is the physical location where your database and backend server actually run. Pick the region closest to the users you'll serve. For us in Hawaii, a West US region — such as West US (North California) — is the closest choice.",
+              "text": "Region determines where Supabase hosts your project. For this course, choose Americas in the Region menu.",
               "links": [],
               "source": 1079
             },
@@ -444,7 +444,7 @@
             {
               "type": "note",
               "title": "Before you continue",
-              "text": "A Supabase project's Region (server location) is effectively impossible to change after creation — that's why you chose carefully when you made it. For a service aimed at users in Hawaii or the mainland US, a US region is the right pick.",
+              "text": "Choose Americas when creating your project. If you already have a working project, continue using it.",
               "optional": false,
               "source": 1098
             },
