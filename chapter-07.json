@@ -598,6 +598,12 @@
                   "label": "Your folder structure",
                   "copy": false,
                   "source": 942
+                },
+                {
+                  "type": "image",
+                  "src": "image-design-theme-skill-location.png",
+                  "alt": "VS Code Explorer showing SKILL.md inside ohana-link, .claude, skills, and design-theme",
+                  "caption": "Create SKILL.md inside .claude → skills → design-theme."
                 }
               ]
             },

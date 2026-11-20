@@ -38,3 +38,6 @@
 
 /* Keep the terminal screenshot at its original readable size. */
 .guide-image:has(img[src="image-split-terminal.png"]){width:599px;max-width:100%}
+
+/* Keep the design Skill screenshot at its original size. */
+.guide-image:has(img[src="image-design-theme-skill-location.png"]){width:292px;max-width:100%}
