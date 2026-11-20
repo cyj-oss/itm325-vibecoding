@@ -269,6 +269,22 @@
           "returnLabel": "Return to 8.2 · Connection files"
         },
         {
+          "type": "subheading",
+          "text": "Find the connection screen"
+        },
+        {
+          "type": "image",
+          "src": "image-supabase-connect-button.png",
+          "alt": "Supabase project dashboard with the Connect button highlighted.",
+          "caption": "Click Connect at the top of your Supabase project."
+        },
+        {
+          "type": "image",
+          "src": "image-supabase-nextjs-app-router.png",
+          "alt": "Supabase Connect dialog with Framework selected, Next.js as the framework, and App Router as the variant.",
+          "caption": "Select Framework, then choose Next.js and App Router. Continue with Step 2 in the setup guide."
+        },
+        {
           "type": "details",
           "title": "What the Supabase setup fields mean",
           "blocks": [

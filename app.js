@@ -7,12 +7,13 @@
   let complete=new Set(Array.isArray(saved.complete)?saved.complete:[]),last=saved.last||null;
   let manifest,chapters=[],lessons=[],current=null;
   const escape=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const codeTextHtml=t=>escape(t).replace(/\bNEXT_PUBLIC_SUPABASE_(URL|PUBLISHABLE_KEY)\b/g,(name,type)=>'<span class="supabase-env-name '+(type==='URL'?'supabase-env-url':'supabase-env-key')+'">'+name+'</span>');
   const safeUrl=u=>/^(https?:\/\/|themes-english\.zip$|#)/.test(u)?u:'#';
   function inline(text,links=[]){
     let s=String(text??'');const tokens=[];
     const token=html=>{tokens.push(html);return '\u0001'+(tokens.length-1)+'\u0002'};
     for(const link of links){if(link.text&&link.target&&/^https?:\/\//.test(link.target)&&s.includes(link.text))s=s.replace(link.text,token('<a href="'+escape(link.target)+'" target="_blank" rel="noopener">'+escape(link.text)+'</a>'));}
-    s=s.replace(/`([^`]+)`/g,(_,c)=>token('<code>'+escape(c)+'</code>'));
+    s=s.replace(/`([^`]+)`/g,(_,c)=>token('<code>'+codeTextHtml(c)+'</code>'));
     s=s.replace(/https?:\/\/[^\s<>]+/g,u=>{let end='';while(/[.,;)]$/.test(u)){end=u.slice(-1)+end;u=u.slice(0,-1)}return token('<a href="'+escape(u)+'" target="_blank" rel="noopener">'+escape(u)+'</a>')+end});
     s=escape(s).replace(/\u0001(\d+)\u0002/g,(_,n)=>tokens[Number(n)]);
     return s;
@@ -24,9 +25,9 @@
   function actualCode(b){return platform==='Windows'&&b.windows?b.windows:platform==='Mac'&&b.mac?b.mac:b.text;}
   function codeHtml(b,extra=''){
     const text=actualCode(b),note=b.note||'',where=normalShell(b.where||'');
-    if(!b.copy)return '<div class="reference"><div class="kind">'+escape(b.label||'Read this example — do not type')+'</div><pre><code>'+escape(text)+'</code></pre>'+(note?'<p>'+inline(note)+'</p>':'')+'</div>';
+    if(!b.copy)return '<div class="reference"><div class="kind">'+escape(b.label||'Read this example — do not type')+'</div><pre><code>'+codeTextHtml(text)+'</code></pre>'+(note?'<p>'+inline(note)+'</p>':'')+'</div>';
     const filePrompt=b.mode==='prompt'&&where.includes('prompt.md')&&b.autoLaunch!==false;
-    return '<section class="input-area '+extra+'" aria-label="'+escape(b.label||'Input')+'"><div class="input-destination"><div class="input-location"><span class="where-label">Where to paste</span><strong>'+escape(where)+'</strong></div><button type="button" class="copy" aria-label="Copy '+escape(b.label||'input')+'">Copy</button></div><pre><code>'+escape(text)+'</code></pre>'+(note?'<p class="input-note">'+inline(note)+'</p>':'')+'</section>'+(filePrompt?'<div class="launch-prompt"><p>After saving the file, paste this instruction into <strong>Claude Code</strong> and press Enter.</p>'+codeHtml({mode:'command',copy:true,where:'Claude Code input · in the VS Code terminal panel',label:'Claude Code instruction',text:b.launchText||'@prompt.md'},'compact')+'</div>':'');
+    return '<section class="input-area '+extra+'" aria-label="'+escape(b.label||'Input')+'"><div class="input-destination"><div class="input-location"><span class="where-label">Where to paste</span><strong>'+escape(where)+'</strong></div><button type="button" class="copy" aria-label="Copy '+escape(b.label||'input')+'">Copy</button></div><pre><code>'+codeTextHtml(text)+'</code></pre>'+(note?'<p class="input-note">'+inline(note)+'</p>':'')+'</section>'+(filePrompt?'<div class="launch-prompt"><p>After saving the file, paste this instruction into <strong>Claude Code</strong> and press Enter.</p>'+codeHtml({mode:'command',copy:true,where:'Claude Code input · in the VS Code terminal panel',label:'Claude Code instruction',text:b.launchText||'@prompt.md'},'compact')+'</div>':'');
   }
   function setupHtml(b){
     const scope=b.scope?'<div class="setup-scope"><h4>Do in the guide</h4><p>'+inline(b.scope)+'</p></div>':'';

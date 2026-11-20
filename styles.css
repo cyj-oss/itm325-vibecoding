@@ -41,3 +41,4 @@
 
 /* Keep the design Skill screenshot at its original size. */
 .guide-image:has(img[src="image-design-theme-skill-location.png"]){width:292px;max-width:100%}
+.supabase-env-name{font-weight:700}.supabase-env-url{color:#1457bf}.supabase-env-key{color:#7033a6}
