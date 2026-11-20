@@ -104,6 +104,12 @@
               "source": 1051
             },
             {
+              "type": "image",
+              "src": "image-database-request-flow.png",
+              "alt": "Student A sends a request to the backend server and receives a response. The backend server and database are inside one PC, with a curved arrow from the server to the database. Student B's browser is also shown.",
+              "caption": "In this example, the backend server and database run on the same PC. The arrows show Student A's request, the database operation, and the response."
+            },
+            {
               "type": "paragraph",
               "text": "On the flip side, the Next.js server that answers with the pages users actually see is called the frontend server. So far, the Ohana Link project has only ever been a frontend server.",
               "links": [],
