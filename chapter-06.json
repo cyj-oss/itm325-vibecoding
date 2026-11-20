@@ -811,17 +811,17 @@
             },
             {
               "type": "action",
-              "where": "VS Code editor · prompt.md",
-              "title": "Build the component-based timer",
+              "where": "VS Code · Explorer → ohana-link",
+              "title": "Create prompt.md inside ohana-link",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Open prompt.md in Explorer. Replace its previous contents with the prompt below. Save the file with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
+                  "text": "In VS Code Explorer, right-click the ohana-link folder and choose New File. Type prompt.md and press Enter. The new file should appear directly inside ohana-link, alongside package.json. Paste the prompt below into this file. Save with Ctrl + S on Windows or Command + S on Mac. Then send the separate Claude Code instruction shown below."
                 },
                 {
                   "type": "code",
                   "text": "Build a Pomodoro timer web application.\n\n# Main Page\n\n## Main Page UI\n- Display the title \"pomodoro\" using an `h1` tag\n- Display the current remaining time (load and use from localStorage, default is 25 minutes)\n- Place Start, Stop, and Reset buttons\n- Place a Settings button (navigates to the Settings page)\n\n## Main Page Features\n- Clicking the Start button starts the timer\n- Clicking the Stop button pauses/stops the timer\n- Clicking the Reset button resets the timer\n\n# Settings Page\n\n## Settings Page UI\n- Place the title \"Setting\" using an `h3` tag\n- Place a single input field to set the timer duration\n- Place a Complete Setting (Save) button\n\n## Settings Page Features\n- Change timer duration\n- Can only be set between 1 minute and 60 minutes (inclusive)\n- The Complete Setting button cannot be clicked if the input field is left empty\n- The updated time is immediately reflected on the Main Page\n- The updated time persists even after a page refresh\n\n# Component Splitting\n- Properly split the work into modular components\n- Split the components into `Timer`, `Controllers`, and `TimerSettingInput`\n- Store the components in the `/components` folder\n- If a `src` folder exists, store them in `src/components`\n- Must be stored in `/components`, NOT `app/components`\n\n# Miscellaneous\n- Do not build or run the Next.js app after completing the development\n- Explain the results in English as follows:\n- Explain unit by unit for each component (Name, Path, Role)\n- Explain in the order of Regular Components -> Page Components\n- In the Page Component explanation, include a list of the Regular Components it contains",
-                  "where": "VS Code editor · prompt.md",
+                  "where": "VS Code editor · ohana-link/prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
                   "copy": true,
