@@ -479,6 +479,12 @@
               "source": 1125
             },
             {
+              "type": "image",
+              "src": "image-foreign-key-student-school.svg",
+              "alt": "Student and School tables with school_id and id highlighted. Arrows connect each student’s school_id to the matching School id. Jordan, Maya, and Olivia reference school 0, Ethan references school 1, and Noah references school 2.",
+              "caption": "Jordan, Maya, and Olivia share school_id 0. They all reference Pacific University. A foreign key value can repeat in the Student table."
+            },
+            {
               "type": "paragraph",
               "text": "A foreign key can also carry policies that make it follow along when the thing it references changes:",
               "links": [],

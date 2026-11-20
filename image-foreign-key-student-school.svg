@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
+<title id="title">Students connect to schools through a foreign key</title>
+<desc id="desc">The Student table has a school_id foreign key referencing the School table's unique id. Jordan, Maya, and Olivia use school_id 0, which refers to Pacific University. Ethan uses 1 for Mountain College. Noah uses 2 for Bayside University.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8 Z" fill="#8862b8"/></marker></defs>
+<rect width="1280" height="480" rx="16" fill="#ffffff"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#26303d}.title{font-size:28px;font-weight:700}.role{font-size:19px;fill:#7033a6;font-weight:700}.head{font-size:21px;font-weight:700}.cell{font-size:21px}.key{fill:#7033a6;font-weight:700}.mono{font-family:Consolas,monospace}</style>
+
+<text x="24" y="36" class="title" text-anchor="start" dominant-baseline="middle">Student table</text>
+<text x="564.0" y="83" class="role" text-anchor="middle" dominant-baseline="middle">Foreign key</text>
+<rect x="24" y="126" width="620" height="334" rx="10" fill="#ffffff" stroke="#d6dce5" stroke-width="2"/>
+<path d="M34 126 H634 Q644 126 644 136 V180 H24 V136 Q24 126 34 126" fill="#f1f4f8"/>
+<rect x="484" y="126" width="160" height="334" fill="#eee6f9"/>
+<text x="64.0" y="153.0" class="head" text-anchor="middle" dominant-baseline="middle">id</text>
+<path d="M104 126 V460" stroke="#e0e4ec"/>
+<text x="174.0" y="153.0" class="head" text-anchor="middle" dominant-baseline="middle">name</text>
+<path d="M244 126 V460" stroke="#e0e4ec"/>
+<text x="314.0" y="153.0" class="head" text-anchor="middle" dominant-baseline="middle">year</text>
+<path d="M384 126 V460" stroke="#e0e4ec"/>
+<text x="434.0" y="153.0" class="head" text-anchor="middle" dominant-baseline="middle">grade</text>
+<path d="M484 126 V460" stroke="#e0e4ec"/>
+<text x="564.0" y="153.0" class="head key mono" text-anchor="middle" dominant-baseline="middle">school_id</text>
+<path d="M24 180 H644" stroke="#dce2ea"/>
+<text x="64.0" y="208.0" class="cell" text-anchor="middle" dominant-baseline="middle">123</text>
+<text x="174.0" y="208.0" class="cell" text-anchor="middle" dominant-baseline="middle">Jordan</text>
+<text x="314.0" y="208.0" class="cell" text-anchor="middle" dominant-baseline="middle">Junior</text>
+<text x="434.0" y="208.0" class="cell" text-anchor="middle" dominant-baseline="middle">C+</text>
+<text x="564.0" y="208.0" class="cell key mono" text-anchor="middle" dominant-baseline="middle">0</text>
+<path d="M24 236 H644" stroke="#dce2ea"/>
+<text x="64.0" y="264.0" class="cell" text-anchor="middle" dominant-baseline="middle">234</text>
+<text x="174.0" y="264.0" class="cell" text-anchor="middle" dominant-baseline="middle">Maya</text>
+<text x="314.0" y="264.0" class="cell" text-anchor="middle" dominant-baseline="middle">Freshman</text>
+<text x="434.0" y="264.0" class="cell" text-anchor="middle" dominant-baseline="middle">B+</text>
+<text x="564.0" y="264.0" class="cell key mono" text-anchor="middle" dominant-baseline="middle">0</text>
+<path d="M24 292 H644" stroke="#dce2ea"/>
+<text x="64.0" y="320.0" class="cell" text-anchor="middle" dominant-baseline="middle">016</text>
+<text x="174.0" y="320.0" class="cell" text-anchor="middle" dominant-baseline="middle">Ethan</text>
+<text x="314.0" y="320.0" class="cell" text-anchor="middle" dominant-baseline="middle">Sophomore</text>
+<text x="434.0" y="320.0" class="cell" text-anchor="middle" dominant-baseline="middle">A+</text>
+<text x="564.0" y="320.0" class="cell key mono" text-anchor="middle" dominant-baseline="middle">1</text>
+<path d="M24 348 H644" stroke="#dce2ea"/>
+<text x="64.0" y="376.0" class="cell" text-anchor="middle" dominant-baseline="middle">922</text>
+<text x="174.0" y="376.0" class="cell" text-anchor="middle" dominant-baseline="middle">Olivia</text>
+<text x="314.0" y="376.0" class="cell" text-anchor="middle" dominant-baseline="middle">Junior</text>
+<text x="434.0" y="376.0" class="cell" text-anchor="middle" dominant-baseline="middle">D-</text>
+<text x="564.0" y="376.0" class="cell key mono" text-anchor="middle" dominant-baseline="middle">0</text>
+<path d="M24 404 H644" stroke="#dce2ea"/>
+<text x="64.0" y="432.0" class="cell" text-anchor="middle" dominant-baseline="middle">321</text>
+<text x="174.0" y="432.0" class="cell" text-anchor="middle" dominant-baseline="middle">Noah</text>
+<text x="314.0" y="432.0" class="cell" text-anchor="middle" dominant-baseline="middle">Senior</text>
+<text x="434.0" y="432.0" class="cell" text-anchor="middle" dominant-baseline="middle">A+</text>
+<text x="564.0" y="432.0" class="cell key mono" text-anchor="middle" dominant-baseline="middle">2</text>
+<rect x="24" y="126" width="620" height="334" rx="10" fill="none" stroke="#d6dce5" stroke-width="2"/>
+<text x="780" y="36" class="title" text-anchor="start" dominant-baseline="middle">School table</text>
+<text x="815.0" y="83" class="role" text-anchor="middle" dominant-baseline="middle">Primary key</text>
+<rect x="780" y="126" width="475" height="222" rx="10" fill="#ffffff" stroke="#d6dce5" stroke-width="2"/>
+<path d="M790 126 H1245 Q1255 126 1255 136 V180 H780 V136 Q780 126 790 126" fill="#f1f4f8"/>
+<rect x="780" y="126" width="70" height="222" fill="#eee6f9"/>
+<text x="815.0" y="153.0" class="head key mono" text-anchor="middle" dominant-baseline="middle">id</text>
+<path d="M850 126 V348" stroke="#e0e4ec"/>
+<text x="952.5" y="153.0" class="head" text-anchor="middle" dominant-baseline="middle">school name</text>
+<path d="M1055 126 V348" stroke="#e0e4ec"/>
+<text x="1155.0" y="153.0" class="head" text-anchor="middle" dominant-baseline="middle">school address</text>
+<path d="M780 180 H1255" stroke="#dce2ea"/>
+<text x="815.0" y="208.0" class="cell key mono" text-anchor="middle" dominant-baseline="middle">0</text>
+<text x="952.5" y="208.0" class="cell" text-anchor="middle" dominant-baseline="middle">Pacific University</text>
+<text x="1155.0" y="208.0" class="cell" text-anchor="middle" dominant-baseline="middle">Honolulu, HI</text>
+<path d="M780 236 H1255" stroke="#dce2ea"/>
+<text x="815.0" y="264.0" class="cell key mono" text-anchor="middle" dominant-baseline="middle">1</text>
+<text x="952.5" y="264.0" class="cell" text-anchor="middle" dominant-baseline="middle">Mountain College</text>
+<text x="1155.0" y="264.0" class="cell" text-anchor="middle" dominant-baseline="middle">Boulder, CO</text>
+<path d="M780 292 H1255" stroke="#dce2ea"/>
+<text x="815.0" y="320.0" class="cell key mono" text-anchor="middle" dominant-baseline="middle">2</text>
+<text x="952.5" y="320.0" class="cell" text-anchor="middle" dominant-baseline="middle">Bayside University</text>
+<text x="1155.0" y="320.0" class="cell" text-anchor="middle" dominant-baseline="middle">San Diego, CA</text>
+<rect x="780" y="126" width="475" height="222" rx="10" fill="none" stroke="#d6dce5" stroke-width="2"/>
+<path d="M620 208 C688 208,718 208,792 208" fill="none" stroke="#8862b8" stroke-width="2.5" opacity=".8" marker-end="url(#arrow)"/>
+<path d="M620 264 C688 264,718 208,792 208" fill="none" stroke="#8862b8" stroke-width="2.5" opacity=".8" marker-end="url(#arrow)"/>
+<path d="M620 320 C688 320,718 264,792 264" fill="none" stroke="#8862b8" stroke-width="2.5" opacity=".8" marker-end="url(#arrow)"/>
+<path d="M620 376 C688 376,718 208,792 208" fill="none" stroke="#8862b8" stroke-width="2.5" opacity=".8" marker-end="url(#arrow)"/>
+<path d="M620 432 C688 432,718 320,792 320" fill="none" stroke="#8862b8" stroke-width="2.5" opacity=".8" marker-end="url(#arrow)"/>
+</svg>
