@@ -226,7 +226,7 @@
             },
             {
               "type": "check",
-              "text": "Both ESLint and Prettier are installed and enabled. Select Next step to configure Prettier. There are two settings to complete."
+              "text": "Both ESLint and Prettier are installed and enabled. Continue below to Step 3 to configure Prettier. There are two settings to complete."
             },
             {
               "type": "note",
@@ -308,7 +308,7 @@
             },
             {
               "type": "check",
-              "text": "Editor: Format On Save is checked, and Editor: Default Formatter shows Prettier - Code formatter. Both are required. Then select Next step."
+              "text": "Editor: Format On Save is checked, and Editor: Default Formatter shows Prettier - Code formatter. Both are required. Then select Next page."
             },
             {
               "type": "note",
