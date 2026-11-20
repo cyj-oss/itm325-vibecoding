@@ -1059,7 +1059,7 @@
     {
       "id": "7.5",
       "title": "Implementing Link Management",
-      "objective": "Understand Open Graph metadata and what an API is — well enough to direct and verify link add / delete / edit, including an Open Graph API that auto-collects each link's title, description, and thumbnail.",
+      "objective": "Understand Open Graph metadata and APIs, then add, delete, and edit links. Save each link in its selected folder, with a preview when available.",
       "intro": [],
       "steps": [
         {
@@ -1068,7 +1068,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "With folder management done, we now have Claude implement Ohana Link's core features: adding, deleting, and editing links. The most important new concept this time is the Open Graph API, which automatically fetches extra information about any external link — understand it, and you can tell whether the \"auto-fill\" Claude delivers actually works.",
+              "text": "With folder management done, we now implement Ohana Link's core features: adding, deleting, and editing links. Our Open Graph API collects preview information when a website provides it. A link should still be saved even when its preview is unavailable.",
               "links": [],
               "source": 1001
             }
@@ -1088,13 +1088,13 @@
             },
             {
               "type": "bullet",
-              "text": "Inside a web page's HTML are Open Graph tags that summarize the page's title, description, and thumbnail. Think of them like the shipping label on a package — metadata that gathers the page's key facts in one place.",
+              "text": "Many web pages include Open Graph tags in their HTML to describe the page's title, description, and thumbnail. Think of them like the shipping label on a package — metadata that gathers the page's key facts in one place.",
               "links": [],
               "source": 1004
             },
             {
               "type": "bullet",
-              "text": "If we fetch the HTML of the link the user typed and extract just the Open Graph tags, we get all the extra info we need.",
+              "text": "When the website allows us to fetch its HTML, we can read the available tags to build a link preview. Some pages leave out a description or image.",
               "links": [],
               "source": 1005
             }
@@ -1104,7 +1104,7 @@
         },
         {
           "id": "s1007",
-          "title": "Why the browser can't make that request itself",
+          "title": "Why we use a server API",
           "blocks": [
             {
               "type": "paragraph",
@@ -1114,13 +1114,13 @@
             },
             {
               "type": "paragraph",
-              "text": "The reason is security. That request could carry along personal information the user has stored in the browser — saved passwords, card numbers, and the like. So browsers stop pages from firing off direct requests to outside servers in the first place.",
+              "text": "This helps prevent one website from reading another website's responses without permission.",
               "links": [],
               "source": 1009
             },
             {
               "type": "paragraph",
-              "text": "The solution is to route around it through our Next.js server:",
+              "text": "Our app requests the preview through its Next.js server:",
               "links": [],
               "source": 1011
             },
@@ -1132,19 +1132,19 @@
             },
             {
               "type": "bullet",
-              "text": "The Next.js server contacts the external link on the browser's behalf and receives the HTML.",
+              "text": "The Next.js server requests the public HTML from the external website.",
               "links": [],
               "source": 1013
             },
             {
               "type": "bullet",
-              "text": "The server extracts just the Open Graph tags and responds to the browser.",
+              "text": "If the request succeeds, the server extracts the available preview information and returns it to the browser.",
               "links": [],
               "source": 1014
             },
             {
               "type": "paragraph",
-              "text": "Think of it like a kid who can't ask their strict dad for a toy directly — so they ask mom, and mom talks to dad. Our Next.js server plays the role of mom.",
+              "text": "A website can still refuse our server's request or return no preview data. The link should still be saved using its URL and selected folder.",
               "links": [],
               "source": 1015
             },
@@ -1173,7 +1173,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "implement the add-link feature.\n– First implement the API that extracts a given link's Open Graph information\n– On the new-link page, pressing Save stores the link\n– On save, use the Open Graph API to collect and store the title, description, thumbnail, and link URL together",
+                  "text": "Implement the add-link feature.\n– Keep the existing new-link page UI, including the URL input, Folder dropdown, and Save button.\n– Fill the dropdown from the current folder list and include a No folder option.\n– Implement a server-side API that reads the link's Open Graph information.\n– Validate that the URL is a public HTTP or HTTPS address before fetching or saving.\n– On Save, store the URL, the selected folder's numeric ID (or null for No folder), and any available title, description, and thumbnail.\n– If preview fetching fails, including a 403 response or timeout, still save the valid URL and selected folder. Use the website's domain as the title, an empty description, and no thumbnail. Use these defaults for individual missing fields too.\n– Show the saved link in All Links and in the selected folder. Keep the current design.",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1185,13 +1185,58 @@
               ]
             },
             {
+              "type": "details",
+              "title": "Already built this and need to fix it?",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Paste this directly into Claude Code:"
+                },
+                {
+                  "type": "code",
+                  "id": "prompt-link-folder-preview-repair",
+                  "text": "Restore the Folder dropdown on the Add Link page using the current folders, plus a No folder option. Save the selected numeric folder ID with the link and show it in All Links and that folder. Keep URL validation. If preview fetching fails, including 403 errors, still save the valid public URL and selected folder; use the domain as the title, an empty description, and no thumbnail. Keep the current design.",
+                  "where": "Claude Code input · in the VS Code terminal panel",
+                  "mode": "prompt",
+                  "label": "Claude Code repair prompt",
+                  "copy": true
+                }
+              ]
+            },
+            {
               "type": "action",
               "where": "Browser · your app",
               "title": "Test the result",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "After Claude finishes, open the new-link page in your browser, enter an address such as https://www.nytimes.com, and save it. Review the title, description, and thumbnail returned by the feature."
+                  "text": "Open Add Link. Paste this address into the Link field, choose a folder, and click Save."
+                },
+                {
+                  "type": "code",
+                  "text": "https://nextjs.org/docs",
+                  "where": "Browser · Add Link page · Link field",
+                  "mode": "input",
+                  "label": "Test link",
+                  "copy": true
+                },
+                {
+                  "type": "bullet",
+                  "text": "Find the saved link in All Links, then open the selected folder and find it there too."
+                },
+                {
+                  "type": "bullet",
+                  "text": "Review its title, description, and thumbnail when available. Open the link to check its URL."
+                },
+                {
+                  "type": "details",
+                  "title": "What if a preview is unavailable?",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "The link should still save in the selected folder. It can display the website domain as its title, with no description or thumbnail."
+                    }
+                  ]
                 }
               ]
             },
@@ -1208,7 +1253,7 @@
             },
             {
               "type": "check",
-              "text": "Add a test link and review its saved title, description, and thumbnail. Commit and push the working feature."
+              "text": "The link saves in All Links and the selected folder. Preview failures do not prevent a valid link from saving. Commit and push the working feature."
             }
           ],
           "source": 1017,
