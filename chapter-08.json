@@ -258,13 +258,13 @@
           "label": "Setup 2 · Part 3 · Supabase",
           "url": "https://github.com/cyj-oss/itm325-setup2/blob/main/SUPABASE.md",
           "text": "The guide opens in a new tab. Keep this book tab open.",
-          "scope": "With your existing Next.js app working, complete all four Supabase setup steps. Windows and Mac use the same page. Reuse your existing account and project.",
+          "scope": "With your existing Next.js app working, complete all four Supabase setup steps: create or open your project, copy the setup prompt from Supabase, run it in Claude Code, and check the generated files. Windows and Mac use the same page.",
           "checks": [
             "Your Supabase project dashboard is ready.",
             "Connection files and real settings are saved; .env.local is ignored by Git and is not tracked.",
             "The app starts without setup errors. Database reads and writes are tested later in the lesson."
           ],
-          "returnText": "Stop at DONE for Part 3 setup. Switch back to this book tab, Lesson 8.2, Step 1. Continue below with Connection files and environment variables. Do not repeat the setup prompt. Table creation comes later in Lesson 8.4.",
+          "returnText": "Stop at DONE for Part 3 setup. Use the return button in the guide to come back here. Review the connection files below; do not run the setup prompt again. Table creation comes later in Lesson 8.4.",
           "returnUrl": "#lesson=8.2&step=0",
           "returnLabel": "Return to 8.2 · Connection files"
         },
@@ -282,7 +282,13 @@
           "type": "image",
           "src": "image-supabase-nextjs-app-router.png",
           "alt": "Supabase Connect dialog with Framework selected, Next.js as the framework, and App Router as the variant.",
-          "caption": "Select Framework, then choose Next.js and App Router. Continue with Step 2 in the setup guide."
+          "caption": "Select Framework, then choose Next.js and App Router."
+        },
+        {
+          "type": "image",
+          "src": "image-supabase-copy-prompt.png",
+          "alt": "Supabase Connect panel with Next.js and App Router selected and the Copy prompt button outlined in red.",
+          "caption": "In the setup guide, use Copy prompt to copy the full Supabase instructions into Claude Code. The section may be called Connect your app or Follow these steps."
         },
         {
           "type": "details",
@@ -343,8 +349,18 @@
             {
               "type": "note",
               "title": "Review the files you just prepared",
-              "text": "The setup guide already prepared the connection. Use this step to understand and check those files. Keep your real .env.local values; do not replace a working connection with the example below.",
+              "text": "The setup guide used Supabase’s Copy prompt to prepare the connection in Claude Code. Review the files it created below. Keep your real .env.local values; do not replace them with the examples.",
               "optional": false
+            },
+            {
+              "type": "details",
+              "title": "What did Claude create?",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Claude installs the needed packages and prepares the Supabase connection files. You may see client.ts and server.ts inside utils/supabase or lib/supabase. Exact filenames can vary; follow Claude’s change summary. The main file to check now is .env.local."
+                }
+              ]
             },
             {
               "type": "explanation",
@@ -372,6 +388,12 @@
                   "source": 1086
                 }
               ]
+            },
+            {
+              "type": "image",
+              "src": "image-supabase-env-local-english.png",
+              "alt": "English VS Code example showing .env.local in the ohana-link project root beside package.json. The project URL variable is blue and the publishable key variable is purple.",
+              "caption": "Open .env.local in the project root, beside package.json. Adapted example: your file should contain your own project URL and publishable key."
             },
             {
               "type": "details",
@@ -428,7 +450,17 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Open .env.local and confirm it contains your own Supabase project settings. Open .gitignore and check that the environment file is excluded. Do not copy the example placeholders over your working values."
+                  "text": "Open .env.local beside package.json. Check that `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` match your Supabase project’s Add files → .env.local tab."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Open .gitignore and find .env*. This tells Git to ignore new environment files such as .env.local. The setup guide’s two Git checks confirm the file is ignored and untracked."
+                },
+                {
+                  "type": "image",
+                  "src": "image-supabase-gitignore-env.png",
+                  "alt": "VS Code .gitignore editor with the .env* rule highlighted.",
+                  "caption": "The .env* rule in .gitignore excludes environment files that Git is not already tracking."
                 }
               ]
             },
