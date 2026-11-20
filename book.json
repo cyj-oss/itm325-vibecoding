@@ -713,27 +713,20 @@
           "id": "7.4",
           "title": "Implementing Folder Management",
           "platform": null,
-          "steps": 6,
+          "steps": 4,
           "pages": [
             {
-              "title": "Prepare for folder management",
+              "title": "Add folders and commit your work",
               "steps": [
                 0,
                 1
               ]
             },
             {
-              "title": "Add folders and commit your work",
+              "title": "Delete and rename folders",
               "steps": [
                 2,
                 3
-              ]
-            },
-            {
-              "title": "Delete and rename folders",
-              "steps": [
-                4,
-                5
               ]
             }
           ]
