@@ -382,7 +382,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Setup already created webdev. In VS Code, choose File → Open Folder and open that existing folder: C:\\webdev on Windows, or webdev inside your Mac home folder. If it is already open, select Next step. Do not create a second webdev folder."
+                  "text": "Setup already created webdev. In VS Code, choose File → Open Folder and open that existing folder: C:\\webdev on Windows, or webdev inside your Mac home folder. If it is already open, continue below to Step 2, Run Claude Code. Do not create a second webdev folder."
                 }
               ]
             },
@@ -487,7 +487,7 @@
             {
               "type": "note",
               "title": "Use the session you already opened",
-              "text": "If Claude’s message area is still open from setup, keep using it and select Next step. Otherwise, open a regular VS Code terminal in webdev and run the command below. You do not need to install or subscribe again.",
+              "text": "If Claude’s message area is still open from setup, keep using it and select Next page. Otherwise, open a regular VS Code terminal in webdev and run the command below. You do not need to install or subscribe again.",
               "optional": false
             },
             {
