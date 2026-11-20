@@ -1286,7 +1286,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement the add-folder feature.\n- Add every folder the user creates to the Supabase folder table\n- Block double-clicks on the add-folder button so multiple folders can't be created at once\n- Load the folders stored in the folder table and list them in the left sidebar\n- Do not implement anything beyond this\n- Use MCP to check the table structure first, then do the work",
+                  "text": "implement the add-folder feature.\n- Add every folder the user creates to the Supabase folder table\n- Block double-clicks on the add-folder button so multiple folders can't be created at once\n- Load the folders stored in the folder table and list them in the left sidebar\n- Do not implement anything beyond this\n- Use MCP to check the table structure first, then do the work",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1369,7 +1369,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement folder renaming.\n- When a folder is renamed, update the new name in the folder table",
+                  "text": "implement folder renaming.\n- When a folder is renamed, update the new name in the folder table",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1416,7 +1416,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement folder deletion.\n- When a folder is deleted, remove that folder's data from the folder table",
+                  "text": "implement folder deletion.\n- When a folder is deleted, remove that folder's data from the folder table",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1463,7 +1463,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement the add-link feature.\n- Add links saved on the new-link page to the Supabase link table\n- Block double-clicks on the save button\n- On the index page and each folder page, load the links stored in the link table and show them in the grid\n- Do not implement anything beyond this",
+                  "text": "implement the add-link feature.\n- Add links saved on the new-link page to the Supabase link table\n- Block double-clicks on the save button\n- On the index page and each folder page, load the links stored in the link table and show them in the grid\n- Do not implement anything beyond this",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1519,7 +1519,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement link editing.\n- When a link is edited, update the link table with the edited values",
+                  "text": "implement link editing.\n- When a link is edited, update the link table with the edited values",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
@@ -1566,7 +1566,7 @@
                 },
                 {
                   "type": "code",
-                  "text": "Request: implement link deletion.\n- When a link is deleted, remove that link's data from the link table",
+                  "text": "implement link deletion.\n- When a link is deleted, remove that link's data from the link table",
                   "where": "VS Code editor · prompt.md",
                   "mode": "prompt",
                   "label": "Prompt to save in prompt.md",
