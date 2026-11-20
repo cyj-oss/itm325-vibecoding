@@ -799,13 +799,42 @@
           "blocks": [
             {
               "type": "action",
-              "where": "VS Code",
-              "title": "Keep the server and Claude in separate terminals",
+              "where": "VS Code terminal · normal shell",
+              "title": "Start Claude Code in a new terminal",
               "blocks": [
                 {
-                  "type": "note",
-                  "title": "Use the Next.js project",
-                  "text": "Open ohana-link, where package.json is visible. Keep the development server in its existing terminal. Choose Terminal → New Terminal, confirm this second terminal is also in ohana-link, and type claude there. Use Claude’s message area for AI prompts. Save and review the starter state in Git before changing it."
+                  "type": "paragraph",
+                  "text": "Keep the development server running in its existing terminal. In VS Code, choose Terminal → New Terminal. Use this new terminal to start Claude Code."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Check the path in the new terminal. If it ends in webdev, run the command below to enter ohana-link. If it already ends in ohana-link, skip this command."
+                },
+                {
+                  "type": "code",
+                  "text": "cd ohana-link",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Enter the project folder — only if needed",
+                  "copy": true,
+                  "note": "Run only when the terminal is in webdev."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Once the terminal path ends in ohana-link, run:"
+                },
+                {
+                  "type": "code",
+                  "text": "claude",
+                  "where": "VS Code terminal · normal shell",
+                  "mode": "command",
+                  "label": "Start Claude Code",
+                  "copy": true,
+                  "note": "Press Enter and wait for Claude Code’s message input to appear."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Keep Claude Code open and continue below to create prompt.md. Save and review the starter state in Git before changing it."
                 }
               ]
             },
