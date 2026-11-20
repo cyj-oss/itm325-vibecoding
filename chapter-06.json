@@ -980,16 +980,30 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Check the new terminal’s path. If it ends in webdev, run the next command. If it already ends in ohana-link, skip this command. Use the regular terminal, not Claude Code’s message input."
+                  "text": "Use the new regular terminal, not Claude Code’s message input. If its path already ends in ohana-link, continue with the check below."
                 },
                 {
-                  "type": "code",
-                  "text": "cd ohana-link",
-                  "where": "VS Code terminal · normal shell",
-                  "mode": "command",
-                  "label": "Enter the project folder — only if needed",
-                  "copy": true,
-                  "note": "Run only when the terminal is in webdev."
+                  "type": "details",
+                  "title": "Only if the terminal is outside ohana-link",
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "If the terminal path ends in webdev, run this command once. If it already ends in ohana-link, skip it."
+                    },
+                    {
+                      "type": "code",
+                      "text": "cd ohana-link",
+                      "where": "VS Code terminal · normal shell",
+                      "mode": "command",
+                      "label": "Enter the project folder — only if needed",
+                      "copy": true,
+                      "note": "Run only when the terminal is in webdev."
+                    },
+                    {
+                      "type": "paragraph",
+                      "text": "If the terminal is somewhere else, choose File → Open Folder in VS Code, select your existing ohana-link folder, and open a new terminal."
+                    }
+                  ]
                 },
                 {
                   "type": "code",
