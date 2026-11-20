@@ -719,50 +719,92 @@
               ]
             },
             {
-              "type": "check",
-              "text": "Claude has finished adding the Supabase MCP connection. Continue below to authorize it and confirm it is connected."
-            }
-          ],
-          "source": 1144,
-          "kind": "Practice"
-        },
-        {
-          "id": "s1152",
-          "title": "Authenticate the MCP",
-          "blocks": [
-            {
               "type": "action",
-              "where": "Claude Code input · in the terminal",
-              "title": "Restart Claude and open the MCP list",
+              "where": "VS Code terminal panel · ohana-link",
+              "title": "Restart Claude Code and enable Supabase",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Exit Claude Code, then type `claude` in the same VS Code terminal to start it again. If asked to enable the project’s MCP server, enable Supabase. Enter `/mcp` to view the connection list.",
-                  "links": [],
-                  "source": 1153
+                  "text": "After Claude finishes the setup, click its terminal and press Control+C twice to exit Claude Code. Use Control+C on both Windows and Mac."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In the same terminal, enter this command and press Enter to start Claude Code again:"
                 },
                 {
                   "type": "code",
-                  "text": "/mcp",
-                  "where": "Claude Code input",
+                  "text": "claude",
+                  "where": "VS Code terminal · normal shell",
                   "mode": "command",
-                  "label": "Claude Code command",
+                  "label": "Start Claude Code",
                   "copy": true,
-                  "source": 1154,
-                  "note": "Paste into the named input area. Press Enter to run."
+                  "note": "Press Enter to run."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When New MCP server found in this project: supabase appears, use the arrow keys to select Use this MCP server, the first option, and press Enter."
+                },
+                {
+                  "type": "image",
+                  "src": "image-supabase-mcp-restart.png",
+                  "alt": "Claude Code detects the Supabase MCP server after restarting. The menu offers Use this MCP server and other options.",
+                  "caption": "Choose Use this MCP server, the first option, to enable Supabase."
                 }
               ]
             },
             {
               "type": "action",
-              "where": "Claude Code · browser authorization",
-              "title": "Authenticate if requested",
+              "where": "Claude Code input · in the VS Code terminal panel",
+              "title": "Check the Supabase connection",
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "If Needs Authentication shows on the right, you still need to log in. Press Enter on that item and continue with the Authenticate response — a browser opens, and you finish by clicking the Authorize Claude Code button. (If the browser doesn't open by itself, click the address printed in the terminal.)",
-                  "links": [],
-                  "source": 1156
+                  "text": "With Claude Code running, enter this command and press Enter:"
+                },
+                {
+                  "type": "code",
+                  "text": "/mcp",
+                  "where": "Claude Code input · in the VS Code terminal panel",
+                  "mode": "command",
+                  "label": "Claude Code command",
+                  "copy": true,
+                  "source": 1154,
+                  "note": "Enter this in Claude Code, then press Enter."
+                },
+                {
+                  "type": "image",
+                  "src": "image-supabase-mcp-needs-authentication.png",
+                  "alt": "The MCP server list shows supabase with the status needs authentication.",
+                  "caption": "Select supabase when it shows needs authentication."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If supabase shows needs authentication, use the arrow keys to select it and press Enter."
+                }
+              ]
+            },
+            {
+              "type": "action",
+              "where": "Claude Code → browser · Supabase",
+              "title": "Authenticate Supabase",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Select Authenticate and press Enter."
+                },
+                {
+                  "type": "image",
+                  "src": "image-supabase-mcp-authenticate.png",
+                  "alt": "The Supabase MCP Server menu shows needs authentication and the Authenticate option highlighted.",
+                  "caption": "Select Authenticate, then press Enter."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A browser window opens. Sign in to Supabase if asked, then click Authorize Claude Code. If the browser does not open, use the address shown in the terminal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Return to Claude Code and run `/mcp` again. Supabase should now be connected. If it was already connected, no new sign-in is needed."
                 }
               ]
             },
@@ -784,7 +826,7 @@
               "text": "Supabase appears in the MCP list and no longer needs authentication."
             }
           ],
-          "source": 1152,
+          "source": 1144,
           "kind": "Practice"
         },
         {

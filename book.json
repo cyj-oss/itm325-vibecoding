@@ -839,28 +839,27 @@
           "id": "8.4",
           "title": "Creating Database Tables",
           "platform": null,
-          "steps": 7,
+          "steps": 6,
           "pages": [
             {
               "title": "Connect Claude Code to Supabase",
               "steps": [
-                0,
-                1
+                0
               ]
             },
             {
               "title": "Plan your tables and create the link table",
               "steps": [
-                2,
-                3
+                1,
+                2
               ]
             },
             {
               "title": "Create the folder table and connect the tables",
               "steps": [
+                3,
                 4,
-                5,
-                6
+                5
               ]
             }
           ]
