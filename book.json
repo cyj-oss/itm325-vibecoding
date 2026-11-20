@@ -13,25 +13,63 @@
           "id": "1.1",
           "title": "The CLI and the Terminal",
           "platform": null,
-          "steps": 2
+          "steps": 2,
+          "pages": [
+            {
+              "title": "The CLI and the terminal",
+              "steps": [
+                0,
+                1
+              ]
+            }
+          ]
         },
         {
           "id": "1.2",
           "title": "Terminal Basics — Windows",
           "platform": "Windows",
-          "steps": 2
+          "steps": 2,
+          "pages": [
+            {
+              "title": "Open PowerShell and practice the core commands",
+              "steps": [
+                0,
+                1
+              ]
+            }
+          ]
         },
         {
           "id": "1.3",
           "title": "Terminal Basics — macOS",
           "platform": "Mac",
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "Open Terminal and practice the core commands",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
         },
         {
           "id": "1.4",
           "title": "Terminal Shortcuts Worth Knowing",
           "platform": null,
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "Useful terminal shortcuts",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
         }
       ]
     },
@@ -45,13 +83,43 @@
           "id": "2.1",
           "title": "Meet Claude Code",
           "platform": null,
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "Meet Claude Code",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Pricing",
+              "steps": [
+                2
+              ]
+            }
+          ]
         },
         {
           "id": "2.2",
           "title": "Claude Code: Account and Subscription",
           "platform": null,
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "Before you start",
+              "steps": [
+                0
+              ]
+            },
+            {
+              "title": "Subscribe and confirm your access",
+              "steps": [
+                1,
+                2
+              ]
+            }
+          ]
         },
         {
           "id": "2.3",
@@ -69,7 +137,30 @@
           "id": "2.5",
           "title": "Claude Code Basics",
           "platform": null,
-          "steps": 6
+          "steps": 6,
+          "pages": [
+            {
+              "title": "Open your course folder and start Claude Code",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Use Claude Code and its basic commands",
+              "steps": [
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "title": "Build your first website",
+              "steps": [
+                5
+              ]
+            }
+          ]
         }
       ]
     },
@@ -83,13 +174,45 @@
           "id": "3.1",
           "title": "Introducing the VSCode Editor",
           "platform": null,
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "Why we use VS Code",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
         },
         {
           "id": "3.2",
           "title": "Installing VSCode and Learning the Basics",
           "platform": null,
-          "steps": 5
+          "steps": 5,
+          "pages": [
+            {
+              "title": "Start here: two required tasks",
+              "steps": [
+                0
+              ]
+            },
+            {
+              "title": "Install the extensions and set up Prettier",
+              "steps": [
+                1,
+                2
+              ]
+            },
+            {
+              "title": "Open your project and use Claude Code in VS Code",
+              "steps": [
+                3,
+                4
+              ]
+            }
+          ]
         }
       ]
     },
@@ -103,37 +226,146 @@
           "id": "4.1",
           "title": "The Internet and the Web",
           "platform": null,
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "How the web and its three languages work",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
         },
         {
           "id": "4.2",
           "title": "Laying Out a Page with HTML",
           "platform": null,
-          "steps": 4
+          "steps": 4,
+          "pages": [
+            {
+              "title": "HTML tags and their rules",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Content tags and page structure",
+              "steps": [
+                2,
+                3
+              ]
+            }
+          ]
         },
         {
           "id": "4.3",
           "title": "HTML's Essential Tags",
           "platform": null,
-          "steps": 2
+          "steps": 2,
+          "pages": [
+            {
+              "title": "Essential HTML tags and attributes",
+              "steps": [
+                0,
+                1
+              ]
+            }
+          ]
         },
         {
           "id": "4.4",
           "title": "Styling with CSS",
           "platform": null,
-          "steps": 4
+          "steps": 4,
+          "pages": [
+            {
+              "title": "What CSS does and how to read it",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Use selectors and organize your CSS",
+              "steps": [
+                2,
+                3
+              ]
+            }
+          ]
         },
         {
           "id": "4.5",
           "title": "Adding Behavior with JavaScript",
           "platform": null,
-          "steps": 6
+          "steps": 6,
+          "pages": [
+            {
+              "title": "Add JavaScript to a page",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Functions and events",
+              "steps": [
+                2,
+                3
+              ]
+            },
+            {
+              "title": "Update the page and organize your JavaScript",
+              "steps": [
+                4,
+                5
+              ]
+            }
+          ]
         },
         {
           "id": "4.6",
           "title": "Your First Project: A Pomodoro Timer",
           "platform": null,
-          "steps": 8
+          "steps": 8,
+          "pages": [
+            {
+              "title": "The Pomodoro project and prompt workflow",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Setup: one folder per project",
+              "steps": [
+                2
+              ]
+            },
+            {
+              "title": "Build and test the main page",
+              "steps": [
+                3,
+                4
+              ]
+            },
+            {
+              "title": "Build and test the settings page",
+              "steps": [
+                5,
+                6
+              ]
+            },
+            {
+              "title": "Why the time survives a refresh",
+              "steps": [
+                7
+              ]
+            }
+          ]
         },
         {
           "id": "4.7",
@@ -153,7 +385,17 @@
           "id": "5.1",
           "title": "Version Control",
           "platform": null,
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "Why version control matters",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
         },
         {
           "id": "5.2",
@@ -171,25 +413,98 @@
           "id": "5.4",
           "title": "Version Control with Git",
           "platform": null,
-          "steps": 4
+          "steps": 4,
+          "pages": [
+            {
+              "title": "Initialize Git and record your first version",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "title": "Fixing the AI's mistakes",
+              "steps": [
+                3
+              ]
+            }
+          ]
         },
         {
           "id": "5.5",
           "title": "Meet GitHub & Publish Your Project",
           "platform": null,
-          "steps": 7
+          "steps": 7,
+          "pages": [
+            {
+              "title": "What GitHub adds to Git",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "title": "Publish your project and check GitHub",
+              "steps": [
+                3,
+                4,
+                5,
+                6
+              ]
+            }
+          ]
         },
         {
           "id": "5.6",
           "title": "Using GitHub: Push, Pull, and Clone",
           "platform": null,
-          "steps": 5
+          "steps": 5,
+          "pages": [
+            {
+              "title": "Local and remote repositories: push your changes",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Pull — remote → local",
+              "steps": [
+                2
+              ]
+            },
+            {
+              "title": "Clone a project and review the workflow",
+              "steps": [
+                3,
+                4
+              ]
+            }
+          ]
         },
         {
           "id": "5.7",
           "title": "Safely Granting Permissions to AI",
           "platform": null,
-          "steps": 4
+          "steps": 4,
+          "pages": [
+            {
+              "title": "Choose how to grant permissions",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Understand and check your permission settings",
+              "steps": [
+                2,
+                3
+              ]
+            }
+          ]
         }
       ]
     },
@@ -203,7 +518,17 @@
           "id": "6.1",
           "title": "Introduction to Web Development Frameworks",
           "platform": null,
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "Frameworks, Next.js, and Node.js",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
         },
         {
           "id": "6.2",
@@ -221,19 +546,80 @@
           "id": "6.4",
           "title": "Creating Your First Next.js App",
           "platform": null,
-          "steps": 4
+          "steps": 4,
+          "pages": [
+            {
+              "title": "Create and run your Next.js app",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Read package.json in the editor",
+              "steps": [
+                2
+              ]
+            },
+            {
+              "title": "Meet the node_modules folder",
+              "steps": [
+                3
+              ]
+            }
+          ]
         },
         {
           "id": "6.5",
           "title": "How a Next.js App Runs",
           "platform": null,
-          "steps": 5
+          "steps": 5,
+          "pages": [
+            {
+              "title": "Your development server, localhost, and ports",
+              "steps": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          ]
         },
         {
           "id": "6.6",
           "title": "Next.js Core Concepts",
           "platform": null,
-          "steps": 6
+          "steps": 6,
+          "pages": [
+            {
+              "title": "Core concept: pages are assembled from pieces",
+              "steps": [
+                0
+              ]
+            },
+            {
+              "title": "Build with components and inspect a component",
+              "steps": [
+                1,
+                2
+              ]
+            },
+            {
+              "title": "App Router: the folder structure IS the URL",
+              "steps": [
+                3
+              ]
+            },
+            {
+              "title": "Edit a component and review the core concepts",
+              "steps": [
+                4,
+                5
+              ]
+            }
+          ]
         }
       ]
     },
@@ -247,31 +633,139 @@
           "id": "7.1",
           "title": "Project Introduction",
           "platform": null,
-          "steps": 4
+          "steps": 4,
+          "pages": [
+            {
+              "title": "Meet Ohana Link and the project plan",
+              "steps": [
+                0,
+                1,
+                2,
+                3
+              ]
+            }
+          ]
         },
         {
           "id": "7.2",
           "title": "Building the Project's Base UI",
           "platform": null,
-          "steps": 5
+          "steps": 5,
+          "pages": [
+            {
+              "title": "Reset the project to its initial state",
+              "steps": [
+                0
+              ]
+            },
+            {
+              "title": "Implement the index page UI",
+              "steps": [
+                1
+              ]
+            },
+            {
+              "title": "Tidy the component folder location (optional)",
+              "steps": [
+                2
+              ]
+            },
+            {
+              "title": "Build the link pages",
+              "steps": [
+                3,
+                4
+              ]
+            }
+          ]
         },
         {
           "id": "7.3",
           "title": "Setting a Design Theme (Claude Skills)",
           "platform": null,
-          "steps": 7
+          "steps": 7,
+          "pages": [
+            {
+              "title": "Choose a theme and understand Skills",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "title": "Register the Skill and understand how it works",
+              "steps": [
+                3,
+                4
+              ]
+            },
+            {
+              "title": "Apply the theme and save your changes",
+              "steps": [
+                5,
+                6
+              ]
+            }
+          ]
         },
         {
           "id": "7.4",
           "title": "Implementing Folder Management",
           "platform": null,
-          "steps": 6
+          "steps": 6,
+          "pages": [
+            {
+              "title": "Prepare for folder management",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Add folders and commit your work",
+              "steps": [
+                2,
+                3
+              ]
+            },
+            {
+              "title": "Delete and rename folders",
+              "steps": [
+                4,
+                5
+              ]
+            }
+          ]
         },
         {
           "id": "7.5",
           "title": "Implementing Link Management",
           "platform": null,
-          "steps": 6
+          "steps": 6,
+          "pages": [
+            {
+              "title": "Understand link previews and the server request",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "title": "The add-link feature",
+              "steps": [
+                3
+              ]
+            },
+            {
+              "title": "Delete and edit links",
+              "steps": [
+                4,
+                5
+              ]
+            }
+          ]
         }
       ]
     },
@@ -285,37 +779,159 @@
           "id": "8.1",
           "title": "Introducing Databases",
           "platform": null,
-          "steps": 5
+          "steps": 5,
+          "pages": [
+            {
+              "title": "What databases do and what they need",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Supabase and the key database terms",
+              "steps": [
+                2,
+                3,
+                4
+              ]
+            }
+          ]
         },
         {
           "id": "8.2",
           "title": "Setting Up Supabase",
           "platform": null,
-          "steps": 2
+          "steps": 2,
+          "pages": [
+            {
+              "title": "Connect your project and review the setup",
+              "steps": [
+                0,
+                1
+              ]
+            }
+          ]
         },
         {
           "id": "8.3",
           "title": "How Databases Work",
           "platform": null,
-          "steps": 7
+          "steps": 7,
+          "pages": [
+            {
+              "title": "Tables, rows, and primary keys",
+              "steps": [
+                0,
+                1
+              ]
+            },
+            {
+              "title": "Related tables and foreign keys",
+              "steps": [
+                2,
+                3
+              ]
+            },
+            {
+              "title": "MCP and the database concepts in practice",
+              "steps": [
+                4,
+                5,
+                6
+              ]
+            }
+          ]
         },
         {
           "id": "8.4",
           "title": "Creating Database Tables",
           "platform": null,
-          "steps": 8
+          "steps": 8,
+          "pages": [
+            {
+              "title": "Open Supabase and connect the MCP",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "title": "Plan your tables and create the link table",
+              "steps": [
+                3,
+                4
+              ]
+            },
+            {
+              "title": "Create the folder table and connect the tables",
+              "steps": [
+                5,
+                6,
+                7
+              ]
+            }
+          ]
         },
         {
           "id": "8.5",
           "title": "Wiring Features to the Database",
           "platform": null,
-          "steps": 8
+          "steps": 8,
+          "pages": [
+            {
+              "title": "Prepare the database connection and add folders",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "title": "Rename and delete folders",
+              "steps": [
+                3,
+                4
+              ]
+            },
+            {
+              "title": "Add, edit, and delete links",
+              "steps": [
+                5,
+                6,
+                7
+              ]
+            }
+          ]
         },
         {
           "id": "8.6",
           "title": "Troubleshooting Database Errors",
           "platform": null,
-          "steps": 5
+          "steps": 5,
+          "pages": [
+            {
+              "title": "Is your Supabase project paused?",
+              "steps": [
+                0
+              ]
+            },
+            {
+              "title": "Inspect Network and Console errors",
+              "steps": [
+                1,
+                2
+              ]
+            },
+            {
+              "title": "Other errors and your debugging checklist",
+              "steps": [
+                3,
+                4
+              ]
+            }
+          ]
         }
       ]
     },
@@ -329,13 +945,41 @@
           "id": "9.1",
           "title": "How User Authentication Works",
           "platform": null,
-          "steps": 6
+          "steps": 6,
+          "pages": [
+            {
+              "title": "Sign-up, login, and tokens",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "title": "Token security, expiration, and refresh",
+              "steps": [
+                3,
+                4,
+                5
+              ]
+            }
+          ]
         },
         {
           "id": "9.2",
           "title": "Understanding Authorization to Protect Your Data",
           "platform": null,
-          "steps": 3
+          "steps": 3,
+          "pages": [
+            {
+              "title": "Authorization and Supabase RLS",
+              "steps": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
         }
       ]
     }
